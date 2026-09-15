@@ -1,0 +1,4907 @@
+{
+ "code_version": "0.4.0",
+ "engine": {
+  "error": "no odds_prices Parquet under smoke-out/data",
+  "ok": false
+ },
+ "entries": [],
+ "generated_at": "2026-09-15T05:24:20.537061+00:00",
+ "health": {
+  "kalshi": {
+   "attempts_24h": 1023,
+   "credits_remaining": null,
+   "failed_24h": 0,
+   "last_ok": "2026-09-15T04:17:36.618075+00:00",
+   "n429_24h": 0,
+   "ok_24h": 1023
+  },
+  "longest_gap_s_24h": 347.0
+ },
+ "markets": [
+  {
+   "as_of": "2026-09-15T04:10:48.619151+00:00",
+   "markets": 6,
+   "median_depth_dollars": 4557.0,
+   "median_qty_best_ask": 332.0,
+   "median_spread_cents": 5.5,
+   "series": "KXNBAGAME"
+  },
+  {
+   "as_of": "2026-09-15T04:17:30.617340+00:00",
+   "markets": 32,
+   "median_depth_dollars": 168394.0,
+   "median_qty_best_ask": 44480.0,
+   "median_spread_cents": 1.0,
+   "series": "KXNFLGAME"
+  },
+  {
+   "as_of": "2026-09-15T04:17:36.618075+00:00",
+   "markets": 415,
+   "median_depth_dollars": 29464.0,
+   "median_qty_best_ask": 1851.0,
+   "median_spread_cents": 1.0,
+   "series": "KXNFLSPREAD"
+  },
+  {
+   "as_of": "2026-09-15T04:17:35.124895+00:00",
+   "markets": 304,
+   "median_depth_dollars": 33177.0,
+   "median_qty_best_ask": 4364.0,
+   "median_spread_cents": 2.0,
+   "series": "KXNFLTOTAL"
+  }
+ ],
+ "near_misses": [],
+ "rules": {
+  "contracts": 50,
+  "devig_method": "proportional",
+  "hash": "dcdd7969fde7",
+  "maker_coef": 0.0175,
+  "max_clock_skew_s": 60.0,
+  "max_ref_age_s": 900.0,
+  "ref_book": "pinnacle",
+  "taker_coef": 0.07,
+  "threshold_cents": 3.0,
+  "version": "week1-v1"
+ },
+ "settlements": {
+  "KXNFLGAME-26SEP09NESEA-NE": {
+   "close_time": "2026-09-10T03:28:38.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:29:46.365354+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP09NESEA-SEA": {
+   "close_time": "2026-09-10T03:28:38.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-10T03:29:46.365354+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP10SFLAR-LAR": {
+   "close_time": "2026-09-11T03:25:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:30:54.380751+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP10SFLAR-SF": {
+   "close_time": "2026-09-11T03:25:45.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:30:54.380751+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13ARILAC-ARI": {
+   "close_time": "2026-09-13T23:25:19.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:29:28.637787+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13ARILAC-LAC": {
+   "close_time": "2026-09-13T23:25:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:29:28.637787+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13ATLPIT-ATL": {
+   "close_time": "2026-09-13T20:23:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:25:28.632605+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13ATLPIT-PIT": {
+   "close_time": "2026-09-13T20:23:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:25:28.632605+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13BALIND-BAL": {
+   "close_time": "2026-09-13T20:23:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:25:28.698051+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13BALIND-IND": {
+   "close_time": "2026-09-13T20:23:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:25:28.698051+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13BUFHOU-BUF": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:31:28.832796+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13BUFHOU-HOU": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:31:28.832796+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13CHICAR-CAR": {
+   "close_time": "2026-09-13T20:45:40.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:47:48.691516+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13CHICAR-CHI": {
+   "close_time": "2026-09-13T20:45:40.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:47:48.691516+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13CLEJAC-CLE": {
+   "close_time": "2026-09-13T19:57:14.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:58:18.554488+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13CLEJAC-JAC": {
+   "close_time": "2026-09-13T19:57:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:58:18.554488+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13DALNYG-DAL": {
+   "close_time": "2026-09-14T03:30:44.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:35:49.285491+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13DALNYG-NYG": {
+   "close_time": "2026-09-14T03:30:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:35:49.285491+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13GBMIN-GB": {
+   "close_time": "2026-09-13T23:43:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.894593+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13GBMIN-MIN": {
+   "close_time": "2026-09-13T23:43:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:47:28.894593+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13MIALV-LV": {
+   "close_time": "2026-09-13T23:29:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.635701+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13MIALV-MIA": {
+   "close_time": "2026-09-13T23:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.635701+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13NODET-DET": {
+   "close_time": "2026-09-13T20:45:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:48:18.850646+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13NODET-NO": {
+   "close_time": "2026-09-13T20:45:14.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:48:18.850646+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13NYJTEN-NYJ": {
+   "close_time": "2026-09-13T20:15:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:17:28.535529+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13NYJTEN-TEN": {
+   "close_time": "2026-09-13T20:15:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:17:28.535529+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13TBCIN-CIN": {
+   "close_time": "2026-09-13T20:23:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:25:28.758977+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13TBCIN-TB": {
+   "close_time": "2026-09-13T20:23:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:25:28.758977+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP13WASPHI-PHI": {
+   "close_time": "2026-09-13T23:35:47.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:41:48.713697+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLGAME-26SEP13WASPHI-WAS": {
+   "close_time": "2026-09-13T23:35:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:41:48.713697+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP14DENKC-DEN": {
+   "close_time": "2026-09-15T03:15:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:19.283583+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLGAME-26SEP14DENKC-KC": {
+   "close_time": "2026-09-15T03:15:19.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:19.283583+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE10": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.573596+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE11": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.550590+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE14": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.583740+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE15": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.547537+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE17": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.666854+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE18": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.666972+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE2": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.549895+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE3": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.555401+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE4": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.538125+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE5": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.539129+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE6": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.548109+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE7": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.582555+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-NE8": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.546716+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA10": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.557864+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA11": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.533069+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA14": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.572032+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA15": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.568058+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA17": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.548482+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA18": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.558075+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA2": {
+   "close_time": "2026-09-10T03:52:00.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-10T03:53:05.538593+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA21": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.548349+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA3": {
+   "close_time": "2026-09-10T03:52:00.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-10T03:53:05.563731+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA4": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.661387+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA5": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.571139+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA6": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.561060+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA7": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.567464+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP09NESEA-SEA8": {
+   "close_time": "2026-09-10T03:52:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:25.556614+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR10": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.851129+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR11": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.851850+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR14": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.849678+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR15": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.850031+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR17": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.864051+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR18": {
+   "close_time": "2026-09-11T03:35:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.852209+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR2": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:33.703227+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR21": {
+   "close_time": "2026-09-11T03:35:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.844989+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR3": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:33.722861+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR4": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:33.783252+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR5": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.876039+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR6": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.848697+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR7": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.863085+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-LAR8": {
+   "close_time": "2026-09-11T03:35:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:23.855884+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF10": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.795141+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF11": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.793590+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF14": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.812710+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF15": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.798331+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF17": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.796223+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF18": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.800358+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF2": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.704944+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF21": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:33.799081+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF24": {
+   "close_time": "2026-09-11T03:35:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:37:33.794048+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF3": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.700884+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF4": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.790676+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF5": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.707855+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF6": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.705902+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF7": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.792333+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP10SFLAR-SF8": {
+   "close_time": "2026-09-11T03:35:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:37:33.788935+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI10": {
+   "close_time": "2026-09-13T23:29:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.493342+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI11": {
+   "close_time": "2026-09-13T23:29:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.483113+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI2": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.473263+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI3": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.478562+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI4": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.479333+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI5": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.479955+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI6": {
+   "close_time": "2026-09-13T23:29:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.480804+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI7": {
+   "close_time": "2026-09-13T23:29:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.482496+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-ARI8": {
+   "close_time": "2026-09-13T23:29:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:48.481604+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC10": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.469816+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC11": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.454046+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC12": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.454593+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC14": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.470868+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC15": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.458868+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC17": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.454359+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC18": {
+   "close_time": "2026-09-13T23:29:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.451294+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC2": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.477346+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC21": {
+   "close_time": "2026-09-13T23:29:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.450949+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC24": {
+   "close_time": "2026-09-13T23:29:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.450526+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC28": {
+   "close_time": "2026-09-13T23:29:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.451845+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC3": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.474660+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC31": {
+   "close_time": "2026-09-13T23:29:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.451543+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC4": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.475306+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC5": {
+   "close_time": "2026-09-13T23:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.473769+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC6": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.455738+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC7": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.472658+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ARILAC-LAC8": {
+   "close_time": "2026-09-13T23:29:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:31:48.458495+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL10": {
+   "close_time": "2026-09-13T20:17:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.458483+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL11": {
+   "close_time": "2026-09-13T20:17:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.460782+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL14": {
+   "close_time": "2026-09-13T20:17:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.451051+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL15": {
+   "close_time": "2026-09-13T20:17:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.451341+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL2": {
+   "close_time": "2026-09-13T20:17:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.447650+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL3": {
+   "close_time": "2026-09-13T20:17:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.458175+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL4": {
+   "close_time": "2026-09-13T20:17:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.458343+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL5": {
+   "close_time": "2026-09-13T20:17:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.448635+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL6": {
+   "close_time": "2026-09-13T20:17:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.453889+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL7": {
+   "close_time": "2026-09-13T20:17:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.447866+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-ATL8": {
+   "close_time": "2026-09-13T20:17:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.460391+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT10": {
+   "close_time": "2026-09-13T20:17:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.447385+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT11": {
+   "close_time": "2026-09-13T20:17:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.453698+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT14": {
+   "close_time": "2026-09-13T20:17:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.462376+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT15": {
+   "close_time": "2026-09-13T20:17:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.480295+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT17": {
+   "close_time": "2026-09-13T20:17:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.450929+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT18": {
+   "close_time": "2026-09-13T20:17:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.461363+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT2": {
+   "close_time": "2026-09-13T20:17:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:28.460633+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT21": {
+   "close_time": "2026-09-13T20:17:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.450756+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT3": {
+   "close_time": "2026-09-13T20:17:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:28.479961+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT4": {
+   "close_time": "2026-09-13T20:17:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:28.484536+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT5": {
+   "close_time": "2026-09-13T20:17:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:28.450465+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT6": {
+   "close_time": "2026-09-13T20:17:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:28.457744+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT7": {
+   "close_time": "2026-09-13T20:17:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:28.477894+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13ATLPIT-PIT8": {
+   "close_time": "2026-09-13T20:17:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.460066+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL10": {
+   "close_time": "2026-09-13T20:17:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.445153+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL11": {
+   "close_time": "2026-09-13T20:17:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.455529+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL14": {
+   "close_time": "2026-09-13T20:17:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.448838+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL15": {
+   "close_time": "2026-09-13T20:17:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.454801+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL17": {
+   "close_time": "2026-09-13T20:17:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.450201+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL18": {
+   "close_time": "2026-09-13T20:17:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.483526+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL2": {
+   "close_time": "2026-09-13T20:17:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.452879+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL21": {
+   "close_time": "2026-09-13T20:17:33.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.449570+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL24": {
+   "close_time": "2026-09-13T20:17:33.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.505708+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL28": {
+   "close_time": "2026-09-13T20:17:33.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.505866+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL3": {
+   "close_time": "2026-09-13T20:17:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.487659+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL31": {
+   "close_time": "2026-09-13T20:17:33.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.507555+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL34": {
+   "close_time": "2026-09-13T20:17:33.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.514551+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL4": {
+   "close_time": "2026-09-13T20:17:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.473595+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL5": {
+   "close_time": "2026-09-13T20:17:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.489758+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL6": {
+   "close_time": "2026-09-13T20:17:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.482797+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL7": {
+   "close_time": "2026-09-13T20:17:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.475058+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-BAL8": {
+   "close_time": "2026-09-13T20:17:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.483138+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND10": {
+   "close_time": "2026-09-13T20:17:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.452014+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND11": {
+   "close_time": "2026-09-13T20:17:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.452368+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND14": {
+   "close_time": "2026-09-13T20:17:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.460914+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND15": {
+   "close_time": "2026-09-13T20:17:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.452615+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND2": {
+   "close_time": "2026-09-13T20:17:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.453272+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND3": {
+   "close_time": "2026-09-13T20:17:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.453782+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND4": {
+   "close_time": "2026-09-13T20:17:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.448263+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND5": {
+   "close_time": "2026-09-13T20:17:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.445485+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND6": {
+   "close_time": "2026-09-13T20:17:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.445724+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND7": {
+   "close_time": "2026-09-13T20:17:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.451780+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BALIND-IND8": {
+   "close_time": "2026-09-13T20:17:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:28.452949+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF10": {
+   "close_time": "2026-09-13T20:25:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.444599+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF11": {
+   "close_time": "2026-09-13T20:25:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.446973+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF14": {
+   "close_time": "2026-09-13T20:25:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.446471+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF15": {
+   "close_time": "2026-09-13T20:25:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.452816+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF17": {
+   "close_time": "2026-09-13T20:25:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.453273+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF2": {
+   "close_time": "2026-09-13T20:25:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:27:28.491875+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF3": {
+   "close_time": "2026-09-13T20:25:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:27:28.461540+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF4": {
+   "close_time": "2026-09-13T20:25:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:27:28.464362+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF5": {
+   "close_time": "2026-09-13T20:25:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:27:28.449798+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF6": {
+   "close_time": "2026-09-13T20:25:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.462399+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF7": {
+   "close_time": "2026-09-13T20:25:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.451448+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-BUF8": {
+   "close_time": "2026-09-13T20:25:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.464915+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU10": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.452415+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU11": {
+   "close_time": "2026-09-13T20:25:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.445608+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU14": {
+   "close_time": "2026-09-13T20:25:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.455101+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU15": {
+   "close_time": "2026-09-13T20:25:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.445299+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU17": {
+   "close_time": "2026-09-13T20:25:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.446040+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU2": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.457164+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU3": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.454668+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU4": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.451931+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU5": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.445041+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU6": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.448012+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU7": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.447560+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13BUFHOU-HOU8": {
+   "close_time": "2026-09-13T20:25:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:27:28.452162+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR10": {
+   "close_time": "2026-09-13T20:39:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.447481+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR11": {
+   "close_time": "2026-09-13T20:39:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.445571+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR14": {
+   "close_time": "2026-09-13T20:39:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.445879+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR15": {
+   "close_time": "2026-09-13T20:39:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.446154+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR2": {
+   "close_time": "2026-09-13T20:39:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.445283+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR3": {
+   "close_time": "2026-09-13T20:39:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.480827+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR4": {
+   "close_time": "2026-09-13T20:39:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.444746+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR5": {
+   "close_time": "2026-09-13T20:39:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.443733+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR6": {
+   "close_time": "2026-09-13T20:39:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.444021+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR7": {
+   "close_time": "2026-09-13T20:39:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.451144+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CAR8": {
+   "close_time": "2026-09-13T20:39:47.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:48.447182+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI10": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.452040+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI11": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.446983+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI14": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:58.448185+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI15": {
+   "close_time": "2026-09-13T20:39:50.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:58.447355+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI17": {
+   "close_time": "2026-09-13T20:39:50.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:58.446667+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI18": {
+   "close_time": "2026-09-13T20:39:50.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:58.445900+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI2": {
+   "close_time": "2026-09-13T20:39:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.462261+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI21": {
+   "close_time": "2026-09-13T20:39:50.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:58.445476+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI24": {
+   "close_time": "2026-09-13T20:39:50.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:58.470470+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI28": {
+   "close_time": "2026-09-13T20:39:50.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:41:58.479545+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI3": {
+   "close_time": "2026-09-13T20:39:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.478137+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI4": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.459984+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI5": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.461355+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI6": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.461880+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI7": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.450111+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CHICAR-CHI8": {
+   "close_time": "2026-09-13T20:39:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:41:48.450862+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE10": {
+   "close_time": "2026-09-13T19:55:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:38.450503+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE11": {
+   "close_time": "2026-09-13T19:55:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:38.450745+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE14": {
+   "close_time": "2026-09-13T19:55:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:38.450205+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE15": {
+   "close_time": "2026-09-13T19:55:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:38.449707+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE2": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.448482+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE3": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.451633+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE4": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.451767+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE5": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.452180+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE6": {
+   "close_time": "2026-09-13T19:55:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:38.449493+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE7": {
+   "close_time": "2026-09-13T19:55:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:38.457201+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-CLE8": {
+   "close_time": "2026-09-13T19:55:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:38.449968+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC10": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.465956+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC11": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.466893+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC14": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.453868+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC15": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.452627+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC17": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.454257+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC18": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.449347+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC2": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.447869+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC21": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.455232+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC24": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.450208+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC28": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.451369+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC3": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.459221+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC31": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.470655+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC34": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.470981+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC36": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.471251+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC39": {
+   "close_time": "2026-09-13T19:55:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.471564+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC4": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.453334+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC42": {
+   "close_time": "2026-09-13T19:55:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.473053+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC45": {
+   "close_time": "2026-09-13T19:55:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T19:57:28.473161+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC5": {
+   "close_time": "2026-09-13T19:55:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.454670+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC6": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.448720+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC7": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.467639+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13CLEJAC-JAC8": {
+   "close_time": "2026-09-13T19:55:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:57:28.458785+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL10": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.534574+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL11": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.541756+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL14": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.535116+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL15": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.531714+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL17": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.628083+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL18": {
+   "close_time": "2026-09-14T03:31:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.613242+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL2": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.492612+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL21": {
+   "close_time": "2026-09-14T03:31:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.614731+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL3": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.520180+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL4": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.607784+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL5": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.612870+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL6": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.533677+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL7": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.541021+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-DAL8": {
+   "close_time": "2026-09-14T03:31:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.532759+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG10": {
+   "close_time": "2026-09-14T03:31:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.478291+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG11": {
+   "close_time": "2026-09-14T03:31:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.471684+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG14": {
+   "close_time": "2026-09-14T03:31:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.466932+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG15": {
+   "close_time": "2026-09-14T03:31:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.464487+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG17": {
+   "close_time": "2026-09-14T03:31:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.462375+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG18": {
+   "close_time": "2026-09-14T03:31:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:33:28.462710+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG2": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:33:28.488498+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG3": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:33:28.523825+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG4": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:33:28.526938+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG5": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:33:28.485976+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG6": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:33:28.530964+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG7": {
+   "close_time": "2026-09-14T03:31:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:33:28.529723+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13DALNYG-NYG8": {
+   "close_time": "2026-09-14T03:31:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:33:28.484306+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB10": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.481770+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB11": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.486390+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB14": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.479956+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB15": {
+   "close_time": "2026-09-13T23:47:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.509792+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB17": {
+   "close_time": "2026-09-13T23:47:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.497858+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB18": {
+   "close_time": "2026-09-13T23:47:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.497974+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB2": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.484769+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB21": {
+   "close_time": "2026-09-13T23:47:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.497300+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB3": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.495228+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB4": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.480501+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB5": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.483587+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB6": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.482633+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB7": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.490721+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-GB8": {
+   "close_time": "2026-09-13T23:47:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:49:28.493653+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN10": {
+   "close_time": "2026-09-13T23:47:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.479050+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN11": {
+   "close_time": "2026-09-13T23:47:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.454536+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN14": {
+   "close_time": "2026-09-13T23:47:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.450057+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN15": {
+   "close_time": "2026-09-13T23:47:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.451208+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN17": {
+   "close_time": "2026-09-13T23:47:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.453072+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN2": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.463997+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN3": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.477193+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN4": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.455948+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN5": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.459432+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN6": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.464480+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN7": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.464918+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13GBMIN-MIN8": {
+   "close_time": "2026-09-13T23:47:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:49:28.478549+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV10": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:28.404344+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV11": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:28.403011+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV14": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:28.401101+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV15": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:28.401715+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV17": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:28.398613+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV18": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:28.399009+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV2": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:38.455716+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV21": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:28.404619+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV24": {
+   "close_time": "2026-09-13T23:33:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:28.395943+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV28": {
+   "close_time": "2026-09-13T23:33:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:28.395312+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV3": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:38.454843+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV4": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:38.463956+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV5": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:38.451285+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV6": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:38.466329+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV7": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:38.465203+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-LV8": {
+   "close_time": "2026-09-13T23:33:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:35:38.466018+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA10": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.467081+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA11": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.466862+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA14": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.467184+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA15": {
+   "close_time": "2026-09-13T23:33:32.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.473524+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA2": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.455251+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA3": {
+   "close_time": "2026-09-13T23:33:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.465503+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA4": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.466711+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA5": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.466979+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA6": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.467401+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA7": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.466513+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13MIALV-MIA8": {
+   "close_time": "2026-09-13T23:33:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:35:38.467301+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET10": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.550962+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET11": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.552496+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET14": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.573453+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET15": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.564004+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET17": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.547031+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET18": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.573699+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET2": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.553188+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET21": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.547523+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET24": {
+   "close_time": "2026-09-13T20:47:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.563097+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET28": {
+   "close_time": "2026-09-13T20:47:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.573032+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET3": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.574399+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET31": {
+   "close_time": "2026-09-13T20:47:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.576106+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET34": {
+   "close_time": "2026-09-13T20:47:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.576278+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET4": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.563658+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET5": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.551399+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET6": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.549192+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET7": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.572208+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-DET8": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.562215+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO10": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.445885+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO11": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.446434+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO14": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.446762+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO15": {
+   "close_time": "2026-09-13T20:47:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.446963+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO2": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:28.546759+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO3": {
+   "close_time": "2026-09-13T20:47:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.448520+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO4": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.447439+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO5": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.447734+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO6": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.457196+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO7": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.445733+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NODET-NO8": {
+   "close_time": "2026-09-13T20:47:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:49:38.446190+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ10": {
+   "close_time": "2026-09-13T20:07:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:38.446880+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ11": {
+   "close_time": "2026-09-13T20:07:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:38.445762+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ14": {
+   "close_time": "2026-09-13T20:07:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:38.449335+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ15": {
+   "close_time": "2026-09-13T20:07:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:38.446559+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ17": {
+   "close_time": "2026-09-13T20:07:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:38.450236+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ18": {
+   "close_time": "2026-09-13T20:07:31.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:38.450553+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ2": {
+   "close_time": "2026-09-13T20:07:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:28.395704+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ21": {
+   "close_time": "2026-09-13T20:07:32.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:38.450628+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ24": {
+   "close_time": "2026-09-13T20:07:32.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:38.454801+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ3": {
+   "close_time": "2026-09-13T20:07:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:28.403126+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ4": {
+   "close_time": "2026-09-13T20:07:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:38.447720+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ5": {
+   "close_time": "2026-09-13T20:07:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:38.449776+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ6": {
+   "close_time": "2026-09-13T20:07:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:38.448147+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ7": {
+   "close_time": "2026-09-13T20:07:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:38.448772+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-NYJ8": {
+   "close_time": "2026-09-13T20:07:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:09:38.445460+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN10": {
+   "close_time": "2026-09-13T20:07:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.394913+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN11": {
+   "close_time": "2026-09-13T20:07:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.404324+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN14": {
+   "close_time": "2026-09-13T20:07:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.404426+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN15": {
+   "close_time": "2026-09-13T20:07:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.402544+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN17": {
+   "close_time": "2026-09-13T20:07:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.402444+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN18": {
+   "close_time": "2026-09-13T20:07:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.402357+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN2": {
+   "close_time": "2026-09-13T20:07:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.401666+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN21": {
+   "close_time": "2026-09-13T20:07:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.402243+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN3": {
+   "close_time": "2026-09-13T20:07:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.404136+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN4": {
+   "close_time": "2026-09-13T20:07:29.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.403417+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN5": {
+   "close_time": "2026-09-13T20:07:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.402815+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN6": {
+   "close_time": "2026-09-13T20:07:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.404850+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN7": {
+   "close_time": "2026-09-13T20:07:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.403612+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13NYJTEN-TEN8": {
+   "close_time": "2026-09-13T20:07:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:09:28.402680+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN10": {
+   "close_time": "2026-09-13T20:17:36.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.447999+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN11": {
+   "close_time": "2026-09-13T20:17:35.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.456625+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN14": {
+   "close_time": "2026-09-13T20:17:35.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.488692+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN15": {
+   "close_time": "2026-09-13T20:17:35.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.452162+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN17": {
+   "close_time": "2026-09-13T20:17:35.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.482510+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN18": {
+   "close_time": "2026-09-13T20:17:35.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.451217+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN2": {
+   "close_time": "2026-09-13T20:17:37.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.456990+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN21": {
+   "close_time": "2026-09-13T20:17:35.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.450581+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN24": {
+   "close_time": "2026-09-13T20:17:34.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.499183+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN28": {
+   "close_time": "2026-09-13T20:17:34.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.505290+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN3": {
+   "close_time": "2026-09-13T20:17:37.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.462591+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN4": {
+   "close_time": "2026-09-13T20:17:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.481358+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN5": {
+   "close_time": "2026-09-13T20:17:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.458035+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN6": {
+   "close_time": "2026-09-13T20:17:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:19:38.447229+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN7": {
+   "close_time": "2026-09-13T20:17:36.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.489356+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-CIN8": {
+   "close_time": "2026-09-13T20:17:36.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.446904+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB10": {
+   "close_time": "2026-09-13T20:17:38.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.459242+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB11": {
+   "close_time": "2026-09-13T20:17:38.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.458579+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB14": {
+   "close_time": "2026-09-13T20:17:39.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.458889+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB15": {
+   "close_time": "2026-09-13T20:17:39.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.475320+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB2": {
+   "close_time": "2026-09-13T20:17:37.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.445453+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB3": {
+   "close_time": "2026-09-13T20:17:37.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.458366+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB4": {
+   "close_time": "2026-09-13T20:17:37.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.445611+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB5": {
+   "close_time": "2026-09-13T20:17:37.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.460313+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB6": {
+   "close_time": "2026-09-13T20:17:38.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.460023+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB7": {
+   "close_time": "2026-09-13T20:17:38.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.459651+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13TBCIN-TB8": {
+   "close_time": "2026-09-13T20:17:38.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:19:38.452305+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI10": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.550559+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI11": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.547888+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI14": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.546846+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI15": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.548364+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI17": {
+   "close_time": "2026-09-13T23:37:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.545839+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI18": {
+   "close_time": "2026-09-13T23:37:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.545206+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI2": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:39:28.582183+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI21": {
+   "close_time": "2026-09-13T23:37:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.544875+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI24": {
+   "close_time": "2026-09-13T23:37:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.545266+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI28": {
+   "close_time": "2026-09-13T23:37:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.545376+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI3": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.581746+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI4": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.568375+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI5": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.569776+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI6": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.566533+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI7": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.572550+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-PHI8": {
+   "close_time": "2026-09-13T23:37:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.574254+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS10": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.574859+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS11": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.575712+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS14": {
+   "close_time": "2026-09-13T23:37:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.582351+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS15": {
+   "close_time": "2026-09-13T23:37:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.592348+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS2": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.577332+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS3": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.574703+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS4": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.576866+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS5": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.576438+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS6": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.575148+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS7": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.576123+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP13WASPHI-WAS8": {
+   "close_time": "2026-09-13T23:37:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:39:28.575014+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN10": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.551536+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN11": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.561352+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN14": {
+   "close_time": "2026-09-15T03:19:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.587475+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN15": {
+   "close_time": "2026-09-15T03:19:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.560835+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN2": {
+   "close_time": "2026-09-15T03:19:44.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.485195+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN3": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.556665+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN4": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.553180+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN5": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.557186+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN6": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.553645+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN7": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.554687+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-DEN8": {
+   "close_time": "2026-09-15T03:19:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.552270+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC10": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.464561+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC11": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.460451+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC14": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.452991+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC15": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.461939+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC17": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.465269+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC18": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.454461+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC2": {
+   "close_time": "2026-09-15T03:19:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.512017+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC21": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.476200+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC24": {
+   "close_time": "2026-09-15T03:19:42.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.469874+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC28": {
+   "close_time": "2026-09-15T03:19:42.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.448200+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC3": {
+   "close_time": "2026-09-15T03:19:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.548191+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC31": {
+   "close_time": "2026-09-15T03:19:42.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.445721+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC34": {
+   "close_time": "2026-09-15T03:19:42.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:21:48.445995+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC4": {
+   "close_time": "2026-09-15T03:19:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.517039+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC5": {
+   "close_time": "2026-09-15T03:19:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.483807+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC6": {
+   "close_time": "2026-09-15T03:19:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.481875+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC7": {
+   "close_time": "2026-09-15T03:19:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.495528+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLSPREAD-26SEP14DENKC-KC8": {
+   "close_time": "2026-09-15T03:19:43.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T03:21:48.489447+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-12": {
+   "close_time": "2026-09-10T03:01:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-10T03:03:35.573343+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-15": {
+   "close_time": "2026-09-10T03:01:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-10T03:03:35.573441+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-18": {
+   "close_time": "2026-09-10T03:01:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-10T03:03:45.633448+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-21": {
+   "close_time": "2026-09-10T03:16:44.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-10T03:18:45.486662+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-24": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.549875+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-27": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.541799+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-30": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.555524+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-33": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.544013+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-36": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.557551+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-39": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.567725+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-42": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.545132+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-43": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.560905+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-44": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.563768+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-45": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.614511+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-46": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.566579+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-47": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.559694+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-48": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.568607+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-51": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.558317+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-54": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.550442+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-57": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.570101+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-60": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.533465+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-63": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.569358+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP09NESEA-66": {
+   "close_time": "2026-09-10T03:52:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-10T03:53:55.568927+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-28": {
+   "close_time": "2026-09-11T02:57:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T02:59:43.705480+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-31": {
+   "close_time": "2026-09-11T02:57:36.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T02:59:43.703986+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-34": {
+   "close_time": "2026-09-11T03:07:47.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-11T03:09:53.696323+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-37": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.896063+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-40": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.901157+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-43": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.906057+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-46": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.864470+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-47": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.858906+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-48": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.891760+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-49": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.861251+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-50": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.854725+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-51": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.856759+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-52": {
+   "close_time": "2026-09-11T03:47:18.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.844872+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-55": {
+   "close_time": "2026-09-11T03:47:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.907539+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-58": {
+   "close_time": "2026-09-11T03:47:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.907952+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-61": {
+   "close_time": "2026-09-11T03:47:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.908518+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-64": {
+   "close_time": "2026-09-11T03:47:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.907025+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-67": {
+   "close_time": "2026-09-11T03:47:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.908238+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP10SFLAR-70": {
+   "close_time": "2026-09-11T03:47:19.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-11T03:49:23.919644+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-26": {
+   "close_time": "2026-09-13T22:24:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:26:28.402007+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-29": {
+   "close_time": "2026-09-13T22:24:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:26:28.401851+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-32": {
+   "close_time": "2026-09-13T23:00:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:02:48.400905+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-35": {
+   "close_time": "2026-09-13T23:00:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:02:48.401708+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-38": {
+   "close_time": "2026-09-13T23:25:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:27:28.392784+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-41": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.403497+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-44": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.402316+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-45": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.401345+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-46": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.397561+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-47": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.397083+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-48": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.407618+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-49": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.400178+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-50": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.398533+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-53": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.399437+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-56": {
+   "close_time": "2026-09-13T23:41:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.412103+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-59": {
+   "close_time": "2026-09-13T23:41:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.408305+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-62": {
+   "close_time": "2026-09-13T23:41:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.408016+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-65": {
+   "close_time": "2026-09-13T23:41:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.408449+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ARILAC-68": {
+   "close_time": "2026-09-13T23:41:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:43:28.408126+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-21": {
+   "close_time": "2026-09-13T19:38:21.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:40:28.403032+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-24": {
+   "close_time": "2026-09-13T19:50:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.453461+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-27": {
+   "close_time": "2026-09-13T19:50:30.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.452204+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-30": {
+   "close_time": "2026-09-13T19:50:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.450390+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-33": {
+   "close_time": "2026-09-13T19:53:12.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:55:18.444433+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-36": {
+   "close_time": "2026-09-13T20:27:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.454816+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-39": {
+   "close_time": "2026-09-13T20:27:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.456146+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-40": {
+   "close_time": "2026-09-13T20:27:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.462153+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-41": {
+   "close_time": "2026-09-13T20:27:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.461086+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-42": {
+   "close_time": "2026-09-13T20:27:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.452573+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-43": {
+   "close_time": "2026-09-13T20:27:24.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.464640+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-44": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.466119+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-45": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.455345+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-48": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.456648+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-51": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.450913+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-54": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.477182+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-57": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.465509+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-60": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.456906+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13ATLPIT-63": {
+   "close_time": "2026-09-13T20:27:25.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.453702+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-28": {
+   "close_time": "2026-09-13T18:28:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:30:18.394230+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-31": {
+   "close_time": "2026-09-13T18:28:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:30:18.396762+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-34": {
+   "close_time": "2026-09-13T18:28:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:30:18.396106+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-37": {
+   "close_time": "2026-09-13T18:46:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.397513+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-40": {
+   "close_time": "2026-09-13T18:46:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.400598+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-43": {
+   "close_time": "2026-09-13T18:54:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:56:28.399620+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-46": {
+   "close_time": "2026-09-13T19:23:40.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:25:48.393034+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-47": {
+   "close_time": "2026-09-13T19:23:40.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:25:48.393933+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-48": {
+   "close_time": "2026-09-13T19:50:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.460381+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-49": {
+   "close_time": "2026-09-13T19:50:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.463582+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-50": {
+   "close_time": "2026-09-13T19:50:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.454295+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-51": {
+   "close_time": "2026-09-13T19:50:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.457111+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-52": {
+   "close_time": "2026-09-13T19:50:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.447040+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-55": {
+   "close_time": "2026-09-13T19:56:27.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:58:28.450524+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-58": {
+   "close_time": "2026-09-13T19:56:27.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:58:28.453701+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-61": {
+   "close_time": "2026-09-13T19:59:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:01:28.452376+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-64": {
+   "close_time": "2026-09-13T20:08:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:10:28.394992+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-67": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.462999+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-70": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.453057+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-73": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.478755+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-76": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.479150+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-79": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.479341+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BALIND-82": {
+   "close_time": "2026-09-13T20:27:26.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.482683+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-24": {
+   "close_time": "2026-09-13T18:10:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:12:38.403062+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-27": {
+   "close_time": "2026-09-13T18:16:23.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:18:28.393874+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-30": {
+   "close_time": "2026-09-13T18:16:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:18:28.393053+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-33": {
+   "close_time": "2026-09-13T18:32:02.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:34:08.451739+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-36": {
+   "close_time": "2026-09-13T18:32:02.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:34:08.452628+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-39": {
+   "close_time": "2026-09-13T18:46:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.399773+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-42": {
+   "close_time": "2026-09-13T18:46:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.403832+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-43": {
+   "close_time": "2026-09-13T18:46:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.398865+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-44": {
+   "close_time": "2026-09-13T18:46:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.402942+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-45": {
+   "close_time": "2026-09-13T18:46:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.416401+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-46": {
+   "close_time": "2026-09-13T19:26:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:28:48.450908+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-47": {
+   "close_time": "2026-09-13T19:26:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:28:48.455555+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-48": {
+   "close_time": "2026-09-13T19:26:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:28:48.449564+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-51": {
+   "close_time": "2026-09-13T19:38:21.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:40:28.401464+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-54": {
+   "close_time": "2026-09-13T19:38:21.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:40:28.402247+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-57": {
+   "close_time": "2026-09-13T19:50:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.464192+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-60": {
+   "close_time": "2026-09-13T19:59:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:01:28.451761+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-63": {
+   "close_time": "2026-09-13T20:15:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:17:48.449106+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-66": {
+   "close_time": "2026-09-13T20:15:48.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:17:48.450648+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-69": {
+   "close_time": "2026-09-13T20:35:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:37:28.393858+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-72": {
+   "close_time": "2026-09-13T20:35:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:37:28.394171+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-75": {
+   "close_time": "2026-09-13T20:35:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:37:28.394306+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13BUFHOU-78": {
+   "close_time": "2026-09-13T20:35:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:37:28.400108+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-26": {
+   "close_time": "2026-09-13T18:03:15.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:05:18.454391+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-29": {
+   "close_time": "2026-09-13T18:10:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:12:38.400409+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-32": {
+   "close_time": "2026-09-13T18:10:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:12:38.402056+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-35": {
+   "close_time": "2026-09-13T18:10:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:12:38.403700+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-38": {
+   "close_time": "2026-09-13T18:19:21.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:21:28.393345+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-41": {
+   "close_time": "2026-09-13T18:19:21.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:21:28.394272+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-44": {
+   "close_time": "2026-09-13T18:32:03.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:34:08.450637+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-45": {
+   "close_time": "2026-09-13T18:32:03.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:34:08.449824+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-46": {
+   "close_time": "2026-09-13T18:46:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.401774+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-47": {
+   "close_time": "2026-09-13T18:46:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.410384+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-48": {
+   "close_time": "2026-09-13T18:46:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.417662+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-49": {
+   "close_time": "2026-09-13T18:49:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:51:28.449621+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-50": {
+   "close_time": "2026-09-13T18:49:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:51:28.450440+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-53": {
+   "close_time": "2026-09-13T18:49:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:51:28.448911+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-56": {
+   "close_time": "2026-09-13T19:32:51.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:34:58.397313+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-59": {
+   "close_time": "2026-09-13T19:32:51.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:34:58.396073+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-62": {
+   "close_time": "2026-09-13T19:32:51.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:34:58.396626+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-65": {
+   "close_time": "2026-09-13T19:50:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.456374+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-68": {
+   "close_time": "2026-09-13T19:50:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.451566+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-71": {
+   "close_time": "2026-09-13T19:56:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:58:28.458932+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-74": {
+   "close_time": "2026-09-13T19:56:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:58:28.459545+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-77": {
+   "close_time": "2026-09-13T20:18:50.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:20:58.445366+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-80": {
+   "close_time": "2026-09-13T20:18:50.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:20:58.446522+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-83": {
+   "close_time": "2026-09-13T20:18:51.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:20:58.446730+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-86": {
+   "close_time": "2026-09-13T20:29:59.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:31:58.450962+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-89": {
+   "close_time": "2026-09-13T20:29:59.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:31:58.451192+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-92": {
+   "close_time": "2026-09-13T20:35:02.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:37:08.448146+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-95": {
+   "close_time": "2026-09-13T20:35:02.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:37:08.448277+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CHICAR-98": {
+   "close_time": "2026-09-13T20:49:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:51:48.452856+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-20": {
+   "close_time": "2026-09-13T18:10:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:12:38.399519+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-23": {
+   "close_time": "2026-09-13T18:10:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:12:38.401298+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-26": {
+   "close_time": "2026-09-13T18:51:55.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:53:58.444799+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-29": {
+   "close_time": "2026-09-13T18:51:55.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:53:58.444166+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-32": {
+   "close_time": "2026-09-13T19:03:54.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:05:58.396186+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-35": {
+   "close_time": "2026-09-13T19:16:19.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:18:18.444764+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-38": {
+   "close_time": "2026-09-13T19:50:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.447949+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-39": {
+   "close_time": "2026-09-13T19:50:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.454926+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-40": {
+   "close_time": "2026-09-13T19:50:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.452988+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-41": {
+   "close_time": "2026-09-13T19:50:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.462440+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-42": {
+   "close_time": "2026-09-13T19:50:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.455742+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-43": {
+   "close_time": "2026-09-13T19:50:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.449459+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-44": {
+   "close_time": "2026-09-13T19:50:33.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:52:38.448787+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-47": {
+   "close_time": "2026-09-13T20:05:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:07:38.399435+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-50": {
+   "close_time": "2026-09-13T20:05:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:07:38.399814+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-53": {
+   "close_time": "2026-09-13T20:05:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:07:38.400565+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-56": {
+   "close_time": "2026-09-13T20:05:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:07:38.400067+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-59": {
+   "close_time": "2026-09-13T20:05:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:07:38.403879+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13CLEJAC-62": {
+   "close_time": "2026-09-13T20:05:30.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:07:38.400872+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-28": {
+   "close_time": "2026-09-14T02:25:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T02:27:38.400716+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-31": {
+   "close_time": "2026-09-14T02:40:07.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T02:42:08.399668+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-34": {
+   "close_time": "2026-09-14T02:40:07.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T02:42:08.398655+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-37": {
+   "close_time": "2026-09-14T03:05:34.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:07:38.399379+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-40": {
+   "close_time": "2026-09-14T03:05:34.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:07:38.403043+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-43": {
+   "close_time": "2026-09-14T03:18:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:20:28.404519+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-46": {
+   "close_time": "2026-09-14T03:18:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:20:28.433762+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-47": {
+   "close_time": "2026-09-14T03:18:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:20:28.397767+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-48": {
+   "close_time": "2026-09-14T03:18:28.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-14T03:20:28.429656+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-49": {
+   "close_time": "2026-09-14T03:43:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.466361+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-50": {
+   "close_time": "2026-09-14T03:43:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.451361+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-51": {
+   "close_time": "2026-09-14T03:43:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.453045+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-52": {
+   "close_time": "2026-09-14T03:43:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.454754+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-55": {
+   "close_time": "2026-09-14T03:43:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.447749+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-58": {
+   "close_time": "2026-09-14T03:43:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.467536+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-61": {
+   "close_time": "2026-09-14T03:43:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.467828+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-64": {
+   "close_time": "2026-09-14T03:43:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.479657+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-67": {
+   "close_time": "2026-09-14T03:43:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.467999+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13DALNYG-70": {
+   "close_time": "2026-09-14T03:43:22.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-14T03:45:28.467192+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-25": {
+   "close_time": "2026-09-13T22:06:18.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:08:18.393672+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-28": {
+   "close_time": "2026-09-13T22:06:19.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:08:18.395786+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-31": {
+   "close_time": "2026-09-13T22:44:11.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:46:18.397384+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-34": {
+   "close_time": "2026-09-13T22:50:47.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:52:48.445835+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-37": {
+   "close_time": "2026-09-13T22:50:47.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:52:48.446738+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-40": {
+   "close_time": "2026-09-13T23:19:09.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:21:08.404027+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-43": {
+   "close_time": "2026-09-13T23:19:09.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:21:08.405262+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-44": {
+   "close_time": "2026-09-13T23:19:09.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:21:08.402865+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-45": {
+   "close_time": "2026-09-13T23:19:09.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:21:08.401685+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-46": {
+   "close_time": "2026-09-13T23:20:59.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:22:58.455068+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-47": {
+   "close_time": "2026-09-13T23:20:59.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:22:58.456598+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-48": {
+   "close_time": "2026-09-13T23:29:07.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:08.402432+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-49": {
+   "close_time": "2026-09-13T23:29:07.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:08.405195+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-52": {
+   "close_time": "2026-09-13T23:29:07.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:31:08.403664+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-55": {
+   "close_time": "2026-09-13T23:38:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:40:18.396161+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-58": {
+   "close_time": "2026-09-13T23:38:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:40:18.397838+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-61": {
+   "close_time": "2026-09-13T23:38:14.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:40:18.396765+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-64": {
+   "close_time": "2026-09-13T23:57:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:59:28.405567+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13GBMIN-67": {
+   "close_time": "2026-09-13T23:57:23.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:59:28.397632+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-20": {
+   "close_time": "2026-09-13T21:42:15.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T21:44:18.546393+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-23": {
+   "close_time": "2026-09-13T21:50:50.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T21:52:58.546463+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-26": {
+   "close_time": "2026-09-13T22:17:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:19:28.394403+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-29": {
+   "close_time": "2026-09-13T22:17:21.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:19:28.395215+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-32": {
+   "close_time": "2026-09-13T22:19:13.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:21:18.402617+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-35": {
+   "close_time": "2026-09-13T22:19:13.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:21:18.401926+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-38": {
+   "close_time": "2026-09-13T22:39:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:41:28.396895+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-39": {
+   "close_time": "2026-09-13T22:39:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:41:28.395562+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-40": {
+   "close_time": "2026-09-13T22:39:25.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T22:41:28.394699+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-41": {
+   "close_time": "2026-09-13T23:45:20.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.451624+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-42": {
+   "close_time": "2026-09-13T23:45:20.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.452162+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-43": {
+   "close_time": "2026-09-13T23:45:20.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.444248+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-44": {
+   "close_time": "2026-09-13T23:45:20.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.446401+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-47": {
+   "close_time": "2026-09-13T23:45:20.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.445667+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-50": {
+   "close_time": "2026-09-13T23:45:20.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.445072+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-53": {
+   "close_time": "2026-09-13T23:45:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.453166+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-56": {
+   "close_time": "2026-09-13T23:45:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.457591+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-59": {
+   "close_time": "2026-09-13T23:45:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.452933+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-62": {
+   "close_time": "2026-09-13T23:45:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.452760+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-65": {
+   "close_time": "2026-09-13T23:45:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.453263+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13MIALV-68": {
+   "close_time": "2026-09-13T23:45:21.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:47:28.453318+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-21": {
+   "close_time": "2026-09-13T19:16:19.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:18:18.450184+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-24": {
+   "close_time": "2026-09-13T19:26:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:28:48.457173+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-27": {
+   "close_time": "2026-09-13T19:26:49.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:28:48.456084+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-30": {
+   "close_time": "2026-09-13T19:38:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:40:28.404382+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-33": {
+   "close_time": "2026-09-13T19:38:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:40:28.405386+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-36": {
+   "close_time": "2026-09-13T19:56:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:58:28.452701+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-39": {
+   "close_time": "2026-09-13T20:08:22.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:10:28.394322+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-42": {
+   "close_time": "2026-09-13T20:21:40.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:23:48.447109+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-45": {
+   "close_time": "2026-09-13T20:21:40.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:23:48.447780+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-46": {
+   "close_time": "2026-09-13T20:21:40.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:23:48.448376+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-47": {
+   "close_time": "2026-09-13T20:21:40.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:23:48.446091+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-48": {
+   "close_time": "2026-09-13T20:21:41.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:23:48.445716+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-49": {
+   "close_time": "2026-09-13T20:41:01.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:43:08.404193+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-50": {
+   "close_time": "2026-09-13T20:41:02.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:43:08.409907+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-51": {
+   "close_time": "2026-09-13T20:41:02.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:43:08.401685+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-54": {
+   "close_time": "2026-09-13T20:41:02.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:43:08.402911+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-57": {
+   "close_time": "2026-09-13T20:53:39.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:55:38.544923+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-60": {
+   "close_time": "2026-09-13T20:53:39.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:55:38.545723+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-63": {
+   "close_time": "2026-09-13T20:59:53.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T21:01:58.447924+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-66": {
+   "close_time": "2026-09-13T20:59:53.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T21:01:58.442742+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NODET-69": {
+   "close_time": "2026-09-13T20:59:53.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T21:01:58.442972+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-18": {
+   "close_time": "2026-09-13T19:03:55.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:05:58.395285+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-21": {
+   "close_time": "2026-09-13T19:20:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:22:28.444487+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-24": {
+   "close_time": "2026-09-13T19:56:29.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:58:28.451219+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-27": {
+   "close_time": "2026-09-13T20:02:07.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:04:08.399766+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-30": {
+   "close_time": "2026-09-13T20:02:07.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:04:08.400365+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-33": {
+   "close_time": "2026-09-13T20:02:08.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:04:08.402052+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-36": {
+   "close_time": "2026-09-13T20:19:55.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.454124+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-37": {
+   "close_time": "2026-09-13T20:19:55.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.453502+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-38": {
+   "close_time": "2026-09-13T20:19:56.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.450773+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-39": {
+   "close_time": "2026-09-13T20:19:56.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.458541+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-40": {
+   "close_time": "2026-09-13T20:19:56.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.455919+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-41": {
+   "close_time": "2026-09-13T20:19:56.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.456437+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-42": {
+   "close_time": "2026-09-13T20:19:56.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.451302+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-45": {
+   "close_time": "2026-09-13T20:19:57.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.452484+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-48": {
+   "close_time": "2026-09-13T20:19:57.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.452670+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-51": {
+   "close_time": "2026-09-13T20:19:57.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.456655+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-54": {
+   "close_time": "2026-09-13T20:19:57.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.452793+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-57": {
+   "close_time": "2026-09-13T20:19:58.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.461271+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13NYJTEN-60": {
+   "close_time": "2026-09-13T20:19:58.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:21:58.452895+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-31": {
+   "close_time": "2026-09-13T18:28:15.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:30:18.395344+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-34": {
+   "close_time": "2026-09-13T18:46:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T18:48:28.404650+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-37": {
+   "close_time": "2026-09-13T19:03:55.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:05:58.394306+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-40": {
+   "close_time": "2026-09-13T19:16:20.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:18:28.448970+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-43": {
+   "close_time": "2026-09-13T19:20:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:22:28.443504+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-46": {
+   "close_time": "2026-09-13T19:20:26.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:22:28.445744+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-49": {
+   "close_time": "2026-09-13T19:35:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:37:28.445390+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-50": {
+   "close_time": "2026-09-13T19:35:24.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:37:28.444571+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-51": {
+   "close_time": "2026-09-13T19:53:13.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:55:18.451392+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-52": {
+   "close_time": "2026-09-13T19:53:13.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:55:18.452498+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-53": {
+   "close_time": "2026-09-13T19:53:13.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T19:55:18.443334+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-54": {
+   "close_time": "2026-09-13T20:02:08.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:04:08.402596+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-55": {
+   "close_time": "2026-09-13T20:02:08.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:04:08.401257+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-58": {
+   "close_time": "2026-09-13T20:02:08.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T20:04:08.399159+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-61": {
+   "close_time": "2026-09-13T20:27:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.462662+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-64": {
+   "close_time": "2026-09-13T20:27:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.465261+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-67": {
+   "close_time": "2026-09-13T20:27:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.466970+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-70": {
+   "close_time": "2026-09-13T20:27:27.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.471956+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13TBCIN-73": {
+   "close_time": "2026-09-13T20:27:28.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T20:29:28.453356+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-27": {
+   "close_time": "2026-09-13T23:12:03.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:14:08.445708+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-30": {
+   "close_time": "2026-09-13T23:12:03.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:14:08.447039+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-33": {
+   "close_time": "2026-09-13T23:12:04.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:14:08.446487+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-36": {
+   "close_time": "2026-09-13T23:19:10.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:21:18.496451+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-39": {
+   "close_time": "2026-09-13T23:19:10.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:21:18.498413+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-42": {
+   "close_time": "2026-09-13T23:36:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:38:38.402714+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-45": {
+   "close_time": "2026-09-13T23:36:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:38:38.401629+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-46": {
+   "close_time": "2026-09-13T23:36:31.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-13T23:38:38.395397+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-47": {
+   "close_time": "2026-09-13T23:49:43.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.597775+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-48": {
+   "close_time": "2026-09-13T23:49:44.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.598271+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-49": {
+   "close_time": "2026-09-13T23:49:44.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.595433+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-50": {
+   "close_time": "2026-09-13T23:49:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.600230+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-51": {
+   "close_time": "2026-09-13T23:49:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.600725+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-54": {
+   "close_time": "2026-09-13T23:49:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.599153+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-57": {
+   "close_time": "2026-09-13T23:49:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.599562+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-60": {
+   "close_time": "2026-09-13T23:49:45.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.599839+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-63": {
+   "close_time": "2026-09-13T23:49:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.609207+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-66": {
+   "close_time": "2026-09-13T23:49:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.601853+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP13WASPHI-69": {
+   "close_time": "2026-09-13T23:49:46.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-13T23:51:48.600988+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-22": {
+   "close_time": "2026-09-15T02:05:35.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:07:38.401847+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-25": {
+   "close_time": "2026-09-15T02:05:35.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:07:38.399093+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-28": {
+   "close_time": "2026-09-15T02:05:35.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:07:38.400115+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-31": {
+   "close_time": "2026-09-15T02:24:47.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:26:48.395977+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-34": {
+   "close_time": "2026-09-15T02:33:32.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:35:38.399290+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-37": {
+   "close_time": "2026-09-15T02:46:35.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:48:38.447820+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-40": {
+   "close_time": "2026-09-15T02:46:35.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:48:38.450210+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-41": {
+   "close_time": "2026-09-15T02:46:35.000000+00:00",
+   "result": "yes",
+   "settlement_ts": "2026-09-15T02:48:38.455381+00:00",
+   "settlement_value": 1.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-42": {
+   "close_time": "2026-09-15T03:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.457589+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-43": {
+   "close_time": "2026-09-15T03:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.488657+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-44": {
+   "close_time": "2026-09-15T03:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.476172+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-45": {
+   "close_time": "2026-09-15T03:29:48.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.454724+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-46": {
+   "close_time": "2026-09-15T03:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.521967+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-49": {
+   "close_time": "2026-09-15T03:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.496640+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-52": {
+   "close_time": "2026-09-15T03:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.490727+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-55": {
+   "close_time": "2026-09-15T03:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.492048+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-58": {
+   "close_time": "2026-09-15T03:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.492413+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-61": {
+   "close_time": "2026-09-15T03:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.491218+00:00",
+   "settlement_value": 0.0
+  },
+  "KXNFLTOTAL-26SEP14DENKC-64": {
+   "close_time": "2026-09-15T03:29:49.000000+00:00",
+   "result": "no",
+   "settlement_ts": "2026-09-15T03:31:48.491539+00:00",
+   "settlement_value": 0.0
+  }
+ },
+ "summary": {
+  "mapped": null,
+  "quarantined": null,
+  "reasons": null,
+  "signals_fired": null,
+  "snapshots": null,
+  "snapshots_with_reference": null,
+  "system_entries": null
+ },
+ "watching": [],
+ "window": {
+  "end": "2026-09-15T05:24:20.495997+00:00",
+  "start": "2026-09-08T05:24:20.495997+00:00"
+ }
+}
