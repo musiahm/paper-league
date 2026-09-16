@@ -1,11 +1,11 @@
 {
- "code_version": "0.4.1",
+ "code_version": "0.5.0",
  "engine": {
   "error": "no odds_prices Parquet under smoke-out/data",
   "ok": false
  },
  "entries": [],
- "generated_at": "2026-09-16T04:34:35.087137+00:00",
+ "generated_at": "2026-09-16T05:25:25.213920+00:00",
  "health": {
   "longest_gap_s_24h": null
  },
@@ -4893,7 +4893,7 @@
  },
  "watching": [],
  "window": {
-  "end": "2026-09-16T04:34:35.066738+00:00",
-  "start": "2026-09-09T04:34:35.066738+00:00"
+  "end": "2026-09-16T05:25:25.193312+00:00",
+  "start": "2026-09-09T05:25:25.193312+00:00"
  }
 }

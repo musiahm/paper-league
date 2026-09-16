@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="content-hash" content="d504eb3958e1f98d"><meta name="generated" content="2026-09-16T04:34:35.087137+00:00">
+<meta name="content-hash" content="9ce3a1e2cb56512b"><meta name="generated" content="2026-09-16T05:25:25.213920+00:00">
 <title>Paper League</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>
   :root{--bg:#F3F4EF;--surface:#FFFFFF;--ink:#16202A;--muted:#5B6672;--rule:#D6DAD2;--accent:#1F5FBF;--accent-ink:#FFFFFF;--yes:#0F7B6C;--no:#B0472C;--yes-bg:#E4F2EE;--no-bg:#F6E7E1;--note-bg:#ECEEE7;--sys:#16202A;--sys-ink:#F3F4EF;
     --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;--mono:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace}
@@ -49,20 +49,27 @@
   .note ul{margin:6px 0 0;padding-left:20px}.note li{margin:4px 0}
   .cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:20px;padding:10px 18px;border-radius:3px}
   .cta.unset{background:var(--note-bg);color:var(--muted);border:1px dashed var(--rule)}
+  .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
+  .game{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--accent);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+  .game .g{font-family:var(--display);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:.02em}
+  .game .k{color:var(--muted);font-size:14px}
+  .game .cta{align-self:flex-start;margin-top:6px;font-size:18px;padding:8px 14px}
+  .game.nocard{border-top-color:var(--rule)}
   a{color:var(--accent)} .muted{color:var(--muted)} .pos{color:var(--yes)} .neg{color:var(--no)}
   footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);max-width:76ch}
   @media (max-width:480px){.mast h1{font-size:46px}h2{font-size:24px}td,th{padding:8px 6px}}
 </style></head><body><div class="wrap">
-<header class="mast"><h1>Paper League</h1><div class="week">Week <strong>1</strong> · updated Wed Sep 16, 12:34 AM ET</div></header>
+<header class="mast"><h1>Paper League</h1><div class="week">Week <strong>1</strong> · updated Wed Sep 16, 1:25 AM ET</div></header>
 
 <p class="lede">Ahmed's bets are placed by the System, a fixed rule with no discretion, and every number it used is shown below. The other players bet on intuition. Same paper bankroll, real Kalshi prices, real fees, results from the exchange.</p>
 
 <section id="standings"><h2>Standings <span class="sub">paper P&amp;L after Kalshi taker fees · results from the exchange's settlements</span></h2>
 <div class="scroll"><table class="standings"><thead><tr><th>Player</th><th class="num">Picks</th><th class="num">Open</th><th class="num">W–L</th><th class="num">Fees</th><th class="num">P&amp;L</th><th class="num">Bankroll</th></tr></thead>
-<tbody><tr><td>Ahmed <span class="pill sys">system</span></td><td class="num">0</td><td class="num">0</td><td class="num">0–0</td><td class="num muted">—</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr><tr><td>Player <span class="pill">intuition</span></td><td class="num">0</td><td class="num">0</td><td class="num">0–0</td><td class="num muted">—</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr><tr><td>A Ebrahimi <span class="pill">intuition</span></td><td class="num">0</td><td class="num">0</td><td class="num">0–0</td><td class="num muted">—</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr></tbody></table></div></section>
+<tbody><tr><td>Ahmed <span class="pill sys">system</span></td><td class="num">0</td><td class="num">0</td><td class="num">0–0</td><td class="num muted">—</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr><tr><td>Player <span class="pill">intuition</span></td><td class="num">2</td><td class="num">2</td><td class="num">0–0</td><td class="num muted">$0.04</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr><tr><td>A Ebrahimi <span class="pill">intuition</span></td><td class="num">0</td><td class="num">0</td><td class="num">0–0</td><td class="num muted">—</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr></tbody></table></div></section>
 
-<section id="log"><h2>Place a pick <span class="sub">intuition players only — the System places its own</span></h2>
-<p>Log it in the sheet the moment you make it: who, when (Eastern), the Kalshi ticker, YES or NO, the price of that side, contracts. It shows up here within the hour with its result once the game settles. Entered late = marked backfilled.</p><a class="cta" href="https://docs.google.com/spreadsheets/d/15iAY731H49owHWoY49MWOB5FIHkTkp5GFDULZrVRUxg/edit" target="_blank" rel="noopener">Open the pick sheet</a></section>
+<section id="play"><h2>This week's games <span class="sub">open a game, tap the bets you want, place them — intuition players only; the System places its own</span></h2>
+<div class="games"><div class="game nocard"><div class="g">Detroit @ Buffalo</div><div class="k">Thu Sep 17 · up to $1,000 each per game</div><span class="k">game card not built yet — use the sheet</span></div></div>
+<p>Every game card shows all of Kalshi's open markets for that game — moneyline, every spread line, every total — with what $1,000 does on each, and a slip to place bets from. Placing stamps the bet with Google's clock; it shows up here within 15 minutes and is scored from the exchange result. The sheet is the ledger and the manual fallback (entered late = marked backfilled): <a href="https://docs.google.com/spreadsheets/d/15iAY731H49owHWoY49MWOB5FIHkTkp5GFDULZrVRUxg/edit" target="_blank" rel="noopener">open the pick sheet</a></p></section>
 
 <section id="system"><h2>How the System is thinking <span class="sub">rule week1-v1 · dcdd7969fde7 · 0 book snapshots evaluated, 0 markets mapped</span></h2>
 <div class="card"><ol>
@@ -78,7 +85,7 @@
 
 <section id="picks"><h2>Intuition picks</h2>
 <div class="scroll"><table><thead><tr><th>Player</th><th>Logged</th><th>Market</th><th>Side</th><th class="num">Price × qty</th><th>Result</th><th>Note</th></tr></thead>
-<tbody><tr><td colspan="7" class="muted">No picks logged yet.</td></tr></tbody></table></div></section>
+<tbody><tr><td>Player</td><td class="muted">Wed Sep 16, 12:53 AM <span class="pill">card</span></td><td class="tick">DET @ BUF · Lions</td><td><span class="pill yes">YES</span></td><td class="num">33¢ × 1</td><td><span class="pill">open</span> </td><td class="muted">TEST 2 (timezone check) — ignore/delete</td></tr><tr><td>Player</td><td class="muted">Tue Sep 15, 9:52 PM <span class="pill">card</span></td><td class="tick">DET @ BUF · Bills</td><td><span class="pill yes">YES</span></td><td class="num">68¢ × 1</td><td><span class="pill">open</span> </td><td class="muted">TEST from Claude — ignore/delete</td></tr></tbody></table></div></section>
 
 <section id="slate"><h2>Slate</h2>
 <div class="scroll"><table><thead><tr><th>Game</th><th>Kickoff</th><th>YES tickers</th></tr></thead>
@@ -86,5 +93,5 @@
 
 <section id="market"><h2>Market snapshot <span class="sub">from the collector's latest Kalshi reads</span></h2><div class="grid"><div class="snap"><div class="k">KXNBAGAME</div><div class="v">6 · 6¢</div><div class="d">open markets · median spread · median depth $4,557 · as of Tue Sep 15, 12:10 AM ET</div></div><div class="snap"><div class="k">KXNFLGAME</div><div class="v">32 · 1¢</div><div class="d">open markets · median spread · median depth $168,394 · as of Tue Sep 15, 12:17 AM ET</div></div><div class="snap"><div class="k">KXNFLSPREAD</div><div class="v">415 · 1¢</div><div class="d">open markets · median spread · median depth $29,464 · as of Tue Sep 15, 12:17 AM ET</div></div><div class="snap"><div class="k">KXNFLTOTAL</div><div class="v">304 · 2¢</div><div class="d">open markets · median spread · median depth $33,177 · as of Tue Sep 15, 12:17 AM ET</div></div></div></section>
 
-<footer>Collector: Kalshi 0/0 ok in 24h, last — ET; odds feed not running. Generated Wed Sep 16, 12:34 AM ET by sports_collector 0.4.1. Prices and depth are the collector's own Kalshi reads; settlements are the exchange's; nothing is estimated.</footer>
+<footer>Collector: Kalshi 0/0 ok in 24h, last — ET; odds feed not running. Generated Wed Sep 16, 1:25 AM ET by sports_collector 0.5.0. Prices and depth are the collector's own Kalshi reads; settlements are the exchange's; nothing is estimated.</footer>
 </div></body></html>
