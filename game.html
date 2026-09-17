@@ -515,8 +515,14 @@ function barChart(el, title, desc, bars, opts){
     $("#sysVerdict").textContent = "Verdict: no reference line yet — sits out"; $("#sysNote").textContent = "That is not a prediction about the game; it is the rule. Once the odds feed runs on the Mac mini its decisions appear here and on the league page with every number it used."; $("#sysTable").hidden = true; return; }
   $("#sysTable").innerHTML = `<thead><tr><th>Market</th><th>Side</th><th class="r">Kalshi ask</th><th class="r">Reference</th><th class="r">Edge</th><th>Rule (≥ ${D.league.threshold_cents}¢)</th></tr></thead><tbody>` +
     rows.map(([lab,t,side,ask,p,edge]) => `<tr><td>${esc(lab)} <span class="tick" style="opacity:.6">${esc(t)}</span></td><td>${side}</td><td class="r mono">${ask}</td><td class="r mono">${p}</td><td class="r mono">${edge==null?"—":(edge>=0?"+":"")+edge.toFixed(1)+"¢"}</td><td>${edge!=null && edge>=D.league.threshold_cents?'<span class="chip good">fires</span>':'<span class="chip warn">no</span>'}</td></tr>`).join("") + "</tbody>";
-  $("#sysVerdict").textContent = best >= D.league.threshold_cents ? "Verdict: the rule fires" : `Verdict: sits out — best edge ${best>=0?"+":""}${best.toFixed(1)}¢, needs +${D.league.threshold_cents}¢`;
-  $("#sysNote").textContent = "The System never bets on vibes: no edge, no bet. Prices move until kickoff; this refreshes with the page.";
+  const preview = !!(cons && W[HOME.abbr] && W[AWAY.abbr] && keySpread && keyTotal) && !(D.system_watch && D.system_watch.length);
+  if (preview) {
+    $("#sysVerdict").textContent = best >= D.league.threshold_cents ? `Illustration only: against the ${cons.source} line the rule would fire (+${best.toFixed(1)}¢)` : `Illustration only: against the ${cons.source} line it sits out — best edge ${best>=0?"+":""}${best.toFixed(1)}¢, needs +${D.league.threshold_cents}¢`;
+    $("#sysNote").textContent = `That sportsbook line is a published snapshot, not a live feed — it may be hours or days old while the Kalshi prices here are minutes old, so a gap between them is not evidence of anything. The System itself only acts on a Pinnacle line under 15 minutes old, which it gets from the collector; until the collector runs, its official verdict for this game is: no reference line, sits out.`;
+  } else {
+    $("#sysVerdict").textContent = best >= D.league.threshold_cents ? "Verdict: the rule fires" : `Verdict: sits out — best edge ${best>=0?"+":""}${best.toFixed(1)}¢, needs +${D.league.threshold_cents}¢`;
+    $("#sysNote").textContent = "The System never bets on vibes: no edge, no bet. Prices move until kickoff; this refreshes with the page.";
+  }
 })();
 
 // ---- place your bets
