@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Game Card</title>
+<meta name="description" content="Every Kalshi market for one game, with a slip to place paper bets from.">
+<script src="shared.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{--bg:#F3F4EF;--surface:#FFFFFF;--surface-2:#ECEEE7;--ink:#16202A;--muted:#5B6672;--rule:#D6DAD2;--accent:#1F5FBF;--accent-ink:#FFFFFF;
+    --good:#0F7B6C;--good-bg:#E4F2EE;--warn:#8A5A00;--warn-bg:#F6EBD3;--sys:#16202A;--sys-ink:#F3F4EF;--home:#1F5FBF;--away:#B0472C;--home-bg:#E4ECF8;--away-bg:#F6E9E4;
+    --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;--mono:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121820;--surface:#1A222C;--surface-2:#1F2833;--ink:#E7ECEF;--muted:#93A0AC;--rule:#2C3743;--accent:#6D9BFF;--accent-ink:#0B1220;
+    --good:#3FB7A2;--good-bg:#14302C;--warn:#E0B25A;--warn-bg:#3A2E14;--sys:#E7ECEF;--sys-ink:#121820;--home:#6D9BFF;--away:#E07A56;--home-bg:#1C2A3E;--away-bg:#3A2118}}
+  :root[data-theme="dark"]{--bg:#121820;--surface:#1A222C;--surface-2:#1F2833;--ink:#E7ECEF;--muted:#93A0AC;--rule:#2C3743;--accent:#6D9BFF;--accent-ink:#0B1220;
+    --good:#3FB7A2;--good-bg:#14302C;--warn:#E0B25A;--warn-bg:#3A2E14;--sys:#E7ECEF;--sys-ink:#121820;--home:#6D9BFF;--away:#E07A56;--home-bg:#1C2A3E;--away-bg:#3A2118}
+  html,body{background:var(--bg)}
+  body{margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+  .wrap{max-width:1040px;margin:0 auto;padding-block:22px 80px;padding-inline:20px}
+  .topnav{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--muted);margin-bottom:14px}
+  .topnav a{color:var(--accent);text-decoration:none}
+  .kick{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:15px;color:var(--muted)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(50px,10vw,100px);line-height:.88;margin:6px 0 10px;letter-spacing:.005em;text-transform:uppercase;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .18em}
+  h1 .at{font-weight:500;font-size:.5em;color:var(--muted);letter-spacing:.06em}
+  h1 .away{color:var(--away)} h1 .home{color:var(--home)}
+  .meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:15px;border-top:3px solid var(--ink);padding-top:10px}
+  .meta b{color:var(--ink);font-weight:600}
+  .stakes{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+  .stake{background:var(--surface);border:1px solid var(--rule);padding:12px 14px}
+  .stake .k{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted)}
+  .stake .v{font-family:var(--display);font-weight:700;font-size:34px;line-height:1.05;margin-top:2px;font-variant-numeric:tabular-nums}
+  .stake .d{font-size:13px;color:var(--muted);margin-top:4px}
+  .stake .v.txt{font-size:24px;line-height:1.15;margin-top:6px}
+  section{margin-top:48px}
+  h2{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:30px;line-height:1;margin:0 0 6px}
+  .sub{color:var(--muted);font-size:14px;max-width:78ch;margin:0 0 14px}
+  p{max-width:72ch}
+  .mono,.tick{font-family:var(--mono);font-size:13px}
+  .chip{display:inline-block;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:13px;padding:2px 8px;border-radius:3px;vertical-align:middle}
+  .chip.home{background:var(--home-bg);color:var(--home)} .chip.away{background:var(--away-bg);color:var(--away)}
+  .chip.sys{background:var(--sys);color:var(--sys-ink)} .chip.good{background:var(--good-bg);color:var(--good)} .chip.warn{background:var(--warn-bg);color:var(--warn)}
+  .chip.plain{border:1px solid var(--rule);color:var(--muted)}
+  .hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+  .tile{background:var(--surface);border:1px solid var(--rule);padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+  .tile .k{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:15px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+  .sides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .side{border:1px solid var(--rule);padding:10px 12px;border-top:4px solid var(--rule);position:relative}
+  .side.home{border-top-color:var(--home)} .side.away{border-top-color:var(--away)} .side.over{border-top-color:var(--ink)} .side.under{border-top-color:var(--muted)}
+  .side .lab{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.03em;line-height:1.1}
+  .side .price{font-family:var(--mono);font-weight:600;font-size:30px;line-height:1.1;margin-top:4px}
+  .side .price small{font-size:14px;color:var(--muted);font-weight:400;margin-left:4px}
+  .side .imp{font-size:13px;color:var(--muted);margin-top:2px}
+  .tile .cmp{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px}
+  .tile .cmp b{color:var(--ink);font-weight:600}
+  .betbtn{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:14px;padding:4px 10px;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:3px;cursor:pointer;margin-top:8px}
+  .betbtn:hover,.betbtn:focus-visible{background:var(--accent);color:var(--accent-ink);outline:none}
+  .betbtn.sm{font-size:12px;padding:2px 8px;margin:0 0 0 6px;vertical-align:middle}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .card{background:var(--surface);border:1px solid var(--rule);padding:16px 18px;border-top:5px solid var(--rule)}
+  .card.home{border-top-color:var(--home)} .card.away{border-top-color:var(--away)}
+  .card h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:26px;margin:0;line-height:1}
+  .card .big{font-family:var(--mono);font-weight:600;font-size:40px;line-height:1;margin:8px 0 2px}
+  .card .big small{font-family:var(--body);font-size:14px;color:var(--muted);font-weight:400;margin-left:6px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:10px;font-size:14px}
+  .grid2 .l{color:var(--muted)} .grid2 .r{text-align:right;font-family:var(--mono)}
+  .grid2 .pos{color:var(--good);font-weight:600}
+  .ladder{overflow-x:auto;background:var(--surface);border:1px solid var(--rule)}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;font-weight:600;padding:10px 10px;border-bottom:2px solid var(--rule);white-space:nowrap}
+  td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:middle;white-space:nowrap}
+  td.r,th.r{text-align:right}
+  tr.key td{background:var(--surface-2)}
+  tr:hover td{background:var(--surface-2)}
+  td .bar{position:relative;height:14px;background:var(--surface-2);border-radius:3px;min-width:140px}
+  td .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:0 3px 3px 0;background:var(--home)}
+  td .bar i.away{background:var(--away)} td .bar i.over{background:var(--ink)}
+  td .bar b{position:absolute;left:50%;top:-1px;bottom:-1px;width:2px;background:var(--bg)}
+  .bet{font-family:var(--mono);font-size:13px}
+  .bet b{font-weight:600} .bet .w{color:var(--good)}
+  .toggle{display:inline-flex;border:1px solid var(--rule);border-radius:4px;overflow:hidden;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:15px;margin:0 0 12px}
+  .toggle button{background:var(--surface);color:var(--muted);border:0;padding:6px 14px;cursor:pointer;font:inherit}
+  .toggle button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+  .toggle button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .chart{background:var(--surface);border:1px solid var(--rule);padding:14px 16px}
+  .chart h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:20px;margin:0 0 2px}
+  .chart .d{font-size:13px;color:var(--muted);margin-bottom:8px;max-width:80ch}
+  .chart svg{width:100%;height:auto;display:block}
+  .chart text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+  .chart .lbl{fill:var(--ink);font-weight:600}
+  .chart .grid{stroke:var(--rule);stroke-width:1}
+  .chart .axis{stroke:var(--rule)}
+  .chart rect.home{fill:var(--home)} .chart rect.away{fill:var(--away)} .chart rect.tot{fill:var(--accent)}
+  .chart rect:hover{opacity:.8}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin-top:8px}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+  .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:14px}
+  @media (max-width:480px){.charts{grid-template-columns:1fr}}
+  .tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:12px;padding:6px 8px;border-radius:3px;z-index:10;display:none;max-width:260px;white-space:normal}
+  .sysbox{background:var(--sys);color:var(--sys-ink);padding:18px 20px}
+  .sysbox h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:24px;margin:0 0 6px}
+  .sysbox table th{color:var(--sys-ink);opacity:.7;border-bottom-color:rgba(128,128,128,.4)} .sysbox table td{border-bottom-color:rgba(128,128,128,.25)}
+  .sysbox .verdict{font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.04em;margin-top:12px}
+  .sysbox p{font-size:14px;opacity:.85}
+  /* betting slip */
+  .slip{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border:1px solid var(--rule);border-left:5px solid var(--accent);padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,.08);margin-top:18px}
+  .slip .t{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:16px}
+  .slip .m{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .slip a{color:var(--accent);font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;font-size:15px;margin-left:auto}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:0 0 16px}
+  .step{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted)}
+  .step b{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);font-family:var(--display);font-size:16px;display:inline-flex;align-items:center;justify-content:center}
+  .step span{color:var(--ink)}
+  .builder{background:var(--surface);border:1px solid var(--rule);padding:16px 18px}
+  .who{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+  .who button{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:17px;padding:6px 14px;border:1px solid var(--rule);background:var(--surface);color:var(--muted);cursor:pointer;border-radius:3px}
+  .who button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+  .who button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .rows{display:flex;flex-direction:column;gap:8px}
+  .row{display:grid;grid-template-columns:minmax(220px,2fr) 110px minmax(260px,3fr) 34px;gap:8px;align-items:center}
+  .row select,.row input{font:inherit;font-size:14px;padding:7px 8px;border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
+  .row select:focus-visible,.row input:focus-visible{outline:2px solid var(--accent)}
+  .row .calc{font-family:var(--mono);font-size:12.5px;color:var(--muted);line-height:1.45}
+  .row .calc b{color:var(--ink)} .row .calc .w{color:var(--good);font-weight:600}
+  .row .x{background:none;border:1px solid var(--rule);color:var(--muted);border-radius:3px;height:32px;cursor:pointer;font-size:16px}
+  .budget{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+  .budget .bar{flex:1 1 220px;height:12px;background:var(--surface-2);border-radius:3px;position:relative;overflow:hidden}
+  .budget .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent)} .budget .bar i.over{background:var(--warn)}
+  .budget .t{font-family:var(--mono);font-size:14px}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+  .btn{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:18px;padding:9px 16px;border:0;border-radius:3px;background:var(--accent);color:var(--accent-ink);cursor:pointer;text-decoration:none;display:inline-block}
+  .btn.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--rule)}
+  .btn.big{font-size:22px;padding:12px 22px}
+  .btn.go{background:var(--good);color:#fff}
+  .btn[disabled]{opacity:.5;cursor:not-allowed}
+  .btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .placed{margin-top:16px} .placed table td{white-space:normal}
+  .msg{font-family:var(--mono);font-size:13px;margin-top:8px} .msg.ok{color:var(--good)} .msg.bad{color:var(--warn)}
+  textarea.out{width:100%;box-sizing:border-box;font-family:var(--mono);font-size:12px;min-height:74px;border:1px solid var(--rule);border-radius:3px;padding:8px;background:var(--surface-2);color:var(--ink);margin-top:10px}
+  .note{background:var(--surface-2);border-left:3px solid var(--accent);padding:10px 14px;font-size:14px;max-width:78ch;margin-top:12px}
+  .note.warn{border-left-color:var(--warn)}
+  .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .argue{background:var(--surface);border:1px solid var(--rule);padding:16px 18px}
+  .argue h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:22px;margin:0 0 8px}
+  .argue p{font-size:15px;margin:0 0 10px}
+  .hw3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:20px;margin:26px 0 10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .hw{background:var(--surface);border:1px solid var(--rule);padding:14px 16px;font-size:14.5px}
+  .hw h4{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:18px;margin:0 0 6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .hw p{margin:0 0 8px;max-width:none}
+  .hw .src{font-size:12.5px;color:var(--muted)} .hw .src a{color:var(--accent)}
+  .hw table td{white-space:normal;font-size:13.5px;padding:6px 8px} .hw table th{padding:6px 8px}
+  .hw.home{border-top:4px solid var(--home)} .hw.away{border-top:4px solid var(--away)}
+  .unk{max-width:78ch;padding-left:20px;font-size:14.5px} .unk li{margin:4px 0}
+  .voice{border-bottom:1px solid var(--rule);padding:10px 0} .voice:last-child{border-bottom:0}
+  .voice b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:16px}
+  .voice p{margin:4px 0 0;font-size:14.5px;max-width:none}
+  footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);max-width:86ch}
+  footer a,.sub a,.note a,.tile a{color:var(--accent)}
+  [hidden]{display:none!important}
+  .loading{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:40px 0}
+  .err{background:var(--warn-bg);color:var(--warn);border-left:3px solid var(--warn);padding:10px 14px;font-size:14px;margin-top:12px;max-width:78ch}
+  .meta button{font:inherit;font-size:13px;color:var(--accent);background:none;border:1px solid var(--rule);border-radius:3px;padding:1px 8px;cursor:pointer}
+  .final{margin-top:14px;background:var(--sys);color:var(--sys-ink);padding:12px 16px;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:20px}
+  @media (max-width:640px){.row{grid-template-columns:1fr 100px;} .row .calc{grid-column:1 / -1} .row .x{grid-column:2;justify-self:end}}
+  @media (prefers-reduced-motion:no-preference){.chart rect{transition:opacity .15s}}
+</style></head><body>
+<div class="wrap">
+<nav class="topnav"><a id="navLeague" href="index.html">← League page</a><span>·</span><a href="#builder">Place your bets</a><span>·</span><a href="#homework" id="navHw">Homework</a></nav>
+<div id="loading" class="loading">Loading Kalshi prices and the league ledger…</div>
+<div id="page" hidden>
+<header>
+  <div class="kick" id="kicker"></div>
+  <h1><span class="away" id="h1away"></span><span class="at">at</span><span class="home" id="h1home"></span></h1>
+  <div class="meta"><span><b id="kickoff"></b></span><span id="venue"></span><span>Kalshi prices as of <b id="snap"></b> <button type="button" id="refresh">refresh</button></span></div>
+  <div id="final" class="final" hidden></div>
+  <div id="errs"></div>
+  <div class="stakes" id="stakes"></div>
+  <div class="slip" id="slip"><span class="t">Your slip</span><span class="m" id="slipText">nothing yet — tap a Bet button below</span><a href="#builder">Review &amp; place →</a></div>
+</header>
+
+<section id="bank">
+  <h2>Bankrolls <span class="chip plain">paper</span></h2>
+  <p class="sub" id="bankSub"></p>
+  <div class="hero" id="bankTiles"></div>
+</section>
+
+<section id="hero">
+  <h2>The board</h2>
+  <p class="sub">Every price is a Kalshi <b>ask</b> in cents — what you pay per contract for that side; a contract pays $1.00 if it wins. The percentage is the same number read as the market's probability. Tap <b>Bet</b> on anything to add it to your slip.</p>
+  <div class="hero" id="heroTiles"></div>
+</section>
+
+<section id="ml">
+  <h2>Moneyline <span class="chip plain">who wins</span></h2>
+  <p class="sub">The simplest bet. Below: exactly what $1,000 does on each side, with Kalshi's taker fee (0.07 × contracts × price × (1−price), rounded up to the cent, charged when the order fills).</p>
+  <div class="cards" id="mlCards"></div>
+</section>
+
+<section id="spread">
+  <h2>Spread <span class="chip plain">by how much</span></h2>
+  <p class="sub" id="spreadSub"></p>
+  <div class="toggle" role="group" aria-label="Line wording"><button id="wordHalf" aria-pressed="true">Kalshi wording · over 4.5</button><button id="wordWhole" aria-pressed="false">Whole-number wording · by 5 or more</button></div>
+  <div class="ladder" id="spreadLadder"></div>
+  <p class="note">Every Kalshi line sits on a half, so a bet can never push: "over 4.5" is exactly "by 5 or more". Rows where Kalshi has no open market are simply missing. The highlighted row is the most-traded line.</p>
+</section>
+
+<section id="total">
+  <h2>Total points <span class="chip plain">over / under</span></h2>
+  <p class="sub">"Full game: over 53.5 points scored". <b>YES</b> is the over, <b>NO</b> is the under. Overtime counts.</p>
+  <div class="ladder" id="totalLadder"></div>
+</section>
+
+<section id="shape">
+  <h2>What the market expects</h2>
+  <p class="sub">Read straight off the ladders: the chance of each exact final margin (and total) implied by Kalshi mid-prices. The spikes are the NFL's key numbers — games end on 3 and 7 far more often than on 2 or 5.</p>
+  <div class="charts">
+    <div class="chart" id="marginChart"></div>
+    <div class="chart" id="totalChart"></div>
+  </div>
+</section>
+
+<section id="homework" hidden>
+  <h2>Homework <span class="chip plain" id="hwAsOf"></span></h2>
+  <p class="sub">What is known about this game, with the source and date on every line. Facts are facts; leans and forum takes are labelled as opinions and are not endorsements.</p>
+  <div class="two" id="hwLine"></div>
+  <h3 class="hw3">Week so far, in one paragraph each</h3>
+  <div class="two" id="hwWeek1"></div>
+  <h3 class="hw3">Injuries <span class="chip plain" id="hwInjAsOf" style="text-transform:none;letter-spacing:0;font-family:var(--body);font-weight:400"></span></h3>
+  <div class="two" id="hwInjuries"></div>
+  <p class="note" id="hwInjRead"></p>
+  <div class="two" style="margin-top:14px" id="hwEnv"></div>
+  <h3 class="hw3">Trends people quote <span class="chip plain" style="text-transform:none;letter-spacing:0;font-family:var(--body);font-weight:400">small samples — decoration, not evidence</span></h3>
+  <div class="ladder"><table id="hwTrends"></table></div>
+  <h3 class="hw3">What the analysts and forums say <span class="chip warn">opinions</span></h3>
+  <div class="argue" id="hwVoices"></div>
+  <p class="note warn" id="hwX"></p>
+  <h3 class="hw3">Still unknown</h3>
+  <ul class="unk" id="hwUnknowns"></ul>
+</section>
+
+<section id="system">
+  <div class="sysbox">
+    <h3 id="sysTitle">What the System is doing</h3>
+    <p id="sysIntro"></p>
+    <div class="ladder" style="background:transparent;border:0"><table id="sysTable"></table></div>
+    <div class="verdict" id="sysVerdict"></div>
+    <p id="sysNote"></p>
+  </div>
+</section>
+
+<section id="builder">
+  <h2>Place your bets</h2>
+  <p class="sub" id="builderSub"></p>
+  <div class="builder">
+    <div class="steps"><div class="step"><b>1</b><div><span>Tap your name</span></div></div><div class="step"><b>2</b><div><span>Tap <em>Bet</em></span> next to any price above, or use the menu</div></div><div class="step"><b>3</b><div><span>Type the dollars</span> for each bet — up to <span id="stepBudget"></span> per game in total</div></div><div class="step"><b>4</b><div><span>Press Place</span>, then press again to confirm</div></div></div>
+    <div class="who" id="who"></div>
+    <div class="rows" id="rows"></div>
+    <div class="actions"><button class="btn alt" id="addRow">+ add a bet</button></div>
+    <div class="budget"><div class="bar"><i id="budgetBar" style="width:0"></i></div><div class="t" id="budgetText"></div></div>
+    <div class="actions"><button class="btn big go" id="placeBtn">Place these bets</button><a class="btn alt" id="siteLink" href="index.html">League page</a></div>
+    <div class="msg" id="placeMsg"></div>
+    <div id="fallback" hidden><p class="note warn">This page has no bet form configured, so it cannot place bets itself. Send these rows to Ahmed instead.</p><textarea class="out" id="rowsOut" readonly aria-label="Rows to send"></textarea></div>
+    <div class="placed" id="placed"></div>
+    <p class="note">A placed bet is stamped by Google the second you press the button — that is the time that counts. The price recorded is the ask shown on this page; Kalshi prices here refresh every 5 minutes, so press <b>refresh</b> at the top before placing if it has been a while. Bets show on the league page immediately and settle from the exchange result.</p>
+  </div>
+</section>
+
+<section id="half">
+  <h2>Whole numbers vs. the hook</h2>
+  <div class="two">
+    <div class="argue"><h3>"Whole numbers only"</h3><p>The instinct is real: losing "by the hook" — the favourite wins by exactly 4 when you had −4.5 — feels like theft, and a whole-number line at −4 would have refunded you.</p><p>But look at the ladder. <b>Kalshi has no whole-number lines.</b> Every market is "by over 4.5", which is the same contract as "by 5 or more". There is nothing to push; the hook is built into every line on the exchange. "Whole numbers only" on Kalshi means moneyline only.</p></div>
+    <div class="argue"><h3>"That's dumb"</h3><p>Right conclusion, wrong reason. Whether a line reads 4.5 or "5+" is wording. What matters is the <b>price of the margin you are giving up</b>: the chart above shows how much probability sits on exactly 3 and exactly 7. A half point through a key number is expensive; a half point through 5 is nearly free.</p><p>So the rule that actually helps: <b>compare the price to the probability</b>, not the line to your superstition — which is exactly what the System does.</p></div>
+  </div>
+</section>
+
+<footer id="foot"></footer>
+</div>
+</div>
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const $ = (s, el=document) => el.querySelector(s);
+const {esc, fmt$, fmtK, fmt0, pct, cents: c, ceilCent, american, parseEvent, eventMarkets, standings, label, suffixOf} = PL;
+let L = null;                                        // everything loadAll() returned, kept for refreshes
+async function assemble(){
+  L = await PL.loadAll();
+  const cfg = L.cfg; const q = new URLSearchParams(location.search); const ev = parseEvent(q.get("e") || (L.slate[0] && L.slate[0].ev.suffix) || "");
+  if (!ev) throw new Error("No game given: open this page from the league page, or add ?e=<event> (e.g. ?e=26SEP17DETBUF).");
+  let R = null; try { R = await PL.getJSON(`research/${ev.suffix}.json`); } catch (e) { R = null; }
+  const evo = (R && R.event) || {};
+  const mk = eventMarkets(L.markets, ev); const slateRow = L.slate.find(s => s.ev.suffix===ev.suffix);
+  const info = mk.info || {}; const strike = info.strike_date || info.expected_expiration_time || null;
+  const st = standings(cfg, L.bets, L.results, L.feed); const key = `-${ev.suffix}-`; const placed = {};
+  for (const r of st.rows) if ((r.ticker||"").includes(key)) placed[r.player] = (placed[r.player]||0) + r.price*r.contracts;
+  const watch = []; for (const e of (L.feed&&L.feed.entries)||[]) if ((e.ticker||"").includes(key)) watch.push({ticker:e.ticker, label:label(e.ticker).split(" · ")[1]||e.ticker, yes_ask:e.yes_ask, p_ref:e.p_ref, edge_raw_cents:e.edge_raw_cents, fires:true, reason:"fired"});
+  for (const w of (L.feed&&L.feed.watching)||[]) if ((w.ticker||"").includes(key) && !watch.some(x=>x.ticker===w.ticker)) watch.push({ticker:w.ticker, label:label(w.ticker).split(" · ")[1]||w.ticker, yes_ask:w.yes_ask, p_ref:w.p_ref, edge_raw_cents:w.edge_raw_cents, fires:!!w.fires, reason:w.reason});
+  const fetched = L.markets && L.markets.fetched_at ? new Date(L.markets.fetched_at) : null;
+  const winnerResults = mk.all.filter(m => m.kind==="winner" && (m.result==="yes"||m.result==="no"));
+  const winner = winnerResults.find(m => m.result==="yes");
+  return {
+    ev, cfg, mk, errors: L.errors.slice(),
+    event: {suffix: ev.suffix, ticker: ev.ticker, competition: ev.competition, home: {abbr:ev.home.abbr, nick:ev.home.nick, name:ev.home.name}, away: {abbr:ev.away.abbr, nick:ev.away.nick, name:ev.away.name},
+            kickoff_text: evo.kickoff_text || (slateRow && (slateRow.kickoff||"").trim()) || PL.fmtETlong(evo.kickoff_iso || strike) || null, kickoff_iso: evo.kickoff_iso || strike || null,
+            venue: evo.venue || "", tv: evo.tv || null, sub_title: evo.sub_title || (cfg.week ? `Week ${cfg.week}` : ""), kicker: evo.kicker || null, deadline_text: evo.deadline_text || null},
+    snapshot: {kalshi_et: fetched ? PL.fmtET(fetched, {weekday:"short"}) + " ET" : "unknown (prices not loaded)", fetched},
+    league: {bankroll: cfg.bankroll, game_budget: cfg.game_budget, players: cfg.players, taker_coef: cfg.taker_coef||0.07, threshold_cents: cfg.threshold_cents||3, site_url: "index.html", form: cfg.form||null},
+    winner: mk.winner, spread: mk.spread, total: mk.total,
+    consensus: (R && R.consensus) || null, research: (R && R.research) || null,
+    standings: st.table.map(t => Object.assign({placed_here: Math.round((placed[t.player]||0)*100)/100}, t)),
+    system_watch: watch,
+    final: winnerResults.length ? (winner ? `Final: ${(winner.team===ev.home.abbr?ev.home:ev.away).nick} won` : "Final: settled") : null,
+    code_version: (L.markets && L.markets.version) || "site",
+  };
+}
+let D = null;
+(async () => {
+  try { D = await assemble(); } catch (e) { $("#loading").innerHTML = `<div class="err">Could not load this game: ${esc(e.message)}</div>`; return; }
+  $("#loading").hidden = true; $("#page").hidden = false;
+  PL.applyColors(D.ev);
+  render();
+})();
+function render(){
+const fmt$ = v => (v<0?"−":"") + "$" + Math.abs(v).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmtK = v => fmt$(v).replace(".00","");
+const fmt0 = v => Math.round(v).toLocaleString();
+const pct = p => p==null ? "—" : (p*100).toFixed(p<0.1||p>0.9?1:0) + "%";
+const c = p => p==null ? "—" : Math.round(p*100) + "¢";
+const ceilCent = x => Math.ceil(x*100 - 1e-9)/100;
+const fee = (n,p) => ceilCent(D.league.taker_coef * n * p * (1-p));
+function stake(p, dollars){ const n = Math.floor(dollars/p); const cost = n*p; const f = fee(n,p); return {n, cost, fee:f, win: n*(1-p)-f, lose: -(cost+f), be: n? (cost+f)/n : 0}; }
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const american = a => a>0 ? 100/(a+100) : (-a)/((-a)+100);
+const E = D.event, HOME = E.home, AWAY = E.away;
+const nick = abbr => abbr===HOME.abbr ? HOME.nick : AWAY.nick;
+const cls = abbr => abbr===HOME.abbr ? "home" : "away";
+const other = abbr => abbr===HOME.abbr ? AWAY.abbr : HOME.abbr;
+const wholeMode = { on:false };
+const lineWord = (team, line, side) => { const n = line+0.5;
+  if (side==="yes") return wholeMode.on ? `${nick(team)} by ${n}+` : `${nick(team)} −${line}`;
+  return wholeMode.on ? `${nick(other(team))} win or lose by ≤${n-1}` : `${nick(other(team))} +${line}`; };
+const totWord = (line, side) => side==="yes" ? (wholeMode.on?`${line+0.5}+ points`:`Over ${line}`) : (wholeMode.on?`${line-0.5} or fewer`:`Under ${line}`);
+const BUDGET = D.league.game_budget;
+
+// ---- header
+document.title = `${AWAY.nick}–${HOME.nick} Game Card`; $("#navHw").href = "#homework";
+$("#kicker").textContent = E.kicker || `${E.competition||"NFL"} · ${E.sub_title||""}`;
+$("#h1away").textContent = AWAY.nick; $("#h1home").textContent = HOME.nick;
+$("#kickoff").textContent = E.kickoff_text || (E.kickoff_iso ? new Date(E.kickoff_iso).toLocaleString("en-US",{timeZone:"America/New_York",weekday:"long",month:"long",day:"numeric",hour:"numeric",minute:"2-digit"}) + " ET" : "kickoff time not set");
+$("#venue").textContent = E.venue || ""; $("#snap").textContent = D.snapshot.kalshi_et; $("#navHw").hidden = !D.research;
+$("#errs").innerHTML = D.errors.map(e => `<div class="err">Could not read ${esc(e)} — the page shows what it could load.</div>`).join("") + (D.winner.length ? "" : (D.final ? "" : '<div class="err">No open Kalshi markets for this game right now (not listed yet, or already closed).</div>'));
+$("#final").hidden = !D.final; $("#final").textContent = D.final || "";
+$("#refresh").onclick = async () => { $("#refresh").textContent = "refreshing…"; try { D = await assemble(); render(); } catch (e) { $("#refresh").textContent = "refresh failed"; } };
+$("#stakes").innerHTML = [["Paper bankroll", fmtK(D.league.bankroll), "each · imaginary money"], ["On this game", fmtK(BUDGET), "each · one bet or several"],
+  ["Who bets", String(D.league.players.length), D.league.players.map(p => p.name + (p.role==="system"?" (System)":"")).join(" · ")],
+  ["Deadline", E.deadline_text || "kickoff", "bets placed after kickoff do not count", "txt"]]
+  .map(([k,v,d,x]) => `<div class="stake"><div class="k">${k}</div><div class="v${x?" "+x:""}">${v}</div><div class="d">${d}</div></div>`).join("");
+
+// ---- bankrolls
+const ST = D.standings || D.league.players.map(p => ({player:p.name, role:p.role, bankroll:D.league.bankroll, pnl:0, settled:0, open:0, placed_here:0}));
+$("#bankSub").innerHTML = `Everyone started at ${fmtK(D.league.bankroll)}. Bankroll = start + settled P&amp;L after Kalshi fees, from every bet placed so far; this game puts up to ${fmtK(BUDGET)} each at risk. Settlement comes from Kalshi's results the next time the prices refresh.`;
+$("#bankTiles").innerHTML = ST.map(t => `<div class="tile"><div class="k"><span>${esc(t.player)}</span><span class="chip ${t.role==="system"?"sys":"plain"}">${t.role==="system"?"the System bets for him":"intuition"}</span></div>
+  <div class="side" style="border-top-color:${t.role==="system"?"var(--sys)":"var(--accent)"}"><div class="lab">Bankroll</div><div class="price">${fmt$(t.bankroll)}</div><div class="imp">settled P&amp;L ${fmt$(t.pnl||0)} · ${t.settled||0} settled · ${t.open||0} open</div></div>
+  <div class="grid2"><div class="l">Placed on this game</div><div class="r">${fmt$(t.placed_here||0)}</div><div class="l">Left to place here</div><div class="r">${fmt$(Math.max(0, BUDGET-(t.placed_here||0)))}</div></div></div>`).join("");
+
+// ---- lookups
+const W = Object.fromEntries((D.winner||[]).map(m => [m.team, m]));
+const homeLines = (D.spread||[]).filter(m => m.team===HOME.abbr).sort((a,b)=>a.line-b.line);
+const awayLines = (D.spread||[]).filter(m => m.team===AWAY.abbr).sort((a,b)=>a.line-b.line);
+const totals = (D.total||[]).slice().sort((a,b)=>a.line-b.line);
+const cons = D.consensus || null;
+let consP=null, consSpread=null, consTotal=null;
+if (cons) { const mh = american(cons.moneyline.home), ma = american(cons.moneyline.away); consP = {[HOME.abbr]: mh/(mh+ma), [AWAY.abbr]: ma/(mh+ma)};
+  const sh = american(cons.spread.home_price), sa = american(cons.spread.away_price); consSpread = {home: sh/(sh+sa), away: sa/(sh+sa)};
+  const to = american(cons.total.over_price), tu = american(cons.total.under_price); consTotal = {over: to/(to+tu), under: tu/(to+tu)}; }
+const byVol = arr => arr.length ? arr.reduce((a,b) => (b.volume||0) > (a.volume||0) ? b : a) : null;
+const keySpread = (cons && homeLines.find(m => m.line === -cons.spread.home_line)) || byVol(homeLines) || byVol(awayLines);
+const keyTotal = (cons && totals.find(m => m.line === cons.total.line)) || byVol(totals);
+
+// ---- options (everything bettable) + slip
+const OPTIONS = [];
+if (W[HOME.abbr]) OPTIONS.push({g:"Moneyline", id:`ML-${HOME.abbr}`, lab:`${HOME.nick} win`, ticker:W[HOME.abbr].ticker, side:"yes", price:W[HOME.abbr].yes_ask});
+if (W[AWAY.abbr]) OPTIONS.push({g:"Moneyline", id:`ML-${AWAY.abbr}`, lab:`${AWAY.nick} win`, ticker:W[AWAY.abbr].ticker, side:"yes", price:W[AWAY.abbr].yes_ask});
+for (const m of homeLines){ OPTIONS.push({g:`Spread · ${HOME.nick} side`, id:`S-${m.ticker}-y`, m, team:HOME.abbr, side:"yes", ticker:m.ticker, price:m.yes_ask}); OPTIONS.push({g:`Spread · ${AWAY.nick} side`, id:`S-${m.ticker}-n`, m, team:HOME.abbr, side:"no", ticker:m.ticker, price:m.no_ask}); }
+for (const m of awayLines){ OPTIONS.push({g:`Spread · ${AWAY.nick} favoured`, id:`S-${m.ticker}-y`, m, team:AWAY.abbr, side:"yes", ticker:m.ticker, price:m.yes_ask}); OPTIONS.push({g:`Spread · ${HOME.nick} +points`, id:`S-${m.ticker}-n`, m, team:AWAY.abbr, side:"no", ticker:m.ticker, price:m.no_ask}); }
+for (const m of totals){ OPTIONS.push({g:"Total · over", id:`T-${m.ticker}-y`, m, tot:true, side:"yes", ticker:m.ticker, price:m.yes_ask}); OPTIONS.push({g:"Total · under", id:`T-${m.ticker}-n`, m, tot:true, side:"no", ticker:m.ticker, price:m.no_ask}); }
+const OPT = Object.fromEntries(OPTIONS.map(o => [o.id, o]));
+const optLabel = o => o.lab ? o.lab : o.tot ? totWord(o.m.line, o.side) : lineWord(o.team, o.m.line, o.side);
+const validOpt = o => o && o.price != null && o.price > 0 && o.price < 1;
+const betBtn = (id, small) => validOpt(OPT[id]) ? `<button class="betbtn${small?" sm":""}" data-bet="${esc(id)}" type="button">Bet</button>` : "";
+
+// ---- hero tiles
+function sideBox(clsName, lab, price, sub, betId){ return `<div class="side ${clsName}"><div class="lab">${lab}</div><div class="price">${c(price)}<small>${pct(price)}</small></div><div class="imp">${sub}</div>${betBtn(betId)}</div>`; }
+(function(){
+  const tiles = [];
+  if (W[HOME.abbr] && W[AWAY.abbr]) tiles.push(`<div class="tile"><div class="k"><span>Moneyline</span><span>${fmt0((W[HOME.abbr].volume||0)+(W[AWAY.abbr].volume||0))} traded</span></div>
+   <div class="sides">${sideBox("home",`${HOME.nick} win`,W[HOME.abbr].yes_ask,`bid ${c(W[HOME.abbr].yes_bid)} · ask ${c(W[HOME.abbr].yes_ask)}`,`ML-${HOME.abbr}`)}${sideBox("away",`${AWAY.nick} win`,W[AWAY.abbr].yes_ask,`bid ${c(W[AWAY.abbr].yes_bid)} · ask ${c(W[AWAY.abbr].yes_ask)}`,`ML-${AWAY.abbr}`)}</div>
+   ${cons ? `<div class="cmp">${esc(cons.label)}: ${HOME.nick} <b>${cons.moneyline.home}</b> · ${AWAY.nick} <b>${cons.moneyline.away>0?"+":""}${cons.moneyline.away}</b> → devigged ${pct(consP[HOME.abbr])} / ${pct(consP[AWAY.abbr])}.</div>` : ""}</div>`);
+  if (keySpread) { const isHome = keySpread.team===HOME.abbr; const fav = isHome?HOME:AWAY, dog = isHome?AWAY:HOME;
+    tiles.push(`<div class="tile"><div class="k"><span>Spread · main line</span><span>${fmt0(keySpread.volume||0)} traded</span></div>
+   <div class="sides">${sideBox(cls(fav.abbr),`${fav.nick} −${keySpread.line}`,keySpread.yes_ask,`YES on "by over ${keySpread.line}"`,`S-${keySpread.ticker}-y`)}${sideBox(cls(dog.abbr),`${dog.nick} +${keySpread.line}`,keySpread.no_ask,`NO on the same market`,`S-${keySpread.ticker}-n`)}</div>
+   ${cons ? `<div class="cmp">${esc(cons.label)}: ${HOME.nick} <b>${cons.spread.home_line}</b> (${cons.spread.home_price}) / ${AWAY.nick} ${-cons.spread.home_line>0?"+":""}${-cons.spread.home_line} (${cons.spread.away_price}) → ${pct(consSpread.home)} / ${pct(consSpread.away)}.${cons.spread_note?" "+esc(cons.spread_note):""}</div>` : ""}</div>`); }
+  if (keyTotal) tiles.push(`<div class="tile"><div class="k"><span>Total · main line</span><span>${fmt0(keyTotal.volume||0)} traded</span></div>
+   <div class="sides">${sideBox("over",`Over ${keyTotal.line}`,keyTotal.yes_ask,`YES on "over ${keyTotal.line} points"`,`T-${keyTotal.ticker}-y`)}${sideBox("under",`Under ${keyTotal.line}`,keyTotal.no_ask,`NO on the same market`,`T-${keyTotal.ticker}-n`)}</div>
+   ${cons ? `<div class="cmp">${esc(cons.label)}: <b>${cons.total.line}</b> (O ${cons.total.over_price} / U ${cons.total.under_price}) → ${pct(consTotal.over)} / ${pct(consTotal.under)}.${cons.total_note?" "+esc(cons.total_note):""}</div>` : ""}</div>`);
+  $("#heroTiles").innerHTML = tiles.join("") || '<p class="note">No open Kalshi markets for this game right now.</p>';
+})();
+
+// ---- moneyline cards
+function moneyCard(abbr, m, sideLabel){ const s = stake(m.yes_ask, BUDGET);
+  return `<div class="card ${cls(abbr)}"><h3>${nick(abbr)} win</h3><div class="big">${c(m.yes_ask)}<small>per contract · ${pct(m.yes_ask)} implied · ${sideLabel}</small></div>
+  <div class="grid2"><div class="l">$${BUDGET.toLocaleString()} buys</div><div class="r"><b>${fmt0(s.n)}</b> contracts (${fmt$(s.cost)})</div><div class="l">Kalshi fee</div><div class="r">${fmt$(s.fee)}</div>
+   <div class="l">If it wins</div><div class="r pos">+${fmt$(s.win)}</div><div class="l">If it loses</div><div class="r">${fmt$(s.lose)}</div><div class="l">Break-even win rate</div><div class="r">${pct(s.be)}</div><div class="l">Traded so far</div><div class="r">${fmt0(m.volume||0)} contracts</div></div>
+  <div class="mono" style="margin-top:10px;color:var(--muted)">${m.ticker} · YES</div>${betBtn(`ML-${abbr}`)}</div>`; }
+(function(){ const h = W[HOME.abbr], a = W[AWAY.abbr]; if (!h || !a) { $("#ml").hidden = true; return; }
+  const favHome = h.yes_ask >= a.yes_ask; $("#mlCards").innerHTML = moneyCard(HOME.abbr, h, favHome?"favourite":"underdog") + moneyCard(AWAY.abbr, a, favHome?"underdog":"favourite"); })();
+
+// ---- ladders
+function betCell(p, id){ if (p==null) return "—"; const s = stake(p, BUDGET); return `<span class="bet">${c(p)} · <b>${fmt0(s.n)}</b> → <span class="w">+${fmt$(s.win)}</span></span>${betBtn(id, true)}`; }
+function ladder(rows, favAbbr, headFav, headDog){
+  const dog = other(favAbbr);
+  let h = `<table><thead><tr><th>Line</th><th>Chance ${nick(favAbbr)} cover</th><th>${headFav}</th><th>${headDog}</th><th class="r">Traded</th><th>Ticker</th></tr></thead><tbody>`;
+  for (const m of rows){ const mid = (m.yes_bid+m.yes_ask)/2, key = keySpread && m.ticker===keySpread.ticker;
+    h += `<tr class="${key?"key":""}"><td><span class="chip ${cls(favAbbr)}">${lineWord(favAbbr,m.line,"yes")}</span></td><td><div class="bar" title="mid ${pct(mid)}"><i class="${cls(favAbbr)}" style="width:${(mid*100).toFixed(1)}%"></i><b></b></div></td>
+      <td>${betCell(m.yes_ask, `S-${m.ticker}-y`)}</td><td>${betCell(m.no_ask, `S-${m.ticker}-n`)} <span class="chip ${cls(dog)}" style="font-size:11px">${lineWord(favAbbr,m.line,"no")}</span></td><td class="r mono">${fmt0(m.volume||0)}</td><td class="tick">${m.ticker}</td></tr>`; }
+  return h + "</tbody></table>"; }
+function renderSpread(){
+  $("#spreadSub").innerHTML = `Kalshi lists one market per margin: "${HOME.nick} wins by over 4.5 points". Buying <b>YES</b> is ${HOME.nick} −4.5; buying <b>NO</b> on the same market is ${AWAY.nick} +4.5 (${AWAY.nick} win, or lose by 4 or fewer).`;
+  let h = "";
+  if (homeLines.length) h += ladder(homeLines, HOME.abbr, `${HOME.nick} side · YES`, `${AWAY.nick} side · NO`);
+  if (awayLines.length) h += (h?'<div style="height:8px"></div>':"") + ladder(awayLines, AWAY.abbr, `${AWAY.nick} side · YES`, `${HOME.nick} side · NO`);
+  $("#spreadLadder").innerHTML = h || '<p class="note" style="margin:12px">No open spread markets right now.</p>';
+  if (!homeLines.length && !awayLines.length) $("#spread").hidden = true; }
+function renderTotal(){
+  let h = `<table><thead><tr><th>Line</th><th>Chance of the over</th><th>Over · YES</th><th>Under · NO</th><th class="r">Traded</th><th>Ticker</th></tr></thead><tbody>`;
+  for (const m of totals){ const mid = (m.yes_bid+m.yes_ask)/2, key = keyTotal && m.ticker===keyTotal.ticker;
+    h += `<tr class="${key?"key":""}"><td><span class="chip plain" style="color:var(--ink)">${totWord(m.line,"yes")}</span></td><td><div class="bar" title="mid ${pct(mid)}"><i class="over" style="width:${(mid*100).toFixed(1)}%"></i><b></b></div></td>
+      <td>${betCell(m.yes_ask, `T-${m.ticker}-y`)}</td><td>${betCell(m.no_ask, `T-${m.ticker}-n`)} <span class="chip plain" style="font-size:11px">${totWord(m.line,"no")}</span></td><td class="r mono">${fmt0(m.volume||0)}</td><td class="tick">${m.ticker}</td></tr>`; }
+  $("#totalLadder").innerHTML = totals.length ? h + "</tbody></table>" : '<p class="note" style="margin:12px">No open total markets right now.</p>';
+  if (!totals.length) $("#total").hidden = true; }
+renderSpread(); renderTotal();
+function setWord(on){ wholeMode.on = on; $("#wordHalf").setAttribute("aria-pressed", String(!on)); $("#wordWhole").setAttribute("aria-pressed", String(on)); renderSpread(); renderTotal(); renderRows(); wireBetButtons(); }
+$("#wordHalf").onclick = () => setWord(false); $("#wordWhole").onclick = () => setWord(true);
+
+// ---- derived distributions
+function mids(rows){ return rows.map(m => ({line:m.line, p:(m.yes_bid+m.yes_ask)/2})); }
+function marginBins(team){ const w = W[team]; if (!w) return []; const pw = (w.yes_bid+w.yes_ask)/2;
+  const L = mids((D.spread||[]).filter(m=>m.team===team)).sort((a,b)=>a.line-b.line); const bins = []; let prevP = pw, prevLine = 0.5;
+  for (const {line,p} of L){ bins.push({lo: prevLine+0.5, hi: line-0.5, p: Math.max(0, prevP - p), clamped: prevP - p < 0}); prevP = p; prevLine = line; }
+  bins.push({lo: prevLine+0.5, hi: Infinity, p: prevP}); return bins; }
+function totalBins(){ const L = mids(D.total||[]).sort((a,b)=>a.line-b.line); const bins = []; let prevP = 1, prevLine = -0.5;
+  for (const {line,p} of L){ bins.push({lo: prevLine+0.5, hi: line-0.5, p: Math.max(0, prevP-p), clamped: prevP-p<0}); prevP = p; prevLine = line; }
+  bins.push({lo: prevLine+0.5, hi: Infinity, p: prevP}); return bins; }
+function barChart(el, title, desc, bars, opts){
+  const Wd = 640, H = 220, padL = 34, padR = 10, padT = 18, padB = 34; const xmin = opts.xmin, xmax = opts.xmax; const sx = x => padL + (x - xmin) / (xmax - xmin) * (Wd - padL - padR);
+  const dens = bars.map(b => b.p / (b.x1 - b.x0)); const dmax = Math.max(0.01, ...dens) * 1.12; const step = [0.005,0.01,0.02,0.025,0.05,0.1].find(st => dmax/st <= 5) || 0.1; const ymax = Math.ceil(dmax/step)*step; const sy = d => padT + (1 - d/ymax) * (H - padT - padB);
+  let s = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="${esc(title)}">`;
+  for (let d=0; d<=ymax+1e-9; d+=step){ s += `<line class="grid" x1="${padL}" x2="${Wd-padR}" y1="${sy(d).toFixed(1)}" y2="${sy(d).toFixed(1)}"/><text x="${padL-4}" y="${(sy(d)+4).toFixed(1)}" text-anchor="end">${(d*100).toFixed(step<0.01?1:0)}%</text>`; }
+  bars.forEach(b => { const x0 = sx(b.x0), x1 = sx(b.x1); const d = b.p/(b.x1-b.x0); const y = sy(d); const w = Math.max(1, x1 - x0 - 2);
+    s += `<rect class="${b.cls}" x="${(x0+1).toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${(sy(0)-y).toFixed(1)}" rx="3" data-tip="${esc(b.tip)}"/>`;
+    if (b.label) s += `<text class="lbl" x="${((x0+x1)/2).toFixed(1)}" y="${(y-4).toFixed(1)}" text-anchor="middle">${esc(b.label)}</text>`; });
+  s += `<line class="axis" x1="${padL}" x2="${Wd-padR}" y1="${sy(0)}" y2="${sy(0)}"/>`;
+  for (const t of opts.xticks){ s += `<text x="${sx(t.x).toFixed(1)}" y="${H-padB+16}" text-anchor="middle">${esc(t.l)}</text>`; }
+  s += `</svg>`; el.innerHTML = `<h3>${esc(title)}</h3><div class="d">${desc}</div>${s}${opts.legend||""}`; }
+(function(){
+  const hb = marginBins(HOME.abbr), ab = marginBins(AWAY.abbr);
+  if (!hb.length || !ab.length || (!homeLines.length && !awayLines.length)) { $("#marginChart").innerHTML = `<h3>Final margin, as priced</h3><div class="d">Needs the winner and spread markets — not all open right now.</div>`; }
+  else { const bars = []; const capH = 24, capA = 18;
+    for (const b of hb){ const hi = b.hi===Infinity?capH:Math.min(b.hi,capH); bars.push({x0:b.lo-0.5, x1:hi+0.5, p:b.p, cls:"home", tip:`${HOME.nick} by ${b.lo}${b.hi===Infinity?"+":(b.hi!==b.lo?"–"+b.hi:"")}: ${pct(b.p)}${b.clamped?" (ladder slightly inconsistent; shown as 0)":""}`, label:(b.lo===3||b.lo===7)?pct(b.p):""}); }
+    for (const b of ab){ const hi = b.hi===Infinity?capA:Math.min(b.hi,capA); bars.push({x0:-(hi+0.5), x1:-(b.lo-0.5), p:b.p, cls:"away", tip:`${AWAY.nick} by ${b.lo}${b.hi===Infinity?"+":(b.hi!==b.lo?"–"+b.hi:"")}: ${pct(b.p)}${b.clamped?" (ladder slightly inconsistent; shown as 0)":""}`, label:(b.lo===3||b.lo===7)?pct(b.p):""}); }
+    const pH = (W[HOME.abbr].yes_bid+W[HOME.abbr].yes_ask)/2;
+    barChart($("#marginChart"), "Final margin, as priced", `${HOME.nick} win ${pct(pH)} of the time, ${AWAY.nick} ${pct(1-pH)}. Bars are chance per point of margin; a wide bar covers margins Kalshi has no line between. Hover for the exact number.`,
+      bars, {xmin:-19, xmax:25, xticks:[{x:-14,l:`${AWAY.nick} by 14`},{x:-7,l:"7"},{x:-3,l:"3"},{x:3,l:"3"},{x:7,l:"7"},{x:14,l:`${HOME.nick} by 14`},{x:21,l:"21+"}],
+        legend:`<div class="legend"><span><i style="background:var(--away)"></i>${AWAY.nick} win by N</span><span><i style="background:var(--home)"></i>${HOME.nick} win by N</span><span>labelled: the key numbers 3 and 7</span></div>`}); }
+  const tb = totalBins();
+  if (!totals.length) { $("#totalChart").innerHTML = `<h3>Total points, as priced</h3><div class="d">No total markets open.</div>`; }
+  else { const lo0 = Math.max(0, totals[0].line - 6), hi0 = totals[totals.length-1].line + 6;
+    const tbars = tb.map(b => { const hi = b.hi===Infinity?hi0:b.hi; const lo = b.lo < lo0 ? lo0 : b.lo; return {x0:lo-0.5, x1:hi+0.5, p:b.p, cls:"tot", tip:`${b.lo}${b.hi===Infinity?"+":(b.hi!==b.lo?"–"+b.hi:"")} points: ${pct(b.p)}`, label:""}; });
+    const pO = keyTotal ? (keyTotal.yes_bid+keyTotal.yes_ask)/2 : null;
+    const ticks = []; for (let x = Math.ceil(lo0/10)*10; x <= hi0; x += 10) ticks.push({x, l:String(x)}); if (keyTotal) ticks.push({x:keyTotal.line, l:String(keyTotal.line)});
+    barChart($("#totalChart"), "Total points, as priced", keyTotal ? `Over ${keyTotal.line} is ${pct(pO)}. Chance per point of total, from the ladder above.` : "Chance per point of total.", tbars, {xmin:lo0-1, xmax:hi0+1, xticks:ticks, legend:`<div class="legend"><span><i style="background:var(--accent)"></i>chance per point of total</span></div>`}); }
+  const tip = $("#tip");
+  document.querySelectorAll(".chart rect").forEach(r => { r.addEventListener("mousemove", e => { tip.textContent = r.dataset.tip; tip.style.display="block"; tip.style.left = (e.clientX+12)+"px"; tip.style.top = (e.clientY+12)+"px"; }); r.addEventListener("mouseleave", () => tip.style.display="none"); });
+})();
+
+// ---- homework
+(function(){ const R = D.research; if (!R) return; $("#homework").hidden = false;
+  const src = (s,u) => `<div class="src">${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s)}</a>`:esc(s)}</div>`;
+  $("#hwAsOf").textContent = "as of " + (R.as_of||"");
+  $("#hwLine").innerHTML = (R.line ? `<div class="hw"><h4>Where the line went</h4><p>${esc(R.line.text||"")}</p><p>${esc(R.line.kalshi||"")}</p>${src(R.line.src||"", R.line.url)}</div>` : "") +
+    (R.line && R.line.splits ? `<div class="hw"><h4>Who is betting what</h4>${R.line.splits.map(x => `<p>${esc(x.text)} ${src(x.src, x.url)}</p>`).join("")}<p class="src">${esc(R.line.conflict||"")}</p></div>` : "");
+  $("#hwWeek1").innerHTML = (R.week1||[]).map(w => `<div class="hw ${cls(w.team)}"><h4><span class="chip ${cls(w.team)}">${esc(w.team)}</span>${esc(w.head)}</h4><p>${esc(w.text)}</p>${src(w.src, w.url)}</div>`).join("");
+  if (R.injuries) { $("#hwInjAsOf").textContent = R.injuries.as_of||"";
+    const inj = (team, rows) => `<div class="hw ${cls(team)}"><h4><span class="chip ${cls(team)}">${esc(team)}</span>${nick(team)}</h4><table><thead><tr><th>Player</th><th>Pos</th><th>Injury</th><th>Status</th></tr></thead><tbody>${(rows||[]).map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td></tr>`).join("")}</tbody></table>${src(R.injuries.src||"", R.injuries.url)}</div>`;
+    $("#hwInjuries").innerHTML = inj(AWAY.abbr, R.injuries[AWAY.abbr]) + inj(HOME.abbr, R.injuries[HOME.abbr]); $("#hwInjRead").textContent = R.injuries.read||""; }
+  $("#hwEnv").innerHTML = (R.weather ? `<div class="hw"><h4>Weather</h4><p>${esc(R.weather.text)}</p>${src(R.weather.src, R.weather.url)}</div>` : "") + (R.venue ? `<div class="hw"><h4>Venue</h4><p>${esc(R.venue.text)}</p>${src(R.venue.src, R.venue.url)}</div>` : "");
+  $("#hwTrends").innerHTML = `<thead><tr><th>Trend</th><th>Number</th><th>Source</th></tr></thead><tbody>${(R.trends||[]).map(t => `<tr><td style="white-space:normal">${esc(t[0])}</td><td class="mono">${esc(t[1])}</td><td><a href="${esc(t[3])}" target="_blank" rel="noopener">${esc(t[2])}</a></td></tr>`).join("")}</tbody>`;
+  $("#hwVoices").innerHTML = (R.voices||[]).map(v => `<div class="voice"><b>${esc(v.who)}</b><p>${esc(v.take)} <a href="${esc(v.url)}" target="_blank" rel="noopener" class="src">source</a></p></div>`).join("");
+  $("#hwX").textContent = R.x_note||""; $("#hwX").hidden = !R.x_note;
+  $("#hwUnknowns").innerHTML = (R.unknowns||[]).map(u => `<li>${esc(u)}</li>`).join("");
+})();
+
+// ---- the System
+(function(){
+  const rows = []; let best = -99;
+  if (cons && W[HOME.abbr] && W[AWAY.abbr] && keySpread && keyTotal) {
+    $("#sysTitle").innerHTML = `What the System would do <span class="chip sys" style="background:var(--sys-ink);color:var(--sys)">preview</span>`;
+    $("#sysIntro").innerHTML = `The System's rule: buy only when a Kalshi ask sits <b>${D.league.threshold_cents}¢ or more</b> under a sharp book's devigged probability. This preview uses the public sportsbook consensus as the reference; the official run uses Pinnacle through the odds feed.`;
+    const favIsHome = keySpread.team===HOME.abbr;
+    for (const [lab,t,side,ask,p] of [[`${HOME.nick} win`,W[HOME.abbr].ticker,"YES",W[HOME.abbr].yes_ask,consP[HOME.abbr]],[`${AWAY.nick} win`,W[AWAY.abbr].ticker,"YES",W[AWAY.abbr].yes_ask,consP[AWAY.abbr]],
+        [lineWord(keySpread.team,keySpread.line,"yes"),keySpread.ticker,"YES",keySpread.yes_ask, favIsHome?consSpread.home:consSpread.away],[lineWord(keySpread.team,keySpread.line,"no"),keySpread.ticker,"NO",keySpread.no_ask, favIsHome?consSpread.away:consSpread.home],
+        [`Over ${keyTotal.line}`,keyTotal.ticker,"YES",keyTotal.yes_ask,consTotal.over],[`Under ${keyTotal.line}`,keyTotal.ticker,"NO",keyTotal.no_ask,consTotal.under]]) {
+      const edge = (p-ask)*100; best = Math.max(best, edge); rows.push([lab,t,side,c(ask),pct(p),edge]); }
+  } else if (D.system_watch && D.system_watch.length) {
+    $("#sysIntro").innerHTML = `Ahmed's money is placed by the System, not by Ahmed. It buys only when a Kalshi ask sits <b>${D.league.threshold_cents}¢ or more</b> under Pinnacle's devigged line. This is its latest read on this game's markets, from the collector's data.`;
+    for (const w of D.system_watch) { const edge = w.edge_raw_cents; if (edge != null) best = Math.max(best, edge); rows.push([w.label||w.ticker, w.ticker, "YES", c(w.yes_ask), pct(w.p_ref), edge]); }
+  } else {
+    $("#sysIntro").innerHTML = `Ahmed's money is placed by the System, not by Ahmed. It buys only when a Kalshi ask sits <b>${D.league.threshold_cents}¢ or more</b> under Pinnacle's devigged line — and it has no reference line for this game yet (the odds feed is not running), so it cannot fire.`;
+    $("#sysVerdict").textContent = "Verdict: no reference line yet — sits out"; $("#sysNote").textContent = "That is not a prediction about the game; it is the rule. Once the odds feed runs on the Mac mini its decisions appear here and on the league page with every number it used."; $("#sysTable").hidden = true; return; }
+  $("#sysTable").innerHTML = `<thead><tr><th>Market</th><th>Side</th><th class="r">Kalshi ask</th><th class="r">Reference</th><th class="r">Edge</th><th>Rule (≥ ${D.league.threshold_cents}¢)</th></tr></thead><tbody>` +
+    rows.map(([lab,t,side,ask,p,edge]) => `<tr><td>${esc(lab)} <span class="tick" style="opacity:.6">${esc(t)}</span></td><td>${side}</td><td class="r mono">${ask}</td><td class="r mono">${p}</td><td class="r mono">${edge==null?"—":(edge>=0?"+":"")+edge.toFixed(1)+"¢"}</td><td>${edge!=null && edge>=D.league.threshold_cents?'<span class="chip good">fires</span>':'<span class="chip warn">no</span>'}</td></tr>`).join("") + "</tbody>";
+  $("#sysVerdict").textContent = best >= D.league.threshold_cents ? "Verdict: the rule fires" : `Verdict: sits out — best edge ${best>=0?"+":""}${best.toFixed(1)}¢, needs +${D.league.threshold_cents}¢`;
+  $("#sysNote").textContent = "The System never bets on vibes: no edge, no bet. Prices move until kickoff; this refreshes with the page.";
+})();
+
+// ---- place your bets
+const FORM = D.league.form || null;
+const players = D.league.players.filter(p => p.role!=="system");
+const KEY = "gamecard-" + E.suffix;
+if (!window.__state || window.__state.key !== KEY) { window.__state = { key: KEY, who: players[0] ? players[0].name : "", rows: {}, placed: [] };
+  try { const s = JSON.parse(localStorage.getItem(KEY)||"null"); if (s && s.rows) Object.assign(window.__state, s, {key: KEY}); } catch(e){} }
+let state = window.__state;
+function save(){ window.__state = state; try { localStorage.setItem(KEY, JSON.stringify({who:state.who, rows:state.rows, placed:state.placed})); } catch(e){} }
+function rowsFor(){ if (!state.rows[state.who]) state.rows[state.who] = []; return state.rows[state.who]; }
+$("#builderSub").innerHTML = `${fmtK(BUDGET)} each on this game, one bet or several. ${FORM ? "Placing records the bet with a Google timestamp; it counts on the league page right away and is scored from the exchange result." : "This page has no bet form configured, so it cannot record bets."}`;
+$("#stepBudget").textContent = fmtK(BUDGET);
+function renderWho(){ $("#who").innerHTML = players.map(p => `<button aria-pressed="${p.name===state.who}" data-who="${esc(p.name)}" type="button">${esc(p.name)}</button>`).join("") + (D.league.players.some(p=>p.role==="system") ? `<span class="chip sys">${esc(D.league.players.find(p=>p.role==="system").name)} = System · bets itself</span>` : "");
+  $("#who").querySelectorAll("button").forEach(b => b.onclick = () => { state.who = b.dataset.who; save(); renderWho(); renderRows(); }); }
+function selectHtml(sel){ let h = "", g = null; for (const o of OPTIONS){ if (!validOpt(o)) continue; if (o.g!==g){ if (g!==null) h += "</optgroup>"; g = o.g; h += `<optgroup label="${esc(g)}">`; } h += `<option value="${o.id}" ${o.id===sel?"selected":""}>${esc(optLabel(o))} · ${c(o.price)}</option>`; } return h + (g!==null?"</optgroup>":""); }
+function calcHtml(r){ const o = OPT[r.opt] || OPTIONS[0]; if (!o) return ""; const s = stake(o.price, Number(r.dollars)||0);
+  return `${o.ticker} · <b>${o.side.toUpperCase()}</b> at ${c(o.price)} · <b>${fmt0(s.n)}</b> contracts = ${fmt$(s.cost)} · fee ${fmt$(s.fee)}<br>wins <span class="w">+${fmt$(s.win)}</span> · loses ${fmt$(s.lose)} · break-even ${pct(s.be)}`; }
+function renderRows(){ const rows = rowsFor(); const el = $("#rows"); el.innerHTML = "";
+  if (!rows.length) el.innerHTML = `<p class="note">Your slip is empty. Tap <b>Bet</b> next to any price above, or <b>+ add a bet</b>.</p>`;
+  rows.forEach((r, i) => { const o = OPT[r.opt] || OPTIONS[0]; if (!o) return; const div = document.createElement("div"); div.className = "row";
+    div.innerHTML = `<select id="sel-${i}" aria-label="Bet ${i+1} market">${selectHtml(o.id)}</select><input id="amt-${i}" type="number" min="0" max="${BUDGET}" step="10" value="${Number(r.dollars)||0}" aria-label="Bet ${i+1} dollars"><div class="calc">${calcHtml(r)}</div><button class="x" type="button" aria-label="Remove bet ${i+1}">×</button>`;
+    div.querySelector("select").onchange = e => { r.opt = e.target.value; save(); renderRows(); };
+    div.querySelector("input").oninput = e => { r.dollars = Number(e.target.value)||0; save(); renderBudget(); renderOut(); div.querySelector(".calc").innerHTML = calcHtml(r); };
+    div.querySelector(".x").onclick = () => { rows.splice(i,1); save(); renderRows(); };
+    el.appendChild(div); });
+  renderBudget(); renderOut(); renderPlaced(); }
+function totals$(){ const rows = rowsFor(); let cost = 0, f = 0; for (const r of rows){ const o = OPT[r.opt]; if (!o) continue; const s = stake(o.price, Number(r.dollars)||0); cost += s.cost; f += s.fee; } return {cost, f}; }
+const placedBefore = who => { const t = ST.find(x => x.player===who); return t ? (t.placed_here||0) : 0; };
+function renderBudget(){ const {cost, f} = totals$(); const prior = placedBefore(state.who); const used = cost + prior; const over = used > BUDGET + 0.005;
+  $("#budgetBar").style.width = Math.min(100, used/BUDGET*100) + "%"; $("#budgetBar").className = over?"over":"";
+  $("#budgetText").textContent = `${state.who}: ${fmt$(cost)} on the slip${prior?" + "+fmt$(prior)+" already placed":""} = ${fmt$(used)} of ${fmtK(BUDGET)} · fees ${fmt$(f)} · ${over?"over by "+fmt$(used-BUDGET):fmt$(BUDGET-used)+" left"}`;
+  $("#slipText").textContent = rowsFor().length ? `${state.who} · ${rowsFor().length} bet${rowsFor().length>1?"s":""} · ${fmt$(cost)} of ${fmtK(BUDGET)}` : "nothing yet — tap a Bet button below";
+  $("#placeBtn").disabled = over || !rowsFor().some(r => (Number(r.dollars)||0) > 0); }
+function etNow(){ const p = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date()); const g = t => p.find(x=>x.type===t).value; return `${g("year")}-${g("month")}-${g("day")} ${g("hour")}:${g("minute")}`; }
+function renderOut(){ if (FORM) return; $("#fallback").hidden = false; const ts = etNow();
+  $("#rowsOut").value = rowsFor().filter(r => (Number(r.dollars)||0) > 0).map(r => { const o = OPT[r.opt]; const s = stake(o.price, Number(r.dollars)||0); return [state.who, ts, o.ticker, o.side, o.price.toFixed(2), s.n, "", "", "", "", "", state.who, "FALSE", optLabel(o) + " · " + E.suffix].join("\t"); }).join("\n"); }
+function renderPlaced(){ const mine = (state.placed||[]).filter(p => p.who===state.who); const el = $("#placed");
+  el.innerHTML = mine.length ? `<h3 class="hw3" style="margin-top:18px">Placed from this device</h3><div class="ladder"><table><thead><tr><th>When (ET)</th><th>Bet</th><th>Side</th><th class="r">Price</th><th class="r">Contracts</th><th class="r">Cost</th><th>Status</th></tr></thead><tbody>` +
+    mine.map(p => `<tr><td class="mono">${esc(p.ts)}</td><td>${esc(p.label)} <span class="tick" style="opacity:.6">${esc(p.ticker)}</span></td><td>${p.side.toUpperCase()}</td><td class="r mono">${c(p.price)}</td><td class="r mono">${p.contracts}</td><td class="r mono">${fmt$(p.cost)}</td><td>${p.ok?'<span class="chip good">sent</span>':'<span class="chip warn">failed — try again</span>'}</td></tr>`).join("") + "</tbody></table></div>" : ""; }
+let armed = false;
+$("#placeBtn").onclick = async () => {
+  const rows = rowsFor().filter(r => (Number(r.dollars)||0) > 0); if (!rows.length) return;
+  if (!FORM) { renderOut(); $("#placeMsg").className = "msg bad"; $("#placeMsg").textContent = "No bet form configured — send the rows below to Ahmed."; return; }
+  if (!armed) { armed = true; const {cost} = totals$(); $("#placeBtn").textContent = `Confirm — place ${fmt$(cost)} as ${state.who}`; $("#placeMsg").className = "msg"; $("#placeMsg").textContent = "Press again to confirm. Bets cannot be un-placed from here."; setTimeout(() => { armed = false; $("#placeBtn").textContent = "Place these bets"; }, 8000); return; }
+  armed = false; $("#placeBtn").disabled = true; $("#placeBtn").textContent = "Placing…"; $("#placeMsg").className = "msg"; $("#placeMsg").textContent = "";
+  let okAll = true;
+  for (const r of rows) { const o = OPT[r.opt]; const s = stake(o.price, Number(r.dollars)||0); if (!s.n) continue;
+    const body = new URLSearchParams(); const F = FORM.fields;
+    body.set(F.player, state.who); body.set(F.ticker, o.ticker); body.set(F.side, o.side); body.set(F.price, o.price.toFixed(2)); body.set(F.contracts, String(s.n)); if (F.note) body.set(F.note, `${optLabel(o)} · ${E.suffix} · placed on the game card`);
+    let ok = false; try { await fetch(FORM.action, {method:"POST", mode:"no-cors", body}); ok = true; } catch(e){ ok = false; okAll = false; }
+    state.placed.push({who: state.who, ts: etNow(), ticker: o.ticker, side: o.side, price: o.price, contracts: s.n, cost: s.cost, label: optLabel(o), ok}); }
+  state.rows[state.who] = []; save(); renderRows();
+  $("#placeBtn").textContent = "Place these bets"; $("#placeMsg").className = okAll ? "msg ok" : "msg bad";
+  $("#placeMsg").textContent = okAll ? `Placed ✓ — stamped ${etNow()} ET. Bankrolls above update in a few seconds.` : "Something failed — check your connection and try the failed rows again.";
+  if (okAll) setTimeout(async () => { try { D = await assemble(); render(); } catch (e) {} }, 4000); };
+function addBet(id){ if (!validOpt(OPT[id])) return; const rows = rowsFor(); const {cost} = totals$(); const left = Math.max(0, BUDGET - cost - placedBefore(state.who)); rows.push({opt:id, dollars: Math.max(0, Math.min(left, 250))}); save(); renderRows();
+  $("#slip").animate([{transform:"scale(1)"},{transform:"scale(1.02)"},{transform:"scale(1)"}], {duration:250}); }
+function wireBetButtons(){ document.querySelectorAll("[data-bet]").forEach(b => b.onclick = () => addBet(b.dataset.bet)); }
+$("#addRow").onclick = () => { const first = OPTIONS.find(validOpt); if (first) addBet(first.id); };
+renderWho(); renderRows(); wireBetButtons();
+
+// ---- footer
+$("#foot").innerHTML = `Kalshi prices, volumes and tickers read from the public API at ${esc(D.snapshot.kalshi_et)} (refreshed every 5 minutes; prices move until kickoff). Settlement by the ${esc(E.competition||"league")} result, overtime included. ${cons ? `Sportsbook consensus: <a href="${esc(cons.url)}" target="_blank" rel="noopener">${esc(cons.source)}</a>. ` : ""}Fee: Kalshi taker schedule, 0.07 × contracts × P × (1−P) per order, rounded up. Implied probabilities are asks (what you pay) or mids (what the market thinks); "devigged" removes the sportsbook's margin proportionally. Paper money. One game, or one week, proves nothing about the System — the plan's own bar before real money is hundreds of settled bets and an edge that survives fees. Paper League ${esc(D.code_version||"")}.`;
+}
+</script>
+</body></html>

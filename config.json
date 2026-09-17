@@ -1,0 +1,14 @@
+{
+  "title": "Paper League",
+  "week": "1",
+  "competition": "NFL",
+  "players": [{"name": "Ahmed", "role": "system"}, {"name": "Player", "role": "intuition"}, {"name": "A Ebrahimi", "role": "intuition"}],
+  "bankroll": 5000,
+  "game_budget": 1000,
+  "taker_coef": 0.07,
+  "threshold_cents": 3,
+  "sheet": {"id": "15iAY731H49owHWoY49MWOB5FIHkTkp5GFDULZrVRUxg", "form_gid": 1279938956, "picks_gid": 223060591, "slate_gid": 985414954},
+  "form": {"action": "https://docs.google.com/forms/d/e/1FAIpQLSezSUNiWBIUEGRmBs9EMguArIbqlwDMgvvNQg3CURTq-WAi_w/formResponse",
+           "fields": {"player": "entry.1472054418", "ticker": "entry.1783941379", "side": "entry.1225848767", "price": "entry.2005362054", "contracts": "entry.365578985", "note": "entry.729424601"}},
+  "data_url": "https://raw.githubusercontent.com/musiahm/paper-league/data/markets.json"
+}

@@ -1,12 +1,16 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="content-hash" content="4267114b8b8be007"><meta name="generated" content="2026-09-16T05:27:03.067112+00:00">
-<title>Paper League</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>
-  :root{--bg:#F3F4EF;--surface:#FFFFFF;--ink:#16202A;--muted:#5B6672;--rule:#D6DAD2;--accent:#1F5FBF;--accent-ink:#FFFFFF;--yes:#0F7B6C;--no:#B0472C;--yes-bg:#E4F2EE;--no-bg:#F6E7E1;--note-bg:#ECEEE7;--sys:#16202A;--sys-ink:#F3F4EF;
+<title>Paper League</title>
+<meta name="description" content="Standings, games and every bet in the paper league — computed live in the browser from Kalshi prices and the placed bets.">
+<script src="shared.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{--bg:#F3F4EF;--surface:#FFFFFF;--surface-2:#ECEEE7;--ink:#16202A;--muted:#5B6672;--rule:#D6DAD2;--accent:#1F5FBF;--accent-ink:#FFFFFF;--yes:#0F7B6C;--no:#B0472C;--yes-bg:#E4F2EE;--no-bg:#F6E7E1;--warn:#8A5A00;--warn-bg:#F6EBD3;--sys:#16202A;--sys-ink:#F3F4EF;
     --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;--mono:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121820;--surface:#1A222C;--ink:#E7ECEF;--muted:#93A0AC;--rule:#2C3743;--accent:#6D9BFF;--accent-ink:#0B1220;--yes:#3FB7A2;--no:#E07A56;--yes-bg:#14302C;--no-bg:#3A2118;--note-bg:#1F2833;--sys:#E7ECEF;--sys-ink:#121820}}
-  :root[data-theme="dark"]{--bg:#121820;--surface:#1A222C;--ink:#E7ECEF;--muted:#93A0AC;--rule:#2C3743;--accent:#6D9BFF;--accent-ink:#0B1220;--yes:#3FB7A2;--no:#E07A56;--yes-bg:#14302C;--no-bg:#3A2118;--note-bg:#1F2833;--sys:#E7ECEF;--sys-ink:#121820}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121820;--surface:#1A222C;--surface-2:#1F2833;--ink:#E7ECEF;--muted:#93A0AC;--rule:#2C3743;--accent:#6D9BFF;--accent-ink:#0B1220;--yes:#3FB7A2;--no:#E07A56;--yes-bg:#14302C;--no-bg:#3A2118;--warn:#E0B25A;--warn-bg:#3A2E14;--sys:#E7ECEF;--sys-ink:#121820}}
+  :root[data-theme="dark"]{--bg:#121820;--surface:#1A222C;--surface-2:#1F2833;--ink:#E7ECEF;--muted:#93A0AC;--rule:#2C3743;--accent:#6D9BFF;--accent-ink:#0B1220;--yes:#3FB7A2;--no:#E07A56;--yes-bg:#14302C;--no-bg:#3A2118;--warn:#E0B25A;--warn-bg:#3A2E14;--sys:#E7ECEF;--sys-ink:#121820}
+  html,body{background:var(--bg)}
+  body{margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
   .wrap{max-width:960px;margin:0 auto;padding-block:28px 64px;padding-inline:20px}
   header.mast{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;border-bottom:3px solid var(--ink);padding-bottom:12px}
   .mast h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,9vw,72px);line-height:.9;letter-spacing:.01em;margin:0;text-transform:uppercase}
@@ -27,12 +31,9 @@
   .standings td:first-child{font-weight:600;white-space:nowrap}
   .standings .bank{font-family:var(--mono);font-size:16px}
   .pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:2px 7px;border-radius:3px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap;vertical-align:middle}
-  .pill.yes{background:var(--yes-bg);color:var(--yes);border-color:transparent}
-  .pill.no{background:var(--no-bg);color:var(--no);border-color:transparent}
-  .pill.sys{background:var(--sys);color:var(--sys-ink);border-color:transparent}
-  .pill.fire{background:var(--accent);color:var(--accent-ink);border-color:transparent}
-  .pill.win{background:var(--yes-bg);color:var(--yes);border-color:transparent}
-  .pill.loss{background:var(--no-bg);color:var(--no);border-color:transparent}
+  .pill.yes{background:var(--yes-bg);color:var(--yes);border-color:transparent} .pill.no{background:var(--no-bg);color:var(--no);border-color:transparent}
+  .pill.sys{background:var(--sys);color:var(--sys-ink);border-color:transparent} .pill.fire{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+  .pill.win{background:var(--yes-bg);color:var(--yes);border-color:transparent} .pill.loss{background:var(--no-bg);color:var(--no);border-color:transparent}
   .card{background:var(--surface);border:1px solid var(--rule);padding:16px 18px}
   .card ol{margin:0;padding-left:22px}.card li{margin:6px 0;max-width:68ch}
   .think{border-left:4px solid var(--accent);padding:10px 14px;margin:10px 0;background:var(--surface);border-top:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -40,58 +41,98 @@
   .think .head b{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.03em}
   .think .chain{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6}
   .think .chain span{color:var(--ink)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-  .snap{background:var(--surface);border:1px solid var(--rule);padding:12px 14px}
-  .snap .k{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:15px;color:var(--muted)}
-  .snap .v{font-family:var(--mono);font-size:24px;line-height:1.2;margin-top:4px}.snap .d{font-size:13px;color:var(--muted);margin-top:4px}
-  .banner{margin-top:16px;background:var(--no-bg);color:var(--no);border:1px solid var(--no);padding:10px 14px;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:17px}
-  .note{background:var(--note-bg);border-left:3px solid var(--accent);padding:10px 14px;font-size:14px;max-width:72ch}
-  .note ul{margin:6px 0 0;padding-left:20px}.note li{margin:4px 0}
-  .cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:20px;padding:10px 18px;border-radius:3px}
-  .cta.unset{background:var(--note-bg);color:var(--muted);border:1px dashed var(--rule)}
-  .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
+  .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
   .game{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--accent);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
   .game .g{font-family:var(--display);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:.02em}
   .game .k{color:var(--muted);font-size:14px}
-  .game .cta{align-self:flex-start;margin-top:6px;font-size:18px;padding:8px 14px}
-  .game.nocard{border-top-color:var(--rule)}
+  .game .prices{font-family:var(--mono);font-size:13px}
+  .game .cta{align-self:flex-start;margin-top:6px}
+  .game.done{border-top-color:var(--rule)}
+  .cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:18px;padding:8px 14px;border-radius:3px}
+  .cta.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--rule)}
+  .note{background:var(--surface-2);border-left:3px solid var(--accent);padding:10px 14px;font-size:14px;max-width:72ch}
+  .err{background:var(--warn-bg);color:var(--warn);border-left:3px solid var(--warn);padding:10px 14px;font-size:14px;margin-top:12px;max-width:78ch}
+  .loading{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:40px 0}
   a{color:var(--accent)} .muted{color:var(--muted)} .pos{color:var(--yes)} .neg{color:var(--no)}
   footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);max-width:76ch}
+  footer button{font:inherit;color:var(--accent);background:none;border:1px solid var(--rule);border-radius:3px;padding:1px 8px;cursor:pointer}
+  [hidden]{display:none!important}
   @media (max-width:480px){.mast h1{font-size:46px}h2{font-size:24px}td,th{padding:8px 6px}}
 </style></head><body><div class="wrap">
-<header class="mast"><h1>Paper League</h1><div class="week">Week <strong>1</strong> · updated Wed Sep 16, 1:27 AM ET</div></header>
-
-<p class="lede">Ahmed's bets are placed by the System, a fixed rule with no discretion, and every number it used is shown below. The other players bet on intuition. Same paper bankroll, real Kalshi prices, real fees, results from the exchange.</p>
+<header class="mast"><h1 id="title">Paper League</h1><div class="week" id="week"></div></header>
+<div id="loading" class="loading">Loading the ledger…</div>
+<div id="page" hidden>
+<p class="lede" id="lede"></p>
+<div id="errs"></div>
 
 <section id="standings"><h2>Standings <span class="sub">paper P&amp;L after Kalshi taker fees · results from the exchange's settlements</span></h2>
-<div class="scroll"><table class="standings"><thead><tr><th>Player</th><th class="num">Picks</th><th class="num">Open</th><th class="num">W–L</th><th class="num">Fees</th><th class="num">P&amp;L</th><th class="num">Bankroll</th></tr></thead>
-<tbody><tr><td>Ahmed <span class="pill sys">system</span></td><td class="num">0</td><td class="num">0</td><td class="num">0–0</td><td class="num muted">—</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr><tr><td>Player <span class="pill">intuition</span></td><td class="num">2</td><td class="num">2</td><td class="num">0–0</td><td class="num muted">$0.04</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr><tr><td>A Ebrahimi <span class="pill">intuition</span></td><td class="num">0</td><td class="num">0</td><td class="num">0–0</td><td class="num muted">—</td><td class="num ">—</td><td class="num bank">$5,000.00</td></tr></tbody></table></div></section>
+<div class="scroll"><table class="standings"><thead><tr><th>Player</th><th class="num">Bets</th><th class="num">Open</th><th class="num">At risk</th><th class="num">W–L</th><th class="num">Fees</th><th class="num">P&amp;L</th><th class="num">Bankroll</th></tr></thead>
+<tbody id="stRows"></tbody></table></div></section>
 
-<section id="play"><h2>This week's games <span class="sub">open a game, tap the bets you want, place them — intuition players only; the System places its own</span></h2>
-<div class="games"><div class="game"><div class="g">Detroit @ Buffalo</div><div class="k">Thu Sep 17 · up to $1,000 each per game</div><a class="cta" href="games/26SEP17DETBUF.html">Choose &amp; place bets →</a></div></div>
-<p>Every game card shows all of Kalshi's open markets for that game — moneyline, every spread line, every total — with what $1,000 does on each, and a slip to place bets from. Placing stamps the bet with Google's clock; it shows up here within 15 minutes and is scored from the exchange result. The sheet is the ledger and the manual fallback (entered late = marked backfilled): <a href="https://docs.google.com/spreadsheets/d/15iAY731H49owHWoY49MWOB5FIHkTkp5GFDULZrVRUxg/edit" target="_blank" rel="noopener">open the pick sheet</a></p></section>
+<section id="play"><h2>Games <span class="sub">open a game, tap the bets you want, place them — intuition players only; the System places its own</span></h2>
+<div class="games" id="games"></div>
+<p style="margin-top:14px">Every game card shows all of Kalshi's open markets for that game — moneyline, every spread line, every total — with what <span id="budgetTxt"></span> does on each, and a slip to place bets from. A placed bet is stamped by Google's clock, counts here immediately, and is scored from Kalshi's result when the game settles.</p></section>
 
-<section id="system"><h2>How the System is thinking <span class="sub">rule week1-v1 · dcdd7969fde7 · 0 book snapshots evaluated, 0 markets mapped</span></h2>
-<div class="card"><ol>
+<section id="system"><h2>How the System is thinking <span class="sub" id="sysSub"></span></h2>
+<div class="card"><ol id="rules">
 <li>Reference: Pinnacle's two-way line, devigged proportionally — <span class="mono">p = q ÷ (q₁ + q₂)</span>, <span class="mono">q = 1 ÷ decimal odds</span>.</li>
-<li>Buy YES only when the Kalshi ask is at least <b>3¢</b> below that probability; a reference older than 15 minutes is ignored.</li>
-<li><b>50 contracts</b>, one entry per market per day, at the ask. Fee = 0.07 × contracts × P × (1−P), rounded up to the cent.</li></ol></div>
-<h3>Its picks</h3><p class="note">No fires yet in this window. The System only buys when a Kalshi ask sits ≥ 3¢ under Pinnacle’s devigged line; most of the time that is nothing.</p>
-<h3>What it is watching right now</h3>
-<div class="scroll"><table><thead><tr><th>Market</th><th class="num">To tip</th><th class="num">Bid/Ask</th><th class="num">Line</th><th class="num">Edge ¢</th><th class="num">Net ¢</th><th class="num">Peak ¢</th><th>Decision</th></tr></thead>
-<tbody><tr><td colspan="8" class="muted">The System has no reference line yet (no odds_prices Parquet) — it cannot fire until the odds feed is running.</td></tr></tbody></table></div>
-
+<li>Buy YES only when the Kalshi ask is at least <b id="thr">3¢</b> below that probability; a stale reference is ignored.</li>
+<li>Fixed size, one entry per market per day, at the ask. Fee = 0.07 × contracts × P × (1−P), rounded up to the cent.</li></ol></div>
+<h3>Its picks</h3><div id="sysPicks"></div>
+<h3>What it is watching</h3>
+<div class="scroll"><table><thead><tr><th>Market</th><th class="num">Bid/Ask</th><th class="num">Line</th><th class="num">Edge ¢</th><th class="num">Net ¢</th><th>Decision</th></tr></thead><tbody id="watchRows"></tbody></table></div>
 </section>
 
-<section id="picks"><h2>Intuition picks</h2>
-<div class="scroll"><table><thead><tr><th>Player</th><th>Logged</th><th>Market</th><th>Side</th><th class="num">Price × qty</th><th>Result</th><th>Note</th></tr></thead>
-<tbody><tr><td>Player</td><td class="muted">Wed Sep 16, 12:53 AM <span class="pill">card</span></td><td class="tick">DET @ BUF · Lions</td><td><span class="pill yes">YES</span></td><td class="num">33¢ × 1</td><td><span class="pill">open</span> </td><td class="muted">TEST 2 (timezone check) — ignore/delete</td></tr><tr><td>Player</td><td class="muted">Tue Sep 15, 9:52 PM <span class="pill">card</span></td><td class="tick">DET @ BUF · Bills</td><td><span class="pill yes">YES</span></td><td class="num">68¢ × 1</td><td><span class="pill">open</span> </td><td class="muted">TEST from Claude — ignore/delete</td></tr></tbody></table></div></section>
+<section id="picks"><h2>Every bet <span class="sub">newest first · placed on the site unless marked</span></h2>
+<div class="scroll"><table><thead><tr><th>Player</th><th>Placed (ET)</th><th>Market</th><th>Side</th><th class="num">Price × qty</th><th class="num">Cost</th><th>Result</th><th>Note</th></tr></thead>
+<tbody id="pickRows"></tbody></table></div></section>
 
-<section id="slate"><h2>Slate</h2>
-<div class="scroll"><table><thead><tr><th>Game</th><th>Kickoff</th><th>YES tickers</th></tr></thead>
-<tbody><tr><td>Detroit @ Buffalo</td><td>Thu Sep 17</td><td class="tick">KXNFLGAME-26SEP17DETBUF-DET · KXNFLGAME-26SEP17DETBUF-BUF</td></tr></tbody></table></div></section>
-
-<section id="market"><h2>Market snapshot <span class="sub">from the collector's latest Kalshi reads</span></h2><div class="grid"><div class="snap"><div class="k">KXNBAGAME</div><div class="v">6 · 6¢</div><div class="d">open markets · median spread · median depth $4,557 · as of Tue Sep 15, 12:10 AM ET</div></div><div class="snap"><div class="k">KXNFLGAME</div><div class="v">32 · 1¢</div><div class="d">open markets · median spread · median depth $168,394 · as of Tue Sep 15, 12:17 AM ET</div></div><div class="snap"><div class="k">KXNFLSPREAD</div><div class="v">415 · 1¢</div><div class="d">open markets · median spread · median depth $29,464 · as of Tue Sep 15, 12:17 AM ET</div></div><div class="snap"><div class="k">KXNFLTOTAL</div><div class="v">304 · 2¢</div><div class="d">open markets · median spread · median depth $33,177 · as of Tue Sep 15, 12:17 AM ET</div></div></div></section>
-
-<footer>Collector: Kalshi 0/0 ok in 24h, last — ET; odds feed not running. Generated Wed Sep 16, 1:27 AM ET by sports_collector 0.5.0. Prices and depth are the collector's own Kalshi reads; settlements are the exchange's; nothing is estimated.</footer>
-</div></body></html>
+<footer id="foot"></footer>
+</div></div>
+<script>
+const $ = s => document.querySelector(s);
+const {esc, fmt$, fmtK, fmt0, cents, pct, label, fmtET, standings, eventMarkets} = PL;
+const pillRes = x => x.result==="yes"||x.result==="no" ? `<span class="pill ${x.result===x.side?"win":"loss"}">${x.result===x.side?"won":"lost"}</span>` : x.result==="void" ? '<span class="pill">void</span>' : '<span class="pill">open</span>';
+async function main(){
+  let L; try { L = await PL.loadAll(); } catch (e) { $("#loading").innerHTML = `<div class="err">Could not load config.json: ${esc(e.message)}</div>`; return; }
+  const cfg = L.cfg; const st = standings(cfg, L.bets, L.results, L.feed); const fetched = L.markets && L.markets.fetched_at ? new Date(L.markets.fetched_at) : null;
+  const sysName = (cfg.players.find(p=>p.role==="system")||{}).name || "System";
+  document.title = cfg.title || "Paper League"; $("#title").textContent = cfg.title || "Paper League";
+  $("#week").innerHTML = `Week <strong>${esc(cfg.week||"1")}</strong> · ${cfg.competition||"NFL"} on Kalshi · paper only`;
+  $("#lede").textContent = `${sysName}'s bets are placed by the System, a fixed rule with no discretion, and every number it used is shown below. The other players bet on intuition. Same paper bankroll (${fmtK(cfg.bankroll)} each), real Kalshi prices, real fees, results from the exchange.`;
+  $("#errs").innerHTML = L.errors.map(e => `<div class="err">Could not read ${esc(e)} — the page shows what it could load.</div>`).join("");
+  $("#budgetTxt").textContent = fmtK(cfg.game_budget);
+  // standings
+  $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.bankroll-a.bankroll).map(t => `<tr><td>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':'<span class="pill">intuition</span>'}</td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${t.pnl>0?"pos":t.pnl<0?"neg":""}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num bank">${fmt$(t.bankroll)}</td></tr>`).join("");
+  // games
+  const games = L.slate.filter(s => /^(yes|y|true)$/i.test(s.in_slate||""));
+  $("#games").innerHTML = games.length ? games.map(s => { const mk = eventMarkets(L.markets, s.ev); const h = mk.winner.find(m=>m.team===s.ev.home.abbr), a = mk.winner.find(m=>m.team===s.ev.away.abbr);
+      const res = mk.all.find(m => m.kind==="winner" && m.result==="yes"); const done = !!res || (!h && mk.all.some(m=>m.kind==="winner"));
+      const price = h && a ? `${s.ev.home.nick} ${cents(h.yes_ask)} · ${s.ev.away.nick} ${cents(a.yes_ask)}` : done ? (res ? `Final — ${(res.team===s.ev.home.abbr?s.ev.home:s.ev.away).nick} won` : "Final") : "no open markets yet";
+      const placed = st.rows.filter(r => (r.ticker||"").includes(`-${s.ev.suffix}-`)).length;
+      return `<div class="game${done?" done":""}"><div class="g">${esc(s.ev.away.nick)} @ ${esc(s.ev.home.nick)}</div><div class="k">${esc((s.kickoff||"").trim() || s.ev.date_et)} · up to ${fmtK(cfg.game_budget)} each</div><div class="prices">${esc(price)}${placed?` · ${placed} bet${placed>1?"s":""} placed`:""}</div><a class="cta${done?" alt":""}" href="game.html?e=${encodeURIComponent(s.ev.suffix)}">${done?"See the result →":"Choose & place bets →"}</a></div>`; }).join("")
+    : '<div class="game done"><div class="g">No games yet</div><div class="k">Games marked yes on the slate appear here.</div></div>';
+  // the System
+  const feed = L.feed; const rules = (feed&&feed.rules)||{};
+  $("#thr").textContent = `${cfg.threshold_cents||rules.threshold_cents||3}¢`;
+  $("#sysSub").textContent = feed ? `rule ${rules.version||""} ${rules.hash||""} · replayed ${fmtET(feed.generated_at)} ET` : "the collector is not running, so the System has no reference line yet";
+  const ents = (feed&&feed.entries)||[];
+  $("#sysPicks").innerHTML = ents.length ? ents.slice(-12).reverse().map(e => `<div class="think"><div class="head"><b>YES · ${esc(label(e.ticker))}</b><span class="pill fire">fired</span>${pillRes({result:e.result, side:"yes"})}<span class="muted">${fmtET(e.ts_entry)} ET · ${e.contracts} contracts at ${cents(e.yes_ask)}${e.pnl==null?"":` · P&amp;L <b class="${e.pnl>0?"pos":"neg"}">${fmt$(e.pnl)}</b>`}</span></div>
+      <div class="chain">Pinnacle <span>${e.ref_price_decimal||"—"}</span> → devig <span>${pct(e.p_ref)}</span> · Kalshi bid/ask <span>${cents(e.yes_bid)}/${cents(e.yes_ask)}</span> · raw edge <span>${(e.edge_raw_cents||0).toFixed(2)}¢</span> · fee ${(e.taker_fee_cents||0).toFixed(2)}¢ → net <span>${(e.edge_net_taker_cents||0).toFixed(2)}¢</span></div></div>`).join("")
+    : `<p class="note">No fires yet. The System only buys when a Kalshi ask sits ≥ ${cfg.threshold_cents||3}¢ under Pinnacle's devigged line; most of the time that is nothing${feed?"":" — and until the collector runs it has no line to compare against, so it sits out"}.</p>`;
+  const manual = st.rows.filter(r => r.role==="system" && r.source!=="system");
+  if (manual.length) $("#sysPicks").innerHTML += `<div class="note"><b>${manual.length} bet${manual.length>1?"s":""} placed under ${esc(sysName)}'s name by hand</b> — counted in the standings, but not the System's: ${manual.map(m => esc(label(m.ticker)) + " " + m.side.toUpperCase() + " " + cents(m.price) + " × " + m.contracts).join("; ")}</div>`;
+  const watch = (feed&&feed.watching)||[];
+  $("#watchRows").innerHTML = watch.length ? watch.slice(0,25).map(w => `<tr><td class="tick">${esc(label(w.ticker))}</td><td class="num">${cents(w.yes_bid)}/${cents(w.yes_ask)}</td><td class="num">${pct(w.p_ref)}</td><td class="num">${w.edge_raw_cents==null?"—":w.edge_raw_cents.toFixed(2)}</td><td class="num">${w.edge_net_taker_cents==null?"—":w.edge_net_taker_cents.toFixed(2)}</td><td>${w.fires?'<span class="pill fire">fires</span>':'<span class="muted">'+esc(w.reason||"")+'</span>'}</td></tr>`).join("")
+    : `<tr><td colspan="6" class="muted">${feed ? "Nothing mapped in the last replay." : "Nothing yet — the collector has to be running for the System to have a reference line."}</td></tr>`;
+  // every bet
+  const rows = st.rows;
+  $("#pickRows").innerHTML = rows.length ? rows.map(x => `<tr><td>${esc(x.player)}${x.role==="system"?' <span class="pill sys">system</span>':""}</td><td class="muted">${x.ts?fmtET(x.ts):"—"}${x.source==="sheet"?' <span class="pill">sheet</span>':""}${x.backfilled?' <span class="pill">backfilled</span>':""}</td><td class="tick">${esc(label(x.ticker))}</td><td><span class="pill ${x.side}">${x.side.toUpperCase()}</span></td><td class="num">${cents(x.price)} × ${x.contracts}</td><td class="num">${fmt$(x.price*x.contracts)}</td><td>${pillRes(x)} ${x.pnl==null?"":`<span class="${x.pnl>0?"pos":"neg"}">${fmt$(x.pnl)}</span>`}</td><td class="muted">${esc((x.note||"").slice(0,80))}</td></tr>`).join("")
+    : '<tr><td colspan="8" class="muted">No bets placed yet.</td></tr>';
+  $("#foot").innerHTML = `Kalshi prices and results as of ${fetched ? esc(fmtET(fetched,{weekday:"short"})) + " ET" : "unknown"} (a GitHub Action refreshes them every 5 minutes) · bets read from the league's sheet as you loaded this page <button type="button" id="reload">reload</button>. Fees are Kalshi's taker schedule; settlement is Kalshi's; nothing is estimated. Paper money.`;
+  $("#reload").onclick = () => location.reload();
+  $("#loading").hidden = true; $("#page").hidden = false;
+}
+main();
+</script>
+</body></html>

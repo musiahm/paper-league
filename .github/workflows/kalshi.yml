@@ -1,0 +1,39 @@
+name: kalshi-prices
+# Every 5 minutes: read the slate from the league sheet, pull every Kalshi market for those games, and publish markets.json
+# on the orphan `data` branch (force-pushed, one commit — the Pages site on `main` is untouched, so no Pages builds are spent).
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kalshi-prices
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch markets
+        run: |
+          python scripts/fetch_markets.py --sheet-id "$SHEET_ID" --slate-gid "$SLATE_GID" --out /tmp/markets.json
+        env:
+          SHEET_ID: 15iAY731H49owHWoY49MWOB5FIHkTkp5GFDULZrVRUxg
+          SLATE_GID: "985414954"
+      - name: Publish to the data branch
+        run: |
+          set -e
+          mkdir -p /tmp/data && cd /tmp/data
+          git init -q -b data
+          git config user.name "kalshi-prices[bot]"
+          git config user.email "kalshi-prices@users.noreply.github.com"
+          cp /tmp/markets.json markets.json
+          printf 'Data branch written by the kalshi-prices workflow. Do not edit by hand.\n' > README.md
+          git add -A && git commit -q -m "markets $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data:data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

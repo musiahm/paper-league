@@ -1,0 +1,269 @@
+{
+ "_about": "Hand-maintained homework for one game. Keys: event (overrides: venue, kickoff_text, kickoff_iso, tv, sub_title, kicker, deadline_text), consensus (a sportsbook line to compare with), research (the Homework section). Delete the file and the card still renders from Kalshi alone.",
+ "event": {
+  "venue": "Highmark Stadium, Orchard Park, NY",
+  "kickoff_text": "Thursday, September 17, 2026 · 8:15 PM ET",
+  "kickoff_iso": "2026-09-18T00:15:00Z",
+  "tv": "Prime Video",
+  "sub_title": "Week 2 · Thursday Night Football",
+  "deadline_text": "Kickoff, 8:15 PM ET"
+ },
+ "consensus": {
+  "label": "Sportsbook consensus",
+  "source": "TheSpread.com, Sep 15 2026",
+  "url": "https://www.thespread.com/nfl-articles/lions-vs-bills-odds-spread-public-betting-how-to-watch-september-17/",
+  "spread": {
+   "home_line": -4.5,
+   "home_price": -110,
+   "away_price": -110
+  },
+  "total": {
+   "line": 53.5,
+   "over_price": -110,
+   "under_price": -110
+  },
+  "moneyline": {
+   "home": -220,
+   "away": 180
+  },
+  "public_spread_tickets_away_pct": 74,
+  "opener": {
+   "source": "DraftKings via SI.com, Sep 14 2026",
+   "url": "https://www.si.com/betting/lions-vs-bills-prediction-odds-spread-injuries-trends-for-nfl-week-2-2026",
+   "spread": "Bills −3 (−115) / Lions +3 (−105)",
+   "total": "52.5 (O −105 / U −115)",
+   "moneyline": "Bills −166 / Lions +140"
+  },
+  "injuries": {
+   "source": "SI.com, Sep 14 2026",
+   "DET": "Christian Mahogany (questionable); Kerby Joseph, Brian Branch (PUP); Cade Mays, Isiah Pacheco (IR)",
+   "BUF": "Ty Johnson, Jedrick Wills Jr. (questionable); Tyrell Shavers (PUP)"
+  }
+ },
+ "research": {
+  "as_of": "Tue Sep 15, 11:45 PM ET",
+  "line": {
+   "text": "Opened Bills −3 / total 51.5 (BetMGM); now Bills −4.5 / 53.5. The spread went through the key number 3 toward Buffalo and the total climbed two points.",
+   "splits": [
+    {
+     "src": "DraftKings via RotoWire, Sep 15",
+     "url": "https://www.rotowire.com/football/article/nfl-week-2-odds-biggest-line-moves-betting-splits-and-key-injuries-134428",
+     "text": "Spread: Bills 64% of bets, 91% of money — the money is heavily Buffalo."
+    },
+    {
+     "src": "TheSpread.com, Sep 15",
+     "url": "https://www.thespread.com/nfl-articles/lions-vs-bills-odds-spread-public-betting-how-to-watch-september-17/",
+     "text": "Spread: 74% of tickets on the Lions."
+    }
+   ],
+   "conflict": "Those two disagree on ticket share (they are different books at different times); they agree on the direction of the move. Read it as: whoever is putting the big money in is on Buffalo, and the market moved with them.",
+   "kalshi": "Kalshi's winner market has Buffalo at 67–68%, about 1.7 points more Bills than the sportsbook moneyline devigs to (65.8%)."
+  },
+  "week1": [
+   {
+    "team": "BUF",
+    "head": "Bills 36, Texans 31 (at Houston, Sep 13)",
+    "text": "Josh Allen 20/29, 334 yards, no turnovers; game-winning 96-yard drive. New WR D.J. Moore 100 yards and a TD; TE Dalton Kincaid a career-high 130 yards. The defense, in coordinator Jim Leonhard's debut, let Houston convert nine third/fourth downs and allowed 31; CB Christian Benford struggled against Nico Collins. Joe Brady's first win as head coach.",
+    "src": "Yahoo/D&C (Sal Maiorana), Sep 13; r/buffalobills",
+    "url": "https://sports.yahoo.com/articles/4-things-stood-bills-exciting-230308870.html"
+   },
+   {
+    "team": "DET",
+    "head": "Lions 31, Saints 30 in OT (Detroit, Sep 13)",
+    "text": "Jared Goff 26/39, 206 yards, 2 TD, 0 INT. Jahmyr Gibbs 29 carries, 156 yards, 2 TD (team 165 rushing). Amon-Ra St. Brown 10 catches, 2 TD including the OT winner. Detroit won the turnover battle 3–1 and still needed a failed Saints two-point try to survive: New Orleans put up 469 yards, mostly after halftime. Played a full overtime on the short week.",
+    "src": "detroitlions.com recap, Sep 13",
+    "url": "https://www.detroitlions.com/news/recap-lions-vs-saints-goff-stbrown-barnes"
+   }
+  ],
+  "injuries": {
+   "as_of": "Monday's official report plus Tuesday's practice as reported live by the beat writers on X (Tue Sep 15 afternoon). Wednesday's report and final game statuses are still to come.",
+   "url": "https://www.detroitlionspodcast.com/dlp-beat-bot/2026/09/15/lions-injury-report-week-2/",
+   "DET": [
+    [
+     "Christian Mahogany",
+     "LG",
+     "hip/knee",
+     "DNP Monday and Tuesday. Campbell (Mon): not serious long-term, but 'could be tough to get him ready for Thursday'. Ben Bartch would start"
+    ],
+    [
+     "Blake Miller",
+     "T",
+     "knee",
+     "DNP Monday and Tuesday; says he's 'optimistic' about playing and 'doing everything I humanly can'"
+    ],
+    [
+     "D.J. Reed",
+     "CB",
+     "foot",
+     "NEW Tuesday — limited (Justin Rogers, Nolan Bianchi)"
+    ],
+    [
+     "Juice Scruggs",
+     "C/OL",
+     "knee",
+     "limited both days — starting at center with Cade Mays (wrist) on IR until at least Oct 11"
+    ],
+    [
+     "Christian Izien",
+     "DB",
+     "groin",
+     "full — 'looks good to go'"
+    ],
+    [
+     "Kerby Joseph (S) and Brian Branch (DB)",
+     "secondary",
+     "knee / Achilles",
+     "PUP — both 2024 All-Pro/Pro Bowl; not available"
+    ],
+    [
+     "Isiah Pacheco (RB), Payton Turner (Edge), Damone Clark (LB), Kendrick Law (WR)",
+     "",
+     "",
+     "IR"
+    ]
+   ],
+   "BUF": [
+    [
+     "Cole Bishop",
+     "S",
+     "left leg (calf per Parrino)",
+     "did NOT practice Tuesday, leg sleeve on; the official sheet lists him higher 'on a technicality' (Buscaglia). Monday he was listed full"
+    ],
+    [
+     "T.J. Sanders",
+     "DL",
+     "knee / illness",
+     "sent home ill Tuesday; was inactive Week 1"
+    ],
+    [
+     "D.J. Moore",
+     "WR",
+     "—",
+     "not on Monday's report; Tuesday he was at stretching but left before individual drills, then returned to the field (Fitzgerald). Watch Wednesday"
+    ],
+    [
+     "Terrel Bernard",
+     "ILB",
+     "calf",
+     "limited Monday — played all 79 defensive snaps Week 1"
+    ],
+    [
+     "Ty Johnson",
+     "RB",
+     "hamstring",
+     "limited Monday; practising Tuesday"
+    ],
+    [
+     "Bradley Chubb (OLB, thumb) · Jordan Hancock (DB, quad)",
+     "",
+     "",
+     "full"
+    ],
+    [
+     "Tyrell Shavers (WR)",
+     "",
+     "ACL",
+     "PUP; Phidarian Mathis (DL) suspended through Week 3"
+    ]
+   ],
+   "read": "Two days in, the story is unchanged and a little worse for Detroit: left guard and a tackle have not practised, the starting center is limited, the starting center from camp is on IR, and now a starting corner (D.J. Reed) is limited — against Allen, Moore and Kincaid, with Joseph and Branch already out. Buffalo's new worry is its own secondary: Cole Bishop, the safety Buscaglia thinks could be the defense's next star, did not practise Tuesday. Nothing here is a surprise to the market — the line moved 1.5 toward Buffalo before any of it was official — but a Bishop or Moore 'out' on Wednesday would move it again."
+  },
+  "weather": {
+   "text": "National Weather Service (issued Mon Sep 14): showers likely in the morning and early afternoon Thursday, then mostly cloudy; kickoff-time conditions about 61–65°F, 30% chance of a shower, wind light and variable. Not a weather game unless the forecast changes.",
+   "url": "https://forecast.weather.gov/MapClick.php?lat=42.76718000000005&lon=-78.74387999999999",
+   "src": "NWS Buffalo, Sep 14"
+  },
+  "venue": {
+   "text": "First game ever in the new Highmark Stadium. The Bills tested the new grass field on Tuesday (Sal Maiorana); Joe Brady on the opener: not trying to put on a show, 'trying to put on a clinic'. Nobody has a home-field number for the building; last season the Bills were 4–5 against the spread at home.",
+   "src": "CBS Sports, Sep 14; @salmaiorana and @kfitz134 on X, Sep 15",
+   "url": "https://www.cbssports.com/nfl/news/2026-nfl-week-2-early-odds-bills-eagles/"
+  },
+  "trends": [
+   [
+    "Bills as favourites of 4.5+ last season",
+    "4–7 ATS",
+    "FanDuel Research, Sep 15",
+    "https://www.fanduel.com/research/bills-vs-lions-predictions-odds-picks-best-bets-for-nfl-week-2-thursday-night-football-2026"
+   ],
+   [
+    "Lions as underdogs of 4.5+ last season",
+    "2–1 ATS",
+    "FanDuel Research, Sep 15",
+    "https://www.fanduel.com/research/bills-vs-lions-predictions-odds-picks-best-bets-for-nfl-week-2-thursday-night-football-2026"
+   ],
+   [
+    "Lions in their last six games as 3+ point underdogs",
+    "5–1 ATS",
+    "Covers, Sep 15",
+    "https://www.covers.com/nfl/lions-vs-bills-predictions-odds-early-leans-week-2-2026"
+   ],
+   [
+    "Overs last season",
+    "Bills 9 of 17 · Lions 10 of 17",
+    "FanDuel Research, Sep 15",
+    "https://www.fanduel.com/research/bills-vs-lions-predictions-odds-picks-best-bets-for-nfl-week-2-thursday-night-football-2026"
+   ],
+   [
+    "Last meeting (2024)",
+    "Bills 48, Lions 42 — 90 points",
+    "Covers, Sep 15",
+    "https://www.covers.com/nfl/lions-vs-bills-predictions-odds-early-leans-week-2-2026"
+   ],
+   [
+    "Week 1 combined",
+    "Both offenses 30+, both defenses allowed 30+",
+    "CBS Sports, Sep 14",
+    "https://www.cbssports.com/nfl/news/2026-nfl-week-2-early-odds-bills-eagles/"
+   ]
+  ],
+  "voices": [
+   {
+    "who": "Lions beat writers on X (Tue Sep 15)",
+    "take": "Nolan Bianchi (Detroit News) posted the Tuesday estimated report: no practice again for Mahogany and Blake Miller, D.J. Reed limited (foot), Scruggs limited, Izien fine. Justin Rogers: of the Lions' defensive starters from the 48–42 game in 2024, only Jack Campbell and Alim McNeill will start this week — this is a very different Detroit defense. Dave Birkett: Campbell says Mahogany's injury isn't serious long-term but Thursday is 'tough'.",
+    "url": "https://x.com/nolanbianchi"
+   },
+   {
+    "who": "Bills beat writers on X (Tue Sep 15)",
+    "take": "Joe Buscaglia (The Athletic), Matt Parrino, Katherine Fitzgerald: Cole Bishop did not practise (leg sleeve), T.J. Sanders sent home ill, Ty Johnson back out there, D.J. Moore left early then returned. Parrino: Jim Leonhard saw 'a lot of ugly' between the two Rousseau strip-sacks vs Houston. Maiorana: the Bills' defense 'needs to get some things fixed' against a much better Lions offense.",
+    "url": "https://x.com/JoeBuscaglia"
+   },
+   {
+    "who": "Betting media on X (Tue Sep 15)",
+    "take": "Action Network logged the early move as Lions +3.5 → +4.5. Warren Sharp's Week 1 table has Detroit second in the league in yards before contact per rush (+2.55) — the Gibbs run game is real. No sharp-side call on this game from the accounts I could read; the rest of the X search results were ticket resellers and parlay touts.",
+    "url": "https://x.com/ActionNetworkHQ"
+   },
+   {
+    "who": "Covers (early leans, Sep 15)",
+    "take": "Lions +4.5 and Over 53.5 — Buffalo's defense just allowed 31 to Houston; both offenses combined for 67 in Week 1; short-week fatigue is an overblown narrative.",
+    "url": "https://www.covers.com/nfl/lions-vs-bills-predictions-odds-early-leans-week-2-2026"
+   },
+   {
+    "who": "SI Betting (Sep 14, when the line was −3)",
+    "take": "Bills −3.",
+    "url": "https://www.si.com/betting/lions-vs-bills-prediction-odds-spread-injuries-trends-for-nfl-week-2-2026"
+   },
+   {
+    "who": "RotoWire (Sep 15)",
+    "take": "Early Bills backers got closing-line value; the move says the market is upgrading Buffalo's offense.",
+    "url": "https://www.rotowire.com/football/article/nfl-week-2-odds-biggest-line-moves-betting-splits-and-key-injuries-134428"
+   },
+   {
+    "who": "r/sportsbook daily thread (Sep 15, three relevant comments out of ~36)",
+    "take": "One bettor thinks a 102.5 Lions team-rushing prop is mispriced after 165 yards last week; another is laddering Allen passing yards because Detroit's secondary is, in his words, Swiss cheese; a third has Bills on a parlay. No consensus, thin thread.",
+    "url": "https://www.reddit.com/r/sportsbook/comments/1wgp5wm/nfl_betting_and_picks_91526_tuesday/"
+   },
+   {
+    "who": "Fan subreddits (top posts this week)",
+    "take": "r/detroitlions: relief after surviving the Saints' second-half comeback — 'a win is a win'. r/buffalobills: celebrating Joe Brady's first win and D.J. Moore as the new WR1. Mood, not information.",
+    "url": "https://www.reddit.com/r/detroitlions/top/?t=week"
+   }
+  ],
+  "x_note": "X (Twitter) was read through your signed-in Chrome on Tue Sep 15 evening: beat writers for both teams and the betting-media accounts. Generic searches for the game are mostly ticket resellers and parlay touts and were ignored.",
+  "unknowns": [
+   "Wednesday's final injury report and game statuses — Mahogany, Blake Miller, D.J. Reed (DET); Cole Bishop, D.J. Moore, T.J. Sanders (BUF).",
+   "How the new stadium plays (turf tested Tuesday; no game data).",
+   "Ticket-share numbers conflict between sources; the money-share figure (91% Bills at DraftKings) is a single-book number.",
+   "Prices move until 8:15 PM ET; everything here is as of the snapshot."
+  ]
+ }
+}
