@@ -265,5 +265,94 @@
    "Ticket-share numbers conflict between sources; the money-share figure (91% Bills at DraftKings) is a single-book number.",
    "Prices move until 8:15 PM ET; everything here is as of the snapshot."
   ]
+ },
+ "tracks": {
+  "as_of": "Thu Sep 17, 1:40 AM ET",
+  "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Neither is the System: the System needs a live Pinnacle line and sits out until the collector runs.",
+  "research": {
+   "player": "Ahmed research",
+   "method": "Bet whatever most people think will win — sportsbook ticket counts, prediction-market crowds, expert panels, Reddit and X — at the best Kalshi price for that side.",
+   "pick": "Bills to win (moneyline)",
+   "ticker": "KXNFLGAME-26SEP17DETBUF-BUF",
+   "side": "yes",
+   "verdict": "Everyone thinks Buffalo wins. The only place Detroit leads is the count of small spread tickets at one aggregator, and even there the money is on Buffalo.",
+   "evidence": [
+    {
+     "text": "DraftKings: 80% of moneyline bets and 64% of spread bets are on the Bills (line opened Bills −3, now −5.5; total 52.5 → 54.5).",
+     "src": "SI.com, Sep 16 2026",
+     "url": "https://www.si.com/betting/lions-vs-bills-odds-movement-spread-continues-to-climb-towards-buffalo-ahead-of-thursday-night"
+    },
+    {
+     "text": "Covers consensus: 67% of picks on the Bills against the spread.",
+     "src": "Covers matchups, Sep 17 2026",
+     "url": "https://www.covers.com/sports/nfl/matchups"
+    },
+    {
+     "text": "Ticket count vs money: 74% of spread tickets on Detroit at one shop, 66% of the money on Buffalo — the crowd that bets small likes the points, the crowd that bets big likes the Bills.",
+     "src": "SportsBettingDime public betting trends",
+     "url": "https://www.sportsbettingdime.com/nfl/public-betting-trends/"
+    },
+    {
+     "text": "Prediction markets: Kalshi has Buffalo at 68¢ on $1.8M of volume in the winner market; Polymarket's write-up calls the spread a coin flip but the winner market leans Buffalo the same way.",
+     "src": "Kalshi public API, Sep 17 1:35 AM ET; @PredictInsights on X, Sep 15",
+     "url": "https://x.com/PredictInsights"
+    },
+    {
+     "text": "r/sportsbook game thread: the straight-up picks are Bills (36 points against a good Texans defense, new stadium, Allen); the Lions takes are all about the points (+5.5/+6.5), citing 'Week 2 TNF favourites 3-10-1 ATS since 2012' — a 14-game trend, not a reason.",
+     "src": "r/sportsbook, Sep 17 2026",
+     "url": "https://old.reddit.com/r/sportsbook/comments/1wihdy5/nfl_lions_vs_bills_betting_and_picks_91726/"
+    },
+    {
+     "text": "X polls are tiny (3–21 votes) and mostly tout accounts — no usable signal; the beat writers were posting about Buffalo wings, not predictions. Trend quoted everywhere: Bills 14-2 straight up as home favourites since 2024; Dan Campbell 8-18 as a road underdog.",
+     "src": "X search, Sep 17 2026; VSiN, Sep 16",
+     "url": "https://vsin.com/nfl/lions-vs-bills-predictions-week-2-thursday-night-football-odds-picks-and-player-props/"
+    },
+    {
+     "text": "Every model we could find also has Buffalo: ESPN FPI 66%, Opta 70%, Dimers 65%, nfelo's line Bills −5.5.",
+     "src": "see the statistics track",
+     "url": "https://www.espn.com/nfl/game/_/gameId/401872932/lions-bills"
+    }
+   ]
+  },
+  "statistics": {
+   "player": "Ahmed statistics",
+   "method": "Estimate each outcome's probability from models and the sharpest sportsbook prices, subtract Kalshi's ask and fee, and bet the line with the best expected profit — if there is one.",
+   "pick": "Under 54.5 points",
+   "ticker": "KXNFLTOTAL-26SEP17DETBUF-55",
+   "side": "no",
+   "verdict": "On who wins, Kalshi is priced right: Buffalo ~67% by every model and book, 68¢ on Kalshi — no edge left after the fee, either side. The one line Kalshi has wrong is the total: sportsbooks price the game at 54.5 with the under slightly favoured (DraftKings over −108 / under −112 → 49.6% over), Kalshi asks 53¢ for the over. Under 54.5 at 48¢ is the only bet on the board with positive expected value after fees, and it is small — about +1¢ to +3¢ a contract.",
+   "evidence": [
+    {
+     "text": "Bills win probability: ESPN FPI 66.2%, Opta 69.8%, predictionmarketspicks 65%, Dimers 64.6% (Sep 14), nfelo model line Bills −5.5 (≈68%); DraftKings −238/+195 devigs to 67.5%. Kalshi: Bills 68¢, Lions 32¢. Edge on either side: under 1¢ before a 1.5¢ fee.",
+     "src": "ESPN, The Analyst, PMP, Dimers, nfelo, DraftKings via SI",
+     "url": "https://theanalyst.com/articles/2026-week-2-nfl-predictions"
+    },
+    {
+     "text": "Spread: DraftKings moved to Bills −5.5 (−105) after Detroit ruled out RT Blake Miller and LG Christian Mahogany; other books −4.5 to −5. Kalshi's ladder (Bills −4.5 at 52¢, −5.5 at 49¢) sits between them — no edge after fees on any margin.",
+     "src": "CBS Sports injury report, Sep 16 8:17 PM ET; nfelo games page",
+     "url": "https://www.cbssports.com/nfl/news/nfl-week-2-injury-report-lions-down-two-offensive-lineman-bills/"
+    },
+    {
+     "text": "Total: DraftKings 54.5 (over −108 / under −112 → over 49.6% devigged); Lucky Rebel 55; VSiN's 53.5 was priced over −120 / under +100 (≈ a 54). Kalshi's over-54.5 market: 52¢ bid / 53¢ ask on $1.06M volume, i.e. the crowd here is ~3¢ more over than the books.",
+     "src": "SI/DK, Betting News, VSiN; Kalshi public API Sep 17 1:35 AM ET",
+     "url": "https://www.bettingnews.com/articles/nfl/lions-bills-nfl-expert-picks-predictions-9-17/"
+    },
+    {
+     "text": "Models on the total disagree with each other: SportsLine's simulation projects 58 points and the over 54.5 in 57% of runs; predictionmarketspicks projects 48.8; Dimers had the under 53.5 at 53.4%. The sportsbook price is the tie-breaker — it is where the most money has already voted.",
+     "src": "CBS/SportsLine Sep 16; PMP Sep 16; Dimers Sep 14",
+     "url": "https://www.cbssports.com/betting/news/bills-lions-predictions-odds-time-week-2-nfl-thursday-night-football-picks-best-bets/"
+    },
+    {
+     "text": "Why the under rather than a side: Detroit is missing two starting offensive linemen against Buffalo's pass rush and has its two best safeties (Kerby Joseph, Brian Branch) on PUP; that argues for fewer Lions points and more Bills points — roughly a wash on the total, which is why the books barely moved it. Weather is 75°F and calm, no help either way.",
+     "src": "CBS Sports; ESPN game page",
+     "url": "https://www.espn.com/nfl/game/_/gameId/401872932/lions-bills"
+    },
+    {
+     "text": "The math at $1,000: 2,083 contracts at 48¢ = $999.84, Kalshi fee $36.40; wins +$1,046.76 if the game stays at 54 or fewer, loses $1,036.24 otherwise; break-even 49.7%. Expected profit at a true 50.4% under: about +$15 — real but tiny. The honest statistical answer for this game is 'the market is right'; this is the least-wrong bet, not a strong one.",
+     "src": "Kalshi fee schedule 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  }
  }
 }

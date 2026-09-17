@@ -151,6 +151,13 @@
   .voice{border-bottom:1px solid var(--rule);padding:10px 0} .voice:last-child{border-bottom:0}
   .voice b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:16px}
   .voice p{margin:4px 0 0;font-size:14.5px;max-width:none}
+  .track{background:var(--surface);border:1px solid var(--rule);border-top:5px solid var(--accent);padding:16px 18px}
+  .track h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:24px;margin:0 0 4px}
+  .track .method{font-size:14px;color:var(--muted);margin:0 0 10px}
+  .track .pick{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.05;margin:6px 0 2px}
+  .track .status{font-family:var(--mono);font-size:13px;margin:0 0 10px}
+  .track .verdict{font-size:15px;margin:0 0 10px}
+  .track ul{margin:0;padding-left:18px;font-size:14px} .track li{margin:6px 0} .track li .src{font-size:12.5px;color:var(--muted)} .track li .src a{color:var(--accent)}
   footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);max-width:86ch}
   footer a,.sub a,.note a,.tile a{color:var(--accent)}
   [hidden]{display:none!important}
@@ -162,7 +169,7 @@
   @media (prefers-reduced-motion:no-preference){.chart rect{transition:opacity .15s}}
 </style></head><body>
 <div class="wrap">
-<nav class="topnav"><a id="navLeague" href="index.html">← League page</a><span>·</span><a href="#builder">Place your bets</a><span>·</span><a href="#homework" id="navHw">Homework</a></nav>
+<nav class="topnav"><a id="navLeague" href="index.html">← League page</a><span>·</span><a href="#builder">Place your bets</a><span>·</span><a href="#homework" id="navHw">Homework</a><span>·</span><a href="#tracks" id="navTr">Ahmed's tracks</a></nav>
 <div id="loading" class="loading">Loading Kalshi prices and the league ledger…</div>
 <div id="page" hidden>
 <header>
@@ -235,6 +242,12 @@
   <ul class="unk" id="hwUnknowns"></ul>
 </section>
 
+<section id="tracks" hidden>
+  <h2>Ahmed's two tracks <span class="chip plain" id="trAsOf"></span></h2>
+  <p class="sub" id="trIntro"></p>
+  <div class="two" id="trCards"></div>
+</section>
+
 <section id="system">
   <div class="sysbox">
     <h3 id="sysTitle">What the System is doing</h3>
@@ -302,7 +315,8 @@ async function assemble(){
     snapshot: {kalshi_et: fetched ? PL.fmtET(fetched, {weekday:"short"}) + " ET" : "unknown (prices not loaded)", fetched},
     league: {bankroll: cfg.bankroll, game_budget: cfg.game_budget, players: cfg.players, taker_coef: cfg.taker_coef||0.07, threshold_cents: cfg.threshold_cents||3, site_url: "index.html", form: cfg.form||null},
     winner: mk.winner, spread: mk.spread, total: mk.total,
-    consensus: (R && R.consensus) || null, research: (R && R.research) || null,
+    consensus: (R && R.consensus) || null, research: (R && R.research) || null, tracks: (R && R.tracks) || null,
+    ledger: st.rows.map(r => ({player:r.player, ticker:r.ticker, side:r.side, price:r.price, contracts:r.contracts, ts:r.ts?r.ts.toISOString():null, result:r.result, pnl:r.pnl})),
     standings: st.table.map(t => Object.assign({placed_here: Math.round((placed[t.player]||0)*100)/100}, t)),
     system_watch: watch,
     final: winnerResults.length ? (winner ? `Final: ${(winner.team===ev.home.abbr?ev.home:ev.away).nick} won` : "Final: settled") : null,
@@ -343,19 +357,20 @@ document.title = `${AWAY.nick}–${HOME.nick} Game Card`; $("#navHw").href = "#h
 $("#kicker").textContent = E.kicker || `${E.competition||"NFL"} · ${E.sub_title||""}`;
 $("#h1away").textContent = AWAY.nick; $("#h1home").textContent = HOME.nick;
 $("#kickoff").textContent = E.kickoff_text || (E.kickoff_iso ? new Date(E.kickoff_iso).toLocaleString("en-US",{timeZone:"America/New_York",weekday:"long",month:"long",day:"numeric",hour:"numeric",minute:"2-digit"}) + " ET" : "kickoff time not set");
-$("#venue").textContent = E.venue || ""; $("#snap").textContent = D.snapshot.kalshi_et; $("#navHw").hidden = !D.research;
+$("#venue").textContent = E.venue || ""; $("#snap").textContent = D.snapshot.kalshi_et; $("#navHw").hidden = !D.research; $("#navTr").hidden = !D.tracks;
 $("#errs").innerHTML = D.errors.map(e => `<div class="err">Could not read ${esc(e)} — the page shows what it could load.</div>`).join("") + (D.winner.length ? "" : (D.final ? "" : '<div class="err">No open Kalshi markets for this game right now (not listed yet, or already closed).</div>'));
 $("#final").hidden = !D.final; $("#final").textContent = D.final || "";
 $("#refresh").onclick = async () => { $("#refresh").textContent = "refreshing…"; try { D = await assemble(); render(); } catch (e) { $("#refresh").textContent = "refresh failed"; } };
 $("#stakes").innerHTML = [["Paper bankroll", fmtK(D.league.bankroll), "each · imaginary money"], ["On this game", fmtK(BUDGET), "each · one bet or several"],
-  ["Who bets", String(D.league.players.length), D.league.players.map(p => p.name + (p.role==="system"?" (System)":"")).join(" · ")],
+  ["Who bets", String(D.league.players.length), D.league.players.map(p => p.name).join(" · ")],
   ["Deadline", E.deadline_text || "kickoff", "bets placed after kickoff do not count", "txt"]]
   .map(([k,v,d,x]) => `<div class="stake"><div class="k">${k}</div><div class="v${x?" "+x:""}">${v}</div><div class="d">${d}</div></div>`).join("");
 
 // ---- bankrolls
 const ST = D.standings || D.league.players.map(p => ({player:p.name, role:p.role, bankroll:D.league.bankroll, pnl:0, settled:0, open:0, placed_here:0}));
 $("#bankSub").innerHTML = `Everyone started at ${fmtK(D.league.bankroll)}. Bankroll = start + settled P&amp;L after Kalshi fees, from every bet placed so far; this game puts up to ${fmtK(BUDGET)} each at risk. Settlement comes from Kalshi's results the next time the prices refresh.`;
-$("#bankTiles").innerHTML = ST.map(t => `<div class="tile"><div class="k"><span>${esc(t.player)}</span><span class="chip ${t.role==="system"?"sys":"plain"}">${t.role==="system"?"the System bets for him":"intuition"}</span></div>
+const roleLabel = t => { const p = D.league.players.find(x => x.name===t.player); return p && p.label ? p.label : (t.role==="system" ? "the System bets for him" : t.role); };
+$("#bankTiles").innerHTML = ST.map(t => `<div class="tile"><div class="k"><span>${esc(t.player)}</span><span class="chip ${t.role==="system"?"sys":"plain"}">${esc(roleLabel(t))}</span></div>
   <div class="side" style="border-top-color:${t.role==="system"?"var(--sys)":"var(--accent)"}"><div class="lab">Bankroll</div><div class="price">${fmt$(t.bankroll)}</div><div class="imp">settled P&amp;L ${fmt$(t.pnl||0)} · ${t.settled||0} settled · ${t.open||0} open</div></div>
   <div class="grid2"><div class="l">Placed on this game</div><div class="r">${fmt$(t.placed_here||0)}</div><div class="l">Left to place here</div><div class="r">${fmt$(Math.max(0, BUDGET-(t.placed_here||0)))}</div></div></div>`).join("");
 
@@ -496,6 +511,17 @@ function barChart(el, title, desc, bars, opts){
   $("#hwUnknowns").innerHTML = (R.unknowns||[]).map(u => `<li>${esc(u)}</li>`).join("");
 })();
 
+// ---- Ahmed's two tracks (picked by Claude; the bet itself is read from the ledger like everyone else's)
+(function(){ const T = D.tracks; if (!T) return; $("#tracks").hidden = false; $("#trAsOf").textContent = T.as_of ? "as of " + T.as_of : ""; $("#trIntro").textContent = T.intro || "";
+  const cards = [];
+  for (const key of ["research","statistics"]) { const tr = T[key]; if (!tr) continue;
+    const mine = (D.ledger||[]).filter(r => r.player===tr.player && (r.ticker||"").includes(`-${E.suffix}-`));
+    const status = mine.length ? mine.map(r => `${r.side.toUpperCase()} ${c(r.price)} × ${fmt0(r.contracts)} = ${fmt$(r.price*r.contracts)} · placed ${r.ts?new Date(r.ts).toLocaleString("en-US",{timeZone:"America/New_York",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}):"—"} ET · ${r.result==="yes"||r.result==="no" ? (r.result===r.side ? "won " : "lost ") + fmt$(r.pnl||0) : "open"}`).join("<br>") : "not placed yet";
+    cards.push(`<div class="track"><h3>${esc(tr.player)}</h3><p class="method">${esc(tr.method||"")}</p><div class="pick">${esc(tr.pick||"")}</div><div class="status">${status}</div><p class="verdict">${esc(tr.verdict||"")}</p>
+      <ul>${(tr.evidence||[]).map(e => `<li>${esc(e.text)} <span class="src">— ${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.src||"source")}</a>`:esc(e.src||"")}</span></li>`).join("")}</ul></div>`); }
+  $("#trCards").innerHTML = cards.join("");
+})();
+
 // ---- the System
 (function(){
   const rows = []; let best = -99;
@@ -527,7 +553,7 @@ function barChart(el, title, desc, bars, opts){
 
 // ---- place your bets
 const FORM = D.league.form || null;
-const players = D.league.players.filter(p => p.role!=="system");
+const players = D.league.players.filter(p => p.role==="intuition");
 const KEY = "gamecard-" + E.suffix;
 if (!window.__state || window.__state.key !== KEY) { window.__state = { key: KEY, who: players[0] ? players[0].name : "", rows: {}, placed: [] };
   try { const s = JSON.parse(localStorage.getItem(KEY)||"null"); if (s && s.rows) Object.assign(window.__state, s, {key: KEY}); } catch(e){} }
@@ -536,7 +562,7 @@ function save(){ window.__state = state; try { localStorage.setItem(KEY, JSON.st
 function rowsFor(){ if (!state.rows[state.who]) state.rows[state.who] = []; return state.rows[state.who]; }
 $("#builderSub").innerHTML = `${fmtK(BUDGET)} each on this game, one bet or several. ${FORM ? "Placing records the bet with a Google timestamp; it counts on the league page right away and is scored from the exchange result." : "This page has no bet form configured, so it cannot record bets."}`;
 $("#stepBudget").textContent = fmtK(BUDGET);
-function renderWho(){ $("#who").innerHTML = players.map(p => `<button aria-pressed="${p.name===state.who}" data-who="${esc(p.name)}" type="button">${esc(p.name)}</button>`).join("") + (D.league.players.some(p=>p.role==="system") ? `<span class="chip sys">${esc(D.league.players.find(p=>p.role==="system").name)} = System · bets itself</span>` : "");
+function renderWho(){ $("#who").innerHTML = players.map(p => `<button aria-pressed="${p.name===state.who}" data-who="${esc(p.name)}" type="button">${esc(p.name)}</button>`).join("") + `<span class="chip sys">Ahmed's rows are placed by the System and by Claude's two tracks</span>`;
   $("#who").querySelectorAll("button").forEach(b => b.onclick = () => { state.who = b.dataset.who; save(); renderWho(); renderRows(); }); }
 function selectHtml(sel){ let h = "", g = null; for (const o of OPTIONS){ if (!validOpt(o)) continue; if (o.g!==g){ if (g!==null) h += "</optgroup>"; g = o.g; h += `<optgroup label="${esc(g)}">`; } h += `<option value="${o.id}" ${o.id===sel?"selected":""}>${esc(optLabel(o))} · ${c(o.price)}</option>`; } return h + (g!==null?"</optgroup>":""); }
 function calcHtml(r){ const o = OPT[r.opt] || OPTIONS[0]; if (!o) return ""; const s = stake(o.price, Number(r.dollars)||0);
