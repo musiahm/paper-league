@@ -1,39 +1,64 @@
 name: kalshi-prices
-# Every 5 minutes: read the slate from the league sheet, pull every Kalshi market for those games, and publish markets.json
-# on the orphan `data` branch (force-pushed, one commit — the Pages site on `main` is untouched, so no Pages builds are spent).
+# Keeps markets.json (on the orphan `data` branch) fresh: every Kalshi market for the games on the league's slate.
+#   - cron every 5 minutes (GitHub may delay or skip these, so it is not the only trigger)
+#   - a push that touches this workflow or the scripts starts a run immediately
+#   - around a game (from ~30 h before kickoff until it settles) one run keeps looping every 5 minutes for up to 5½ hours,
+#     then dispatches a fresh run of itself, so prices stay minutes old regardless of the cron
+# The `data` branch is one force-pushed commit — the Pages site on `main` is untouched, no Pages builds are spent.
 on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/kalshi.yml", "scripts/**"]
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: kalshi-prices
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 345
+    env:
+      SHEET_ID: 15iAY731H49owHWoY49MWOB5FIHkTkp5GFDULZrVRUxg
+      SLATE_GID: "985414954"
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Fetch markets
+      - name: Fetch, publish, and keep going while a game is near
         run: |
-          python scripts/fetch_markets.py --sheet-id "$SHEET_ID" --slate-gid "$SLATE_GID" --out /tmp/markets.json
-        env:
-          SHEET_ID: 15iAY731H49owHWoY49MWOB5FIHkTkp5GFDULZrVRUxg
-          SLATE_GID: "985414954"
-      - name: Publish to the data branch
-        run: |
-          set -e
-          mkdir -p /tmp/data && cd /tmp/data
-          git init -q -b data
-          git config user.name "kalshi-prices[bot]"
-          git config user.email "kalshi-prices@users.noreply.github.com"
-          cp /tmp/markets.json markets.json
-          printf 'Data branch written by the kalshi-prices workflow. Do not edit by hand.\n' > README.md
-          git add -A && git commit -q -m "markets $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data:data
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          set -u
+          git config --global user.name "kalshi-prices[bot]"
+          git config --global user.email "kalshi-prices@users.noreply.github.com"
+          publish() {
+            rm -rf /tmp/data && mkdir -p /tmp/data && cd /tmp/data
+            git init -q -b data
+            cp /tmp/markets.json markets.json
+            printf 'Data branch written by the kalshi-prices workflow. Do not edit by hand.\n' > README.md
+            git add -A && git commit -q -m "markets $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data:data
+            cd "$GITHUB_WORKSPACE"
+          }
+          end=$((SECONDS + 330*60))
+          while :; do
+            if python scripts/fetch_markets.py --sheet-id "$SHEET_ID" --slate-gid "$SLATE_GID" --out /tmp/markets.json; then
+              publish || echo "publish failed (will retry next loop)"
+            else
+              echo "fetch failed (will retry next loop)"
+            fi
+            live=$(python scripts/live_window.py /tmp/markets.json 2>/dev/null || echo 0)
+            echo "live=$live elapsed=${SECONDS}s"
+            [ "$live" = "1" ] || { echo "no game near — leaving the rest to the cron"; break; }
+            if [ "$SECONDS" -ge "$end" ]; then
+              echo "handing over to a fresh run"
+              gh workflow run kalshi.yml --ref main || echo "self-dispatch failed; the cron will pick it up"
+              break
+            fi
+            sleep 300
+          done
