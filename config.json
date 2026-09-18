@@ -1,7 +1,7 @@
 {
   "title": "Paper League",
-  "week": "1",
-  "competition": "NFL",
+  "week": "2",
+  "competition": "NFL + college football",
   "players": [
     {
       "name": "Ahmed",
@@ -11,12 +11,12 @@
     {
       "name": "Ahmed research",
       "role": "research",
-      "label": "the crowd's pick \u2014 placed by Claude"
+      "label": "the crowd's pick — placed by Claude"
     },
     {
       "name": "Ahmed statistics",
       "role": "statistics",
-      "label": "the numbers' pick \u2014 placed by Claude"
+      "label": "the numbers' pick — placed by Claude"
     },
     {
       "name": "Player",
@@ -29,7 +29,7 @@
       "label": "intuition"
     }
   ],
-  "bankroll": 5000,
+  "bankroll": 10000,
   "game_budget": 1000,
   "taker_coef": 0.07,
   "threshold_cents": 3,
@@ -50,5 +50,7 @@
       "note": "entry.729424601"
     }
   },
-  "data_url": "https://raw.githubusercontent.com/musiahm/paper-league/data/markets.json"
+  "data_url": "https://raw.githubusercontent.com/musiahm/paper-league/data/markets.json",
+  "max_bets_per_game": 2,
+  "stake_is_example": true
 }

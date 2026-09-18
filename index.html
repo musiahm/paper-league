@@ -71,12 +71,12 @@
 <div id="errs"></div>
 
 <section id="standings"><h2>Standings <span id="liveBadge" hidden><span class="livedot"></span></span><span class="sub" id="stSub">paper P&amp;L after Kalshi taker fees · results from the exchange's settlements</span></h2>
-<div class="scroll"><table class="standings"><thead><tr><th>Player</th><th class="num">Bets</th><th class="num">Open</th><th class="num">At risk</th><th class="num">W–L</th><th class="num">Fees</th><th class="num">Settled</th><th class="num">Live</th><th class="num">Bankroll</th></tr></thead>
+<div class="scroll"><table class="standings"><thead><tr><th>Player</th><th class="num">Bets</th><th class="num">Open</th><th class="num">At risk</th><th class="num">Free</th><th class="num">W–L</th><th class="num">Fees</th><th class="num">Settled</th><th class="num">Live</th><th class="num">Bankroll</th></tr></thead>
 <tbody id="stRows"></tbody></table></div></section>
 
-<section id="play"><h2>Games <span class="sub">open a game, tap the bets you want, place them — intuition players only; the System places its own</span></h2>
+<section id="play"><h2>Games <span class="sub">open a game, tap the bets you want, place them — up to two bets per game, any size, out of your bankroll</span></h2>
 <div class="games" id="games"></div>
-<p style="margin-top:14px">Every game card shows all of Kalshi's open markets for that game — moneyline, every spread line, every total — with what <span id="budgetTxt"></span> does on each, and a slip to place bets from. A placed bet is stamped by Google's clock, counts here immediately, and is scored from Kalshi's result when the game settles.</p></section>
+<p style="margin-top:14px">Every game card shows all of Kalshi's open markets for that game — moneyline, every spread line, every total — with what an example <span id="budgetTxt"></span> stake does on each, and a slip to place bets from. A placed bet is stamped by Google's clock, counts here immediately, and is scored from Kalshi's result when the game settles.</p></section>
 
 <section id="system"><h2>How the System is thinking <span class="sub" id="sysSub"></span></h2>
 <div class="card"><ol id="rules">
@@ -105,7 +105,7 @@ async function main(){
   document.title = cfg.title || "Paper League"; $("#title").textContent = cfg.title || "Paper League";
   $("#week").innerHTML = `Week <strong>${esc(cfg.week||"1")}</strong> · ${cfg.competition||"NFL"} on Kalshi · paper only`;
   const tracks = cfg.players.filter(p => !["system","intuition"].includes(p.role)).map(p=>p.name);
-  $("#lede").textContent = `${sysName}'s bets are placed by the System, a fixed rule with no discretion, and every number it used is shown below${tracks.length ? `; ${tracks.join(" and ")} are picked by Claude, one from what the crowd thinks and one from the numbers — the reasoning is on each game card` : ""}. The other players bet on intuition. Same paper bankroll (${fmtK(cfg.bankroll)} each), real Kalshi prices, real fees, results from the exchange.`;
+  $("#lede").textContent = `${sysName}'s bets are placed by the System, a fixed rule with no discretion, and every number it used is shown below${tracks.length ? `; ${tracks.join(" and ")} are picked by Claude, one from what the crowd thinks and one from the numbers — the reasoning is on each game card` : ""}. The other players bet on intuition. Everyone gets ${fmtK(cfg.bankroll)} of paper money for the season, up to ${cfg.max_bets_per_game||2} bets on any one game and no cap on what you stake — so the money has to last. Real Kalshi prices, real fees, results from the exchange.`;
   $("#errs").innerHTML = L.errors.map(e => `<div class="err">Could not read ${esc(e)} — the page shows what it could load.</div>`).join("");
   $("#budgetTxt").textContent = fmtK(cfg.game_budget);
   // standings
@@ -117,14 +117,14 @@ async function main(){
   $("#stSub").innerHTML = anyLive
     ? 'open bets are marked to the live Kalshi market — what they would be worth if cashed out now, fees already taken out'
     : 'paper P&amp;L after Kalshi taker fees · results from the exchange\'s settlements';
-  $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.liveBankroll-a.liveBankroll).map(t => `<tr><td>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':`<span class="pill">${esc(t.role)}</span>`}${t.marked?' <span class="pill live">live</span>':""}</td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${cls(t.pnl)}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num ${cls(t.live)}">${t.marked?signed(t.live):'<span class="muted">—</span>'}</td><td class="num bank">${fmt$(t.liveBankroll)}${t.marked?`<small class="${cls(t.live)}">${signed(t.live)} unsettled</small>`:""}</td></tr>`).join("");
+  $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.liveBankroll-a.liveBankroll).map(t => `<tr><td>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':`<span class="pill">${esc(t.role)}</span>`}${t.marked?' <span class="pill live">live</span>':""}</td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${fmt$(t.free==null?t.bankroll:t.free)}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${cls(t.pnl)}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num ${cls(t.live)}">${t.marked?signed(t.live):'<span class="muted">—</span>'}</td><td class="num bank">${fmt$(t.liveBankroll)}${t.marked?`<small class="${cls(t.live)}">${signed(t.live)} unsettled</small>`:""}</td></tr>`).join("");
   // games
   const games = L.slate.filter(s => /^(yes|y|true)$/i.test(s.in_slate||""));
   $("#games").innerHTML = games.length ? games.map(s => { const mk = eventMarkets(L.markets, s.ev); const h = mk.winner.find(m=>m.team===s.ev.home.abbr), a = mk.winner.find(m=>m.team===s.ev.away.abbr);
       const res = mk.all.find(m => m.kind==="winner" && m.result==="yes"); const done = !!res || (!h && mk.all.some(m=>m.kind==="winner"));
       const price = h && a ? `${s.ev.home.nick} ${cents(h.yes_ask)} · ${s.ev.away.nick} ${cents(a.yes_ask)}` : done ? (res ? `Final — ${(res.team===s.ev.home.abbr?s.ev.home:s.ev.away).nick} won` : "Final") : "no open markets yet";
       const placed = st.rows.filter(r => (r.ticker||"").includes(`-${s.ev.suffix}-`)).length;
-      return `<div class="game${done?" done":""}"><div class="g">${esc(s.ev.away.nick)} @ ${esc(s.ev.home.nick)}</div><div class="k">${esc((s.kickoff||"").trim() || s.ev.date_et)} · up to ${fmtK(cfg.game_budget)} each</div><div class="prices">${esc(price)}${placed?` · ${placed} bet${placed>1?"s":""} placed`:""}</div><a class="cta${done?" alt":""}" href="game.html?e=${encodeURIComponent(s.ev.suffix)}">${done?"See the result →":"Choose & place bets →"}</a></div>`; }).join("")
+      return `<div class="game${done?" done":""}"><div class="g">${esc(s.ev.away.nick)} @ ${esc(s.ev.home.nick)}</div><div class="k">${esc((s.kickoff||"").trim() || s.ev.date_et)} · ${esc(s.ev.competition)} · up to ${cfg.max_bets_per_game||2} bets each</div><div class="prices">${esc(price)}${placed?` · ${placed} bet${placed>1?"s":""} placed`:""}</div><a class="cta${done?" alt":""}" href="game.html?e=${encodeURIComponent(s.ev.suffix)}">${done?"See the result →":"Choose & place bets →"}</a></div>`; }).join("")
     : '<div class="game done"><div class="g">No games yet</div><div class="k">Games marked yes on the slate appear here.</div></div>';
   // the System
   const feed = L.feed; const rules = (feed&&feed.rules)||{};

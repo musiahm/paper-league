@@ -15,6 +15,22 @@ const PL = (() => {
     ["LAC","Los Angeles","Chargers"],["LAR","Los Angeles","Rams"],["MIA","Miami","Dolphins"],["MIN","Minnesota","Vikings"],["NE","New England","Patriots"],["NO","New Orleans","Saints"],
     ["NYG","New York","Giants"],["NYJ","New York","Jets"],["PHI","Philadelphia","Eagles"],["PIT","Pittsburgh","Steelers"],["SF","San Francisco","49ers"],["SEA","Seattle","Seahawks"],
     ["TB","Tampa Bay","Buccaneers"],["TEN","Tennessee","Titans"],["WAS","Washington","Commanders"]];
+  // College football. Codes are Kalshi's, read off live KXNCAAFGAME tickers; nick is what the card shows.
+  const NCAAF = [["AUB","Auburn","Tigers"],["FLA","Florida","Gators"],["LSU","LSU","Tigers"],["MISS","Ole Miss","Rebels"],["SMU","SMU","Mustangs"],["LOU","Louisville","Cardinals"],
+    ["ALA","Alabama","Crimson Tide"],["UGA","Georgia","Bulldogs"],["ARK","Arkansas","Razorbacks"],["TENN","Tennessee","Volunteers"],["UK","Kentucky","Wildcats"],["TXAM","Texas A&M","Aggies"],
+    ["MSST","Mississippi St.","Bulldogs"],["SCAR","South Carolina","Gamecocks"],["MIZZ","Missouri","Tigers"],["VAN","Vanderbilt","Commodores"],["TEX","Texas","Longhorns"],["OKLA","Oklahoma","Sooners"],
+    ["FSU","Florida St.","Seminoles"],["MIA","Miami (FL)","Hurricanes"],["CLEM","Clemson","Tigers"],["UNC","North Carolina","Tar Heels"],["NCST","NC St.","Wolfpack"],["GT","Georgia Tech","Yellow Jackets"],
+    ["DUKE","Duke","Blue Devils"],["WAKE","Wake Forest","Demon Deacons"],["UVA","Virginia","Cavaliers"],["VT","Virginia Tech","Hokies"],["BC","Boston College","Eagles"],["PITT","Pittsburgh","Panthers"],
+    ["OSU","Ohio St.","Buckeyes"],["MICH","Michigan","Wolverines"],["PSU","Penn St.","Nittany Lions"],["MSU","Michigan St.","Spartans"],["WIS","Wisconsin","Badgers"],["IOWA","Iowa","Hawkeyes"],
+    ["MINN","Minnesota","Golden Gophers"],["NEB","Nebraska","Cornhuskers"],["ILL","Illinois","Fighting Illini"],["IND","Indiana","Hoosiers"],["PUR","Purdue","Boilermakers"],["NW","Northwestern","Wildcats"],
+    ["MD","Maryland","Terrapins"],["RUTG","Rutgers","Scarlet Knights"],["USC","USC","Trojans"],["UCLA","UCLA","Bruins"],["ORE","Oregon","Ducks"],["WASH","Washington","Huskies"],
+    ["ORST","Oregon St.","Beavers"],["WSU","Washington St.","Cougars"],["UTAH","Utah","Utes"],["COLO","Colorado","Buffaloes"],["ARIZ","Arizona","Wildcats"],["ASU","Arizona St.","Sun Devils"],
+    ["CAL","California","Golden Bears"],["STAN","Stanford","Cardinal"],["ND","Notre Dame","Fighting Irish"],["BYU","BYU","Cougars"],["TCU","TCU","Horned Frogs"],["BAY","Baylor","Bears"],
+    ["OKST","Oklahoma St.","Cowboys"],["KSU","Kansas St.","Wildcats"],["KU","Kansas","Jayhawks"],["ISU","Iowa St.","Cyclones"],["TTU","Texas Tech","Red Raiders"],["WVU","West Virginia","Mountaineers"],
+    ["CIN","Cincinnati","Bearcats"],["HOU","Houston","Cougars"],["UCF","UCF","Knights"],["MEM","Memphis","Tigers"],["TULN","Tulane","Green Wave"],["USF","South Florida","Bulls"],
+    ["BSU","Boise St.","Broncos"],["SDSU","San Diego St.","Aztecs"],["FRES","Fresno St.","Bulldogs"],["AFA","Air Force","Falcons"],["ARMY","Army","Black Knights"],["NAVY","Navy","Midshipmen"],
+    ["ULL","Louisiana","Ragin' Cajuns"],["APP","Appalachian St.","Mountaineers"],["JMU","James Madison","Dukes"],["LIB","Liberty","Flames"],["TROY","Troy","Trojans"],["UAB","UAB","Blazers"],
+    ["USA","South Alabama","Jaguars"],["TOL","Toledo","Rockets"],["UTSA","UTSA","Roadrunners"],["TLSA","Tulsa","Golden Hurricane"],["RICE","Rice","Owls"],["ECU","East Carolina","Pirates"]];
   const NBA = [["ATL","Atlanta","Hawks"],["BOS","Boston","Celtics"],["BKN","Brooklyn","Nets"],["CHA","Charlotte","Hornets"],["CHI","Chicago","Bulls"],["CLE","Cleveland","Cavaliers"],
     ["DAL","Dallas","Mavericks"],["DEN","Denver","Nuggets"],["DET","Detroit","Pistons"],["GSW","Golden State","Warriors"],["GS","Golden State","Warriors"],["HOU","Houston","Rockets"],
     ["IND","Indiana","Pacers"],["LAC","Los Angeles","Clippers"],["LAL","Los Angeles","Lakers"],["MEM","Memphis","Grizzlies"],["MIA","Miami","Heat"],["MIL","Milwaukee","Bucks"],
@@ -22,15 +38,19 @@ const PL = (() => {
     ["PHI","Philadelphia","76ers"],["PHX","Phoenix","Suns"],["PHO","Phoenix","Suns"],["POR","Portland","Trail Blazers"],["SAC","Sacramento","Kings"],["SAS","San Antonio","Spurs"],
     ["SA","San Antonio","Spurs"],["TOR","Toronto","Raptors"],["UTA","Utah","Jazz"],["UTAH","Utah","Jazz"],["WAS","Washington","Wizards"]];
   const TEAMS = {NFL: Object.fromEntries(NFL.map(([a,c,n]) => [a, {abbr:a, city:c, nick:n, name:c+" "+n}])),
-                 NBA: Object.fromEntries(NBA.map(([a,c,n]) => [a, {abbr:a, city:c, nick:n, name:c+" "+n}]))};
+                 NBA: Object.fromEntries(NBA.map(([a,c,n]) => [a, {abbr:a, city:c, nick:n, name:c+" "+n}])),
+                 NCAAF: Object.fromEntries(NCAAF.map(([a,c,n]) => [a, {abbr:a, city:c, nick:c, school:c, name:c+" "+n}]))};
   const COLORS = {NFL: {ARI:["#97233F","#FFB612"],ATL:["#A71930","#101820"],BAL:["#241773","#9E7C0C"],BUF:["#00338D","#C60C30"],CAR:["#0085CA","#101820"],CHI:["#0B162A","#C83803"],
     CIN:["#FB4F14","#101820"],CLE:["#311D00","#FF3C00"],DAL:["#003594","#869397"],DEN:["#FB4F14","#002244"],DET:["#0076B6","#B0B7BC"],GB:["#203731","#FFB612"],HOU:["#03202F","#A71304"],
     IND:["#002C5F","#A2AAAD"],JAC:["#006778","#D7A22A"],KC:["#E31837","#FFB81C"],LV:["#101820","#A5ACAF"],LAC:["#0080C6","#FFC20E"],LAR:["#003594","#FFA300"],MIA:["#008E97","#FC4C02"],
     MIN:["#4F2683","#FFC62F"],NE:["#002244","#C60C30"],NO:["#101820","#D3BC8D"],NYG:["#0B2265","#A71930"],NYJ:["#125740","#101820"],PHI:["#004C54","#A5ACAF"],PIT:["#FFB612","#101820"],
-    SF:["#AA0000","#B3995D"],SEA:["#002244","#69BE28"],TB:["#D50A0A","#FF7900"],TEN:["#0C2340","#4B92DB"],WAS:["#5A1414","#FFB612"]}, NBA: {}};
+    SF:["#AA0000","#B3995D"],SEA:["#002244","#69BE28"],TB:["#D50A0A","#FF7900"],TEN:["#0C2340","#4B92DB"],WAS:["#5A1414","#FFB612"]}, NBA: {},
+    NCAAF: {AUB:["#0C2340","#DD550C"],FLA:["#0021A5","#FA4616"],LSU:["#461D7C","#FDD023"],MISS:["#14213D","#CE1126"],SMU:["#0033A0","#C8102E"],LOU:["#AD0000","#000000"],
+      ALA:["#9E1B32","#828A8F"],UGA:["#BA0C2F","#000000"],TENN:["#FF8200","#58595B"],TEX:["#BF5700","#333F48"],OSU:["#BB0000","#666666"],MICH:["#00274C","#FFCB05"],ND:["#0C2340","#C99700"]}};
   const FALLBACK = ["#1F5FBF", "#B0472C"];
   const MONTHS = {JAN:1,FEB:2,MAR:3,APR:4,MAY:5,JUN:6,JUL:7,AUG:8,SEP:9,OCT:10,NOV:11,DEC:12};
-  const SPORT = {KXNFL:"NFL", KXNBA:"NBA"};
+  const SPORT = {KXNFL:"NFL", KXNBA:"NBA", KXNCAAF:"NCAAF"};
+  const COMPETITION = {NFL:"NFL", NBA:"NBA", NCAAF:"College football"};
 
   // "KXNFLGAME-26SEP17DETBUF" or "26SEP17DETBUF" -> event
   function parseEvent(s, dflt="KXNFLGAME"){
@@ -42,7 +62,7 @@ const PL = (() => {
     if (splits.length !== 1) return null;
     const [away, home] = splits[0]; const suffix = `${m[2]}${m[3]}${m[4]}${teams}`;
     return {base, sport, suffix, ticker: `${base}GAME-${suffix}`, date_et: `20${m[2]}-${String(MONTHS[m[3]]).padStart(2,"0")}-${m[4]}`, away, home,
-            competition: sport, eventTicker: k => `${base}${k}-${suffix}`};
+            competition: COMPETITION[sport]||sport, eventTicker: k => `${base}${k}-${suffix}`};
   }
 
   // ---- colours (port of gamecard.pick_colors) ------------------------------------------------------
@@ -204,7 +224,8 @@ const PL = (() => {
     const table = cfg.players.map(p => { const ps = rows.filter(x => x.player===p.name); const settled = ps.filter(x => x.result==="yes"||x.result==="no"); const wins = settled.filter(x => x.result===x.side).length;
       const pnl = Math.round(settled.reduce((a,x)=>a+(x.pnl||0),0)*100)/100;
       const live = Math.round(ps.reduce((a,x)=>a+(x.live||0),0)*100)/100; const marked = ps.filter(x=>x.live!=null).length;
-      return {player:p.name, role:p.role, picks:ps.length, open:ps.length-settled.length-ps.filter(x=>x.result==="void").length, settled:settled.length, wins, losses:settled.length-wins, fees:Math.round(ps.reduce((a,x)=>a+x.fee,0)*100)/100, pnl, bankroll:Math.round((cfg.bankroll+pnl)*100)/100, live, marked, liveBankroll:Math.round((cfg.bankroll+pnl+live)*100)/100, atRisk:Math.round(ps.filter(x=>!x.result).reduce((a,x)=>a+x.price*x.contracts,0)*100)/100, backfilled:ps.filter(x=>x.backfilled).length}; });
+      const games = {}; for (const x of ps) { const sfx = suffixOf(x.ticker); if (sfx) games[sfx] = (games[sfx]||0) + 1; }
+      return {player:p.name, role:p.role, picks:ps.length, open:ps.length-settled.length-ps.filter(x=>x.result==="void").length, settled:settled.length, wins, losses:settled.length-wins, fees:Math.round(ps.reduce((a,x)=>a+x.fee,0)*100)/100, pnl, bankroll:Math.round((cfg.bankroll+pnl)*100)/100, live, marked, liveBankroll:Math.round((cfg.bankroll+pnl+live)*100)/100, atRisk:Math.round(ps.filter(x=>!x.result).reduce((a,x)=>a+x.price*x.contracts,0)*100)/100, backfilled:ps.filter(x=>x.backfilled).length, games}; }).map(t => Object.assign(t, {free: Math.round((t.bankroll - t.atRisk)*100)/100}));
     rows.sort((a,b) => (b.ts?b.ts.getTime():0) - (a.ts?a.ts.getTime():0));
     return {table, rows}; }
 

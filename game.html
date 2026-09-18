@@ -351,7 +351,9 @@ const lineWord = (team, line, side) => { const n = line+0.5;
   if (side==="yes") return wholeMode.on ? `${nick(team)} by ${n}+` : `${nick(team)} −${line}`;
   return wholeMode.on ? `${nick(other(team))} win or lose by ≤${n-1}` : `${nick(other(team))} +${line}`; };
 const totWord = (line, side) => side==="yes" ? (wholeMode.on?`${line+0.5}+ points`:`Over ${line}`) : (wholeMode.on?`${line-0.5} or fewer`:`Under ${line}`);
-const BUDGET = D.league.game_budget;
+const BUDGET = D.league.game_budget;            // illustrative stake only, for the "what $1,000 does" tables
+const MAXBETS = D.league.max_bets_per_game || 2;  // the real rule: how many bets one player may have on this game
+const BANKROLL = D.league.bankroll;
 
 // ---- header
 document.title = `${AWAY.nick}–${HOME.nick} Game Card`; $("#navHw").href = "#homework";
@@ -363,19 +365,19 @@ $("#errs").innerHTML = D.errors.map(e => `<div class="err">Could not read ${esc(
 $("#final").hidden = !D.final; $("#final").textContent = D.final || "";
 $("#refresh").onclick = async () => { $("#refresh").textContent = "refreshing…"; try { D = await assemble(); render(); } catch (e) { $("#refresh").textContent = "refresh failed"; } };
 setInterval(async () => { if (document.hidden) return; try { D = await assemble(); render(); } catch (e) {} }, 60000);
-$("#stakes").innerHTML = [["Paper bankroll", fmtK(D.league.bankroll), "each · imaginary money"], ["On this game", fmtK(BUDGET), "each · one bet or several"],
+$("#stakes").innerHTML = [["Paper bankroll", fmtK(D.league.bankroll), "each · imaginary money"], ["Bets on this game", `up to ${MAXBETS}`, "each · any size, out of your bankroll"],
   ["Who bets", String(D.league.players.length), D.league.players.map(p => p.name).join(" · ")],
   ["Deadline", E.deadline_text || "kickoff", "bets placed after kickoff do not count", "txt"]]
   .map(([k,v,d,x]) => `<div class="stake"><div class="k">${k}</div><div class="v${x?" "+x:""}">${v}</div><div class="d">${d}</div></div>`).join("");
 
 // ---- bankrolls
 const ST = D.standings || D.league.players.map(p => ({player:p.name, role:p.role, bankroll:D.league.bankroll, pnl:0, settled:0, open:0, placed_here:0, live_here:0, marked_here:0, liveBankroll:D.league.bankroll, live:0, marked:0}));
-const anyLive = ST.some(t => t.marked); $("#bankSub").innerHTML = `Everyone started at ${fmtK(D.league.bankroll)}. Bankroll = start + settled P&amp;L after Kalshi fees${anyLive ? ", plus every open bet marked to the live Kalshi market — what it would fetch if sold right now, fees already taken out" : ""}; this game puts up to ${fmtK(BUDGET)} each at risk. Settlement comes from Kalshi's results the next time the prices refresh.`;
+const anyLive = ST.some(t => t.marked); $("#bankSub").innerHTML = `Everyone started at ${fmtK(D.league.bankroll)} for the season. Bankroll = start + settled P&amp;L after Kalshi fees${anyLive ? ", plus every open bet marked to the live Kalshi market — what it would fetch if sold right now, fees already taken out" : ""}. There is no cap per game: you may place up to ${MAXBETS} bets here, any size, and what you tie up is gone until it settles. Settlement comes from Kalshi's results the next time the prices refresh.`;
 const roleLabel = t => { const p = D.league.players.find(x => x.name===t.player); return p && p.label ? p.label : (t.role==="system" ? "the System bets for him" : t.role); };
 const sgn = v => (v>0?"+":"") + fmt$(v);
 $("#bankTiles").innerHTML = ST.map(t => `<div class="tile"><div class="k"><span>${esc(t.player)}</span><span class="chip ${t.role==="system"?"sys":"plain"}">${esc(roleLabel(t))}</span></div>
   <div class="side" style="border-top-color:${t.marked?"var(--no)":t.role==="system"?"var(--sys)":"var(--accent)"}"><div class="lab">Bankroll${t.marked?" · live":""}</div><div class="price">${fmt$(t.marked?t.liveBankroll:t.bankroll)}</div><div class="imp">${t.marked?`${sgn(t.live)} unsettled · ` : ""}settled P&amp;L ${fmt$(t.pnl||0)} · ${t.settled||0} settled · ${t.open||0} open</div></div>
-  <div class="grid2"><div class="l">Placed on this game</div><div class="r">${fmt$(t.placed_here||0)}</div>${t.marked_here?`<div class="l">Worth right now</div><div class="r">${fmt$((t.placed_here||0)+(t.live_here||0))} <span style="color:${t.live_here>0?"var(--yes)":"var(--no)"}">${sgn(t.live_here||0)}</span></div>`:""}<div class="l">Left to place here</div><div class="r">${fmt$(Math.max(0, BUDGET-(t.placed_here||0)))}</div></div></div>`).join("");
+  <div class="grid2"><div class="l">Placed on this game</div><div class="r">${fmt$(t.placed_here||0)}</div>${t.marked_here?`<div class="l">Worth right now</div><div class="r">${fmt$((t.placed_here||0)+(t.live_here||0))} <span style="color:${t.live_here>0?"var(--yes)":"var(--no)"}">${sgn(t.live_here||0)}</span></div>`:""}<div class="l">Bets here</div><div class="r">${(t.games&&t.games[E.suffix])||0} of ${MAXBETS}</div><div class="l">Bankroll free</div><div class="r">${fmt$(t.free==null?t.bankroll:t.free)}</div></div></div>`).join("");
 
 // ---- lookups
 const W = Object.fromEntries((D.winner||[]).map(m => [m.team, m]));
@@ -563,8 +565,8 @@ if (!window.__state || window.__state.key !== KEY) { window.__state = { key: KEY
 let state = window.__state;
 function save(){ window.__state = state; try { localStorage.setItem(KEY, JSON.stringify({who:state.who, rows:state.rows, placed:state.placed})); } catch(e){} }
 function rowsFor(){ if (!state.rows[state.who]) state.rows[state.who] = []; return state.rows[state.who]; }
-$("#builderSub").innerHTML = `${fmtK(BUDGET)} each on this game, one bet or several. ${FORM ? "Placing records the bet with a Google timestamp; it counts on the league page right away and is scored from the exchange result." : "This page has no bet form configured, so it cannot record bets."}`;
-$("#stepBudget").textContent = fmtK(BUDGET);
+$("#builderSub").innerHTML = `Up to ${MAXBETS} bets on this game, any size — it comes out of your ${fmtK(BANKROLL)} bankroll, so spend it where you mean it. ${FORM ? "Placing records the bet with a Google timestamp; it counts on the league page right away and is scored from the exchange result." : "This page has no bet form configured, so it cannot record bets."}`;
+$("#stepBudget").textContent = `up to ${MAXBETS} bets`;
 function renderWho(){ $("#who").innerHTML = players.map(p => `<button aria-pressed="${p.name===state.who}" data-who="${esc(p.name)}" type="button">${esc(p.name)}</button>`).join("") + `<span class="chip sys">Ahmed's rows are placed by the System and by Claude's two tracks</span>`;
   $("#who").querySelectorAll("button").forEach(b => b.onclick = () => { state.who = b.dataset.who; save(); renderWho(); renderRows(); }); }
 function selectHtml(sel){ let h = "", g = null; for (const o of OPTIONS){ if (!validOpt(o)) continue; if (o.g!==g){ if (g!==null) h += "</optgroup>"; g = o.g; h += `<optgroup label="${esc(g)}">`; } h += `<option value="${o.id}" ${o.id===sel?"selected":""}>${esc(optLabel(o))} · ${c(o.price)}</option>`; } return h + (g!==null?"</optgroup>":""); }
@@ -573,7 +575,7 @@ function calcHtml(r){ const o = OPT[r.opt] || OPTIONS[0]; if (!o) return ""; con
 function renderRows(){ const rows = rowsFor(); const el = $("#rows"); el.innerHTML = "";
   if (!rows.length) el.innerHTML = `<p class="note">Your slip is empty. Tap <b>Bet</b> next to any price above, or <b>+ add a bet</b>.</p>`;
   rows.forEach((r, i) => { const o = OPT[r.opt] || OPTIONS[0]; if (!o) return; const div = document.createElement("div"); div.className = "row";
-    div.innerHTML = `<select id="sel-${i}" aria-label="Bet ${i+1} market">${selectHtml(o.id)}</select><input id="amt-${i}" type="number" min="0" max="${BUDGET}" step="10" value="${Number(r.dollars)||0}" aria-label="Bet ${i+1} dollars"><div class="calc">${calcHtml(r)}</div><button class="x" type="button" aria-label="Remove bet ${i+1}">×</button>`;
+    div.innerHTML = `<select id="sel-${i}" aria-label="Bet ${i+1} market">${selectHtml(o.id)}</select><input id="amt-${i}" type="number" min="0" max="${BANKROLL}" step="10" value="${Number(r.dollars)||0}" aria-label="Bet ${i+1} dollars"><div class="calc">${calcHtml(r)}</div><button class="x" type="button" aria-label="Remove bet ${i+1}">×</button>`;
     div.querySelector("select").onchange = e => { r.opt = e.target.value; save(); renderRows(); };
     div.querySelector("input").oninput = e => { r.dollars = Number(e.target.value)||0; save(); renderBudget(); renderOut(); div.querySelector(".calc").innerHTML = calcHtml(r); };
     div.querySelector(".x").onclick = () => { rows.splice(i,1); save(); renderRows(); };
@@ -581,10 +583,16 @@ function renderRows(){ const rows = rowsFor(); const el = $("#rows"); el.innerHT
   renderBudget(); renderOut(); renderPlaced(); }
 function totals$(){ const rows = rowsFor(); let cost = 0, f = 0; for (const r of rows){ const o = OPT[r.opt]; if (!o) continue; const s = stake(o.price, Number(r.dollars)||0); cost += s.cost; f += s.fee; } return {cost, f}; }
 const placedBefore = who => { const t = ST.find(x => x.player===who); return t ? (t.placed_here||0) : 0; };
-function renderBudget(){ const {cost, f} = totals$(); const prior = placedBefore(state.who); const used = cost + prior; const over = used > BUDGET + 0.005;
-  $("#budgetBar").style.width = Math.min(100, used/BUDGET*100) + "%"; $("#budgetBar").className = over?"over":"";
-  $("#budgetText").textContent = `${state.who}: ${fmt$(cost)} on the slip${prior?" + "+fmt$(prior)+" already placed":""} = ${fmt$(used)} of ${fmtK(BUDGET)} · fees ${fmt$(f)} · ${over?"over by "+fmt$(used-BUDGET):fmt$(BUDGET-used)+" left"}`;
-  $("#slipText").textContent = rowsFor().length ? `${state.who} · ${rowsFor().length} bet${rowsFor().length>1?"s":""} · ${fmt$(cost)} of ${fmtK(BUDGET)}` : "nothing yet — tap a Bet button below";
+const betsBefore = who => { const t = ST.find(x => x.player===who); return t && t.games ? (t.games[E.suffix]||0) : 0; };
+const freeFor = who => { const t = ST.find(x => x.player===who); return t ? (t.free==null ? t.bankroll : t.free) : BANKROLL; };
+function renderBudget(){ const {cost, f} = totals$(); const free = freeFor(state.who); const live = rowsFor().filter(r => (Number(r.dollars)||0) > 0).length;
+  const nBets = betsBefore(state.who) + live; const tooMany = nBets > MAXBETS; const overBank = cost + f > free + 0.005; const over = tooMany || overBank;
+  $("#budgetBar").style.width = Math.min(100, free>0 ? (cost+f)/free*100 : 100) + "%"; $("#budgetBar").className = over?"over":"";
+  const betTxt = `${nBets} of ${MAXBETS} bet${MAXBETS>1?"s":""} on this game`;
+  $("#budgetText").textContent = tooMany
+    ? `${state.who}: ${betTxt} — that is over the limit. Remove one, or place fewer.`
+    : `${state.who}: ${betTxt} · ${fmt$(cost)} staked + ${fmt$(f)} fees = ${fmt$(cost+f)} of ${fmt$(free)} bankroll free · ${overBank ? "short by "+fmt$(cost+f-free) : fmt$(free-cost-f)+" still yours"}`;
+  $("#slipText").textContent = rowsFor().length ? `${state.who} · ${live} bet${live===1?"":"s"} · ${fmt$(cost)} · ${fmt$(free-cost-f)} bankroll left` : "nothing yet — tap a Bet button below";
   $("#placeBtn").disabled = over || !rowsFor().some(r => (Number(r.dollars)||0) > 0); }
 function etNow(){ const p = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date()); const g = t => p.find(x=>x.type===t).value; return `${g("year")}-${g("month")}-${g("day")} ${g("hour")}:${g("minute")}`; }
 function renderOut(){ if (FORM) return; $("#fallback").hidden = false; const ts = etNow();
@@ -608,7 +616,9 @@ $("#placeBtn").onclick = async () => {
   $("#placeBtn").textContent = "Place these bets"; $("#placeMsg").className = okAll ? "msg ok" : "msg bad";
   $("#placeMsg").textContent = okAll ? `Placed ✓ — stamped ${etNow()} ET. Bankrolls above update in a few seconds.` : "Something failed — check your connection and try the failed rows again.";
   if (okAll) setTimeout(async () => { try { D = await assemble(); render(); } catch (e) {} }, 4000); };
-function addBet(id){ if (!validOpt(OPT[id])) return; const rows = rowsFor(); const {cost} = totals$(); const left = Math.max(0, BUDGET - cost - placedBefore(state.who)); rows.push({opt:id, dollars: Math.max(0, Math.min(left, 250))}); save(); renderRows();
+function addBet(id){ if (!validOpt(OPT[id])) return; const rows = rowsFor(); const live = rows.filter(r => (Number(r.dollars)||0) > 0).length;
+  if (betsBefore(state.who) + live >= MAXBETS) { $("#budgetText").textContent = `${state.who} already has ${MAXBETS} bet${MAXBETS>1?"s":""} on this game — that is the limit.`; $("#slip").animate([{transform:"translateX(0)"},{transform:"translateX(-4px)"},{transform:"translateX(4px)"},{transform:"translateX(0)"}], {duration:220}); return; }
+  const {cost, f} = totals$(); const left = Math.max(0, freeFor(state.who) - cost - f); rows.push({opt:id, dollars: Math.max(0, Math.min(left, 1000))}); save(); renderRows();
   $("#slip").animate([{transform:"scale(1)"},{transform:"scale(1.02)"},{transform:"scale(1)"}], {duration:250}); }
 function wireBetButtons(){ document.querySelectorAll("[data-bet]").forEach(b => b.onclick = () => addBet(b.dataset.bet)); }
 $("#addRow").onclick = () => { const first = OPTIONS.find(validOpt); if (first) addBet(first.id); };
