@@ -56,6 +56,11 @@
   a{color:var(--accent)} .muted{color:var(--muted)} .pos{color:var(--yes)} .neg{color:var(--no)}
   footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);max-width:76ch}
   footer button{font:inherit;color:var(--accent);background:none;border:1px solid var(--rule);border-radius:3px;padding:1px 8px;cursor:pointer}
+  .livedot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--no);margin-right:6px;vertical-align:baseline;animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  @media (prefers-reduced-motion:reduce){.livedot{animation:none}}
+  .pill.live{background:var(--no-bg);color:var(--no);border-color:transparent;font-weight:600}
+  .standings .bank small{display:block;font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:.02em}
   [hidden]{display:none!important}
   @media (max-width:480px){.mast h1{font-size:46px}h2{font-size:24px}td,th{padding:8px 6px}}
 </style></head><body><div class="wrap">
@@ -65,8 +70,8 @@
 <p class="lede" id="lede"></p>
 <div id="errs"></div>
 
-<section id="standings"><h2>Standings <span class="sub">paper P&amp;L after Kalshi taker fees · results from the exchange's settlements</span></h2>
-<div class="scroll"><table class="standings"><thead><tr><th>Player</th><th class="num">Bets</th><th class="num">Open</th><th class="num">At risk</th><th class="num">W–L</th><th class="num">Fees</th><th class="num">P&amp;L</th><th class="num">Bankroll</th></tr></thead>
+<section id="standings"><h2>Standings <span id="liveBadge" hidden><span class="livedot"></span></span><span class="sub" id="stSub">paper P&amp;L after Kalshi taker fees · results from the exchange's settlements</span></h2>
+<div class="scroll"><table class="standings"><thead><tr><th>Player</th><th class="num">Bets</th><th class="num">Open</th><th class="num">At risk</th><th class="num">W–L</th><th class="num">Fees</th><th class="num">Settled</th><th class="num">Live</th><th class="num">Bankroll</th></tr></thead>
 <tbody id="stRows"></tbody></table></div></section>
 
 <section id="play"><h2>Games <span class="sub">open a game, tap the bets you want, place them — intuition players only; the System places its own</span></h2>
@@ -95,7 +100,7 @@ const {esc, fmt$, fmtK, fmt0, cents, pct, label, fmtET, standings, eventMarkets}
 const pillRes = x => x.result==="yes"||x.result==="no" ? `<span class="pill ${x.result===x.side?"win":"loss"}">${x.result===x.side?"won":"lost"}</span>` : x.result==="void" ? '<span class="pill">void</span>' : '<span class="pill">open</span>';
 async function main(){
   let L; try { L = await PL.loadAll(); } catch (e) { $("#loading").innerHTML = `<div class="err">Could not load config.json: ${esc(e.message)}</div>`; return; }
-  const cfg = L.cfg; const st = standings(cfg, L.bets, L.results, L.feed); const fetched = L.markets && L.markets.fetched_at ? new Date(L.markets.fetched_at) : null;
+  const cfg = L.cfg; const st = standings(cfg, L.bets, L.results, L.feed, L.book); const fetched = L.markets && L.markets.fetched_at ? new Date(L.markets.fetched_at) : null;
   const sysName = (cfg.players.find(p=>p.role==="system")||{}).name || "System";
   document.title = cfg.title || "Paper League"; $("#title").textContent = cfg.title || "Paper League";
   $("#week").innerHTML = `Week <strong>${esc(cfg.week||"1")}</strong> · ${cfg.competition||"NFL"} on Kalshi · paper only`;
@@ -104,7 +109,14 @@ async function main(){
   $("#errs").innerHTML = L.errors.map(e => `<div class="err">Could not read ${esc(e)} — the page shows what it could load.</div>`).join("");
   $("#budgetTxt").textContent = fmtK(cfg.game_budget);
   // standings
-  $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.bankroll-a.bankroll).map(t => `<tr><td>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':`<span class="pill">${esc(t.role)}</span>`}</td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${t.pnl>0?"pos":t.pnl<0?"neg":""}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num bank">${fmt$(t.bankroll)}</td></tr>`).join("");
+  const anyLive = st.table.some(t => t.marked);
+  const signed = v => (v>0?"+":"") + fmt$(v);
+  const cls = v => v>0?"pos":v<0?"neg":"";
+  $("#liveBadge").hidden = !anyLive;
+  $("#stSub").innerHTML = anyLive
+    ? 'open bets are marked to the live Kalshi market — what they would be worth if cashed out now, fees already taken out'
+    : 'paper P&amp;L after Kalshi taker fees · results from the exchange\'s settlements';
+  $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.liveBankroll-a.liveBankroll).map(t => `<tr><td>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':`<span class="pill">${esc(t.role)}</span>`}${t.marked?' <span class="pill live">live</span>':""}</td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${cls(t.pnl)}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num ${cls(t.live)}">${t.marked?signed(t.live):'<span class="muted">—</span>'}</td><td class="num bank">${fmt$(t.liveBankroll)}${t.marked?`<small class="${cls(t.live)}">${signed(t.live)} unsettled</small>`:""}</td></tr>`).join("");
   // games
   const games = L.slate.filter(s => /^(yes|y|true)$/i.test(s.in_slate||""));
   $("#games").innerHTML = games.length ? games.map(s => { const mk = eventMarkets(L.markets, s.ev); const h = mk.winner.find(m=>m.team===s.ev.home.abbr), a = mk.winner.find(m=>m.team===s.ev.away.abbr);
@@ -128,12 +140,19 @@ async function main(){
     : `<tr><td colspan="6" class="muted">${feed ? "Nothing mapped in the last replay." : "Nothing yet — the collector has to be running for the System to have a reference line."}</td></tr>`;
   // every bet
   const rows = st.rows;
-  $("#pickRows").innerHTML = rows.length ? rows.map(x => `<tr><td>${esc(x.player)}${x.role==="system"?' <span class="pill sys">system</span>':x.role!=="intuition"?` <span class="pill">${esc(x.role)}</span>`:""}</td><td class="muted">${x.ts?fmtET(x.ts):"—"}${x.source==="sheet"?' <span class="pill">sheet</span>':""}${x.backfilled?' <span class="pill">backfilled</span>':""}</td><td class="tick">${esc(label(x.ticker))}</td><td><span class="pill ${x.side}">${x.side.toUpperCase()}</span></td><td class="num">${cents(x.price)} × ${x.contracts}</td><td class="num">${fmt$(x.price*x.contracts)}</td><td>${pillRes(x)} ${x.pnl==null?"":`<span class="${x.pnl>0?"pos":"neg"}">${fmt$(x.pnl)}</span>`}</td><td class="muted">${esc((x.note||"").slice(0,80))}</td></tr>`).join("")
+  $("#pickRows").innerHTML = rows.length ? rows.map(x => `<tr><td>${esc(x.player)}${x.role==="system"?' <span class="pill sys">system</span>':x.role!=="intuition"?` <span class="pill">${esc(x.role)}</span>`:""}</td><td class="muted">${x.ts?fmtET(x.ts):"—"}${x.source==="sheet"?' <span class="pill">sheet</span>':""}${x.backfilled?' <span class="pill">backfilled</span>':""}</td><td class="tick">${esc(label(x.ticker))}</td><td><span class="pill ${x.side}">${x.side.toUpperCase()}</span></td><td class="num">${cents(x.price)} × ${x.contracts}</td><td class="num">${fmt$(x.price*x.contracts)}</td><td>${pillRes(x)} ${x.pnl!=null?`<span class="${x.pnl>0?"pos":"neg"}">${fmt$(x.pnl)}</span>`:x.live!=null?`<span class="muted">now ${cents(x.mark)}</span> <span class="${x.live>0?"pos":"neg"}">${(x.live>0?"+":"")+fmt$(x.live)}</span>`:""}</td><td class="muted">${esc((x.note||"").slice(0,80))}</td></tr>`).join("")
     : '<tr><td colspan="8" class="muted">No bets placed yet.</td></tr>';
-  $("#foot").innerHTML = `Kalshi prices and results as of ${fetched ? esc(fmtET(fetched,{weekday:"short"})) + " ET" : "unknown"} (a GitHub Action refreshes them every 5 minutes) · bets read from the league's sheet as you loaded this page <button type="button" id="reload">reload</button>. Fees are Kalshi's taker schedule; settlement is Kalshi's; nothing is estimated. Paper money.`;
-  $("#reload").onclick = () => location.reload();
+  $("#foot").innerHTML = `Kalshi prices and results as of ${fetched ? esc(fmtET(fetched,{weekday:"short"})) + " ET" : "unknown"} — a GitHub Action refreshes them every 5 minutes around a game, and this page re-reads the prices and the bets every minute on its own, so leave it open. Last checked <span id="checked">just now</span> <button type="button" id="reload">reload now</button>. Open bets are marked at the market's mid price; fees are Kalshi's taker schedule; settlement is Kalshi's; nothing is estimated. Paper money.`;
+  lastCheck = Date.now();
+  $("#reload").onclick = () => { $("#reload").disabled = true; main().catch(()=>{}).then(()=>{ const b=$("#reload"); if (b) b.disabled = false; }); };
   $("#loading").hidden = true; $("#page").hidden = false;
 }
+let lastCheck = Date.now();
+function ago(){ const el = $("#checked"); if (!el) return; const s = Math.round((Date.now()-lastCheck)/1000);
+  el.textContent = s < 10 ? "just now" : s < 90 ? `${s}s ago` : `${Math.round(s/60)} min ago`; }
 main();
+setInterval(ago, 5000);
+setInterval(() => { if (!document.hidden) main().catch(()=>{}); }, 60000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden && Date.now()-lastCheck > 60000) main().catch(()=>{}); });
 </script>
 </body></html>

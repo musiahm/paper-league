@@ -300,8 +300,9 @@ async function assemble(){
   const evo = (R && R.event) || {};
   const mk = eventMarkets(L.markets, ev); const slateRow = L.slate.find(s => s.ev.suffix===ev.suffix);
   const info = mk.info || {}; const strike = info.strike_date || info.expected_expiration_time || null;
-  const st = standings(cfg, L.bets, L.results, L.feed); const key = `-${ev.suffix}-`; const placed = {};
-  for (const r of st.rows) if ((r.ticker||"").includes(key)) placed[r.player] = (placed[r.player]||0) + r.price*r.contracts;
+  const st = standings(cfg, L.bets, L.results, L.feed, L.book); const key = `-${ev.suffix}-`; const placed = {}, liveHere = {}, markedHere = {};
+  for (const r of st.rows) if ((r.ticker||"").includes(key)) { placed[r.player] = (placed[r.player]||0) + r.price*r.contracts;
+    if (r.live != null) { liveHere[r.player] = (liveHere[r.player]||0) + r.live; markedHere[r.player] = (markedHere[r.player]||0) + 1; } }
   const watch = []; for (const e of (L.feed&&L.feed.entries)||[]) if ((e.ticker||"").includes(key)) watch.push({ticker:e.ticker, label:label(e.ticker).split(" · ")[1]||e.ticker, yes_ask:e.yes_ask, p_ref:e.p_ref, edge_raw_cents:e.edge_raw_cents, fires:true, reason:"fired"});
   for (const w of (L.feed&&L.feed.watching)||[]) if ((w.ticker||"").includes(key) && !watch.some(x=>x.ticker===w.ticker)) watch.push({ticker:w.ticker, label:label(w.ticker).split(" · ")[1]||w.ticker, yes_ask:w.yes_ask, p_ref:w.p_ref, edge_raw_cents:w.edge_raw_cents, fires:!!w.fires, reason:w.reason});
   const fetched = L.markets && L.markets.fetched_at ? new Date(L.markets.fetched_at) : null;
@@ -317,7 +318,7 @@ async function assemble(){
     winner: mk.winner, spread: mk.spread, total: mk.total,
     consensus: (R && R.consensus) || null, research: (R && R.research) || null, tracks: (R && R.tracks) || null,
     ledger: st.rows.map(r => ({player:r.player, ticker:r.ticker, side:r.side, price:r.price, contracts:r.contracts, ts:r.ts?r.ts.toISOString():null, result:r.result, pnl:r.pnl})),
-    standings: st.table.map(t => Object.assign({placed_here: Math.round((placed[t.player]||0)*100)/100}, t)),
+    standings: st.table.map(t => Object.assign({placed_here: Math.round((placed[t.player]||0)*100)/100, live_here: Math.round((liveHere[t.player]||0)*100)/100, marked_here: markedHere[t.player]||0}, t)),
     system_watch: watch,
     final: winnerResults.length ? (winner ? `Final: ${(winner.team===ev.home.abbr?ev.home:ev.away).nick} won` : "Final: settled") : null,
     code_version: (L.markets && L.markets.version) || "site",
@@ -361,18 +362,20 @@ $("#venue").textContent = E.venue || ""; $("#snap").textContent = D.snapshot.kal
 $("#errs").innerHTML = D.errors.map(e => `<div class="err">Could not read ${esc(e)} — the page shows what it could load.</div>`).join("") + (D.winner.length ? "" : (D.final ? "" : '<div class="err">No open Kalshi markets for this game right now (not listed yet, or already closed).</div>'));
 $("#final").hidden = !D.final; $("#final").textContent = D.final || "";
 $("#refresh").onclick = async () => { $("#refresh").textContent = "refreshing…"; try { D = await assemble(); render(); } catch (e) { $("#refresh").textContent = "refresh failed"; } };
+setInterval(async () => { if (document.hidden) return; try { D = await assemble(); render(); } catch (e) {} }, 60000);
 $("#stakes").innerHTML = [["Paper bankroll", fmtK(D.league.bankroll), "each · imaginary money"], ["On this game", fmtK(BUDGET), "each · one bet or several"],
   ["Who bets", String(D.league.players.length), D.league.players.map(p => p.name).join(" · ")],
   ["Deadline", E.deadline_text || "kickoff", "bets placed after kickoff do not count", "txt"]]
   .map(([k,v,d,x]) => `<div class="stake"><div class="k">${k}</div><div class="v${x?" "+x:""}">${v}</div><div class="d">${d}</div></div>`).join("");
 
 // ---- bankrolls
-const ST = D.standings || D.league.players.map(p => ({player:p.name, role:p.role, bankroll:D.league.bankroll, pnl:0, settled:0, open:0, placed_here:0}));
-$("#bankSub").innerHTML = `Everyone started at ${fmtK(D.league.bankroll)}. Bankroll = start + settled P&amp;L after Kalshi fees, from every bet placed so far; this game puts up to ${fmtK(BUDGET)} each at risk. Settlement comes from Kalshi's results the next time the prices refresh.`;
+const ST = D.standings || D.league.players.map(p => ({player:p.name, role:p.role, bankroll:D.league.bankroll, pnl:0, settled:0, open:0, placed_here:0, live_here:0, marked_here:0, liveBankroll:D.league.bankroll, live:0, marked:0}));
+const anyLive = ST.some(t => t.marked); $("#bankSub").innerHTML = `Everyone started at ${fmtK(D.league.bankroll)}. Bankroll = start + settled P&amp;L after Kalshi fees${anyLive ? ", plus every open bet marked to the live Kalshi market — what it would fetch if sold right now, fees already taken out" : ""}; this game puts up to ${fmtK(BUDGET)} each at risk. Settlement comes from Kalshi's results the next time the prices refresh.`;
 const roleLabel = t => { const p = D.league.players.find(x => x.name===t.player); return p && p.label ? p.label : (t.role==="system" ? "the System bets for him" : t.role); };
+const sgn = v => (v>0?"+":"") + fmt$(v);
 $("#bankTiles").innerHTML = ST.map(t => `<div class="tile"><div class="k"><span>${esc(t.player)}</span><span class="chip ${t.role==="system"?"sys":"plain"}">${esc(roleLabel(t))}</span></div>
-  <div class="side" style="border-top-color:${t.role==="system"?"var(--sys)":"var(--accent)"}"><div class="lab">Bankroll</div><div class="price">${fmt$(t.bankroll)}</div><div class="imp">settled P&amp;L ${fmt$(t.pnl||0)} · ${t.settled||0} settled · ${t.open||0} open</div></div>
-  <div class="grid2"><div class="l">Placed on this game</div><div class="r">${fmt$(t.placed_here||0)}</div><div class="l">Left to place here</div><div class="r">${fmt$(Math.max(0, BUDGET-(t.placed_here||0)))}</div></div></div>`).join("");
+  <div class="side" style="border-top-color:${t.marked?"var(--no)":t.role==="system"?"var(--sys)":"var(--accent)"}"><div class="lab">Bankroll${t.marked?" · live":""}</div><div class="price">${fmt$(t.marked?t.liveBankroll:t.bankroll)}</div><div class="imp">${t.marked?`${sgn(t.live)} unsettled · ` : ""}settled P&amp;L ${fmt$(t.pnl||0)} · ${t.settled||0} settled · ${t.open||0} open</div></div>
+  <div class="grid2"><div class="l">Placed on this game</div><div class="r">${fmt$(t.placed_here||0)}</div>${t.marked_here?`<div class="l">Worth right now</div><div class="r">${fmt$((t.placed_here||0)+(t.live_here||0))} <span style="color:${t.live_here>0?"var(--yes)":"var(--no)"}">${sgn(t.live_here||0)}</span></div>`:""}<div class="l">Left to place here</div><div class="r">${fmt$(Math.max(0, BUDGET-(t.placed_here||0)))}</div></div></div>`).join("");
 
 // ---- lookups
 const W = Object.fromEntries((D.winner||[]).map(m => [m.team, m]));

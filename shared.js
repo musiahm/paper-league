@@ -131,6 +131,7 @@ const PL = (() => {
     out.bets = normalizeBets(out.form, out.picks);
     out.results = settlements(out.markets);
     out.slate = slateRows(out.markets);
+    out.book = priceBook(out.markets);
     return out;
   }
 
@@ -163,6 +164,20 @@ const PL = (() => {
     return m[2]==="SPREAD" && T[m[4]] ? `${g} · ${T[m[4]].nick} by over ${line}` : `${g} · over ${line}`; }
   const suffixOf = ticker => { const m = /-(\d{2}[A-Z]{3}\d{2}[A-Z]+)-/.exec(ticker||""); return m ? m[1] : null; };
 
+  // ---- live marks --------------------------------------------------------------------------------
+  // every quoted ticker in the file -> its current prices, so an open bet can be valued while the game is running
+  function priceBook(data){ const b = {}; if (!data || !data.events) return b;
+    for (const evd of Object.values(data.events)) for (const m of evd.markets||[]) { if (!m.ticker) continue;
+      b[m.ticker] = {yes_bid:num(m.yes_bid_dollars), yes_ask:num(m.yes_ask_dollars), no_bid:num(m.no_bid_dollars), no_ask:num(m.no_ask_dollars), last:num(m.last_price_dollars), status:m.status||"", result:(m.result||"").toLowerCase()}; }
+    return b; }
+  // what one contract of `side` is worth right now: the mid of that side's book, else the other side mirrored, else the last trade. null = not quoted
+  function mark(book, ticker, side){ const q = book && book[ticker]; if (!q) return null;
+    const mid = (bid, ask) => (bid>0 && ask>0 && ask>=bid) ? (bid+ask)/2 : null;
+    const yes = mid(q.yes_bid, q.yes_ask), no = mid(q.no_bid, q.no_ask);
+    let v = side==="yes" ? (yes!=null ? yes : (no!=null ? 1-no : null)) : (no!=null ? no : (yes!=null ? 1-yes : null));
+    if (v==null && q.last>0) v = side==="yes" ? q.last : 1-q.last;
+    return v==null ? null : Math.min(1, Math.max(0, v)); }
+
   // ---- bets --------------------------------------------------------------------------------------
   // Form Responses rows (Timestamp, player, ticker, side, price, contracts, note) and Picks rows (player, ts_logged, …) -> one shape
   function normalizeBets(form, picks){ const out = [];
@@ -171,7 +186,7 @@ const PL = (() => {
     return out.filter(b => (b.side==="yes"||b.side==="no") && b.price>0 && b.price<1 && b.contracts>0); }
 
   // standings, port of collector.site.compute_standings: the System's rows come from the feed, everyone else's from the sheet
-  function standings(cfg, bets, results, feed){ const coef = cfg.taker_coef||0.07; const rows = [];
+  function standings(cfg, bets, results, feed, book){ const coef = cfg.taker_coef||0.07; const rows = [];
     const sysName = (cfg.players.find(p=>p.role==="system")||{}).name || "System"; const sysNames = new Set([sysName.toLowerCase(), "system"]);
     const feedKeys = new Set();
     for (const e of (feed&&feed.entries)||[]) { feedKeys.add(`${e.ticker}|${e.et_date}`);
@@ -182,12 +197,17 @@ const PL = (() => {
       const f = fee(b.contracts, b.price, coef); let pnl = null; if (res==="yes"||res==="no") { const win = res===b.side; pnl = Math.round((b.contracts*(win ? 1-b.price : -b.price) - f)*100)/100; }
       const pl = cfg.players.find(p => p.name.toLowerCase()===b.player.toLowerCase());
       rows.push({player: isSys ? sysName : (pl ? pl.name : b.player), role: isSys ? "system" : (pl ? pl.role : "intuition"), source: isSys ? "sheet (manual)" : b.source, ts:b.ts, ticker:b.ticker, side:b.side, price:b.price, contracts:b.contracts, result:res, pnl, fee:f, note:b.note, backfilled:b.backfilled, clv:null}); }
+    // mark every unsettled bet to the current market: unrealised P&L = contracts x (mark - entry) - the fee already paid
+    for (const r of rows) { r.mark = null; r.live = null; if (r.pnl!=null || r.result) continue;
+      const mk = book ? mark(book, r.ticker, r.side) : null; if (mk==null) continue;
+      r.mark = mk; r.live = Math.round((r.contracts*(mk - r.price) - r.fee)*100)/100; }
     const table = cfg.players.map(p => { const ps = rows.filter(x => x.player===p.name); const settled = ps.filter(x => x.result==="yes"||x.result==="no"); const wins = settled.filter(x => x.result===x.side).length;
       const pnl = Math.round(settled.reduce((a,x)=>a+(x.pnl||0),0)*100)/100;
-      return {player:p.name, role:p.role, picks:ps.length, open:ps.length-settled.length-ps.filter(x=>x.result==="void").length, settled:settled.length, wins, losses:settled.length-wins, fees:Math.round(ps.reduce((a,x)=>a+x.fee,0)*100)/100, pnl, bankroll:Math.round((cfg.bankroll+pnl)*100)/100, atRisk:Math.round(ps.filter(x=>!x.result).reduce((a,x)=>a+x.price*x.contracts,0)*100)/100, backfilled:ps.filter(x=>x.backfilled).length}; });
+      const live = Math.round(ps.reduce((a,x)=>a+(x.live||0),0)*100)/100; const marked = ps.filter(x=>x.live!=null).length;
+      return {player:p.name, role:p.role, picks:ps.length, open:ps.length-settled.length-ps.filter(x=>x.result==="void").length, settled:settled.length, wins, losses:settled.length-wins, fees:Math.round(ps.reduce((a,x)=>a+x.fee,0)*100)/100, pnl, bankroll:Math.round((cfg.bankroll+pnl)*100)/100, live, marked, liveBankroll:Math.round((cfg.bankroll+pnl+live)*100)/100, atRisk:Math.round(ps.filter(x=>!x.result).reduce((a,x)=>a+x.price*x.contracts,0)*100)/100, backfilled:ps.filter(x=>x.backfilled).length}; });
     rows.sort((a,b) => (b.ts?b.ts.getTime():0) - (a.ts?a.ts.getTime():0));
     return {table, rows}; }
 
   return {TEAMS, parseEvent, pickColors, applyColors, num, ceilCent, fee, fmt$, fmtK, fmt0, pct, cents, esc, american, parseET, fmtET, fmtETlong, nowET, etDate, parseCSV, getJSON, getText, sheetURL, loadAll,
-          normalizeMarket, eventMarkets, settlements, slateRows, label, suffixOf, normalizeBets, standings};
+          normalizeMarket, eventMarkets, settlements, slateRows, label, suffixOf, normalizeBets, standings, priceBook, mark};
 })();
