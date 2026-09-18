@@ -55,12 +55,18 @@ const PL = (() => {
   // "KXNFLGAME-26SEP17DETBUF" or "26SEP17DETBUF" -> event
   function parseEvent(s, dflt="KXNFLGAME"){
     const m = /^(?:(KX[A-Z]+)GAME-)?(\d{2})([A-Z]{3})(\d{2})([A-Z]+)$/.exec(String(s||"").trim().toUpperCase());
-    if (!m) return null;
-    const base = m[1] || dflt.replace(/GAME$/,""); const sport = SPORT[base]; if (!sport || !MONTHS[m[3]]) return null;
-    const teams = m[5]; const T = TEAMS[sport]; const splits = [];
-    for (let i = 1; i < teams.length; i++){ const a = T[teams.slice(0,i)], b = T[teams.slice(i)]; if (a && b && a !== b) splits.push([a,b]); }
-    if (splits.length !== 1) return null;
-    const [away, home] = splits[0]; const suffix = `${m[2]}${m[3]}${m[4]}${teams}`;
+    if (!m || !MONTHS[m[3]]) return null;
+    // A bare suffix (game.html?e=26SEP19FLAAUB) carries no series, so try every sport we know and take the one
+    // whose team table splits the letters cleanly. The default sport goes first so NFL keeps winning any tie.
+    const first = dflt.replace(/GAME$/,"");
+    const bases = m[1] ? [m[1]] : [first, ...Object.keys(SPORT).filter(b => b !== first)];
+    let base = null, sport = null, away = null, home = null;
+    for (const b of bases){ const sp = SPORT[b]; const T = sp && TEAMS[sp]; if (!T) continue;
+      const teams = m[5]; const splits = [];
+      for (let i = 1; i < teams.length; i++){ const x = T[teams.slice(0,i)], y = T[teams.slice(i)]; if (x && y && x !== y) splits.push([x,y]); }
+      if (splits.length === 1){ base = b; sport = sp; [away, home] = splits[0]; break; } }
+    if (!base) return null;
+    const teams = m[5]; const suffix = `${m[2]}${m[3]}${m[4]}${teams}`;
     return {base, sport, suffix, ticker: `${base}GAME-${suffix}`, date_et: `20${m[2]}-${String(MONTHS[m[3]]).padStart(2,"0")}-${m[4]}`, away, home,
             competition: COMPETITION[sport]||sport, eventTicker: k => `${base}${k}-${suffix}`};
   }
