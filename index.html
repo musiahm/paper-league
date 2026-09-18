@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Paper League</title>
 <meta name="description" content="Standings, games and every bet in the paper league — computed live in the browser from Kalshi prices and the placed bets.">
-<script src="shared.js"></script>
+<script src="shared.js?v=2"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{--bg:#F3F4EF;--surface:#FFFFFF;--surface-2:#ECEEE7;--ink:#16202A;--muted:#5B6672;--rule:#D6DAD2;--accent:#1F5FBF;--accent-ink:#FFFFFF;--yes:#0F7B6C;--no:#B0472C;--yes-bg:#E4F2EE;--no-bg:#F6E7E1;--warn:#8A5A00;--warn-bg:#F6EBD3;--sys:#16202A;--sys-ink:#F3F4EF;
@@ -109,6 +109,7 @@ async function main(){
   $("#errs").innerHTML = L.errors.map(e => `<div class="err">Could not read ${esc(e)} — the page shows what it could load.</div>`).join("");
   $("#budgetTxt").textContent = fmtK(cfg.game_budget);
   // standings
+  for (const t of st.table) { if (t.liveBankroll == null) { t.live = 0; t.marked = 0; t.liveBankroll = t.bankroll; } }
   const anyLive = st.table.some(t => t.marked);
   const signed = v => (v>0?"+":"") + fmt$(v);
   const cls = v => v>0?"pos":v<0?"neg":"";
