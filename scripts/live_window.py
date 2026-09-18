@@ -23,3 +23,5 @@ for ev in (doc.get("events") or {}).values():
         if m.get("status") not in ("open", "active") and not (m.get("result") or "") and now - timedelta(hours=8) <= exp <= now + timedelta(hours=8):
             live = True
 print("1" if live else "0")
+
+# Board now includes college football (KXNCAAFGAME) alongside the NFL; the window logic is series-agnostic.
