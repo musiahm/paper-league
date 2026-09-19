@@ -1,0 +1,40 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
+  "tracks": {
+    "as_of": "Sat Sep 19, 11:27 AM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
+    "research": {
+      "pick": "Green Bay to win (moneyline)",
+      "ticker": "KXNFLGAME-26SEP20GBNYJ-GB",
+      "side": "yes",
+      "verdict": "The one game where the talkers and the money split hard — and the two tracks split with them.",
+      "evidence": [
+        {
+          "text": "Named analyst picks run about two-to-one Green Bay, 20–10: SI/MMQB 6–2, Bleacher Report 5–2, plus Florio, Athlon, SI Betting, FanDuel, Yahoo, PicksAndParlays and the Dimers model.",
+          "src": "expert roundup, Sep 2026"
+        },
+        {
+          "text": "The models agree and sit above the market: Dimers 67.3%, numberFire 64%.",
+          "src": "model screens, Sep 19 2026"
+        },
+        {
+          "text": "Honest caveat, on the record: 85–90% of spread handle is on the Jets and the line moved 1–3 points toward New York.",
+          "src": "RotoWire/DraftKings Sep 15; VegasInsider Sep 18 2026"
+        },
+        {
+          "text": "This track follows the crowd by construction, so it takes Green Bay anyway. The statistics track declined this game for exactly that reason.",
+          "src": "method note"
+        }
+      ],
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "no_bet": true,
+      "pick": "No bet — sat this one out",
+      "verdict": "Declined on purpose. The published picks say Green Bay while 85–90% of the actual handle says Jets; when the talk and the money point opposite ways there is no defensible probability to bet against the price."
+    }
+  }
+}

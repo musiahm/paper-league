@@ -521,7 +521,7 @@ function barChart(el, title, desc, bars, opts){
   const cards = [];
   for (const key of ["research","statistics"]) { const tr = T[key]; if (!tr) continue;
     const mine = (D.ledger||[]).filter(r => r.player===tr.player && (r.ticker||"").includes(`-${E.suffix}-`));
-    const status = mine.length ? mine.map(r => `${r.side.toUpperCase()} ${c(r.price)} × ${fmt0(r.contracts)} = ${fmt$(r.price*r.contracts)} · placed ${r.ts?new Date(r.ts).toLocaleString("en-US",{timeZone:"America/New_York",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}):"—"} ET · ${r.result==="yes"||r.result==="no" ? (r.result===r.side ? "won " : "lost ") + fmt$(r.pnl||0) : "open"}`).join("<br>") : "not placed yet";
+    const status = mine.length ? mine.map(r => `${r.side.toUpperCase()} ${c(r.price)} × ${fmt0(r.contracts)} = ${fmt$(r.price*r.contracts)} · placed ${r.ts?new Date(r.ts).toLocaleString("en-US",{timeZone:"America/New_York",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}):"—"} ET · ${r.result==="yes"||r.result==="no" ? (r.result===r.side ? "won " : "lost ") + fmt$(r.pnl||0) : "open"}`).join("<br>") : (tr.no_bet ? "sat this one out — by design, not an oversight" : "not placed yet");
     cards.push(`<div class="track"><h3>${esc(tr.player)}</h3><p class="method">${esc(tr.method||"")}</p><div class="pick">${esc(tr.pick||"")}</div><div class="status">${status}</div><p class="verdict">${esc(tr.verdict||"")}</p>
       <ul>${(tr.evidence||[]).map(e => `<li>${esc(e.text)} <span class="src">— ${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.src||"source")}</a>`:esc(e.src||"")}</span></li>`).join("")}</ul></div>`); }
   $("#trCards").innerHTML = cards.join("");

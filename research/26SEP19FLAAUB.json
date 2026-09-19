@@ -1,0 +1,71 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
+  "tracks": {
+    "as_of": "Sat Sep 19, 11:27 AM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
+    "research": {
+      "pick": "Florida to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP19FLAAUB-FLA",
+      "side": "yes",
+      "verdict": "Everything the crowd publishes points at Florida, and the price sits at the expensive end of fair. Paying up for consensus is exactly what this track is built to do.",
+      "evidence": [
+        {
+          "text": "70% of spread tickets are on Florida.",
+          "src": "TheSpread, Sep 19 2026"
+        },
+        {
+          "text": "Named expert picks run 8–3 Florida — Gators Wire panel 4–0, Brockway, Fiutak, TheRX, 1230 The Gambler.",
+          "src": "expert roundup, Sep 19 2026"
+        },
+        {
+          "text": "SP+ has Florida at 63% and −5.3; Florida is favoured at every book, −120 to −135.",
+          "src": "SP+ / book screens, Sep 2026"
+        },
+        {
+          "text": "Florida is 2–0 having scored 66 and 52, sits 2nd in FBS in points per drive, and Jadan Baugh leads the SEC in rushing.",
+          "src": "season stats, Sep 2026"
+        },
+        {
+          "text": "Kalshi's 56¢ ask normalizes to 55.4%, at or above the top of the book devig range of 52.8–55.3%.",
+          "src": "Kalshi public API, Sep 19 2026 15:27Z"
+        }
+      ],
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
+    },
+    "statistics": {
+      "pick": "Auburn to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP19FLAAUB-AUB",
+      "side": "yes",
+      "verdict": "The only bet on the whole six-game board that clears the fee — and it happens to be against the other track.",
+      "evidence": [
+        {
+          "text": "Three neutral models call this a coin flip: ESPN Matchup Predictor Auburn 50.2%, ESPN FPI Auburn 49.6%, numberFire Auburn 49.5%.",
+          "src": "model screens, Sep 19 2026"
+        },
+        {
+          "text": "The sharper book devigs put Auburn at 46.7–47.2% — Caesars −120/+105, FanDuel −126/+105, SportsLine-quoted −125/+105.",
+          "src": "sportsbook prices, Sep 19 2026"
+        },
+        {
+          "text": "Kalshi asks 45¢, which normalizes to Auburn 44.6% — below every model and below the better book prices.",
+          "src": "Kalshi public API, Sep 19 2026 15:27Z"
+        },
+        {
+          "text": "Blending the models with the sharp devig gives roughly 48–49% true. At 45¢ that is a 3–4¢ edge against a 1.74¢ fee, about +1.5 to +2.2¢ net per contract. Break-even 46.73¢.",
+          "src": "fee = 0.07 × P × (1−P)"
+        },
+        {
+          "text": "SP+ is the dissent at Florida 63% and is deliberately discounted: dated Sep 14, and it rates Florida off blowouts of FAU and Campbell.",
+          "src": "SP+, Sep 14 2026"
+        },
+        {
+          "text": "Supporting structure, not counted in the probability: 70% of spread tickets on Florida with the number static all week, VSiN flagged an expected sharp Auburn buyback, Auburn gets edge rushers Womack and Murray back, Aaron Philo makes his first career road start in a sold-out Jordan-Hare, and Florida went 0–6 outside The Swamp in 2025 and has not won at Auburn in 27 years.",
+          "src": "VSiN and beat reporting, Sep 19 2026"
+        }
+      ],
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee."
+    }
+  }
+}

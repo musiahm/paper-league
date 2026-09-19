@@ -1,0 +1,52 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
+  "tracks": {
+    "as_of": "Sat Sep 19, 11:27 AM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
+    "research": {
+      "pick": "LSU to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP19LSUMISS-LSU",
+      "side": "yes",
+      "verdict": "The most lopsided money-versus-tickets split found all week. The small bettors are on Ole Miss; the handle is almost entirely LSU.",
+      "evidence": [
+        {
+          "text": "97% of moneyline money is on LSU against only 31% of tickets — the widest bets-to-handle gap on the board this week.",
+          "src": "SportsBettingDime, Sep 14 2026"
+        },
+        {
+          "text": "61% of spread bets are also on LSU.",
+          "src": "TheSpread, Sep 18 2026"
+        },
+        {
+          "text": "Expert count 13–9 LSU; the CFN panel is 8–5 LSU.",
+          "src": "expert roundup, Sep 2026"
+        },
+        {
+          "text": "ESPN FPI 66.8% LSU, Dimers 57%, Polymarket 60¢.",
+          "src": "model and market screens, Sep 19 2026"
+        },
+        {
+          "text": "The line has swung about 5 points toward LSU since the August lookahead — Ole Miss −2.5 then, LSU −3 now.",
+          "src": "line history, Aug–Sep 2026"
+        },
+        {
+          "text": "Sam Leavitt came off the SEC availability report entirely on Friday night and is expected to start.",
+          "src": "Thamel via Athlon, Sep 19 2026 9:25am ET"
+        },
+        {
+          "text": "Oxford sentiment is violently anti-Kiffin, but sentiment is not the crowd's money.",
+          "src": "forum reading, Sep 19 2026"
+        }
+      ],
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "no_bet": true,
+      "pick": "No bet — sat this one out",
+      "verdict": "Nothing on this board cleared the fee. The models, the books and Kalshi all land within a couple of cents of each other, and a couple of cents does not survive a 1.7¢ round trip."
+    }
+  }
+}

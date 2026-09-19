@@ -1,0 +1,48 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
+  "tracks": {
+    "as_of": "Sat Sep 19, 11:27 AM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
+    "research": {
+      "pick": "Dallas to win (moneyline)",
+      "ticker": "KXNFLGAME-26SEP20WASDAL-DAL",
+      "side": "yes",
+      "verdict": "The most one-sided straight-up media consensus of the weekend, with the handle agreeing — though every ATS recommendation found went the other way.",
+      "evidence": [
+        {
+          "text": "Straight-up media consensus is 28–3 Dallas, about 90%: MMQB 7–1, ESPN 9–2, CBS 7–0, NFL.com 5–0.",
+          "src": "expert roundup, Sep 2026"
+        },
+        {
+          "text": "Spread tickets are 65% Dallas carrying 84% of the money, and Yahoo reports sharps on Cowboys −3.5.",
+          "src": "VegasInsider, Sep 18 2026 9:26pm"
+        },
+        {
+          "text": "Models numberFire 68.6% and Dimers 61.1%, both Dallas.",
+          "src": "model screens, Sep 19 2026"
+        },
+        {
+          "text": "Dallas is 8–2 against the spread in the last ten meetings and 15–5 against Washington over the past decade.",
+          "src": "historical series, Sep 2026"
+        },
+        {
+          "text": "Roof expected closed, so weather is not a factor.",
+          "src": "venue note, Sep 19 2026"
+        },
+        {
+          "text": "Recorded dissent: every published ATS recommendation found was on Washington, and Dallas is missing S Malik Hooker and LB DeMarvion Overshown with a rookie taking the green dot.",
+          "src": "injury report and ATS roundup, Sep 19 2026"
+        }
+      ],
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "no_bet": true,
+      "pick": "No bet — sat this one out",
+      "verdict": "No edge after fees. Dallas is priced where the models and the books already agree it belongs."
+    }
+  }
+}

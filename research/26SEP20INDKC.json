@@ -1,0 +1,44 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
+  "tracks": {
+    "as_of": "Sat Sep 19, 11:27 AM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
+    "research": {
+      "pick": "Kansas City to win (moneyline)",
+      "ticker": "KXNFLGAME-26SEP20INDKC-KC",
+      "side": "yes",
+      "verdict": "The most lopsided crowd on the board, and the dearest ticket — so it got the fewest contracts. The crowd is probably right here; you just pay for it.",
+      "evidence": [
+        {
+          "text": "98% of moneyline tickets and 94% of moneyline money are on Kansas City; 76% of bets and 77% of handle on KC −6.5 at BetMGM.",
+          "src": "scoresandodds, Sep 18 2026"
+        },
+        {
+          "text": "Expert count 8–2 Kansas City straight up.",
+          "src": "expert roundup, Sep 2026"
+        },
+        {
+          "text": "Models: ESPN Matchup Predictor 75%, nfelo 73%, Dimers 70%, Opta 67.4%.",
+          "src": "model screens, Sep 19 2026"
+        },
+        {
+          "text": "Kansas City ran for 220 yards at 5.9 a carry in Week 1 against Denver's No. 2 run defence, while Indianapolis gave up 202 rushing yards and four rushing touchdowns to Baltimore and carries the NFL's longest active losing streak at eight.",
+          "src": "Week 1 box scores, Sep 2026"
+        },
+        {
+          "text": "Smallest contract count of the six, because 73¢ is the dearest ticket on the board.",
+          "src": "Kalshi public API, Sep 19 2026 15:27Z"
+        }
+      ],
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "no_bet": true,
+      "pick": "No bet — sat this one out",
+      "verdict": "No edge. At 73¢ Kalshi is already at or past where the models put Kansas City, so there is nothing to buy."
+    }
+  }
+}
