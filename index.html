@@ -48,6 +48,14 @@
   .game .prices{font-family:var(--mono);font-size:13px}
   .game .cta{align-self:flex-start;margin-top:6px}
   .game.done{border-top-color:var(--rule)}
+  details.past{margin-top:18px;border-top:1px solid var(--rule)}
+  details.past>summary{cursor:pointer;list-style:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:var(--muted);display:flex;align-items:center;gap:8px;padding:12px 0}
+  details.past>summary::-webkit-details-marker{display:none}
+  details.past>summary::before{content:"\25B8";font-size:13px}
+  details.past[open]>summary::before{content:"\25BE"}
+  details.past>summary:hover{color:var(--ink)}
+  details.past>summary .n{font-family:var(--mono);text-transform:none;letter-spacing:0;font-size:13px}
+  details.past .games{margin:4px 0 16px}
   .cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:18px;padding:8px 14px;border-radius:3px}
   .cta.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--rule)}
   .note{background:var(--surface-2);border-left:3px solid var(--accent);padding:10px 14px;font-size:14px;max-width:72ch}
@@ -76,6 +84,7 @@
 
 <section id="play"><h2>Games <span class="sub">open a game, tap the bets you want, place them — up to two bets per game, any size, out of your bankroll</span></h2>
 <div class="games" id="games"></div>
+<details class="past" id="pastWrap" hidden><summary id="pastSum">Finished games</summary><div class="games" id="pastGames"></div></details>
 <p style="margin-top:14px">Every game card shows all of Kalshi's open markets for that game — moneyline, every spread line, every total — with what an example <span id="budgetTxt"></span> stake does on each, and a slip to place bets from. A placed bet is stamped by Google's clock, counts here immediately, and is scored from Kalshi's result when the game settles.</p></section>
 
 <section id="system"><h2>How the System is thinking <span class="sub" id="sysSub"></span></h2>
@@ -118,14 +127,20 @@ async function main(){
     ? 'open bets are marked to the live Kalshi market — what they would be worth if cashed out now, fees already taken out'
     : 'paper P&amp;L after Kalshi taker fees · results from the exchange\'s settlements';
   $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.liveBankroll-a.liveBankroll).map(t => `<tr><td>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':`<span class="pill">${esc(t.role)}</span>`}${t.marked?' <span class="pill live">live</span>':""}</td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${fmt$(t.free==null?t.bankroll:t.free)}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${cls(t.pnl)}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num ${cls(t.live)}">${t.marked?signed(t.live):'<span class="muted">—</span>'}</td><td class="num bank">${fmt$(t.liveBankroll)}${t.marked?`<small class="${cls(t.live)}">${signed(t.live)} unsettled</small>`:""}</td></tr>`).join("");
-  // games
+  // games — open ones on the board, finished ones folded away underneath
   const games = L.slate.filter(s => /^(yes|y|true)$/i.test(s.in_slate||""));
-  $("#games").innerHTML = games.length ? games.map(s => { const mk = eventMarkets(L.markets, s.ev); const h = mk.winner.find(m=>m.team===s.ev.home.abbr), a = mk.winner.find(m=>m.team===s.ev.away.abbr);
+  const tiles = games.map(s => { const mk = eventMarkets(L.markets, s.ev); const h = mk.winner.find(m=>m.team===s.ev.home.abbr), a = mk.winner.find(m=>m.team===s.ev.away.abbr);
       const res = mk.all.find(m => m.kind==="winner" && m.result==="yes"); const done = !!res || (!h && mk.all.some(m=>m.kind==="winner"));
       const price = h && a ? `${s.ev.home.nick} ${cents(h.yes_ask)} · ${s.ev.away.nick} ${cents(a.yes_ask)}` : done ? (res ? `Final — ${(res.team===s.ev.home.abbr?s.ev.home:s.ev.away).nick} won` : "Final") : "no open markets yet";
       const placed = st.rows.filter(r => (r.ticker||"").includes(`-${s.ev.suffix}-`)).length;
-      return `<div class="game${done?" done":""}"><div class="g">${esc(s.ev.away.nick)} @ ${esc(s.ev.home.nick)}</div><div class="k">${esc((s.kickoff||"").trim() || s.ev.date_et)} · ${esc(s.ev.competition)} · up to ${cfg.max_bets_per_game||2} bets each</div><div class="prices">${esc(price)}${placed?` · ${placed} bet${placed>1?"s":""} placed`:""}</div><a class="cta${done?" alt":""}" href="game.html?e=${encodeURIComponent(s.ev.suffix)}">${done?"See the result →":"Choose & place bets →"}</a></div>`; }).join("")
+      return {done, html: `<div class="game${done?" done":""}"><div class="g">${esc(s.ev.away.nick)} @ ${esc(s.ev.home.nick)}</div><div class="k">${esc((s.kickoff||"").trim() || s.ev.date_et)} · ${esc(s.ev.competition)} · up to ${cfg.max_bets_per_game||2} bets each</div><div class="prices">${esc(price)}${placed?` · ${placed} bet${placed>1?"s":""} placed`:""}</div><a class="cta${done?" alt":""}" href="game.html?e=${encodeURIComponent(s.ev.suffix)}">${done?"See the result →":"Choose & place bets →"}</a></div>`}; });
+  const open_ = tiles.filter(t => !t.done), past = tiles.filter(t => t.done);
+  $("#games").innerHTML = open_.length ? open_.map(t => t.html).join("")
+    : past.length ? '<div class="game done"><div class="g">Nothing open</div><div class="k">Every game on the slate has finished — the results are folded up below.</div></div>'
     : '<div class="game done"><div class="g">No games yet</div><div class="k">Games marked yes on the slate appear here.</div></div>';
+  $("#pastWrap").hidden = !past.length;
+  if (past.length) { $("#pastGames").innerHTML = past.map(t => t.html).join("");
+    $("#pastSum").innerHTML = `Finished games <span class="n">${past.length} settled · tap to open</span>`; }
   // the System
   const feed = L.feed; const rules = (feed&&feed.rules)||{};
   $("#thr").textContent = `${cfg.threshold_cents||rules.threshold_cents||3}¢`;
