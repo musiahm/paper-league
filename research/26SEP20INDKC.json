@@ -1,44 +1,336 @@
 {
-  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
-  "tracks": {
-    "as_of": "Sat Sep 19, 11:27 AM ET",
-    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
-    "research": {
-      "pick": "Kansas City to win (moneyline)",
-      "ticker": "KXNFLGAME-26SEP20INDKC-KC",
-      "side": "yes",
-      "verdict": "The most lopsided crowd on the board, and the dearest ticket — so it got the fewest contracts. The crowd is probably right here; you just pay for it.",
-      "evidence": [
-        {
-          "text": "98% of moneyline tickets and 94% of moneyline money are on Kansas City; 76% of bets and 77% of handle on KC −6.5 at BetMGM.",
-          "src": "scoresandodds, Sep 18 2026"
-        },
-        {
-          "text": "Expert count 8–2 Kansas City straight up.",
-          "src": "expert roundup, Sep 2026"
-        },
-        {
-          "text": "Models: ESPN Matchup Predictor 75%, nfelo 73%, Dimers 70%, Opta 67.4%.",
-          "src": "model screens, Sep 19 2026"
-        },
-        {
-          "text": "Kansas City ran for 220 yards at 5.9 a carry in Week 1 against Denver's No. 2 run defence, while Indianapolis gave up 202 rushing yards and four rushing touchdowns to Baltimore and carries the NFL's longest active losing streak at eight.",
-          "src": "Week 1 box scores, Sep 2026"
-        },
-        {
-          "text": "Smallest contract count of the six, because 73¢ is the dearest ticket on the board.",
-          "src": "Kalshi public API, Sep 19 2026 15:27Z"
-        }
-      ],
-      "player": "Ahmed research",
-      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
-    },
-    "statistics": {
-      "player": "Ahmed statistics",
-      "method": "Bets only where the price is wrong by more than the fee.",
-      "no_bet": true,
-      "pick": "No bet — sat this one out",
-      "verdict": "No edge. At 73¢ Kalshi is already at or past where the models put Kansas City, so there is nothing to buy."
-    }
+ "_about": "Hand-maintained homework for one game. Keys: event (overrides: venue, kickoff_text, kickoff_iso, tv, sub_title, kicker, deadline_text), consensus (a sportsbook line to compare with), research (the Homework section). Delete the file and the card still renders from Kalshi alone.",
+ "event": {
+  "venue": "GEHA Field at Arrowhead Stadium, Kansas City, MO",
+  "kickoff_text": "Sunday, September 20, 2026 · 8:20 PM ET",
+  "kickoff_iso": "2026-09-21T00:20:00Z",
+  "tv": "NBC · Peacock · Universo",
+  "sub_title": "Week 2 · Sunday Night Football",
+  "deadline_text": "Kickoff, 8:20 PM ET"
+ },
+ "consensus": {
+  "label": "Sportsbook consensus",
+  "source": "VegasInsider book-by-book grid, Sep 19 2026",
+  "url": "https://www.vegasinsider.com/nfl/matchups/chiefs-vs-colts/",
+  "spread": {
+   "home_line": -6.5,
+   "home_price": -115,
+   "away_price": -105
+  },
+  "total": {
+   "line": 46.5,
+   "over_price": -105,
+   "under_price": -115
+  },
+  "moneyline": {
+   "home": -285,
+   "away": 230
+  },
+  "public_spread_tickets_away_pct": 29,
+  "total_note": "The total is the real move of the week: it opened 47.5-48 and fell to 46.5. Fanatics is a half-point short at 46.",
+  "opener": {
+   "source": "Covers industry report Sep 18; Thomas Gable (Borgata) via Yahoo Sep 18 2026",
+   "url": "https://www.covers.com/industry/nfl-bettors-oddsmakers-adjust-in-week-2-after-high-scoring-openers-sept-18-2026",
+   "spread": "Lookahead line Kansas City −5.5 before Week 1 was played; the Week 2 opener was −6.5 and it has not moved since Monday",
+   "total": "47.5-48 at the opener, now 46.5",
+   "moneyline": "Kansas City about −250 on the lookahead, −290 at the opener, −285 to −335 now"
+  },
+  "injuries": {
+   "source": "Chiefs.com official Week 2 injury report, Sep 18 2026",
+   "KC": "OUT: LT Josh Simmons (back), DB Chamarri Conner (knee). QUESTIONABLE: DT Chris Jones (calf), CB Mansoor Delane (shoulder). On the report with full participation: QB Patrick Mahomes (knee), WR Rashee Rice, CB L'Jarius Sneed, DE Ashton Gillotte, DE R. Mason Thomas",
+   "IND": "OUT: WR Ashton Dulin (ankle). QUESTIONABLE: RB D.J. Giddens (knee). Full participation, no designation: QB Anthony Richardson (groin, QB2), DT DeForest Buckner, CB Sauce Gardner, WR Alec Pierce (heel), WR Keenan Allen, CB Charvarius Ward Sr."
   }
+ },
+ "research": {
+  "as_of": "Sat Sep 19, 11:30 AM ET",
+  "line": {
+   "text": "Kansas City −6.5 has not budged since the Monday opener, despite roughly three-quarters of the tickets and the handle being on the Chiefs. Books have absorbed that pressure in the juice instead — Caesars −117, DraftKings −115, Rivers −114 — and the market briefly traded −6.5 at −120 before easing back. The line that DID move is the total, down from 47.5-48 to 46.5. Yahoo reports the reason the books will not go to −7: respected money is waiting at Colts +7.",
+   "kalshi": "Kalshi has Kansas City at 73¢ ask, normalizing to 72.3% against a best-of-market devigged 73.0%. That is within seven tenths of a point, on a 1.0% ask-side hold that is tighter than any single sportsbook. Kalshi's spread ladder is slightly odd though: only a 3¢ step between the 5.5 and 6.5 thresholds, when the six-point bucket alone is normally worth four to five points of probability.",
+   "src": "VegasInsider Sep 19; Yahoo/Ben Fawkes Sep 18; Covers Sep 18",
+   "url": "https://www.vegasinsider.com/nfl/matchups/chiefs-vs-colts/",
+   "splits": [
+    {
+     "text": "Moneyline: 98% of TICKETS and 94% of MONEY on Kansas City. Spread: 71% of tickets and 74% of money on the Chiefs. Total: 83% of tickets but only 70% of money on the Under.",
+     "src": "scoresandodds consensus, Sep 18 2026",
+     "url": "https://www.scoresandodds.com/nfl/consensus-picks"
+    },
+    {
+     "text": "BetMGM had 76% of bets and 77% of handle on the Chiefs — a top-five most-bet team of the week, with no sharp divergence at that book.",
+     "src": "Covers industry report, Sep 18 2026",
+     "url": "https://www.covers.com/industry/nfl-bettors-oddsmakers-adjust-in-week-2-after-high-scoring-openers-sept-18-2026"
+    },
+    {
+     "text": "The one genuine contrary signal: sharp bettors are queued at COLTS +7, not +6.5. That is why the number will not move up.",
+     "src": "Ben Fawkes, Yahoo Sports, Sep 18 2026",
+     "url": "https://ca.sports.yahoo.com/news/everything-to-know-for-betting-nfl-week-2-odds-sharp-action-public-betting-splits-and-big-bets-140217911.html"
+    }
+   ],
+   "conflict": "One splits reading badly contradicts the others: RotoWire on Sep 15, citing DraftKings, had the COLTS taking 9% of moneyline tickets but 75% of the handle — a textbook sharp footprint on Indianapolis. Three days later scoresandodds had 94% of moneyline money on Kansas City. Either the money flipped hard, or one of the two is wrong. The RotoWire reading is the older one. Note also that the 83%-tickets-but-70%-of-money Under split means the average Over ticket is materially larger than the average Under ticket, even as the number fell."
+  },
+  "week1": [
+   {
+    "team": "IND",
+    "head": "Indianapolis 0-1: lost 41-23 to Baltimore at home (Sep 13)",
+    "text": "Indianapolis allowed 41 points and 506 total yards, the second-most points given up in the league that week, including 202 RUSHING YARDS AND FOUR RUSHING TOUCHDOWNS at 5.5 a carry. That is the number that defines this matchup. The Colts rank 29th in EPA per play. Daniel Jones, back from Achilles surgery, went 19 of 31 for 166 at 5.4 yards an attempt — 26th in the NFL — under a 41.2% pressure rate. Jonathan Taylor ran for 98 and two scores. This is an EIGHT-GAME losing streak dating to last season, the longest active in the NFL, and a fifth straight year heading toward no playoffs. Lou Anarumo is moving the green dot from safety Cam Bynum to linebacker Akeem Davis-Gaither to fix Week 1's alignment breakdowns.",
+    "src": "NFL.com Week 1 schedule; Colts.com Sep 18; NBC Sports Sep 18 2026",
+    "url": "https://www.nbcsports.com/betting/nfl/news/chiefs-vs-colts-prediction-odds-expert-picks-qb-matchups-injury-update-betting-trends-and-stats"
+   },
+   {
+    "team": "KC",
+    "head": "Kansas City 1-0: beat Denver 31-10 on Monday Night Football (Sep 14)",
+    "text": "Kenneth Walker III, in his Kansas City debut, ran 23 times for 173 yards and a score with 14 broken tackles — the most in a single game since 2022 — against Denver's second-ranked run defence. The Chiefs ran for 220 at 5.9 a carry, their best rushing game in five years, and ran the ball on 56.7% of snaps. The defence sacked Denver four times, pressured on 51.5% of dropbacks with 15 different players recording a pressure, and held the Broncos to 61 rushing yards. The open question, and the one Arrowhead Pride's mailbag is full of: Patrick Mahomes, in his return season from knee surgery, threw for only 184 yards on 15 of 27 with a 2.13-second average time to throw. Two passing touchdowns and a 15-yard rushing score, and he moved well.",
+    "src": "Chiefs.com Sep 19; NBC Sports Sep 18 2026",
+    "url": "https://www.chiefs.com/news/2026-week-2-injury-report-colts-vs-chiefs"
+   }
+  ],
+  "injuries": {
+   "as_of": "Both clubs' final Friday designations from the Chiefs.com Week 2 report, Sep 18. No Saturday change was found. Inactives post about 6:50 PM ET Sunday — re-check Chris Jones and Mansoor Delane then.",
+   "src": "Chiefs.com official Week 2 injury report, Sep 18 2026; PFT/NBC Sports Sep 18 4:25 PM ET",
+   "url": "https://www.chiefs.com/news/2026-week-2-injury-report-colts-vs-chiefs",
+   "IND": [
+    [
+     "Daniel Jones",
+     "QB",
+     "playing through Achilles recovery",
+     "STARTING, no game-status designation"
+    ],
+    [
+     "Anthony Richardson Sr.",
+     "QB",
+     "groin (reportedly hurt lifting weights this week)",
+     "QB2, full participation, no designation"
+    ],
+    [
+     "Ashton Dulin",
+     "WR",
+     "ankle",
+     "OUT"
+    ],
+    [
+     "D.J. Giddens",
+     "RB",
+     "knee",
+     "Questionable"
+    ],
+    [
+     "Alec Pierce",
+     "WR",
+     "heel",
+     "No designation, but two outlets flagged it as a live limitation in wet conditions"
+    ],
+    [
+     "Sauce Gardner",
+     "CB",
+     "rib",
+     "Full participation — two-time All-Pro, draws Rashee Rice"
+    ],
+    [
+     "DeForest Buckner",
+     "DT",
+     "ankle",
+     "Full participation"
+    ],
+    [
+     "Akeem Davis-Gaither",
+     "LB",
+     "knee",
+     "Full participation — takes over the green dot this week"
+    ]
+   ],
+   "KC": [
+    [
+     "Patrick Mahomes",
+     "QB",
+     "knee",
+     "NO DESIGNATION, will play. Full practice participation. Described as probable"
+    ],
+    [
+     "Josh Simmons",
+     "LT",
+     "back",
+     "OUT — second straight game. Rookie Kahlil Benson starts at left tackle again. The Colts' clearest structural opening"
+    ],
+    [
+     "Chamarri Conner",
+     "DB",
+     "knee",
+     "OUT — second straight game"
+    ],
+    [
+     "Chris Jones",
+     "DT",
+     "calf",
+     "QUESTIONABLE — limited all week. Andy Reid said Saturday he 'thinks we'll be OK there'. The biggest swing item on the card"
+    ],
+    [
+     "Mansoor Delane",
+     "CB",
+     "shoulder",
+     "Questionable — full Thursday, limited Friday"
+    ],
+    [
+     "Rashee Rice / L'Jarius Sneed",
+     "WR / CB",
+     "knee",
+     "Full participation, no designation"
+    ]
+   ],
+   "read": "No quarterback uncertainty on either side, which is the main thing. Kansas City's left tackle being out for a second week, with a rookie replacing him, is the Colts' best structural opening — Indianapolis has to generate pressure to have a chance. Chris Jones's calf is the single biggest unresolved item and will not be settled until inactives at about 6:50 PM ET."
+  },
+  "weather": {
+   "text": "Rain is a live factor and it has already moved the total. The NWS Kansas City forecast, issued 11:41 PM CDT Friday, has the Sunday-night kickoff window at a low around 64°F, mostly cloudy, NORTHEAST WIND 6-8 MPH, and a 60% CHANCE OF SHOWERS AND POSSIBLY A THUNDERSTORM, with a quarter to a half inch of new rainfall possible. AccuWeather at the stadium has 55% and NNE 6 mph; Fantasy Alarm has 59% and calls it one of the worst weather games on the slate. Wind is unanimously light across all four sources at 6-10 mph NNE and should not move the total. The rain is the variable, and a wet ball plus two run-first game plans is a coherent explanation both for the total falling from 47.5-48 to 46.5 and for the 70-83% Under lean. One outlier to discard: footballdb shows 0% precipitation and is the oldest-stamped of the four. Thunderstorm risk raises a small non-zero delay possibility.",
+   "src": "NWS Kansas City/Pleasant Hill, issued 11:41 PM CDT Sep 18 2026",
+   "url": "https://forecast.weather.gov/MapClick.php?lat=39.0489&lon=-94.4839"
+  },
+  "venue": {
+   "text": "Kansas City becomes only the second team in NFL history to open at home with consecutive prime-time games. Mahomes is 30-13 in prime time, second all-time behind Peyton Manning's 47-17. The last meeting was November 2025, a 23-20 Chiefs win in overtime. The counter-argument the betting community keeps raising is a venue-and-situation one: since the start of 2020 Kansas City has been a favourite of six or more points 48 times and covered only 19 of them, and Andy Reid is 9-17 against the spread in Week 2 over 26 years.",
+   "src": "Chiefs.com Sep 19; OddsShopper Sep 18; Sports Gambling Podcast Sep 17 2026",
+   "url": "https://www.oddsshopper.com/articles/prediction-markets/colts-vs-chiefs-week-2-picks"
+  },
+  "trends": [
+   [
+    "Kansas City as a favourite of 6+ points since 2020",
+    "19-29 against the spread (39.6%)",
+    "OddsShopper, Sep 18 2026",
+    "https://www.oddsshopper.com/articles/prediction-markets/colts-vs-chiefs-week-2-picks"
+   ],
+   [
+    "Andy Reid in Week 2 over 26 years",
+    "9-17 against the spread",
+    "Sean Green, Sports Gambling Podcast, Sep 17 2026",
+    "https://www.sportsgamblingpodcast.com/2026/09/17/colts-vs-chiefs-prediction-week-2-2026/"
+   ],
+   [
+    "Indianapolis losing streak",
+    "8 straight — longest active in the NFL",
+    "Dan Parr, NFL.com, Sep 16 2026",
+    "https://www.nfl.com/news/nfl-picks-week-2-2026-nfl-season"
+   ],
+   [
+    "Colts run defence in Week 1",
+    "202 yards and 4 rushing TDs allowed at 5.5 a carry",
+    "Covers Sep 16; Chiefs.com Sep 19",
+    "https://www.chiefs.com/news/2026-week-2-injury-report-colts-vs-chiefs"
+   ],
+   [
+    "Chiefs rushing in Week 1",
+    "220 yards at 5.9 a carry — best in five years",
+    "Athlon Sports, Sep 17 2026",
+    "https://athlonsports.com/nfl/week-2-nfl-picks-expert-picks-against-the-spread-every-game"
+   ],
+   [
+    "Mahomes in prime time",
+    "30-13, second all-time",
+    "Chiefs.com, Sep 19 2026",
+    "https://www.chiefs.com/news/2026-week-2-injury-report-colts-vs-chiefs"
+   ]
+  ],
+  "voices": [
+   {
+    "who": "Models cluster on the market, with two dissenters",
+    "take": "ESPN's Matchup Predictor has Kansas City 75.0%, nfelo 73%, Dimers 70%, Opta's supercomputer 67.4%, and numberFire a wild 58.6% outlier that maps to a three-point spread rather than 6.5 — numberFire models are typically slow to shed preseason priors in the first weeks. Excluding it, the median lands at about 72.6%, essentially the market. Dimers projects Kansas City 26-20, i.e. failing to cover by half a point, and has the Colts covering +6.5 in 52.4% of runs.",
+    "url": "https://www.si.com/nfl/chiefs/onsi/espn-matchup-predictor-forecasts-chiefs-vs-colts-sunday-night-matchup"
+   },
+   {
+    "who": "Game-preview writers versus betting analysts",
+    "take": "Straight up it is 8-2 Kansas City — Dan Parr, Florio (27-10), six of seven at Bleacher Report. Against the spread it is 9-5 Kansas City, with all four Athlon experts, both Covers writers and SI Betting on the Chiefs. But the betting-analyst cohort is disproportionately on Indianapolis: VSiN's Steve Makinen fades Kansas City and plays the Colts plus the Under, OddsShopper calls Kansas City 'the trap of the week', and both Sports Gambling Podcast hosts argue the line 'should be 3.5-4, not 6.5' and blame primetime public money. That is the classic shape of a public-inflated primetime favourite.",
+    "url": "https://vsin.com/nfl/nfl-top-plays-based-on-betting-splits-power-ratings-and-trends-for-week-2/"
+   },
+   {
+    "who": "Colts fan confidence has collapsed",
+    "take": "An SB Nation Reacts poll found only 9% of surveyed Colts fans believe the team is headed in the right direction after the Week 1 blowout, with failures attributed across all three phases. Stampede Blue's framing was that Kansas City 'must be licking their chops'. On the other side, Arrowhead Pride's mailbag headline is 'How concerning was the passing game against Denver?' — a confident fanbase with one specific worry, and it is the same worry the Colts-side bettors are citing.",
+    "url": "https://sports.yahoo.com/articles/reacts-poll-results-following-week-234947194.html"
+   }
+  ],
+  "x_note": "Reddit was unreachable — r/nfl, r/sportsbook, r/Colts and r/KansasCityChiefs all returned blocked — and no beat-writer X posts were retrievable. Arrowhead Pride and Stampede Blue are robots-blocked and were read only through Yahoo syndication and search headlines. The 'betting-community sentiment' above is inferred from published analyst opinion rather than read from forums, and should be treated as such.",
+  "unknowns": [
+   "Chris Jones's calf. Questionable, limited all week, and unresolved until inactives at about 6:50 PM ET Sunday. Mansoor Delane too.",
+   "The two splits readings flatly contradict each other on the moneyline — 75% of handle on the COLTS at DraftKings on Sep 15, 94% on the CHIEFS at scoresandodds on Sep 18.",
+   "numberFire at 58.6% is 14 points below every other model and cannot be reconciled.",
+   "SportsLine's model output is paywalled; PFF produced nothing for this game.",
+   "No Circa or Pinnacle price found.",
+   "nfelo's '-4.5%' indicator on the Kansas City side could not be definitively interpreted — most likely a spread-side edge figure, not a moneyline one.",
+   "Prices move until 8:20 PM ET Sunday; this is the 15:27Z Saturday snapshot."
+  ]
+ },
+ "tracks": {
+  "as_of": "Sat Sep 19, 11:31 AM ET",
+  "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Neither is the System: the System needs a live Pinnacle line and sits out until the collector runs.",
+  "research": {
+   "player": "Ahmed research",
+   "method": "Bet whatever most people think will win — sportsbook ticket counts, prediction-market crowds, expert panels, Reddit and X — at the best Kalshi price for that side.",
+   "pick": "Kansas City to win (moneyline)",
+   "ticker": "KXNFLGAME-26SEP20INDKC-KC",
+   "side": "yes",
+   "verdict": "The most lopsided crowd on the board — 98% of moneyline tickets and 94% of the money — and the smallest contract count of the six, because at 73¢ the crowd's opinion is the most expensive one to buy. Being right and being cheap are different things, and this track is only asked to be right about what people think.",
+   "evidence": [
+    {
+     "text": "98% of moneyline TICKETS and 94% of moneyline MONEY on Kansas City; 71% of tickets and 74% of money on the Chiefs against the spread.",
+     "src": "scoresandodds consensus, Sep 18 2026",
+     "url": "https://www.scoresandodds.com/nfl/consensus-picks"
+    },
+    {
+     "text": "BetMGM had 76% of bets and 77% of handle on the Chiefs, a top-five most-bet team of the week; SportsBettingDime noted at least 80% of spread handle on Kansas City.",
+     "src": "Covers industry report, Sep 18 2026",
+     "url": "https://www.covers.com/industry/nfl-bettors-oddsmakers-adjust-in-week-2-after-high-scoring-openers-sept-18-2026"
+    },
+    {
+     "text": "Named picks are 8-2 Kansas City straight up and 9-5 against the spread. Models: ESPN Matchup Predictor 75%, nfelo 73%, Dimers 70%, Opta 67.4%.",
+     "src": "SI / OnSI Chiefs Sep 19; NFL.com Sep 16",
+     "url": "https://www.si.com/nfl/chiefs/onsi/espn-matchup-predictor-forecasts-chiefs-vs-colts-sunday-night-matchup"
+    },
+    {
+     "text": "The matchup the crowd is buying: Kansas City ran for 220 at 5.9 a carry against Denver's second-ranked run defence, and Indianapolis just gave up 202 rushing yards and four rushing touchdowns to Baltimore while carrying the NFL's longest active losing streak at eight games.",
+     "src": "Chiefs.com Sep 19; Covers Sep 16",
+     "url": "https://www.chiefs.com/news/2026-week-2-injury-report-colts-vs-chiefs"
+    },
+    {
+     "text": "The dissent, recorded: sharp money is reportedly queued at Colts +7, the betting-analyst cohort is disproportionately on Indianapolis, and Kansas City is 19-29 against the spread as a 6-plus point favourite since 2020. None of that changes who the crowd thinks wins.",
+     "src": "Yahoo/Ben Fawkes Sep 18; OddsShopper Sep 18",
+     "url": "https://ca.sports.yahoo.com/news/everything-to-know-for-betting-nfl-week-2-odds-sharp-action-public-betting-splits-and-big-bets-140217911.html"
+    },
+    {
+     "text": "Stake: 1,800 contracts at 73¢ = $1,314, fee $24.84, $1,338.84 tied up. Win returns only +$461.16 — the smallest payoff of the six for nearly the same money at risk, which is exactly the cost of buying a consensus everyone already owns. Break-even 74.38¢.",
+     "src": "Kalshi fee schedule, 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  },
+  "statistics": {
+   "player": "Ahmed statistics",
+   "method": "Estimate each outcome's probability from models and the sharpest sportsbook prices, subtract Kalshi's ask and fee, and bet the line with the best expected profit — if there is one.",
+   "no_bet": true,
+   "pick": "No bet — sat this one out",
+   "ticker": "",
+   "side": "",
+   "verdict": "Skipped. Every line on this game sits within about a cent of fair, and the fee at these prices is 1.4¢ to 1.75¢ a contract. Kansas City at 73¢ is exactly the best-of-market devigged number; Indianapolis at 28¢ is a cent WORSE than the books; the spread and total are both a cent or less from fair on the side that looks attractive and worse on the other. The Colts-side case is real and well argued, but Kalshi has already priced it — which is precisely why there is nothing to buy.",
+   "evidence": [
+    {
+     "text": "Moneyline: the best-of-market synthetic (Colts +265 at Rivers with Chiefs −285 at DraftKings, 1.42% hold) gives Kansas City 72.99%. Kalshi normalizes to 72.28%. Buying Kansas City at 73¢ is a zero-cent gap against a 1.38¢ fee; buying Indianapolis at 28¢ against a fair 27.0% is a cent NEGATIVE before the 1.41¢ fee.",
+     "src": "VegasInsider book grid, Sep 19 2026",
+     "url": "https://www.vegasinsider.com/nfl/matchups/chiefs-vs-colts/"
+    },
+    {
+     "text": "Spread: best-of-market devig puts Kansas City covering −6.5 at 50.24% — a true pick'em. Kalshi asks 49¢ for the Chiefs to cover, a 1.24¢ gap against a 1.75¢ fee, and 52¢ for the Colts side against a fair 49.76%, which is two cents the wrong way.",
+     "src": "VegasInsider grid, Sep 19 2026",
+     "url": "https://www.vegasinsider.com/nfl/matchups/chiefs-vs-colts/"
+    },
+    {
+     "text": "The strongest Colts argument — Dimers projecting a 26-20 Kansas City win, i.e. a six-point margin that fails to cover by half a point, with the Colts covering in 52.4% of runs — still does not get there. At 52¢ for the Colts side against Dimers' own 52.4%, the gap is four tenths of a cent against a 1.75¢ fee.",
+     "src": "Dimers, Sep 14 2026",
+     "url": "https://www.dimers.com/nfl/news/indianapolis-colts-vs-kansas-city-chiefs-early-prediction-nfl-week-2-2026-ac"
+    },
+    {
+     "text": "Total: books devig to Over 49.44% / Under 50.56%. Kalshi asks 49¢ Over and 51¢ Under. The rain case and the 70-83% Under lean already did their work — the number fell a point and a half from the opener before anyone here could act on it.",
+     "src": "NWS Sep 18; scoresandodds Sep 18",
+     "url": "https://forecast.weather.gov/MapClick.php?lat=39.0489&lon=-94.4839"
+    },
+    {
+     "text": "One structural note worth recording even though it is not actionable: Kalshi's ladder shows only a 3¢ step between the 5.5 and 6.5 spread thresholds, when the six-point bucket alone is normally worth four to five points on an NFL margin distribution. That hints the 5.5 line is slightly cheap or the 6.5 slightly rich — but not by enough to clear the fee, and not with enough confidence to act.",
+     "src": "Kalshi public API snapshot, Sep 19 15:27Z",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  }
+ }
 }

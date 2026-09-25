@@ -1,6 +1,6 @@
 {
   "title": "Paper League",
-  "week": "2",
+  "week": "3",
   "competition": "NFL + college football",
   "players": [
     {
@@ -11,12 +11,12 @@
     {
       "name": "Ahmed research",
       "role": "research",
-      "label": "the crowd's pick — placed by Claude"
+      "label": "the crowd's pick \u2014 placed by Claude"
     },
     {
       "name": "Ahmed statistics",
       "role": "statistics",
-      "label": "the numbers' pick — placed by Claude"
+      "label": "the numbers' pick \u2014 placed by Claude"
     },
     {
       "name": "Player",
@@ -25,6 +25,11 @@
     },
     {
       "name": "A Ebrahimi",
+      "role": "intuition",
+      "label": "intuition"
+    },
+    {
+      "name": "Flowers",
       "role": "intuition",
       "label": "intuition"
     }

@@ -1,40 +1,337 @@
 {
-  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
-  "tracks": {
-    "as_of": "Sat Sep 19, 11:27 AM ET",
-    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
-    "research": {
-      "pick": "Louisville to win (moneyline)",
-      "ticker": "KXNCAAFGAME-26SEP19SMULOU-LOU",
-      "side": "yes",
-      "verdict": "The weakest crowd signal of the six, and the price is near a coin flip — so this got the smallest stake on the board.",
-      "evidence": [
-        {
-          "text": "Media and expert side count is 8–3 Louisville — the CBS crew unanimous, plus Sharp Football, CFN, Covers, Yahoo and TheSpread.",
-          "src": "expert roundup, Sep 19 2026"
-        },
-        {
-          "text": "Four of five models favour Louisville: SP+ by 1.3, ESPN FPI 52.8%, numberFire 58.3%. Only SportsGrid dissents, at SMU 55%. Polymarket 53% Louisville.",
-          "src": "model screens, Sep 19 2026"
-        },
-        {
-          "text": "Public spread tickets lean SMU 57%, but the moneyline drifted the other way all week — Louisville −115 to −128 — so the dollars are on Louisville.",
-          "src": "book screens, Sep 14–19 2026"
-        },
-        {
-          "text": "Kalshi's 54¢ ask normalizes to 52.9%, dead on the sportsbook devig of 52.2–53.6%.",
-          "src": "Kalshi public API, Sep 19 2026 15:27Z"
-        }
-      ],
-      "player": "Ahmed research",
-      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
-    },
-    "statistics": {
-      "player": "Ahmed statistics",
-      "method": "Bets only where the price is wrong by more than the fee.",
-      "no_bet": true,
-      "pick": "No bet — sat this one out",
-      "verdict": "No edge. Kalshi's price sits inside the sportsbook devig range, and the models disagree with each other more than they disagree with the market."
-    }
+ "_about": "Hand-maintained homework for one game. Keys: event (overrides: venue, kickoff_text, kickoff_iso, tv, sub_title, kicker, deadline_text), consensus (a sportsbook line to compare with), research (the Homework section). Delete the file and the card still renders from Kalshi alone.",
+ "event": {
+  "venue": "L&N Federal Credit Union Stadium, Louisville, KY",
+  "kickoff_text": "Saturday, September 19, 2026 · 3:30 PM ET",
+  "kickoff_iso": "2026-09-19T19:30:00Z",
+  "tv": "ESPN2",
+  "sub_title": "College · Week 3 · No. 16 SMU at No. 23 Louisville · Louisville's ACC opener",
+  "deadline_text": "Kickoff, 3:30 PM ET"
+ },
+ "consensus": {
+  "label": "Sportsbook consensus",
+  "source": "VegasInsider book-by-book grid, Sep 19 2026",
+  "url": "https://www.vegasinsider.com/college-football/matchups/louisville-vs-smu/",
+  "spread": {
+   "home_line": -1.5,
+   "home_price": -112,
+   "away_price": -108
+  },
+  "total": {
+   "line": 58.5,
+   "over_price": -112,
+   "under_price": -108
+  },
+  "moneyline": {
+   "home": -122,
+   "away": 102
+  },
+  "public_spread_tickets_away_pct": 57,
+  "total_note": "Six outlets were still quoting 59.5 on Sep 18–19 while all eight books on the VegasInsider grid showed 58.5. Reprice at the book before touching the total.",
+  "opener": {
+   "source": "VSiN, Sep 14 2026 (Circa) and SI Betting, Sep 15 2026 (FanDuel)",
+   "url": "https://vsin.com/college-football/week-3-college-football-betting-report-and-odds/",
+   "spread": "Circa opened Louisville −2, other books as high as −2.5; FanDuel still −2.5 (−105) on Sep 15",
+   "total": "56.5 per VegasInsider; 59.5 per TheSpread — the two disagree",
+   "moneyline": "Louisville −112 → −122 → −128 (VegasInsider open, VI current, Yahoo Sep 19)"
+  },
+  "injuries": {
+   "source": "Louisville availability report Sep 16, published Sep 17 2026; Covers SMU injury page Sep 17",
+   "LOU": "OUT: TE Travis Egan, P Jacob Barker, OL Max Merz, OT Bryten Close, OL Sam Secrest, OL Cameron Gorin, WR Payton Cook, DL Sam Dawson. QUESTIONABLE: DL Demeco Kennedy. PROBABLE: RB Isaac Brown, OT Cason Henry, OL Anwar O'Neal, DB Santana Wilson, WR Montavin Quisenberry",
+   "SMU": "OUT for season: RB L. Rhodes (torn ACL). QUESTIONABLE: TE M. Uter, RB C. Rhodes. PROBABLE: RB E. Kelly. SMU's full ACC availability report is paywalled at On3 — the offensive and defensive lists could not be read"
   }
+ },
+ "research": {
+  "as_of": "Sat Sep 19, 11:30 AM ET",
+  "line": {
+   "text": "The number has compressed onto Louisville −1.5 at all eight books on the VegasInsider grid. The best-supported story of the move is that it opened around Louisville −2 to −2.5 (Circa via VSiN on Sep 14; FanDuel still −2.5 on Sep 15) and drifted a half-point to a point toward SMU. While the spread sat still, the moneyline crept the other way: Louisville −112 at the open, −122 on the grid, −128 at Yahoo this morning. A static number with the price drifting to the home team is the shape of money on Louisville that is not big enough to move a 1.5.",
+   "kalshi": "Kalshi has Louisville at 54¢ ask, which normalizes to 52.9%. The devigged sportsbook range is 52.2%–53.6%. Kalshi is sitting in the middle of the book market with about half the overround — there is no gap to exploit on the winner.",
+   "src": "VegasInsider Sep 19; VSiN Sep 14; TheSpread Sep 18–19; Yahoo Sep 19",
+   "url": "https://www.vegasinsider.com/college-football/matchups/louisville-vs-smu/",
+   "splits": [
+    {
+     "text": "Spread tickets: SMU 56% on Sep 18, drifting to 57% on Sep 19. No handle figure for the spread could be found anywhere.",
+     "src": "TheSpread.com, Sep 18 and Sep 19 2026",
+     "url": "https://www.thespread.com/ncaaf-articles/smu-vs-louisville-prediction-september-19-do-mustangs-leave-2-1/"
+    },
+    {
+     "text": "Total: the Under 58.5 drew 82% of BETS but only 59% of HANDLE — called the most lopsided split of the week. That means the average Over ticket was roughly three and a half times the size of the average Under ticket.",
+     "src": "SportsBettingDime, Sep 14 2026 8:40 PM ET",
+     "url": "https://www.sportsbettingdime.com/college-football/public-betting-trends/"
+    },
+    {
+     "text": "Polymarket has Louisville at 53% to win, within a point of Kalshi and of the book devig.",
+     "src": "SportsBettingDime prediction-market report, Sep 18 2026",
+     "url": "https://www.sportsbettingdime.com/news/college-football/prediction-market-picks-week-3-sharp-money-movers/"
+    }
+   ],
+   "conflict": "Two flat contradictions to keep in mind. VegasInsider says the total opened 56.5 and rose to 58.5; SportsBettingDime says the Over 58.5 market fell two points in 24 hours. Both cannot be right over the same window. And the ticket counts point at SMU while the moneyline price points at Louisville — the small bettors like the points, the price action likes the home team."
+  },
+  "week1": [
+   {
+    "team": "SMU",
+    "head": "SMU 2-0 (1-0 ACC): won 27-24 at Florida State (Sep 7), beat UC Davis 56-10 (Sep 12)",
+    "text": "The Florida State win came through a power outage that delayed kickoff an hour and forty minutes, with no scoreboard and no coach-to-player communication — and SMU won it despite four turnovers. Against UC Davis, Kevin Jennings threw for 337 yards and five touchdowns in the first half alone, and sixteen different Mustangs caught a pass. Jennings leads the FBS at 14.8 yards per attempt and is second nationally in Total QBR. SMU is 7th in total offense at 566 yards a game and top-five nationally in sacks. The soft spot is the ground game, and the back room is thin.",
+    "src": "SMU Athletics Sep 15; Yahoo Sports Sep 17 2026",
+    "url": "https://smumustangs.com/news/2026/9/15/football-no-16-smu-heads-east-to-face-no-23-louisville"
+   },
+   {
+    "team": "LOU",
+    "head": "Louisville 1-1: lost 41-38 to No. 9 Ole Miss in Nashville (Sep 6), beat Villanova 59-13 (Sep 11)",
+    "text": "A three-point loss to a top-ten team is a respectable result, and Lincoln Kienholz — an Ohio State transfer with 36 career pass attempts entering the season — has thrown for 300-plus in both games with four touchdowns, no interceptions and 111 rushing yards. He is fifth nationally in Total QBR. The alarming number is on the other side: Louisville is tied for last in the FBS with ONE sack, and it faces a quarterback averaging 14.8 yards an attempt who put up four touchdowns on them last November.",
+    "src": "gocards.com Sep 7 and Sep 11; Yahoo Week 3 preview Sep 18 2026",
+    "url": "https://sports.yahoo.com/articles/2026-week-3-preview-smu-110000126.html"
+   }
+  ],
+  "injuries": {
+   "as_of": "Louisville's availability report released Wednesday night Sep 16 and published Sep 17. SMU's official ACC report is paywalled at On3; only the Covers list was readable, so SMU's line play is effectively unknown.",
+   "src": "Yahoo Sports / SI syndication Sep 17 2026; Covers SMU injuries page",
+   "url": "https://sports.yahoo.com/articles/louisville-vs-smu-injury-report-015234237.html",
+   "SMU": [
+    [
+     "L. Rhodes",
+     "RB",
+     "knee, torn ACL",
+     "OUT for the season (updated Aug 26)"
+    ],
+    [
+     "C. Rhodes",
+     "RB",
+     "undisclosed",
+     "Questionable (updated Sep 12)"
+    ],
+    [
+     "M. Uter",
+     "TE",
+     "undisclosed",
+     "Questionable (updated Sep 12)"
+    ],
+    [
+     "E. Kelly",
+     "RB",
+     "undisclosed",
+     "Probable — likely to play (updated Sep 17)"
+    ],
+    [
+     "Offensive and defensive line",
+     "—",
+     "—",
+     "UNKNOWN. SMU's official ACC availability report is behind a subscription wall and the released depth chart would not extract"
+    ]
+   ],
+   "LOU": [
+    [
+     "Max Merz",
+     "OL",
+     "—",
+     "OUT"
+    ],
+    [
+     "Bryten Close",
+     "OT",
+     "—",
+     "OUT"
+    ],
+    [
+     "Sam Secrest",
+     "OL",
+     "—",
+     "OUT"
+    ],
+    [
+     "Cameron Gorin",
+     "OL",
+     "—",
+     "OUT"
+    ],
+    [
+     "Cason Henry",
+     "OT",
+     "leg",
+     "Probable — South Carolina transfer who started the opener, missed Villanova"
+    ],
+    [
+     "Anwar O'Neal",
+     "OL",
+     "—",
+     "Probable"
+    ],
+    [
+     "Demeco Kennedy",
+     "DL",
+     "arm",
+     "Questionable — Brohm said Sep 14 he 'probably will not be able to go', upgraded since"
+    ],
+    [
+     "Jacob Barker",
+     "P",
+     "—",
+     "OUT — the punter, a special-teams problem in a one-score game"
+    ],
+    [
+     "Travis Egan / Payton Cook / Sam Dawson",
+     "TE / WR / DL",
+     "—",
+     "OUT"
+    ],
+    [
+     "Isaac Brown",
+     "RB",
+     "—",
+     "Probable — preseason ACC Player of the Year candidate, averaging 3.3 a carry"
+    ]
+   ],
+   "read": "This is the most underweighted fact on the card. Four Louisville offensive linemen are out and two more are only probable, against an SMU defense that is top-five nationally in sacks — while Louisville's own pass rush is tied for last in the FBS with one sack. That asymmetry argues for SMU more than the media's 8-3 Louisville lean suggests. Against it: nobody can see SMU's line report, so this is a one-sided view of the trenches."
+  },
+  "weather": {
+   "text": "Hot and still. The NWS hourly forecast issued 7:01 AM ET this morning has 92–94°F through the 3:30 kickoff window, wind 5–6 mph from the west and southwest, and a 6–13% chance of a shower at kick rising to about 28% late. The zone forecast carries a heat index to 100°F and flags dangerously hot conditions through the weekend. Wind at 5–6 mph is functionally still air and will not touch the passing game or the kicking. The live variable is heat, not wind: a 3:30 PM kick at 94°F argues for fatigue and substitutions, and SMU already had a game shortened six minutes for heat against UC Davis on Sep 12.",
+   "src": "NWS Louisville, issued 7:01 AM ET Sep 19 2026",
+   "url": "https://forecast.weather.gov/MapClick.php?lat=38.2065&lon=-85.7585&unit=0&lg=english&FcstType=digital"
+  },
+  "venue": {
+   "text": "Louisville's ACC opener and its first real home test. The uncomfortable history: SMU is 4-0 all-time against Louisville, including 38-6 at Ford Stadium last November, and Louisville is 0-6 all-time against the ACC's three newest members — California, SMU and Stanford. Louisville also went 0-7 against the spread as a home favourite in 2025 and 2-7 at home since the start of that season, which is the stat driving public money onto SMU. The counter-narrative from the Louisville side is 'Big Game Brohm' in a back-against-the-wall spot.",
+   "src": "Cardinal Sports Zone Sep 17; Yahoo Sports Sep 17 2026",
+   "url": "https://cardinalsportszone.com/2026/09/17/everything-you-need-to-know-2026-louisville-v-smu/"
+  },
+  "trends": [
+   [
+    "SMU all-time versus Louisville",
+    "4-0, last 38-6",
+    "Cardinal Sports Zone, Sep 17 2026",
+    "https://cardinalsportszone.com/2026/09/17/everything-you-need-to-know-2026-louisville-v-smu/"
+   ],
+   [
+    "Louisville all-time versus the ACC's three newest members",
+    "0-6",
+    "Cardinal Sports Zone, Sep 17 2026",
+    "https://cardinalsportszone.com/2026/09/17/everything-you-need-to-know-2026-louisville-v-smu/"
+   ],
+   [
+    "Louisville against the spread as a home favourite in 2025",
+    "0-7",
+    "Yahoo Sports, Sep 17 2026",
+    "https://sports.yahoo.com/articles/smu-vs-louisville-prediction-odds-203000882.html"
+   ],
+   [
+    "Louisville sacks through two games",
+    "1 — tied for last in the FBS",
+    "Yahoo Week 3 preview, Sep 18 2026",
+    "https://sports.yahoo.com/articles/2026-week-3-preview-smu-110000126.html"
+   ],
+   [
+    "Kevin Jennings career interceptions, road versus home",
+    "19 on the road, 5 at home",
+    "Sharp Football Analysis, Sep 18 2026",
+    "https://www.sharpfootballanalysis.com/betting/smu-louisville-college-football-prediction-2026/"
+   ],
+   [
+    "SP+ projected total versus the market",
+    "53 versus 58.5",
+    "Bill Connelly Week 3 SP+ picks",
+    "https://x.com/ESPN_BillC/status/2099248404295516544"
+   ]
+  ],
+  "voices": [
+   {
+    "who": "The models, side by side",
+    "take": "SP+ has Louisville by 1.3 with a projected 27-26. ESPN's FPI gives Louisville 52.8%, while ranking SMU the better team at 24th to Louisville's 28th — the whole gap is home field. numberFire is the outlier high at Louisville 58.3%. SportsGrid is the only model on the other side at SMU 55%. Four of five say Louisville by about a point, so the market at −1.5 is a shade ahead of the model consensus.",
+    "url": "https://247sports.com/college/louisville/longformarticle/espn-fpi-projected-results-ahead-of-louisville-vs-smu-289880879/"
+   },
+   {
+    "who": "Media picks, 8 to 3 Louisville",
+    "take": "The CBS crew is unanimously Louisville; Chip Patterson is on −1.5. Also Louisville: Sharp Football's Ryan McCrystal, College Football News (31-28), TheSpread, Covers' Geoff Clark, Yahoo, BettorsInsider. On SMU: Lineups (SMU 31-28, 'conviction is low'), Sports Gambling Podcast, TheRX. The CFB Tracker panel is a dead 3-3 split, and Nick Saban declined a pick, saying it comes down to which quarterback plays better.",
+    "url": "https://www.cbssports.com/college-football/news/smu-louisvlle-prediction-picks-odds-spread-where-to-watch-live/"
+   },
+   {
+    "who": "On the total, the pundits and the public disagree",
+    "take": "Media picks lean Over roughly 5-2 (SI twice, Sports Gambling Podcast, Lineups, TheRX) while 82% of public tickets are on the Under. SP+ projects 53 points against a market of 58.5-59.5 — the largest model-versus-market gap on the weekend board. Nobody can reconcile these; the handle split (59% Under against 82% of tickets) says the bigger money is on the Over.",
+    "url": "https://www.si.com/betting/college-football-week-3-best-bets-bet-the-over-in-smu-vs-louisville-01m2p3v7g4zg"
+   }
+  ],
+  "x_note": "Reddit was unreachable this morning — r/CFB, r/sportsbook, r/GoCards and r/SMUMustangs all returned blocked. Beat-writer timelines on X were not retrievable either. The only X post read directly was Bill Connelly's SP+ picks. Everything in the Voices section above is media-reported, not scraped crowd data, and the fan-sentiment picture on this game is a genuine hole in this file.",
+  "unknowns": [
+   "SMU's official ACC availability report is paywalled — its offensive and defensive line status is unknown, which matters a lot given Louisville's line is gutted.",
+   "No Pinnacle or current Circa price was found anywhere, so every devig here rests on retail books at 4%-plus hold.",
+   "The live total is genuinely disputed: 58.5 across the VegasInsider grid, 59.5 at six other outlets including Yahoo this morning.",
+   "Direction of the total's move is reported in opposite directions by VegasInsider and SportsBettingDime.",
+   "No handle percentage exists for the spread anywhere — only ticket counts.",
+   "Sagarin, Massey and Dimers had nothing usable for this game.",
+   "Prices move until 3:30 PM ET; everything here is the 15:27Z snapshot."
+  ]
+ },
+ "tracks": {
+  "as_of": "Sat Sep 19, 11:31 AM ET",
+  "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Neither is the System: the System needs a live Pinnacle line and sits out until the collector runs.",
+  "research": {
+   "player": "Ahmed research",
+   "method": "Bet whatever most people think will win — sportsbook ticket counts, prediction-market crowds, expert panels, Reddit and X — at the best Kalshi price for that side.",
+   "pick": "Louisville to win (moneyline)",
+   "ticker": "KXNCAAFGAME-26SEP19SMULOU-LOU",
+   "side": "yes",
+   "verdict": "The crowd says Louisville, but this is the weakest crowd signal of the six games — which is why it got the smallest stake. The media count is 8-3 Louisville and four of five models agree, but the public's own tickets are on SMU and the price is close to a coin flip.",
+   "evidence": [
+    {
+     "text": "Named media picks run 8-3 Louisville: the CBS crew unanimously, plus Sharp Football, College Football News, TheSpread, Covers, Yahoo and BettorsInsider. SMU has Lineups, Sports Gambling Podcast and TheRX.",
+     "src": "CBS Sports, Sep 18 2026",
+     "url": "https://www.cbssports.com/college-football/news/smu-louisvlle-prediction-picks-odds-spread-where-to-watch-live/"
+    },
+    {
+     "text": "Four of five models favour Louisville: SP+ by 1.3, ESPN FPI 52.8%, numberFire 58.3%. Only SportsGrid dissents, at SMU 55%.",
+     "src": "247Sports reporting ESPN's FPI; Bill Connelly's SP+ picks",
+     "url": "https://247sports.com/college/louisville/longformarticle/espn-fpi-projected-results-ahead-of-louisville-vs-smu-289880879/"
+    },
+    {
+     "text": "Prediction markets agree with each other: Polymarket Louisville 53%, Kalshi 52.9% normalized.",
+     "src": "SportsBettingDime, Sep 18 2026",
+     "url": "https://www.sportsbettingdime.com/news/college-football/prediction-market-picks-week-3-sharp-money-movers/"
+    },
+    {
+     "text": "The dissent, recorded honestly: 57% of spread tickets are on SMU and have been drifting further that way. The crowd that buys points likes the Mustangs; the crowd that moves prices likes the Cardinals. This track follows the winner question, not the points question.",
+     "src": "TheSpread.com, Sep 19 2026",
+     "url": "https://www.thespread.com/ncaaf-articles/smu-vs-louisville-prediction-september-19-do-mustangs-leave-2-1/"
+    },
+    {
+     "text": "Stake: 2,000 contracts at 54¢ = $1,080, fee $34.78, $1,114.78 tied up. Break-even 55.74¢. Deliberately the smallest of the six research bets.",
+     "src": "Kalshi fee schedule, 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  },
+  "statistics": {
+   "player": "Ahmed statistics",
+   "method": "Estimate each outcome's probability from models and the sharpest sportsbook prices, subtract Kalshi's ask and fee, and bet the line with the best expected profit — if there is one.",
+   "no_bet": true,
+   "pick": "No bet — sat this one out",
+   "ticker": "",
+   "side": "",
+   "verdict": "Skipped. Kalshi's 52.9% on Louisville sits inside the devigged book range of 52.2%–53.6% with half the overround — there is nothing to take on either side of the winner, and the spread at 51¢ is within a cent of a devigged 50.4%. The total is the only place with a real disagreement, and it is not resolvable: SP+ projects 53 against a market of 58.5, but SP+ projected scores run systematically below betting totals and are not a totals model. Meanwhile the handle says the bigger money is on the Over while 82% of tickets are on the Under. With the fee at 1.75¢ a contract at these prices, nothing here clears it. No bet is the honest answer.",
+   "evidence": [
+    {
+     "text": "Moneyline: Kalshi Louisville 54¢ ask = 52.9% normalized. Devigged books run 52.2% (bet365/BetMGM/FanDuel) to 53.6% (Yahoo's −128), with Caesars the tightest at 4.05% hold giving 52.4%. Buying Louisville at 54¢ is paying about a cent over fair; buying SMU at 47¢ against a fair 47.1% is paying about fair. Neither survives a 1.75¢ fee.",
+     "src": "VegasInsider book grid, Sep 19 2026",
+     "url": "https://www.vegasinsider.com/college-football/matchups/louisville-vs-smu/"
+    },
+    {
+     "text": "Spread: Kalshi 'Louisville by over 1.5' at 51¢ against books pricing −1.5 at −109 to −112, which devigs to about 50.4%. Roughly a cent rich, and the fee is 1.75¢.",
+     "src": "VegasInsider, Sep 19 2026",
+     "url": "https://www.vegasinsider.com/college-football/matchups/louisville-vs-smu/"
+    },
+    {
+     "text": "Total: SP+ projects 27-26, a total of 53, against a market of 58.5-59.5 — a five-and-a-half to six-and-a-half point gap and the biggest model-versus-market divergence found this weekend. But SP+ projected scores are an efficiency output, not a calibrated totals forecast, and they sit under market totals as a matter of course. Treating that gap as an edge would be a mistake.",
+     "src": "Bill Connelly, Week 3 SP+ picks",
+     "url": "https://x.com/ESPN_BillC/status/2099248404295516544"
+    },
+    {
+     "text": "The public-money read cuts against the Under anyway: 82% of total tickets are Under but only 59% of the handle is, so the average Over bet is about three and a half times bigger. Buying the Under at 50¢ against a devigged 49.8% is negative before the fee is even counted.",
+     "src": "SportsBettingDime, Sep 14 2026",
+     "url": "https://www.sportsbettingdime.com/college-football/public-betting-trends/"
+    },
+    {
+     "text": "The one thing that would justify an SMU bet — four Louisville linemen out against a top-five sack defense, with Louisville's own pass rush last in the FBS — is already in the price: the spread moved from −2/−2.5 to −1.5 during the week, and Kalshi asks MORE for SMU (47¢) than the books' fair 46.4%–47.8%.",
+     "src": "Louisville availability report, Sep 17 2026",
+     "url": "https://sports.yahoo.com/articles/louisville-vs-smu-injury-report-015234237.html"
+    }
+   ]
+  }
+ }
 }

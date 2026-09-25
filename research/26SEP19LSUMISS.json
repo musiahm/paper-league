@@ -1,52 +1,337 @@
 {
-  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
-  "tracks": {
-    "as_of": "Sat Sep 19, 11:27 AM ET",
-    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
-    "research": {
-      "pick": "LSU to win (moneyline)",
-      "ticker": "KXNCAAFGAME-26SEP19LSUMISS-LSU",
-      "side": "yes",
-      "verdict": "The most lopsided money-versus-tickets split found all week. The small bettors are on Ole Miss; the handle is almost entirely LSU.",
-      "evidence": [
-        {
-          "text": "97% of moneyline money is on LSU against only 31% of tickets — the widest bets-to-handle gap on the board this week.",
-          "src": "SportsBettingDime, Sep 14 2026"
-        },
-        {
-          "text": "61% of spread bets are also on LSU.",
-          "src": "TheSpread, Sep 18 2026"
-        },
-        {
-          "text": "Expert count 13–9 LSU; the CFN panel is 8–5 LSU.",
-          "src": "expert roundup, Sep 2026"
-        },
-        {
-          "text": "ESPN FPI 66.8% LSU, Dimers 57%, Polymarket 60¢.",
-          "src": "model and market screens, Sep 19 2026"
-        },
-        {
-          "text": "The line has swung about 5 points toward LSU since the August lookahead — Ole Miss −2.5 then, LSU −3 now.",
-          "src": "line history, Aug–Sep 2026"
-        },
-        {
-          "text": "Sam Leavitt came off the SEC availability report entirely on Friday night and is expected to start.",
-          "src": "Thamel via Athlon, Sep 19 2026 9:25am ET"
-        },
-        {
-          "text": "Oxford sentiment is violently anti-Kiffin, but sentiment is not the crowd's money.",
-          "src": "forum reading, Sep 19 2026"
-        }
-      ],
-      "player": "Ahmed research",
-      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
-    },
-    "statistics": {
-      "player": "Ahmed statistics",
-      "method": "Bets only where the price is wrong by more than the fee.",
-      "no_bet": true,
-      "pick": "No bet — sat this one out",
-      "verdict": "Nothing on this board cleared the fee. The models, the books and Kalshi all land within a couple of cents of each other, and a couple of cents does not survive a 1.7¢ round trip."
-    }
+ "_about": "Hand-maintained homework for one game. Keys: event (overrides: venue, kickoff_text, kickoff_iso, tv, sub_title, kicker, deadline_text), consensus (a sportsbook line to compare with), research (the Homework section). Delete the file and the card still renders from Kalshi alone.",
+ "event": {
+  "venue": "Vaught-Hemingway Stadium, Oxford, MS",
+  "kickoff_text": "Saturday, September 19, 2026 · 7:30 PM ET",
+  "kickoff_iso": "2026-09-19T23:30:00Z",
+  "tv": "ABC",
+  "sub_title": "College · Week 3 · The Magnolia Bowl · No. 7 LSU at No. 8 Ole Miss · College GameDay from The Grove",
+  "deadline_text": "Kickoff, 7:30 PM ET"
+ },
+ "consensus": {
+  "label": "Sportsbook consensus",
+  "source": "VegasInsider book-by-book grid, Sep 18 2026",
+  "url": "https://www.vegasinsider.com/college-football/matchups/lsu-vs-ole-miss/",
+  "spread": {
+   "home_line": 3.0,
+   "home_price": -108,
+   "away_price": -108
+  },
+  "total": {
+   "line": 58.5,
+   "over_price": -108,
+   "under_price": -112
+  },
+  "moneyline": {
+   "home": 130,
+   "away": -155
+  },
+  "public_spread_tickets_away_pct": 61,
+  "total_note": "Most of the market is at 58.5 (VegasInsider consensus, FanDuel, DraftKings, CBS, BetOnline, Polymarket) but Covers and TheSpread both had 57.5 on Sep 18-19. Verify the live number before touching the total.",
+  "opener": {
+   "source": "SportsBettingDime Sep 13 2026 (FanDuel) with an August lookahead",
+   "url": "https://www.sportsbettingdime.com/news/college-football/opening-week-3-odds-lsu-ole-miss-2026/",
+   "spread": "August lookahead had OLE MISS −2.5. The Week 3 opener was LSU −2.5 at FanDuel. Roughly a five-point swing to LSU since the summer. Within the week the direction is disputed — VegasInsider says toward LSU, TheSpread says toward Ole Miss.",
+   "total": "58.5 (Over −105 / Under −115) at the FanDuel opener",
+   "moneyline": "LSU −134 / Ole Miss +112 at the opener; −155/+130 now"
+  },
+  "injuries": {
+   "source": "SEC availability reports, Wednesday Sep 16 and Friday Sep 18 2026",
+   "LSU": "Sam Leavitt (QB) went DOUBTFUL Wed, QUESTIONABLE Thu, and was REMOVED ENTIRELY from the Friday report — expected to start. QUESTIONABLE: LB TJ Dottery. PROBABLE: LB Tylen Singleton, LB Davhon Keys, OL Aliou Bah. OUT: WR Phillip Wright III, LB Jaiden Braker, RB Raycine Guillory Jr.",
+   "MISS": "QUESTIONABLE: RB Makhi Frazier, OT Tommy Kinsler. PROBABLE: LB Keaton Thomas, CB Cedrick Beavers. OUT: CB Victor Lincoln Jr., OL Emanuel Faulkner. RB Kewan Lacy is NOT on the report. CB Antonio Kite and DB Sharif Denson returning. QB Trinidad Chambliss healthy"
   }
+ },
+ "research": {
+  "as_of": "Sat Sep 19, 11:30 AM ET",
+  "line": {
+   "text": "The market is sitting on the key number 3 and cannot decide which side of it to be on: bet365 and Hard Rock hang LSU −3.5 at even money, five books are at −3, FanDuel is at −2.5 (−122). The big move is seasonal rather than weekly — an August lookahead had OLE MISS favoured by 2.5, and LSU is now laying 3, a swing of roughly five points. Inside the week the direction is contested: VegasInsider reports movement toward LSU, TheSpread reports −3 shortening to −2.5 with the moneyline coming in from −165 to −135. The reconcilable story is that LSU was bet up hard, topped out around −3/−3.5, and then Sam Leavitt's Wednesday 'doubtful' tag pulled some books back before Friday's clearance.",
+   "kalshi": "Kalshi has LSU at 59¢ ask, normalizing to 58.4%. The devigged sportsbook consensus is 58.1%–58.3%. On over $3 million of volume this is the most efficiently priced market on the weekend board — there is no edge on the winner in either direction.",
+   "src": "VegasInsider Sep 18; SportsBettingDime Sep 13; TheSpread Sep 18",
+   "url": "https://www.vegasinsider.com/college-football/matchups/lsu-vs-ole-miss/",
+   "splits": [
+    {
+     "text": "Moneyline: Ole Miss took 69% of TICKETS while LSU took 31% of tickets and 97% of the HANDLE — described as the clearest bets-to-handle gap on the board. The public is on the home dog; the dollars are on the road favourite.",
+     "src": "SportsBettingDime, Sep 14 2026 8:40 PM ET",
+     "url": "https://www.sportsbettingdime.com/college-football/public-betting-trends/"
+    },
+    {
+     "text": "Spread: 61% of bets on LSU, yet the line shortened from −3 to −2.5 — which TheSpread reads as either sharper money on Ole Miss or repricing around Leavitt's availability.",
+     "src": "TheSpread.com, Sep 18 2026",
+     "url": "https://www.thespread.com/ncaaf-articles/lsu-vs-ole-miss-odds-spread-public-betting-how-to-watch-september-19/"
+    },
+    {
+     "text": "Polymarket has LSU at 58-60%, up four percentage points in 24 hours, with the LSU spread market up three.",
+     "src": "SportsBettingDime prediction-market report, Sep 18 2026",
+     "url": "https://www.sportsbettingdime.com/news/college-football/prediction-market-picks-week-3-sharp-money-movers/"
+    }
+   ],
+   "conflict": "The two splits point opposite ways because they are different markets captured four days apart, straddling the Leavitt news. The Sep 14 moneyline capture (97% of handle on LSU) is the more striking signal but predates the entire injury cycle; the Sep 18 spread capture is consistent with the news pulling the number back. Note also that Covers displays a 'Moneyline: LSU 55% / Ole Miss 45%' figure that is Kalshi-derived implied probability, not a betting split — do not read it as one."
+  },
+  "week1": [
+   {
+    "team": "LSU",
+    "head": "LSU 2-0, AP No. 7: beat Clemson 24-3 (Sep 5), beat Louisiana Tech 45-14 (Sep 12)",
+    "text": "Lane Kiffin's first season at LSU, and his first return to Oxford after leaving Ole Miss. The Tigers have outscored opponents 96-24, sit third nationally at 586 yards a game, FIRST nationally in total defence, first in sacks with 12, and third in havoc rate at 30.2%. Princewill Umanmielen has five sacks in two games and used to play for Ole Miss. The wart is turnovers: Sam Leavitt threw three interceptions in the first half against Louisiana Tech. LSU is 4-7 against the spread as a road favourite since 2011.",
+    "src": "NBC Sports Sep 15; VegasInsider Sep 18 2026",
+    "url": "https://www.nbcsports.com/betting/college-football/news/lsu-vs-ole-miss-prediction-odds-expert-picks-team-and-player-news-betting-trends-and-stats"
+   },
+   {
+    "team": "MISS",
+    "head": "Ole Miss 2-0, AP No. 8: beat No. 24 Louisville 41-38 in Nashville (Sep 6), beat Charlotte 41-9 (Sep 12)",
+    "text": "Pete Golding's first season, promoted from defensive coordinator when Kiffin left — so he knows LSU's schemes from the inside. Trinidad Chambliss completed 88.5% against Charlotte and carries a 22-to-3 touchdown-to-interception ratio as a starter; Kewan Lacy ran for 87 and two scores after a leg injury against Louisville. The concern is on defence: 23.5 points allowed a game, 80th nationally, and a havoc rate of 15.5% that is third-from-last in the SEC. Ole Miss is 0-2 against the spread this season but 4-0 as a home underdog since 2021.",
+    "src": "NBC Sports Sep 15; The Rebel Walk Sep 16 2026",
+    "url": "https://therebelwalk.com/2026/09/wednesday-ole-miss-lsu-injury-report-tigers-qb-sam-leavitt-listed-doubtful-rebels-get-encouraging-news-ahead-of-top-10-clash/"
+   }
+  ],
+  "injuries": {
+   "as_of": "Friday Sep 18's SEC availability report, plus Pete Thamel's Saturday-morning confirmation at 9:25 AM ET that Leavitt has come off the report entirely. A separate Friday Ole Miss report was not found, so the Rebels' statuses are Wednesday's.",
+   "src": "On3 Sep 19 12:11 AM ET; SB Nation via Yahoo Sep 19; The Rebel Walk Sep 16 2026",
+   "url": "https://www.on3.com/news/sam-leavitt-injury-update-latest-on-lsu-qb-status-ole-miss-revealed-on-friday-availability-report",
+   "LSU": [
+    [
+     "Sam Leavitt",
+     "QB",
+     "disputed — sore throwing shoulder, back spasms or foot depending on the source",
+     "EXPECTED TO START. Doubtful Wed → questionable Thu → OFF THE REPORT Fri. But he missed Wednesday's practice and only lightly participated in Thursday walkthroughs, so 'playing' and '100%' are not the same thing"
+    ],
+    [
+     "TJ Dottery",
+     "LB",
+     "—",
+     "Questionable — playing against his former team"
+    ],
+    [
+     "Tylen Singleton / Davhon Keys",
+     "LB",
+     "—",
+     "Probable"
+    ],
+    [
+     "Aliou Bah",
+     "OL",
+     "—",
+     "Probable"
+    ],
+    [
+     "Phillip Wright III",
+     "WR",
+     "leg (Q4 vs Louisiana Tech)",
+     "OUT"
+    ],
+    [
+     "Jaiden Braker / Raycine Guillory Jr.",
+     "LB / RB",
+     "—",
+     "OUT — neither has suited up in 2026"
+    ],
+    [
+     "Landen Clark / Husan Longstreet",
+     "QB",
+     "—",
+     "The backups if Leavitt cannot go: Clark is 7-of-10 for 109 yards this season, Longstreet a former five-star with minimal LSU snaps"
+    ]
+   ],
+   "MISS": [
+    [
+     "Trinidad Chambliss",
+     "QB",
+     "—",
+     "HEALTHY, starting. Not on any report"
+    ],
+    [
+     "Kewan Lacy",
+     "RB",
+     "leg (from the Louisville game)",
+     "NOT on the report — returned vs Charlotte for 87 yards and two touchdowns"
+    ],
+    [
+     "Makhi Frazier",
+     "RB",
+     "—",
+     "Questionable (Wednesday's report)"
+    ],
+    [
+     "Tommy Kinsler",
+     "OT",
+     "—",
+     "Questionable — status in doubt since the opener"
+    ],
+    [
+     "Antonio Kite / Sharif Denson",
+     "CB / DB",
+     "—",
+     "RETURNING — the secondary struggled through Louisville and Charlotte"
+    ],
+    [
+     "Keaton Thomas / Cedrick Beavers",
+     "LB / CB",
+     "—",
+     "Probable"
+    ],
+    [
+     "Victor Lincoln Jr. / Emanuel Faulkner",
+     "CB / OL",
+     "—",
+     "OUT"
+    ]
+   ],
+   "read": "The Leavitt saga is the story of the week and it has a gamesmanship subplot: Ole Miss staff reportedly do not feel LSU was 'sincere' in listing him, and misrepresenting availability carries a $25,000 SEC penalty at the commissioner's discretion. Covers and Sharp Football both independently speculated the designation was Kiffin gamesmanship. Nothing has been adjudicated. What is certain is that he is off the report and expected to start; what is unknown is whether he is at full strength after a week of limited practice."
+  },
+  "weather": {
+   "text": "Brutally hot and dead calm. The NWS Memphis hourly forecast, last updated 6:15 PM CDT Friday, has 95-96°F at the 6:30 PM CT kickoff with a dew point of 63°F, wind of 0-2 mph, sky cover under 10% and a precipitation chance of 0-1%, cooling to about 85°F by the fourth quarter. A heat advisory was in effect until 8:00 PM CDT Saturday. No wind and no rain removes the usual weather-driven Under argument entirely. The live variable is heat and attrition, which matters more than usual here because both teams are top-five nationally in plays per minute — depth and cramping could decide the second half.",
+   "src": "NWS Memphis hourly forecast for Oxford, last updated 6:15 PM CDT Sep 18 2026",
+   "url": "https://forecast.weather.gov/MapClick.php?lat=34.366&lon=-89.519&FcstType=digital"
+  },
+  "venue": {
+   "text": "College GameDay is on site in The Grove and the atmosphere is the story. Ole Miss fans drowned out Lane Kiffin's segment with NSFW chants and boos within about four minutes of the show going live this morning. Kiffin reportedly travelled separately from the team to Oxford, which drew its own round of criticism. Home teams are on an 11-2 straight-up and 12-1 against-the-spread surge in this rivalry, which is the trend VSiN's system play is built on. Fan sentiment leans Ole Miss on emotion and revenge; the money leans LSU.",
+   "src": "Pro Football Network Sep 19; VSiN Sep 18 2026",
+   "url": "https://www.profootballnetwork.com/cfb/cfb-fans-react-lane-kiffin-faces-wrath-of-ole-miss-fans/"
+  },
+  "trends": [
+   [
+    "Home teams in this rivalry recently",
+    "11-2 straight up, 12-1 against the spread",
+    "VSiN, Sep 18 2026",
+    "https://vsin.com/college-football/college-football-top-plays-based-on-betting-splits-power-ratings-and-trends-week-3-3/"
+   ],
+   [
+    "The Under in the last five meetings",
+    "4 of 5",
+    "CBS Sports, Sep 19 2026",
+    "https://www.cbssports.com/betting/news/ole-miss-lsu-prediction-odds-2026-week-3-college-football-picks-for-lane-kiffin-return/"
+   ],
+   [
+    "Ole Miss as a home underdog since 2021",
+    "4-0 against the spread",
+    "NBC Sports, Sep 15 2026",
+    "https://www.nbcsports.com/betting/college-football/news/lsu-vs-ole-miss-prediction-odds-expert-picks-team-and-player-news-betting-trends-and-stats"
+   ],
+   [
+    "LSU as a road favourite since 2011",
+    "4-7 against the spread",
+    "NBC Sports, Sep 15 2026",
+    "https://www.nbcsports.com/betting/college-football/news/lsu-vs-ole-miss-prediction-odds-expert-picks-team-and-player-news-betting-trends-and-stats"
+   ],
+   [
+    "LSU total defence and sacks",
+    "1st nationally in both",
+    "College Football News Sep 16; VegasInsider Sep 18",
+    "https://collegefootballnews.com/college-football/lsu-vs-ole-miss-prediction-2026"
+   ],
+   [
+    "Moneyline handle on LSU against its ticket share",
+    "97% of money on 31% of tickets",
+    "SportsBettingDime, Sep 14 2026",
+    "https://www.sportsbettingdime.com/college-football/public-betting-trends/"
+   ]
+  ],
+  "voices": [
+   {
+    "who": "The models are 27 points apart on the same game",
+    "take": "ESPN's FPI has LSU at 66.8%. numberFire has OLE MISS at 59.9%. Dimers, updated 9:33 AM ET today, has LSU 57% with a projected 30-28. The market is about 58%. FPI is the significant outlier above the market and is the number most likely to tempt an LSU overbet. On the total, every model runs low: SP+ projects 29-22 for a total of 51, College Football News 31-26 for 57, Dimers 58.",
+    "url": "https://www.saturdaydownsouth.com/news/college-football/espns-football-power-index-predicts-lsu-ole-miss-clash/"
+   },
+   {
+    "who": "Handicappers split almost evenly",
+    "take": "On LSU: the College Football News panel 8-5, VSiN's Chris Coyne, Tyler Shoemaker and Zachary Cohen, Covers' Rob Paul, Sharp Football, VegasInsider. On Ole Miss: VSiN's Matt Youmans and Steve Makinen, NBC's Vaughn Dalzell, theRX, BettorsInsider, plus VSiN's rivalry system play on the home team. VSiN also noted four Circa Friday Football Invitational contestants played this game and 'completely disagree' on direction — even the sharp contest players are split.",
+    "url": "https://vsin.com/the-vsin-daily/college-football-week-3-best-bets-lsu-ole-miss-picks-and-saturday-betting-guide/"
+   },
+   {
+    "who": "The total is a 3-3 human split but the models all say Under",
+    "take": "Under: CBS's Tom Fornelli (noting the Under in four of the last five meetings), Covers' Rob Paul, VSiN's Clyde Walker. Over: theRX, VSiN's Wes Reynolds, and Rob Paul's earlier Sep 16 position before he flipped. Against that, SP+ 51, CFN 57 and Dimers 58 all sit at or below the posted 58.5 — but with zero wind and two of the fastest-tempo offences in the country, the Under case is not a weather case.",
+    "url": "https://www.cbssports.com/betting/news/ole-miss-lsu-prediction-odds-2026-week-3-college-football-picks-for-lane-kiffin-return/"
+   }
+  ],
+  "x_note": "Reddit was unreachable — r/CFB, r/sportsbook, r/LSU and r/olemiss all returned blocked, and domain-restricted searches were rejected. The X reaction in the Venue note above is aggregated secondhand through Pro Football Network, Saturday Down South, ClutchPoints and OutKick rather than read directly. The dominant fan narrative is emotional and revenge-framed around Kiffin's defection and is not a handicapping signal; the only fan-level take that overlaps the betting question is the shared suspicion that the Leavitt designation was gamesmanship.",
+  "unknowns": [
+   "Whether Leavitt is at full strength. He is off the report, but he missed Wednesday's practice and was limited Thursday.",
+   "The nature of his injury is reported three different ways — shoulder, back spasms, or foot.",
+   "The opener is reported four incompatible ways, and this week's direction is described in opposite terms by VegasInsider and TheSpread.",
+   "Whether the live total is 58.5 or 57.5 — sources split.",
+   "No Friday Ole Miss report was found, so Frazier, Kinsler and Beavers are Wednesday's statuses.",
+   "No Pinnacle or Circa price obtainable; the devig rests on retail books at 3.8%-4.3% hold.",
+   "ESPN's FPI at 66.8% and numberFire at 59.9% Ole Miss cannot both be close to right.",
+   "Prices move until 7:30 PM ET; this is the 15:27Z snapshot."
+  ]
+ },
+ "tracks": {
+  "as_of": "Sat Sep 19, 11:31 AM ET",
+  "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Neither is the System: the System needs a live Pinnacle line and sits out until the collector runs.",
+  "research": {
+   "player": "Ahmed research",
+   "method": "Bet whatever most people think will win — sportsbook ticket counts, prediction-market crowds, expert panels, Reddit and X — at the best Kalshi price for that side.",
+   "pick": "LSU to win (moneyline)",
+   "ticker": "KXNCAAFGAME-26SEP19LSUMISS-LSU",
+   "side": "yes",
+   "verdict": "The tickets are on Ole Miss and the money is overwhelmingly on LSU — 97% of the moneyline handle against 31% of the tickets. When the count and the dollars disagree this sharply, this track follows the dollars, and the experts, the prediction markets and most models agree with them.",
+   "evidence": [
+    {
+     "text": "97% of moneyline MONEY on LSU from only 31% of tickets — the clearest bets-to-handle gap on the board. 61% of spread bets are also LSU.",
+     "src": "SportsBettingDime Sep 14; TheSpread Sep 18 2026",
+     "url": "https://www.sportsbettingdime.com/college-football/public-betting-trends/"
+    },
+    {
+     "text": "Named picks run 13-9 LSU, with the cleanest single panel — College Football News — at 8-5 LSU and the VSiN handicappers 3-2 LSU.",
+     "src": "College Football News panel, Sep 15 2026",
+     "url": "https://collegefootballnews.com/college-football/week-3-college-football-predictions-expert-picks-2026"
+    },
+    {
+     "text": "Prediction markets: Kalshi LSU 58.4% normalized, Polymarket 60¢ and rising four points in 24 hours. ESPN's FPI is the most bullish model at 66.8% LSU; Dimers has 57%.",
+     "src": "Saturday Down South Sep 18; SportsBettingDime Sep 18",
+     "url": "https://www.saturdaydownsouth.com/news/college-football/espns-football-power-index-predicts-lsu-ole-miss-clash/"
+    },
+    {
+     "text": "The market has swung about five points toward LSU since the August lookahead, when Ole Miss was favoured by 2.5. Sam Leavitt came off the SEC availability report entirely on Friday night and is expected to start.",
+     "src": "SportsBettingDime Sep 13; Pete Thamel via Athlon, Sep 19 9:25 AM ET",
+     "url": "https://athlonsports.com/college-football/is-sam-leavitt-starting-lsu-vs-ole-miss-latest-injury-update-tigers-qb"
+    },
+    {
+     "text": "The dissent, recorded: 69% of moneyline tickets are on Ole Miss, the crowd in Oxford is ferociously anti-Kiffin, and home teams are 11-2 straight up in this rivalry recently. Sentiment is not the same thing as the crowd's money, and this track follows the money.",
+     "src": "SportsBettingDime Sep 14; VSiN Sep 18",
+     "url": "https://vsin.com/college-football/college-football-top-plays-based-on-betting-splits-power-ratings-and-trends-week-3-3/"
+    },
+    {
+     "text": "Stake: 2,300 contracts at 59¢ = $1,357, fee $38.95, $1,395.95 tied up. Break-even 60.69¢.",
+     "src": "Kalshi fee schedule, 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  },
+  "statistics": {
+   "player": "Ahmed statistics",
+   "method": "Estimate each outcome's probability from models and the sharpest sportsbook prices, subtract Kalshi's ask and fee, and bet the line with the best expected profit — if there is one.",
+   "no_bet": true,
+   "pick": "No bet — sat this one out",
+   "ticker": "",
+   "side": "",
+   "verdict": "Skipped, and this is the clearest skip of the weekend. Kalshi's LSU price normalizes to 58.4% against a devigged book consensus of 58.1%-58.3% — the two agree to within a fifth of a point, on more than $3 million of volume. The spread ladder is priced correctly through the key number, and the total is not resolvable when the books themselves disagree on whether it is 58.5 or 57.5. Nothing here comes close to a 1.7¢ fee.",
+   "evidence": [
+    {
+     "text": "Moneyline: the tightest-hold quote found is CBS at 3.80%, giving LSU 58.11%; FanDuel gives 58.24% and the VegasInsider consensus 58.30%. Kalshi normalizes to 58.42%. Buying Ole Miss at 42¢ against a fair 41.8% is negative before the 1.71¢ fee.",
+     "src": "CBS Sports Sep 19; VegasInsider Sep 18",
+     "url": "https://www.cbssports.com/betting/news/ole-miss-lsu-prediction-odds-2026-week-3-college-football-picks-for-lane-kiffin-return/"
+    },
+    {
+     "text": "'LSU by over 3.5' at 46¢ looked like the one cheap line — bet365 and Hard Rock both post LSU −3.5 at EVEN money. But that is the vigged price. Devigging bet365's −3.5 even / +3.5 −120 gives LSU 47.8% to cover, so 46¢ is a 1.8¢ gap against a 1.74¢ fee. That is six hundredths of a cent of edge. Not a bet.",
+     "src": "VegasInsider book grid, Sep 18 2026",
+     "url": "https://www.vegasinsider.com/college-football/matchups/lsu-vs-ole-miss/"
+    },
+    {
+     "text": "'LSU by over 2.5' at 55¢ is exactly FanDuel's vigged −2.5 (−122). Paying full retail vig on a prediction market is the opposite of an edge.",
+     "src": "FanDuel Research, Sep 17 2026",
+     "url": "https://www.fanduel.com/research/lsu-vs-ole-miss-college-football-odds-picks-best-bets-for-9-19-2026"
+    },
+    {
+     "text": "Total: all three models run at or below the number — SP+ 51, CFN 57, Dimers 58 — and the Under has hit in four of the last five meetings. But buying the Under means paying 51¢ on the no side against a devigged 50%, and the case is weakened by the conditions: zero wind, no rain, and two offences that are top-five nationally in plays per minute. Negative before the 1.75¢ fee.",
+     "src": "Bill Connelly SP+ picks; Dimers Sep 19 9:33 AM ET",
+     "url": "https://www.dimers.com/cfb/predictions/2026_3_miss_lsu"
+    },
+    {
+     "text": "The honest summary: this is the highest-volume market on the weekend board and the crowd has done its job on it. Forcing a bet into an efficiently priced market to avoid an empty row is how a season's bankroll leaks away.",
+     "src": "Kalshi public API snapshot, Sep 19 15:27Z",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  }
+ }
 }

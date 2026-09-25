@@ -1,71 +1,318 @@
 {
-  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
-  "tracks": {
-    "as_of": "Sat Sep 19, 11:27 AM ET",
-    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
-    "research": {
-      "pick": "Florida to win (moneyline)",
-      "ticker": "KXNCAAFGAME-26SEP19FLAAUB-FLA",
-      "side": "yes",
-      "verdict": "Everything the crowd publishes points at Florida, and the price sits at the expensive end of fair. Paying up for consensus is exactly what this track is built to do.",
-      "evidence": [
-        {
-          "text": "70% of spread tickets are on Florida.",
-          "src": "TheSpread, Sep 19 2026"
-        },
-        {
-          "text": "Named expert picks run 8–3 Florida — Gators Wire panel 4–0, Brockway, Fiutak, TheRX, 1230 The Gambler.",
-          "src": "expert roundup, Sep 19 2026"
-        },
-        {
-          "text": "SP+ has Florida at 63% and −5.3; Florida is favoured at every book, −120 to −135.",
-          "src": "SP+ / book screens, Sep 2026"
-        },
-        {
-          "text": "Florida is 2–0 having scored 66 and 52, sits 2nd in FBS in points per drive, and Jadan Baugh leads the SEC in rushing.",
-          "src": "season stats, Sep 2026"
-        },
-        {
-          "text": "Kalshi's 56¢ ask normalizes to 55.4%, at or above the top of the book devig range of 52.8–55.3%.",
-          "src": "Kalshi public API, Sep 19 2026 15:27Z"
-        }
-      ],
-      "player": "Ahmed research",
-      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
-    },
-    "statistics": {
-      "pick": "Auburn to win (moneyline)",
-      "ticker": "KXNCAAFGAME-26SEP19FLAAUB-AUB",
-      "side": "yes",
-      "verdict": "The only bet on the whole six-game board that clears the fee — and it happens to be against the other track.",
-      "evidence": [
-        {
-          "text": "Three neutral models call this a coin flip: ESPN Matchup Predictor Auburn 50.2%, ESPN FPI Auburn 49.6%, numberFire Auburn 49.5%.",
-          "src": "model screens, Sep 19 2026"
-        },
-        {
-          "text": "The sharper book devigs put Auburn at 46.7–47.2% — Caesars −120/+105, FanDuel −126/+105, SportsLine-quoted −125/+105.",
-          "src": "sportsbook prices, Sep 19 2026"
-        },
-        {
-          "text": "Kalshi asks 45¢, which normalizes to Auburn 44.6% — below every model and below the better book prices.",
-          "src": "Kalshi public API, Sep 19 2026 15:27Z"
-        },
-        {
-          "text": "Blending the models with the sharp devig gives roughly 48–49% true. At 45¢ that is a 3–4¢ edge against a 1.74¢ fee, about +1.5 to +2.2¢ net per contract. Break-even 46.73¢.",
-          "src": "fee = 0.07 × P × (1−P)"
-        },
-        {
-          "text": "SP+ is the dissent at Florida 63% and is deliberately discounted: dated Sep 14, and it rates Florida off blowouts of FAU and Campbell.",
-          "src": "SP+, Sep 14 2026"
-        },
-        {
-          "text": "Supporting structure, not counted in the probability: 70% of spread tickets on Florida with the number static all week, VSiN flagged an expected sharp Auburn buyback, Auburn gets edge rushers Womack and Murray back, Aaron Philo makes his first career road start in a sold-out Jordan-Hare, and Florida went 0–6 outside The Swamp in 2025 and has not won at Auburn in 27 years.",
-          "src": "VSiN and beat reporting, Sep 19 2026"
-        }
-      ],
-      "player": "Ahmed statistics",
-      "method": "Bets only where the price is wrong by more than the fee."
-    }
+ "_about": "Hand-maintained homework for one game. Keys: event (overrides: venue, kickoff_text, kickoff_iso, tv, sub_title, kicker, deadline_text), consensus (a sportsbook line to compare with), research (the Homework section). Delete the file and the card still renders from Kalshi alone.",
+ "event": {
+  "venue": "Pat Dye Field at Jordan-Hare Stadium, Auburn, AL",
+  "kickoff_text": "Saturday, September 19, 2026 · 7:00 PM ET",
+  "kickoff_iso": "2026-09-19T23:00:00Z",
+  "tv": "ESPN",
+  "sub_title": "College · Week 3 · SEC opener for both · Florida at Auburn",
+  "deadline_text": "Kickoff, 7:00 PM ET"
+ },
+ "consensus": {
+  "label": "Sportsbook consensus",
+  "source": "VegasInsider book-by-book grid, Sep 19 2026",
+  "url": "https://www.vegasinsider.com/college-football/matchups/auburn-vs-florida/",
+  "spread": {
+   "home_line": 2.5,
+   "home_price": -115,
+   "away_price": -105
+  },
+  "total": {
+   "line": 53.5,
+   "over_price": -105,
+   "under_price": -115
+  },
+  "moneyline": {
+   "home": 110,
+   "away": -130
+  },
+  "public_spread_tickets_away_pct": 70,
+  "total_note": "The board is split a full point: 53.5 at bet365, DraftKings and FanDuel; 53 at Fanatics; 52.5 at BetMGM, Caesars, Hard Rock and Rivers. Kalshi's contract is the 52.5, the low end of the market.",
+  "opener": {
+   "source": "VSiN Sep 14 2026 (Circa) and VegasInsider Sep 19",
+   "url": "https://vsin.com/college-football/week-3-college-football-betting-report-and-odds/",
+   "spread": "VSiN and TheSpread both say it opened Florida −2.5 and has not moved; VegasInsider says it opened PICK'EM. These are incompatible and the difference matters — see the conflict note.",
+   "total": "52.5 per VSiN, 53 per TheSpread, 53.5 per VegasInsider",
+   "moneyline": "Florida −130 consensus; Hard Rock shortest at −135, Caesars longest at −120"
+  },
+  "injuries": {
+   "source": "SEC availability reports, Florida Sep 16 (updated Sep 17) and Auburn Sep 17 2026",
+   "FLA": "QUESTIONABLE: WR Eric Singleton Jr. (ankle), DE Emmanuel Oyebadejo (lower body). PROBABLE: K Patrick Durkin. No quarterback on the report — Aaron Philo is healthy",
+   "AUB": "OUT: OL Tai Buster. QUESTIONABLE: TE Hunter Herring, EDGE Joe Phillips. Not listed and expected to play: EDGE Da'Shawn Womack and EDGE Chris Murray, both of whom missed Week 2. No quarterback on the report — Byrum Brown is healthy"
   }
+ },
+ "research": {
+  "as_of": "Sat Sep 19, 11:30 AM ET",
+  "line": {
+   "text": "Florida −2.5 is the number at six of eight books, with BetMGM and Fanatics at −2 and Hard Rock hanging an odd −0.5 while simultaneously posting the shortest Florida moneyline on the board, which makes that row internally inconsistent and probably stale. The total has drifted DOWN at half the market, from 53.5 to 52.5 at BetMGM, Caesars, Hard Rock and Rivers. Nobody has taken the spread through 3.",
+   "kalshi": "Kalshi asks 56¢ for Florida, which normalizes to 55.4% — at or above the top of the devigged sportsbook range of 52.8%–55.3%. Kalshi is the most Florida-heavy price available anywhere. Auburn at 45¢ normalizes to 44.6%, below every book's fair number and below all three neutral models.",
+   "src": "VegasInsider Sep 19; FanDuel Research Sep 19; TheSpread Sep 19",
+   "url": "https://www.vegasinsider.com/college-football/matchups/auburn-vs-florida/",
+   "splits": [
+    {
+     "text": "Spread tickets: 70% on Florida. The line has not moved. That is the classic shape of recreational money on the favourite being absorbed rather than chased.",
+     "src": "TheSpread.com, Sep 19 2026",
+     "url": "https://www.thespread.com/ncaaf-articles/florida-vs-auburn-odds-spread-total-public-betting-september-19/"
+    },
+    {
+     "text": "TheSpread's own read: with 70% of tickets on Florida and a static number, 'the money behind the remaining 30 percent is heavier per ticket.' On the total, money shifted to the Over without moving the number off 53.",
+     "src": "TheSpread.com, Sep 19 2026",
+     "url": "https://www.thespread.com/ncaaf-articles/florida-vs-auburn-odds-spread-total-public-betting-september-19/"
+    },
+    {
+     "text": "VSiN flagged expected Auburn buyback later in the week as likely to be 'quite sharp in nature', and asked which book would be first to −3 — nobody was.",
+     "src": "VSiN Week 3 betting report, Sep 14 2026",
+     "url": "https://vsin.com/college-football/week-3-college-football-betting-report-and-odds/"
+    }
+   ],
+   "conflict": "No money or handle percentage exists for this game anywhere. SportsBettingDime states plainly it has no splits for it, Action Network returned stale 2024 data, Covers' consensus URL 404s. So 'sharp money on Auburn' is an inference from ticket-versus-line behaviour, not a measured split, and it should be read that way. The opener is also genuinely disputed: if VegasInsider is right that it opened pick'em, Florida has been bet up 2.5 points; if VSiN and TheSpread are right that it opened −2.5, then a 70% Florida ticket split has failed to move the number at all — which is a much stronger Auburn signal."
+  },
+  "week1": [
+   {
+    "team": "FLA",
+    "head": "Florida 2-0: beat Florida Atlantic 66-21 (Sep 5), beat Campbell 52-3 (Sep 12)",
+    "text": "The scorelines are enormous and the opposition was worthless. Florida is second in the FBS at 4.42 points per drive with a +3 turnover margin. Aaron Philo is 32 of 42 for 517 yards, five touchdowns and one pick at 12.3 yards an attempt, and Jadan Baugh leads the SEC in rushing with 296 yards on 28 carries. The context that matters: this is Jon Sumrall's first season after a near-total staff overhaul, Philo is in his tenth career game with 278 career snaps, and Saturday is HIS FIRST CAREER ROAD START. Florida went 0-6 outside The Swamp in 2025 and has not won at Auburn in 27 years. The defensive line has four sacks and is giving up 91 rushing yards a game.",
+    "src": "Florida Gators official Sep 17; Gainesville Sun Sep 18 2026",
+    "url": "https://floridagators.com/news/2026/9/17/football-the-opening-kickoff-florida-at-auburn-test-awaits-in-sec-opener"
+   },
+   {
+    "team": "AUB",
+    "head": "Auburn 2-0: beat Baylor 17-16 in Atlanta (Sep 5), beat Southern Miss 43-8 (Sep 12)",
+    "text": "Auburn's résumé is the mirror image — it has already survived a real opponent by a point while Florida was beating up cupcakes. Alex Golesh is making his SEC coaching debut, but he brought Byrum Brown with him from South Florida: fifth college season, 35 career starts, roughly 2,450 career snaps against Philo's 278 — and Brown has already beaten Florida once, with USF. D.J. Durkin's defence has been retained and has allowed 20.3 points a game over three seasons, ninth nationally. Three Auburn backs rushed for 80-plus against Southern Miss for the first time since 2019. The weakness is the offensive line: eight penalties in two games and five sacks allowed to Baylor, and starter Tai Buster is out.",
+    "src": "Auburn Tigers official Sep 16; Montgomery Advertiser Sep 18 2026",
+    "url": "https://auburntigers.com/news/2026/09/16/the-opening-drive-2026-auburn-vs-florida"
+   }
+  ],
+  "injuries": {
+   "as_of": "Wednesday's SEC availability reports, Florida released Sep 16 8:32 PM ET and updated Sep 17, Auburn reported Sep 17. No Friday or gameday final report was found for either team, so Eric Singleton Jr. remains an unresolved game-time decision.",
+   "src": "The Independent Florida Alligator Sep 16; SI / Auburn Daily Sep 17 2026",
+   "url": "https://www.si.com/college/auburn/football/injury-report-confirms-two-critical-returns-for-auburn-tigers",
+   "FLA": [
+    [
+     "Aaron Philo",
+     "QB",
+     "—",
+     "HEALTHY, starting. Not on the report. First career road start"
+    ],
+    [
+     "Eric Singleton Jr.",
+     "WR",
+     "ankle (from Sep 5 vs FAU)",
+     "QUESTIONABLE — out of the walking boot Monday, game-time decision. The single live injury variable in this game"
+    ],
+    [
+     "Emmanuel Oyebadejo",
+     "DE",
+     "lower body",
+     "Questionable — fifth-year starter"
+    ],
+    [
+     "Patrick Durkin",
+     "K",
+     "—",
+     "Probable"
+    ],
+    [
+     "Evan Chieca",
+     "TE",
+     "—",
+     "Available, confirmed to play"
+    ]
+   ],
+   "AUB": [
+    [
+     "Byrum Brown",
+     "QB",
+     "—",
+     "HEALTHY, starting. Not on the report. 35 career starts"
+    ],
+    [
+     "Da'Shawn Womack",
+     "EDGE",
+     "—",
+     "RETURNING — missed Week 2, not on the mandatory report"
+    ],
+    [
+     "Chris Murray",
+     "EDGE",
+     "—",
+     "RETURNING — missed Week 2, not on the mandatory report"
+    ],
+    [
+     "Tai Buster",
+     "OL",
+     "—",
+     "OUT — starting lineman, on a line that has already allowed five sacks in a game"
+    ],
+    [
+     "Hunter Herring",
+     "TE",
+     "—",
+     "Questionable"
+    ],
+    [
+     "Joe Phillips",
+     "EDGE/DL",
+     "—",
+     "Questionable"
+    ]
+   ],
+   "read": "Both starting quarterbacks are clean, so this is not a quarterback-availability game. The two items that matter point in the same direction: Florida's best perimeter weapon is a coin flip to play, and Auburn gets BOTH starting edge rushers back to attack a first-year starter making his first road start in a sold-out Jordan-Hare. Against that, Auburn loses a starting offensive lineman from a unit that is already its weak point."
+  },
+  "weather": {
+   "text": "Hot, still, and with a real thunderstorm risk in the kickoff window. The NWS point forecast issued 9:01 AM CDT this morning has a high of 94°F, mostly sunny, wind calm becoming northeast around 5 mph, and a 40% chance of showers and thunderstorms mainly after 3 PM, continuing into the evening before 10 PM. For a 6:05 PM CT kick that means upper-80s at kickoff cooling through the game, effectively NO WIND, and a lightning-delay tail risk rather than a base case. Earlier and secondhand forecasts ran hotter on precipitation — 60% via Hail Florida Hail, 50% at 5 PM CT via Auburn Wire — but the gameday-morning issue is the one to trust. Wind is a non-factor in every source.",
+   "src": "NWS Birmingham point forecast for Auburn, issued 9:01 AM CDT Sep 19 2026",
+   "url": "https://forecast.weather.gov/MapClick.php?lat=32.6024&lon=-85.4906"
+  },
+  "venue": {
+   "text": "Auburn expects its 24th consecutive sellout at Jordan-Hare. Auburn leads the series at home 26-8-1 and has won the last three home meetings and four of the last six overall; the last meeting was 2019, a 24-13 Florida win in Gainesville. Florida has not won at Auburn in 27 years. Worth flagging: the two athletics departments publish contradictory all-time series records — Auburn's site says Auburn leads 43-39-2, Florida's site says Florida leads 43-39-2, same numbers, opposite claimant.",
+   "src": "Auburn Tigers official Sep 16; Florida Gators official Sep 17 2026",
+   "url": "https://auburntigers.com/news/2026/09/16/the-opening-drive-2026-auburn-vs-florida"
+  },
+  "trends": [
+   [
+    "Florida away from The Swamp in 2025",
+    "0-6",
+    "Hail Florida Hail, Sep 2026",
+    "https://hailfloridahail.com/florida-at-auburn-how-to-watch-weather-injuries-odds-announcers-and-more"
+   ],
+   [
+    "Florida's last win at Auburn",
+    "1999 — 27 years",
+    "Florida Gators official, Sep 17 2026",
+    "https://floridagators.com/news/2026/9/17/football-the-opening-kickoff-florida-at-auburn-test-awaits-in-sec-opener"
+   ],
+   [
+    "Auburn to the Under in its last seven home games",
+    "6 of 7 (+4.55 units)",
+    "Covers, Sep 2026",
+    "https://www.covers.com/ncaaf/florida-vs-auburn-prediction-picks-odds-sept-19-2026"
+   ],
+   [
+    "Auburn games over the total this season",
+    "0 of 2",
+    "FanDuel Research, Sep 19 2026",
+    "https://www.fanduel.com/research/florida-vs-auburn-college-football-odds-picks-best-bets-for-9-19-2026"
+   ],
+   [
+    "Career snaps, Byrum Brown versus Aaron Philo",
+    "about 2,450 versus 278",
+    "Auburn Wire, Sep 16 2026",
+    "https://sports.yahoo.com/articles/does-experience-auburn-football-edge-182531586.html"
+   ],
+   [
+    "Spread tickets on Florida with the line unmoved",
+    "70%",
+    "TheSpread.com, Sep 19 2026",
+    "https://www.thespread.com/ncaaf-articles/florida-vs-auburn-odds-spread-total-public-betting-september-19/"
+   ]
+  ],
+  "voices": [
+   {
+    "who": "The models split three ways",
+    "take": "SP+ is the big Florida outlier at 63% and a projected 26-21, but it is dated Sep 14 and is rating Florida off two blowouts of FAU and Campbell. ESPN's FPI has it 50.4% Florida; ESPN's Matchup Predictor has Auburn 50.2%; numberFire has Florida 50.5%. So three independent neutral models call this a coin flip while the market says 53.5% Florida and Kalshi says 55.4%. SportsLine's 10,000 simulations project 58 combined points and take the Over 53.5 in 55% of runs, but its side pick is paywalled.",
+    "url": "https://sports.yahoo.com/articles/heres-sp-predicts-floridas-sec-110226996.html"
+   },
+   {
+    "who": "Media picks look 8-3 Florida, but strip the homers and it is 4-3",
+    "take": "Four of the eight Florida picks are the Gators Wire panel, a Florida-affiliated outlet. The remaining split is Brockway (Gainesville Sun), Fiutak, TheRX and 1230 The Gambler for Florida; Adam Cole (Montgomery Advertiser, Auburn 34-28), Covers and SI Betting for Auburn. Notably the two most explicitly betting-focused outlets, Covers and SI Betting, are BOTH on Auburn +2.5.",
+    "url": "https://sports.yahoo.com/articles/auburn-football-vs-florida-predictions-090524785.html"
+   },
+   {
+    "who": "Covers' case for Auburn and the Under",
+    "take": "Florida's two wins came against inferior non-conference opponents while Auburn has already faced Baylor; both teams have offensive line depth problems. Covers takes Auburn +2.5, Under 53.5, and a Florida team total Under 27.5, citing Auburn hitting the Under in six of its last seven home games.",
+    "url": "https://www.covers.com/ncaaf/florida-vs-auburn-prediction-picks-odds-sept-19-2026"
+   }
+  ],
+  "x_note": "Reddit was unreachable — r/CFB, r/Gators and r/AuburnTigers all returned blocked, and no beat-writer X timelines were retrievable. The Auburn Plainsman's writers' roundtable returned 403 and On3's Florida piece is paywalled. OutKick characterised the rivalry chatter as 'toxic on social media this week' but quoted no posts, usernames or timestamps — it asserts the temperature without evidencing it. The fan-sentiment picture here is inferred from the 70% ticket split, not read from posts.",
+  "unknowns": [
+   "Eric Singleton Jr.'s status is still open — no Friday or gameday final report was found. Re-check before kickoff.",
+   "The opener is disputed between pick'em (VegasInsider) and −2.5 (VSiN, TheSpread), and the two imply opposite things about where money has gone.",
+   "No money or handle percentage exists for this game at any source. The sharp-on-Auburn read is an inference.",
+   "ESPN's own two products disagree with each other: FPI 50.4% Florida, Matchup Predictor 50.2% Auburn.",
+   "SP+ is nine-plus points of win probability away from every other model and is also the oldest number.",
+   "No Pinnacle or current Circa price found.",
+   "Kalshi's total contract is the 52.5, while most books hang the number a full point higher at 53.5 — they are not directly comparable.",
+   "Prices move until 7:00 PM ET; this is the 15:27Z snapshot."
+  ]
+ },
+ "tracks": {
+  "as_of": "Sat Sep 19, 11:31 AM ET",
+  "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Neither is the System: the System needs a live Pinnacle line and sits out until the collector runs.",
+  "research": {
+   "player": "Ahmed research",
+   "method": "Bet whatever most people think will win — sportsbook ticket counts, prediction-market crowds, expert panels, Reddit and X — at the best Kalshi price for that side.",
+   "pick": "Florida to win (moneyline)",
+   "ticker": "KXNCAAFGAME-26SEP19FLAAUB-FLA",
+   "side": "yes",
+   "verdict": "The crowd is on Florida and it is not close: 70% of spread tickets, a favourite at every book, and the headline model. This track buys that at 56¢ knowing full well it is the richest Florida price available — which is precisely why the statistics track took the other side of the same game.",
+   "evidence": [
+    {
+     "text": "70% of spread tickets are on Florida.",
+     "src": "TheSpread.com, Sep 19 2026",
+     "url": "https://www.thespread.com/ncaaf-articles/florida-vs-auburn-odds-spread-total-public-betting-september-19/"
+    },
+    {
+     "text": "Named media picks run 8-3 Florida, including a 4-0 sweep by the Gators Wire panel, plus Brockway, Fiutak, TheRX and 1230 The Gambler.",
+     "src": "Gators Wire / USA Today panel, Sep 16 2026",
+     "url": "https://sports.yahoo.com/articles/expert-predictions-picks-florida-football-130213462.html"
+    },
+    {
+     "text": "SP+ — the model most people quote — has Florida at 63% and a projected margin of 5.3, and ranks Florida 13th overall with the 10th-best defence.",
+     "src": "Gators Wire via Yahoo, Sep 14 2026",
+     "url": "https://sports.yahoo.com/articles/heres-sp-predicts-floridas-sec-110226996.html"
+    },
+    {
+     "text": "Florida is favoured at every book on the board, −120 to −135, and has scored 66 and 52 while ranking second in the FBS in points per drive with the SEC's leading rusher.",
+     "src": "VegasInsider grid, Sep 19 2026",
+     "url": "https://www.vegasinsider.com/college-football/matchups/auburn-vs-florida/"
+    },
+    {
+     "text": "Stake: 2,400 contracts at 56¢ = $1,344, fee $41.40, $1,385.40 tied up. Break-even 57.73¢.",
+     "src": "Kalshi fee schedule, 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  },
+  "statistics": {
+   "player": "Ahmed statistics",
+   "method": "Estimate each outcome's probability from models and the sharpest sportsbook prices, subtract Kalshi's ask and fee, and bet the line with the best expected profit — if there is one.",
+   "pick": "Auburn to win (moneyline)",
+   "ticker": "KXNCAAFGAME-26SEP19FLAAUB-AUB",
+   "side": "yes",
+   "verdict": "The only bet on the whole six-game board that clears the fee. Three neutral models call this a coin flip while Kalshi prices Auburn at 44.6% — below every model AND below the better sportsbook numbers. That is roughly a 3-4¢ gap against a 1.74¢ fee, so about +1.5 to +2.2¢ a contract. Thin, and said plainly: this is the least-wrong bet on the board, not a strong one. It rests on discounting SP+, which is the one model that loudly disagrees.",
+   "evidence": [
+    {
+     "text": "The three neutral models: ESPN Matchup Predictor has Auburn 50.2%, ESPN FPI has Auburn 49.6%, numberFire has Auburn 49.5%. All three say coin flip.",
+     "src": "Saturday Down South Sep 18; Auburn Wire via Yahoo Sep 17; FanDuel Research Sep 19",
+     "url": "https://www.saturdaydownsouth.com/news/college-football/espns-fpi-predicts-outcome-of-florida-auburn-game-in-week-3/"
+    },
+    {
+     "text": "The sharper book devigs put Auburn at 46.7%–47.2%: Caesars −120/+105 gives 47.21% at only 3.33% hold, FanDuel −126/+105 gives 46.67%, the SportsLine-quoted −125/+105 gives 46.75%. Kalshi asks 45¢, normalizing to 44.6% — below all of them.",
+     "src": "VegasInsider grid and FanDuel Research, Sep 19 2026",
+     "url": "https://www.fanduel.com/research/florida-vs-auburn-college-football-odds-picks-best-bets-for-9-19-2026"
+    },
+    {
+     "text": "The arithmetic. Blending the three coin-flip models with the sharp book devig gives roughly 48%-49% true for Auburn. At a 45¢ ask that is a 3-4¢ edge. The fee is 0.07 × 0.45 × 0.55 = 1.74¢ a contract, so the net is about +1.5 to +2.2¢. Weight SP+ in at 15% and the edge falls to roughly the fee — that is how thin this is.",
+     "src": "Kalshi fee schedule, 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    },
+    {
+     "text": "Why SP+ is discounted rather than averaged in. It is the lone outlier at Florida 63%, it is dated Sep 14, and it is rating Florida on two blowouts of Florida Atlantic and Campbell. Averaging a stale outlier against three current neutral models would be the wrong treatment.",
+     "src": "Gators Wire via Yahoo, Sep 14 2026",
+     "url": "https://sports.yahoo.com/articles/heres-sp-predicts-floridas-sec-110226996.html"
+    },
+    {
+     "text": "Supporting structure, deliberately NOT counted in the probability estimate: 70% of spread tickets on Florida with the number static all week, VSiN flagging an expected sharp Auburn buyback, Auburn getting both starting edge rushers back, Aaron Philo making his first career road start in a sold-out Jordan-Hare, Florida 0-6 outside The Swamp in 2025 and winless at Auburn in 27 years.",
+     "src": "TheSpread Sep 19; VSiN Sep 14; SI/Auburn Daily Sep 17",
+     "url": "https://vsin.com/college-football/week-3-college-football-betting-report-and-odds/"
+    },
+    {
+     "text": "The math at this size: 3,000 contracts at 45¢ = $1,350, fee $51.98, $1,401.98 tied up. Wins +$1,598.02 if Auburn wins; break-even 46.73¢. Expected profit at a true 48.5%: roughly +$53.",
+     "src": "Kalshi fee schedule, 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  }
+ }
 }

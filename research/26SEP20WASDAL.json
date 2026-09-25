@@ -1,48 +1,325 @@
 {
-  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 19 2026. Every claim here is what the track cited at the time; nothing has been added after the fact. No homework section for these games — the run placed the bets but did not produce one.",
-  "tracks": {
-    "as_of": "Sat Sep 19, 11:27 AM ET",
-    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it sat out five of six games.",
-    "research": {
-      "pick": "Dallas to win (moneyline)",
-      "ticker": "KXNFLGAME-26SEP20WASDAL-DAL",
-      "side": "yes",
-      "verdict": "The most one-sided straight-up media consensus of the weekend, with the handle agreeing — though every ATS recommendation found went the other way.",
-      "evidence": [
-        {
-          "text": "Straight-up media consensus is 28–3 Dallas, about 90%: MMQB 7–1, ESPN 9–2, CBS 7–0, NFL.com 5–0.",
-          "src": "expert roundup, Sep 2026"
-        },
-        {
-          "text": "Spread tickets are 65% Dallas carrying 84% of the money, and Yahoo reports sharps on Cowboys −3.5.",
-          "src": "VegasInsider, Sep 18 2026 9:26pm"
-        },
-        {
-          "text": "Models numberFire 68.6% and Dimers 61.1%, both Dallas.",
-          "src": "model screens, Sep 19 2026"
-        },
-        {
-          "text": "Dallas is 8–2 against the spread in the last ten meetings and 15–5 against Washington over the past decade.",
-          "src": "historical series, Sep 2026"
-        },
-        {
-          "text": "Roof expected closed, so weather is not a factor.",
-          "src": "venue note, Sep 19 2026"
-        },
-        {
-          "text": "Recorded dissent: every published ATS recommendation found was on Washington, and Dallas is missing S Malik Hooker and LB DeMarvion Overshown with a rookie taking the green dot.",
-          "src": "injury report and ATS roundup, Sep 19 2026"
-        }
-      ],
-      "player": "Ahmed research",
-      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side."
-    },
-    "statistics": {
-      "player": "Ahmed statistics",
-      "method": "Bets only where the price is wrong by more than the fee.",
-      "no_bet": true,
-      "pick": "No bet — sat this one out",
-      "verdict": "No edge after fees. Dallas is priced where the models and the books already agree it belongs."
-    }
+ "_about": "Hand-maintained homework for one game. Keys: event (overrides: venue, kickoff_text, kickoff_iso, tv, sub_title, kicker, deadline_text), consensus (a sportsbook line to compare with), research (the Homework section). Delete the file and the card still renders from Kalshi alone.",
+ "event": {
+  "venue": "AT&T Stadium, Arlington, TX (roof expected closed)",
+  "kickoff_text": "Sunday, September 20, 2026 · 4:25 PM ET",
+  "kickoff_iso": "2026-09-20T20:25:00Z",
+  "tv": "FOX",
+  "sub_title": "Week 2 · NFC East · Dallas's home opener · both teams 0-1",
+  "deadline_text": "Kickoff, 4:25 PM ET"
+ },
+ "consensus": {
+  "label": "Sportsbook consensus",
+  "source": "VegasInsider book-by-book grid, Sep 19 2026",
+  "url": "https://www.vegasinsider.com/nfl/matchups/commanders-vs-cowboys/",
+  "spread": {
+   "home_line": -4.5,
+   "home_price": -105,
+   "away_price": -115
+  },
+  "total": {
+   "line": 50.5,
+   "over_price": -110,
+   "under_price": -110
+  },
+  "moneyline": {
+   "home": -205,
+   "away": 172
+  },
+  "public_spread_tickets_away_pct": 35,
+  "total_note": "50.5 was the highest total on the entire Week 2 board.",
+  "opener": {
+   "source": "Yahoo Sports Sep 15 (DraftKings) and Ben Fawkes Sep 18",
+   "url": "https://sports.yahoo.com/articles/dallas-cowboys-commanders-odds-open-134443735.html",
+   "spread": "Disputed. Yahoo and VegasInsider's week page both say it opened Dallas −3.5; VegasInsider's own matchup page says −4.5, and Fawkes says it opened −4.5 and dropped to −4. Two independent sources support −3.5.",
+   "total": "50.5 at the open per two sources, 51.5 per VegasInsider's matchup page",
+   "moneyline": "Dallas −225 / Washington +185 at the DraftKings open"
+  },
+  "injuries": {
+   "source": "Official team reports, Friday Sep 18 2026",
+   "DAL": "OUT: S Malik Hooker (forearm fracture), LB DeMarvion Overshown (hamstring). Cleared with no designation: OT Ajani Cornelius, OLB James Houston. Rookie LB Jaishawn Barham starts at MIKE and takes the green dot",
+   "WAS": "OUT: LB Frankie Luvu (groin), TE Chig Okonkwo (hamstring). QUESTIONABLE: DT Javon Kinlaw (back). Limited Friday but expected: OLB Dorance Armstrong, OLB K'Lavon Chaisson, WR Jaylin Lane, DE Charles Omenihu, OLB Odafe Oweh"
   }
+ },
+ "research": {
+  "as_of": "Sat Sep 19, 11:30 AM ET",
+  "line": {
+   "text": "The market opened around Dallas −3.5 and has traded in a 3.5-to-4.5 band all week, with most books at −4 or −4.5 by Saturday and the total settling on 50.5 — the highest number on the Week 2 board. The movement toward Dallas has been modest, half a point to a point, which is notable given Dallas lost outright in Week 1. Yahoo's reporting is that sharps took Cowboys −3.5, a better number than is now available, which would explain a drift that then stalled.",
+   "kalshi": "Kalshi has Dallas at 66¢ ask, normalizing to 65.35%, against a best-of-market devigged 65.12% and a lowest-hold single book (Hard Rock, 3.70%) at 64.29%. That is within a quarter of a point of fair. Kalshi and the books are saying the same thing about this game.",
+   "src": "VegasInsider Sep 19; Yahoo Sep 15 and Sep 18",
+   "url": "https://www.vegasinsider.com/nfl/matchups/commanders-vs-cowboys/",
+   "splits": [
+    {
+     "text": "Spread: Dallas 65% of tickets but 84% of the MONEY. Total: the Over took 81% of bets and 76% of the money.",
+     "src": "VegasInsider, last updated Sep 18 9:26 PM 2026",
+     "url": "https://www.vegasinsider.com/nfl/nfl-week-2-odds-2026/"
+    },
+    {
+     "text": "A flatly different picture from the same date: Dallas 57% of bets and 57% of handle on the spread — no divergence at all — with 79% of handle on the Over.",
+     "src": "CLEATZ public betting, Sep 18 2026",
+     "url": "https://cleatz.com/public-betting/nfl/"
+    },
+    {
+     "text": "And a third: BetMGM's trading desk told Yahoo it was seeing MORE WASHINGTON money than Dallas money on the spread, which it called surprising given the home field, plus 'a little more under money'. Sharps, per the same piece, bet Cowboys −3.5.",
+     "src": "Ben Fawkes, Yahoo Sports, Sep 18 2026",
+     "url": "https://sports.yahoo.com/nfl/betting/article/everything-to-know-for-betting-nfl-week-2-odds-sharp-action-public-betting-splits-and-big-bets-140217911.html"
+    }
+   ],
+   "conflict": "Three mutually incompatible reports on the spread: heavy Dallas money, a dead-even market, and more Washington money. They cannot all be true. The only claim every usable source shares is that the OVER is the heavily public side of the total, at 76-81% of money — and even that conflicts with BetMGM reporting more under money. A fourth source, FantasySP, shows an identical 85/15 split across spread, moneyline and total including 85% of money on a +180 underdog; that is implausible and was discarded as a broken feed. The most credible single data point is the Yahoo-sourced statement that sharps bet Cowboys −3.5 — which implies the current −4/−4.5 is past the number professionals wanted."
+  },
+  "week1": [
+   {
+    "team": "WAS",
+    "head": "Washington 0-1: lost 24-22 at Philadelphia (Sep 13)",
+    "text": "Washington covered and lost by two, failing on a late two-point conversion that would have forced overtime. Jayden Daniels went 18 of 24 for 164 with two touchdowns. The problems were structural: Washington allowed an NFL-HIGH 50% PRESSURE RATE, and of its 295 total yards nearly half came on the final two drives — a slow-start team. The defence allowed only 10 first downs but gave up four plays of 30-plus yards. Terry McLaurin, 31, had two catches for 14 yards on four targets under new coordinator David Blough, who had said he wanted him at around ten targets a week. Dan Quinn, Dallas's defensive coordinator from 2021 to 2023, is the head coach.",
+    "src": "PhiladelphiaEagles.com recap Sep 13; NFL.com Sep 16 2026",
+    "url": "https://www.philadelphiaeagles.com/news/commanders-vs-eagles-game-recap-september-13-2026-nfl-week-1"
+   },
+   {
+    "team": "DAL",
+    "head": "Dallas 0-1: lost 28-20 at the NY Giants on Sunday Night Football (Sep 13)",
+    "text": "Dak Prescott went 22 of 34 for 175 with a touchdown and a pick, and CeeDee Lamb and George Pickens were held to 72 combined receiving yards. The defensive numbers are the story: Dallas finished Week 1 second-to-last in defensive success rate and DEAD LAST in opponent EPA per play, and the Giants converted NINE OF TEN THIRD DOWNS. Dallas also ranked 20th in run-stop win rate. Inside The Star's framing of the mood is 'urgency bordering on panic', noting 88% of teams that start 0-2 have missed the postseason since 2000 and that Dallas has not started 0-2 since 2010.",
+    "src": "NBC Sports Philadelphia Sep 13; SI Betting Sep 15; Inside The Star Sep 18 2026",
+    "url": "https://insidethestar.com/is-week-2-a-must-win-game-for-the-dallas-cowboys"
+   }
+  ],
+  "injuries": {
+   "as_of": "Both clubs' official Friday Sep 18 reports — Washington's game status posted 1:33 PM, Dallas's ruling 3:09 PM. Inactives post about 2:55 PM ET Sunday; Javon Kinlaw's questionable tag is unresolved until then.",
+   "src": "commanders.com Sep 18 1:33 PM; dallascowboys.com Sep 18 3:09 PM 2026",
+   "url": "https://www.commanders.com/news/game-status-commanders-cowboys-week-2-2026",
+   "WAS": [
+    [
+     "Jayden Daniels",
+     "QB",
+     "—",
+     "HEALTHY, starting. Explicitly not on the injury report"
+    ],
+    [
+     "Frankie Luvu",
+     "LB",
+     "groin",
+     "OUT — starting linebacker, the most significant Washington absence"
+    ],
+    [
+     "Chig Okonkwo",
+     "TE",
+     "hamstring",
+     "OUT"
+    ],
+    [
+     "Javon Kinlaw",
+     "DT",
+     "back",
+     "Questionable — unresolved until inactives"
+    ],
+    [
+     "Dorance Armstrong",
+     "OLB",
+     "knee (or returning from a suspension, sources differ)",
+     "Limited Friday, expected to play — 2026 debut either way"
+    ],
+    [
+     "Odafe Oweh / K'Lavon Chaisson / Charles Omenihu",
+     "OLB / OLB / DE",
+     "calf / knee / ankle",
+     "Limited Friday, all expected to play"
+    ],
+    [
+     "Daron Payne",
+     "DT",
+     "knee",
+     "Returned to FULL practice"
+    ]
+   ],
+   "DAL": [
+    [
+     "Dak Prescott",
+     "QB",
+     "—",
+     "HEALTHY, starting. Not on the injury report"
+    ],
+    [
+     "Malik Hooker",
+     "S",
+     "forearm fracture",
+     "OUT"
+    ],
+    [
+     "DeMarvion Overshown",
+     "LB",
+     "hamstring",
+     "OUT"
+    ],
+    [
+     "Jaishawn Barham",
+     "LB",
+     "—",
+     "STARTS AT MIKE AND TAKES THE GREEN DOT — a rookie wearing the defensive radio helmet and relaying the coordinator's calls, in week two"
+    ],
+    [
+     "Ajani Cornelius / James Houston",
+     "OT / OLB",
+     "knee / shoulder",
+     "Full participants, cleared, no designation"
+    ]
+   ],
+   "read": "The ledger modestly favours Washington. Dallas loses two defensive starters including its signal-caller and hands the green dot to a rookie — on a defence that just finished dead last in opponent EPA per play and allowed nine third-down conversions in ten. Washington has publicly said it intends to attack exactly that with disguised coverages and tempo. Washington loses Luvu and Okonkwo, which is real, but gets Armstrong back and has Payne, Oweh, Chaisson and Omenihu all trending to play. Neither quarterback is affected."
+  },
+  "weather": {
+   "text": "Indoors — the roof is expected CLOSED, so weather should be a non-factor. Fantasy Alarm's Week 2 weather report on Sep 18 lists this among four closed-roof games where 'weather is a non-factor no matter how the sky looks outside'. No official team or league announcement on roof status was located, so treat that as a well-sourced media expectation rather than a confirmed decision. For reference if it did open: AccuWeather for Arlington on Sunday has a high of 98°F with a RealFeel of 101, south wind at 8 mph, and a 55% chance of a late-afternoon thunderstorm overlapping the 3:25 PM local window. The 98-degree heat and the storm risk both point strongly toward a closed roof, and the NFL rule permits closing when hazardous weather is anticipated.",
+   "src": "Fantasy Alarm NFL Week 2 weather report, Sep 18 2026; AccuWeather Arlington",
+   "url": "https://www.fantasyalarm.com/articles/nfl/nfl-weather/nfl-week-2-weather-report-fantasy-football-dfs-impact/195642"
+  },
+  "venue": {
+   "text": "Dallas's home opener, and an NFC East game where the loser falls to 0-2 having lost both divisional games, two behind Philadelphia and the Giants. Dallas leads the all-time series 81-49-2, swept both 2025 meetings including a 30-23 Christmas Day win, and is 8-2 at home against Washington over the past decade and 15-5 overall. The week's flashpoint: the Cowboys' official social account posted an image of Jayden Daniels injured on the ground captioned 'some of our favorite moments vs. the Commanders', then deleted it — reaction was critical even among Dallas fans, and Washington's coaches may well use it.",
+   "src": "SI / OnSI Sep 17 and Sep 18; Yahoo Sports Sep 19 2026",
+   "url": "https://sports.yahoo.com/articles/cowboys-post-questionable-image-commanders-090636791.html"
+  },
+  "trends": [
+   [
+    "Dallas against the spread in the last 10 meetings",
+    "8-2",
+    "SI Betting, Sep 15 2026",
+    "https://www.si.com/betting/commanders-vs-cowboys-prediction-odds-spread-injuries-trends-for-nfl-week-2-2026"
+   ],
+   [
+    "Dallas versus Washington over the past decade",
+    "15-5, and 8-2 at home",
+    "SI / OnSI, Sep 17 2026",
+    "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-washington-commanders-nfl-week-2-betting-odds-preview"
+   ],
+   [
+    "Dallas as a favourite of 4.5+ points in 2025",
+    "0-3",
+    "FanDuel Research, Sep 15 2026",
+    "https://www.fanduel.com/research/cowboys-vs-commanders-predictions-odds-picks-best-bets-for-nfl-week-2-2026"
+   ],
+   [
+    "Dallas defence in Week 1",
+    "dead last in opponent EPA per play; Giants 9 of 10 on third down",
+    "SI Betting Sep 15; OddsShopper Sep 18",
+    "https://www.oddsshopper.com/articles/prediction-markets/commanders-vs-cowboys-week-2-picks"
+   ],
+   [
+    "Washington pressure rate allowed in Week 1",
+    "50% — highest in the NFL",
+    "NFL.com, Sep 2026",
+    "https://www.nfl.com/news/nfl-picks-week-2-2026-nfl-season"
+   ],
+   [
+    "The Over in the last 10 meetings",
+    "6-4; 8-2 in each team's last 10 games",
+    "SI Betting, Sep 15 2026",
+    "https://www.si.com/betting/commanders-vs-cowboys-prediction-odds-spread-injuries-trends-for-nfl-week-2-2026"
+   ]
+  ],
+  "voices": [
+   {
+    "who": "The starkest straight-up versus against-the-spread split of the weekend",
+    "take": "Straight up the analyst community is 28-3 Dallas (90%): MMQB 7-1, ESPN 9-2, CBS 7-0, NFL.com 5-0. Against the spread, essentially every source that took a position is on WASHINGTON — FOX's Geoff Schwartz on +4.5, OddsShopper on +4.5 ('the number I want against a favorite whose defense just let a rookie quarterback go 9 of 10 on third down'), the Covers AI model on +3.5, Dimers implicitly — and Athlon's four experts passed on the game entirely. Not one published ATS recommendation to lay the points with Dallas was found.",
+    "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-washington-commanders-predictions-nfl-week-2-expert-picks-nfc-east-battle"
+   },
+   {
+    "who": "Models straddle the market and lean Washington on the spread",
+    "take": "numberFire has Dallas at 68.6%, Dimers at 61.1% with a projected 26-23 — and Dimers has Dallas covering −3.5 only 45.1% of the time. nfelo's model line is Washington +4.0, identical to the market line, which means nfelo sees NO edge at the current number. ESPN FPI, Opta and PFF could not be retrieved. Every model expressing a spread opinion sides with Washington.",
+    "url": "https://www.dimers.com/nfl/news/washington-commanders-vs-dallas-cowboys-early-prediction-nfl-week-2-2026-ac"
+   },
+   {
+    "who": "The tactical read both sides agree on",
+    "take": "Washington's stated plan is to attack Dallas's rookie green-dot linebacker Jaishawn Barham with disguised coverages and tempo to force miscommunication, and to run outside rather than inside given Quinnen Williams and Kenny Clark on the Dallas interior. Dan Quinn, who coordinated that defence from 2021 to 2023, on the Cowboys: '11 starters returning... that was evident in the game last week.' Dallas's own media mood is 'urgency bordering on panic' with an 0-2 start in view.",
+    "url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-cowboys-blueprint-injuries"
+   }
+  ],
+  "x_note": "Reddit was unreachable — r/nfl, r/sportsbook, r/Commanders and r/cowboys all returned blocked — and Blogging The Boys is robots-disallowed, so genuine fan-forum sentiment is missing from this file. No beat-writer X posts were retrievable directly. The closest proxy to live social sentiment is the Cowboys' deleted post about Jayden Daniels's injury, which Yahoo covered on Saturday morning and which drew criticism from Dallas fans as well as Washington ones.",
+  "unknowns": [
+   "Roof status is a media expectation, not a confirmed team or league announcement.",
+   "Javon Kinlaw's questionable tag is unresolved until inactives at about 2:55 PM ET.",
+   "The opener is reported four incompatible ways, implying opposite directions of movement.",
+   "The three spread-splits reports contradict each other outright; FantasySP's feed appears broken and was discarded.",
+   "VegasInsider's DraftKings row is byte-identical to its consensus row and conflicts with another same-day source — verify DraftKings live before trusting it.",
+   "ESPN FPI, Opta and PFF produced nothing for this game; SportsLine's output is paywalled.",
+   "No Circa or Pinnacle price found.",
+   "Prices move until 4:25 PM ET Sunday; this is the 15:27Z Saturday snapshot."
+  ]
+ },
+ "tracks": {
+  "as_of": "Sat Sep 19, 11:31 AM ET",
+  "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Neither is the System: the System needs a live Pinnacle line and sits out until the collector runs.",
+  "research": {
+   "player": "Ahmed research",
+   "method": "Bet whatever most people think will win — sportsbook ticket counts, prediction-market crowds, expert panels, Reddit and X — at the best Kalshi price for that side.",
+   "pick": "Dallas to win (moneyline)",
+   "ticker": "KXNFLGAME-26SEP20WASDAL-DAL",
+   "side": "yes",
+   "verdict": "The most one-sided straight-up media consensus of the weekend at 28-3, backed by 65% of tickets and 84% of the money. Worth being precise about what the crowd actually believes here: it believes Dallas WINS. It does not believe Dallas covers — every published spread pick found was on Washington. This track buys the winner question, so it buys Dallas.",
+   "evidence": [
+    {
+     "text": "Analyst picks are 28-3 Dallas straight up (90%): MMQB 7-1, ESPN 9-2, CBS 7-0, NFL.com 5-0.",
+     "src": "SI / OnSI roundup of four outlets' staff picks, Sep 18 2026",
+     "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-washington-commanders-predictions-nfl-week-2-expert-picks-nfc-east-battle"
+    },
+    {
+     "text": "Spread tickets 65% Dallas carrying 84% of the money, and Yahoo reports sharp bettors took Cowboys −3.5.",
+     "src": "VegasInsider Sep 18 9:26 PM; Ben Fawkes, Yahoo Sep 18",
+     "url": "https://www.vegasinsider.com/nfl/nfl-week-2-odds-2026/"
+    },
+    {
+     "text": "Models both favour Dallas: numberFire 68.6%, Dimers 61.1%. Dallas is 8-2 against the spread in the last 10 meetings and 15-5 versus Washington over the past decade, having swept both 2025 games.",
+     "src": "FanDuel Research Sep 15; SI Betting Sep 15",
+     "url": "https://www.fanduel.com/research/cowboys-vs-commanders-predictions-odds-picks-best-bets-for-nfl-week-2-2026"
+    },
+    {
+     "text": "The dissent, recorded: every published against-the-spread recommendation found was on Washington, Athlon's four experts passed on the game, and Dallas is missing S Malik Hooker and LB DeMarvion Overshown with a ROOKIE taking the green dot on a defence that finished Week 1 dead last in opponent EPA per play.",
+     "src": "FOX Sports Sep 18; OddsShopper Sep 18; dallascowboys.com Sep 18",
+     "url": "https://www.foxsports.com/stories/nfl/2026-nfl-week-2-best-bets-expert-picks-back-commanders-cover-cowboys"
+    },
+    {
+     "text": "Stake: 2,000 contracts at 66¢ = $1,320, fee $31.42, $1,351.42 tied up. Break-even 67.57¢.",
+     "src": "Kalshi fee schedule, 0.07 × contracts × P × (1−P)",
+     "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    }
+   ]
+  },
+  "statistics": {
+   "player": "Ahmed statistics",
+   "method": "Estimate each outcome's probability from models and the sharpest sportsbook prices, subtract Kalshi's ask and fee, and bet the line with the best expected profit — if there is one.",
+   "no_bet": true,
+   "pick": "No bet — sat this one out",
+   "ticker": "",
+   "side": "",
+   "verdict": "Skipped. Kalshi's Dallas at 65.35% sits within a quarter of a point of the best-of-market devigged 65.12% — the tightest agreement between Kalshi and the books on the entire board. The tempting angle is Washington against the spread, where every model that expressed an opinion sides with the Commanders. But nfelo's model line IS the market line at Washington +4.0, which is the cleanest statement available that there is no edge here, and Kalshi's +4.5 at 52¢ is already a hair rich against a devigged 50.8%-51.9%.",
+   "evidence": [
+    {
+     "text": "Moneyline: the best-of-market synthetic (Washington +180 at DraftKings with Dallas −200 at Hard Rock, 2.38% hold) gives Dallas 65.12%; the lowest-hold single book gives 64.29%. Kalshi normalizes to 65.35%. Buying Dallas at 66¢ is negative; buying Washington at 35¢ against a fair 34.9%-35.7% is between −0.1¢ and +0.7¢ against a 1.59¢ fee.",
+     "src": "VegasInsider book grid, Sep 19 2026",
+     "url": "https://www.vegasinsider.com/nfl/matchups/commanders-vs-cowboys/"
+    },
+    {
+     "text": "Spread: Kalshi's 'Dallas by over 4.5' at 49¢ against a book devig of 48.07%-49.25% is roughly fair to a cent rich. The Washington side costs 52¢ against a devigged 50.75%-51.93% — also a hair rich. Neither clears a 1.75¢ fee.",
+     "src": "VegasInsider grid, Sep 19 2026",
+     "url": "https://www.vegasinsider.com/nfl/matchups/commanders-vs-cowboys/"
+    },
+    {
+     "text": "The strongest argument for Washington, and why it was not enough. Dimers has Dallas covering −3.5 only 45.1% of the time, which would make Washington +4.5 worth well over 55%. But Dimers also has Dallas at 61.1% to win, four points below the market — so its spread number is downstream of a moneyline view the rest of the market rejects. Taking the spread number while ignoring where it comes from would be cherry-picking.",
+     "src": "Dimers, Sep 14 2026",
+     "url": "https://www.dimers.com/nfl/news/washington-commanders-vs-dallas-cowboys-early-prediction-nfl-week-2-2026-ac"
+    },
+    {
+     "text": "The decisive number: nfelo's model line is Washington +4.0 against a market line of Washington +4.0. The most respected public NFL spread model available here is saying the market has it exactly right. That is a skip, not a bet.",
+     "src": "nfeloapp.com games page, fetched Sep 19 2026",
+     "url": "https://www.nfeloapp.com/games/"
+    },
+    {
+     "text": "Total: books devig to Over 49.78%-50.43% at 50.5; Kalshi asks 51¢ for the Over. About a cent rich before a 1.75¢ fee. The Over is also the heavily public side at 76-81% of money, which is not a reason to buy it.",
+     "src": "VegasInsider Sep 18; CLEATZ Sep 18",
+     "url": "https://www.vegasinsider.com/nfl/nfl-week-2-odds-2026/"
+    },
+    {
+     "text": "Recorded honestly: the injury asymmetry — a rookie taking the green dot for a last-ranked defence, against an opponent publicly planning to attack exactly that — is a real argument that the market may be a half-point light on Washington. It is not a 1.75¢ argument, and this track does not bet stories.",
+     "src": "dallascowboys.com Sep 18; SI/OnSI Sep 19",
+     "url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-cowboys-blueprint-injuries"
+    }
+   ]
+  }
+ }
 }
