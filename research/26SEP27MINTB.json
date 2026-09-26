@@ -1,0 +1,60 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 26 2026. Every claim here is what the track cited at the time, with its source and date; nothing has been added after the fact.",
+  "tracks": {
+    "as_of": "Sat Sep 26, 1:40 PM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it fired on three of the six games it looked at.",
+    "research": {
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side.",
+      "pick": "Minnesota to win (moneyline)",
+      "ticker": "KXNFLGAME-26SEP27MINTB-MIN",
+      "side": "yes",
+      "verdict": "The weakest crowd signal of the weekend, and the smallest NFL stake to match.",
+      "evidence": [
+        {
+          "text": "24 of 39 experts take Minnesota (61.5%): NFL.com 2-5, Bleacher Report 5-7, MMQB 4-8, ESPN 7-11, The Athletic 6-8.",
+          "src": "vikings.com expert roundup, Sep 24 2026"
+        },
+        {
+          "text": "Tickets agree — DraftKings 63% and 60% of bets on the Vikings — but handle does not, with Tampa Bay taking 55% at DraftKings and 53% at BetMGM.",
+          "src": "Covers, Sep 25 2026; RotoWire, Sep 23 2026"
+        },
+        {
+          "text": "Polymarket has Minnesota at 53c, matching Kalshi.",
+          "src": "Polymarket, Sep 26 2026"
+        },
+        {
+          "text": "Kyler Murray has cleared concussion protocol and is expected to start; Carson Wentz started the two Vikings wins in his absence.",
+          "src": "RotoWire, Sep 23 2026"
+        },
+        {
+          "text": "Recorded dissent: Pete Prisco, Mike Florio and Vinnie Iyer all took Tampa Bay, Iyer as his upset of the week, and the line has drifted from Vikings -2.5 to roughly pick'em.",
+          "src": "buccaneers.com roundup / line history, Sep 21-25 2026"
+        }
+      ]
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "pick": "No bet",
+      "ticker": "",
+      "side": "",
+      "verdict": "The models disagree with each other by more than the edge is worth, so there is no estimate stable enough to bet.",
+      "evidence": [
+        {
+          "text": "Opta has Tampa Bay at 52.0% (Sep 23) while Dimers has Minnesota at 58.0% (Sep 27) and nfelo has Minnesota at 56% (Sep 26). That is a 10-point spread of opinion on a market priced at 53%.",
+          "src": "model screens, Sep 23-27 2026"
+        },
+        {
+          "text": "Sportsbook devig sits between pick'em and Minnesota 52%, with VegasInsider actually showing Tampa Bay as the favourite at -120.",
+          "src": "sportsbook prices, Sep 25 2026"
+        },
+        {
+          "text": "Kalshi asks Minnesota 53c = 53.0% normalized. Any edge here is smaller than the 1.74c fee, let alone the disagreement between the models.",
+          "src": "Kalshi public API, Sep 26 2026 18:40Z"
+        }
+      ],
+      "no_bet": true
+    }
+  }
+}

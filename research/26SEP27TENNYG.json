@@ -1,0 +1,71 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 26 2026. Every claim here is what the track cited at the time, with its source and date; nothing has been added after the fact.",
+  "tracks": {
+    "as_of": "Sat Sep 26, 1:40 PM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it fired on three of the six games it looked at.",
+    "research": {
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side.",
+      "pick": "NY Giants to win (moneyline)",
+      "ticker": "KXNFLGAME-26SEP27TENNYG-NYG",
+      "side": "yes",
+      "verdict": "The published crowd is on the Giants even though the money is emphatically not. This track follows the published crowd by construction.",
+      "evidence": [
+        {
+          "text": "NFL Pickwatch has 61% of experts on the Giants; Tallysight has 52% on the Giants moneyline.",
+          "src": "Yahoo Sports, Sep 24 2026"
+        },
+        {
+          "text": "Yahoo's two aggregates run 7-3 and 9-0 New York; CBS Sports is 6-1 Giants.",
+          "src": "expert roundup, Sep 24-25 2026"
+        },
+        {
+          "text": "Honest caveat on the record, and it is a big one: DraftKings shows 81% of handle on Tennessee, and SportsBettingDime has the Titans with 66.6% of bets and 60% of money.",
+          "src": "Covers / SportsBettingDime, Sep 25 2026"
+        },
+        {
+          "text": "The line has moved more than three points, from Giants -6 on Sep 21 to -2.5 now, with the total collapsing from 43.5 to 38.5.",
+          "src": "Yahoo / SportsBettingDime, Sep 21-25 2026"
+        },
+        {
+          "text": "Jaxson Dart is out with a knee injury; Jameis Winston starts.",
+          "src": "RotoWire / SI, Sep 23-27 2026"
+        },
+        {
+          "text": "Recorded dissent: SI's MMQB staff went 5-3 for Tennessee.",
+          "src": "SI / MMQB, Sep 24 2026"
+        }
+      ]
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "pick": "NY Giants to win (moneyline)",
+      "ticker": "KXNFLGAME-26SEP27TENNYG-NYG",
+      "side": "yes",
+      "verdict": "The only NFL price that clears the fee, and the smallest stake of the weekend. Both tracks land on the same side here, for different reasons.",
+      "evidence": [
+        {
+          "text": "Three independent models agree closely and all sit above the market: Opta Giants 60.2% (Sep 23), Dimers 62.1% (Sep 27), nfelo 59% (Sep 26).",
+          "src": "model screens, Sep 23-27 2026"
+        },
+        {
+          "text": "Sportsbook devig across bet365 -150/+125, VegasInsider -135/+114 and DraftKings -155/+130 lands near Giants 57%.",
+          "src": "sportsbook prices, Sep 25 2026"
+        },
+        {
+          "text": "Kalshi asks 56c, which normalizes to 55.4%.",
+          "src": "Kalshi public API, Sep 26 2026 18:40Z"
+        },
+        {
+          "text": "Blending models with the book devig puts the Giants near 58.7%. At 56c that is a 2.7c edge against a fee of 0.07 x 0.56 x 0.44 = 1.72c, about +1.0c net per contract. Break-even 57.73c.",
+          "src": "fee = 0.07 x P x (1-P)"
+        },
+        {
+          "text": "Dissent, recorded and not discounted: DraftKings handle is 81% Tennessee, the line has run from Giants -6 to -2.5, and 18-26 mph winds with rain raise the variance on any favourite.",
+          "src": "Covers / Cleatz, Sep 25-26 2026"
+        }
+      ]
+    }
+  }
+}

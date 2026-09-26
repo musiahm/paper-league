@@ -1,0 +1,64 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 26 2026. Every claim here is what the track cited at the time, with its source and date; nothing has been added after the fact.",
+  "tracks": {
+    "as_of": "Sat Sep 26, 1:40 PM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it fired on three of the six games it looked at.",
+    "research": {
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side.",
+      "pick": "LA Rams to win (moneyline)",
+      "ticker": "KXNFLGAME-26SEP27LARDEN-LAR",
+      "side": "yes",
+      "verdict": "The most lopsided media consensus of the weekend, and for once the public's wallet agrees with its tickets. Largest NFL stake.",
+      "evidence": [
+        {
+          "text": "41 of 52 named experts take the Rams (79%): USA Today 6-0, NFL.com 5-0, CBS 6-1, ESPN 7-4, Bleacher Report 5-2, SI 6-2, The Athletic 6-2.",
+          "src": "Yahoo Sports aggregate, Sep 25 2026"
+        },
+        {
+          "text": "DraftKings has 73% of bets and 73% of handle on the Rams; BetMGM 58% of bets and 63% of handle.",
+          "src": "Covers, Sep 25 2026"
+        },
+        {
+          "text": "Polymarket has the Rams at 55c, matching Kalshi.",
+          "src": "Polymarket, Sep 26 2026"
+        },
+        {
+          "text": "Recorded dissent, and there is a lot of it: the spread has not budged off Rams -2.5 despite that one-way action, nfelo has Denver at 59%, and SportsLine's 10,000 sims have Denver covering 54%.",
+          "src": "VSiN / nfelo / SportsLine, Sep 23-26 2026"
+        },
+        {
+          "text": "Puka Nacua's hip is unresolved — reported out by VSiN, questionable by SI and NBC.",
+          "src": "injury reports, Sep 23-26 2026"
+        }
+      ]
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "pick": "No bet",
+      "ticker": "",
+      "side": "",
+      "verdict": "nfelo and Opta are 14 points apart on the same game. The gap between the models is wider than the gap between the market and any of them.",
+      "evidence": [
+        {
+          "text": "nfelo has Denver at 59% (Sep 26) while Opta has Denver at 45.3% (Sep 23) and numberFire has the Rams at 51.8% (Sep 23).",
+          "src": "model screens, Sep 23-26 2026"
+        },
+        {
+          "text": "Sportsbook devig lands near Denver 45.6% across FanDuel -126/+108, VegasInsider -130/+110 and bet365 -135/+115.",
+          "src": "sportsbook prices, Sep 23-25 2026"
+        },
+        {
+          "text": "Kalshi asks Denver 46c = 45.5% normalized. Against a blended estimate near 48% that is a 2.2c edge on a 1.74c fee — about half a cent net, and the models' own disagreement is six times that.",
+          "src": "Kalshi public API, Sep 26 2026 18:40Z"
+        },
+        {
+          "text": "Noted but not bet: SportsLine's sims have Denver covering 54% and the Rams travelled Melbourne to Los Angeles to Denver this month.",
+          "src": "SportsLine / VSiN, Sep 23-25 2026"
+        }
+      ],
+      "no_bet": true
+    }
+  }
+}

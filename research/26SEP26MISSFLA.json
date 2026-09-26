@@ -1,0 +1,72 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 26 2026. Every claim here is what the track cited at the time, with its source and date; nothing has been added after the fact.",
+  "tracks": {
+    "as_of": "Sat Sep 26, 1:40 PM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it fired on three of the six games it looked at.",
+    "research": {
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side.",
+      "pick": "Ole Miss to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP26MISSFLA-MISS",
+      "side": "yes",
+      "verdict": "Every published measure of crowd belief points at Ole Miss, and the price is cheap. The line moving the other way is recorded as dissent, not acted on.",
+      "evidence": [
+        {
+          "text": "Hard Rock books 70.9% of moneyline bets and 71.0% of the moneyline dollars on Ole Miss; on the spread, 79.5% of tickets and 86.7% of handle on Ole Miss +3.5.",
+          "src": "Hard Rock Bet, Sep 26 2026"
+        },
+        {
+          "text": "80% of spread tickets on Ole Miss.",
+          "src": "TheSpread, Sep 26 2026"
+        },
+        {
+          "text": "Straight-up expert picks run 8-5 Ole Miss: CBS panel 6-3, Athlon split, BettingNews.",
+          "src": "expert roundup, Sep 25-26 2026"
+        },
+        {
+          "text": "BetMGM trader Seamus Magee described one-way action on Ole Miss across multiple books.",
+          "src": "Yahoo Sports, Sep 23 2026"
+        },
+        {
+          "text": "Ole Miss is 3-0 and AP No.4; Florida is 3-0 and No.21, and won at Auburn 44-39 last week.",
+          "src": "AP Top 25, Sep 20 2026"
+        },
+        {
+          "text": "Recorded dissent: the line moved to Florida -3.5 and Covers reports sharp money on Florida. This track follows the crowd by construction, so it takes the dog anyway.",
+          "src": "Covers / VegasInsider, Sep 26 2026"
+        },
+        {
+          "text": "Kalshi's 39c ask normalizes to 38.6%.",
+          "src": "Kalshi public API, Sep 26 2026 16:30Z"
+        }
+      ]
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "pick": "No bet",
+      "ticker": "",
+      "side": "",
+      "verdict": "The only edge here came from models published before Friday's injury report, and the one model published today agrees with the market.",
+      "evidence": [
+        {
+          "text": "ESPN FPI had Florida at 53.2% (Sep 22) and numberFire at 50.8% (Sep 24) — both below the market's 61%, which would make Ole Miss at 39c look cheap.",
+          "src": "model screens, Sep 22-24 2026"
+        },
+        {
+          "text": "Both predate Friday's report: Ole Miss RB Kewan Lacy (39 carries, 191 yards, 4 TD) was downgraded to doubtful, and nine Rebels are out including five defensive backs.",
+          "src": "ESPN / CBS Sports / The Rebel Walk, Sep 25 2026"
+        },
+        {
+          "text": "Dimers, published Sep 26, has Florida at 61.8% — in line with the market.",
+          "src": "Dimers, Sep 26 2026"
+        },
+        {
+          "text": "Sportsbook devig across BetMGM, bet365, Caesars, DraftKings and FanDuel lands at Florida 60-61%, against Kalshi's 61.4%. No gap worth the 1.67c fee.",
+          "src": "sportsbook prices, Sep 26 2026"
+        }
+      ],
+      "no_bet": true
+    }
+  }
+}

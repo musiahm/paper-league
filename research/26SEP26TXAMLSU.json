@@ -1,0 +1,75 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 26 2026. Every claim here is what the track cited at the time, with its source and date; nothing has been added after the fact.",
+  "tracks": {
+    "as_of": "Sat Sep 26, 1:40 PM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it fired on three of the six games it looked at.",
+    "research": {
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side.",
+      "pick": "LSU to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+      "side": "yes",
+      "verdict": "The most one-sided straight-up consensus on the board. Dearest ticket of the three, so the smallest college stake.",
+      "evidence": [
+        {
+          "text": "24 of 29 named picks take LSU (83%): GameDay's Nick Saban, Pat McAfee and Kirk Herbstreit, all four of SEC Nation, 7 of 9 CBS analysts, both Athlon writers, Pete Fiutak, and all three Aggies Wire writers.",
+          "src": "expert roundup, Sep 24-26 2026"
+        },
+        {
+          "text": "Polymarket has LSU at 76c, matching Kalshi exactly.",
+          "src": "Polymarket via CBS Sports, Sep 25-26 2026"
+        },
+        {
+          "text": "LSU is No.10 and 25-2 in its last 27 night home games at Tiger Stadium.",
+          "src": "CBS Sports, Sep 26 2026"
+        },
+        {
+          "text": "Recorded dissent: the money is on the dog. Texas A&M took 82% of spread handle on 57% of tickets, and ATS picks split 7-6 toward A&M — the crowd expects LSU to win without covering.",
+          "src": "VegasInsider, Sep 23 2026"
+        },
+        {
+          "text": "Kalshi's 76c ask normalizes to 76.0%.",
+          "src": "Kalshi public API, Sep 26 2026 16:30Z"
+        }
+      ]
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "pick": "Texas A&M to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
+      "side": "yes",
+      "verdict": "The clearest mispricing of the weekend: the power ratings and the market disagree by about ten points of probability, and the models agree with each other.",
+      "evidence": [
+        {
+          "text": "ESPN FPI / Matchup Predictor has LSU at 62.8% (Sep 24-25), SP+ at 61% with LSU by only 4 points (Sep 26), numberFire at 62.5% (Sep 24) — against a market line of LSU -8 to -9.5.",
+          "src": "model screens, Sep 24-26 2026"
+        },
+        {
+          "text": "Sagarin separates the two teams by 0.81 rating points: LSU 88.39, Texas A&M 87.58, both 2-1.",
+          "src": "Sagarin ratings, Sep 19 2026"
+        },
+        {
+          "text": "SportsLine's 10,000 simulations project LSU 27-26, with Texas A&M covering +8.5 in 63% of them.",
+          "src": "SportsLine via CBS Sports, Sep 26 2026"
+        },
+        {
+          "text": "Sportsbook devig is LSU 74.4% (-345/+275); Kalshi asks Texas A&M 24c = 24.0% normalized.",
+          "src": "sportsbook prices / Kalshi, Sep 26 2026"
+        },
+        {
+          "text": "Blending the model cluster with the book devig puts Texas A&M near 30%. At 24c that is a 6c edge against a fee of 0.07 x 0.24 x 0.76 = 1.28c, about +4.7c net per contract. Break-even 25.28c.",
+          "src": "fee = 0.07 x P x (1-P)"
+        },
+        {
+          "text": "Dissent, deliberately discounted: Dimers has LSU at 75% and BetMGM's model at 68.1%, both in line with the market.",
+          "src": "Dimers / BetMGM, Sep 22-25 2026"
+        },
+        {
+          "text": "Supporting structure, not counted in the probability: Texas A&M has won 3 of the last 4 meetings including 49-25 on the road last year, and Mike Elko is 2-0 against LSU. LSU is missing TE Trey'Dez Green.",
+          "src": "CBS Sports / On3, Sep 24-26 2026"
+        }
+      ]
+    }
+  }
+}

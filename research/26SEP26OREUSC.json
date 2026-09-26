@@ -1,0 +1,75 @@
+{
+  "_about": "Written from the reasoning the two tracks recorded when they placed these bets on Sat Sep 26 2026. Every claim here is what the track cited at the time, with its source and date; nothing has been added after the fact.",
+  "tracks": {
+    "as_of": "Sat Sep 26, 1:40 PM ET",
+    "intro": "Two of Ahmed's rows are picked by Claude, each by a fixed method, and placed through the same form as everyone else. Research buys whatever the crowd most believes, at the best Kalshi price for that side. Statistics bets only where a price is wrong by more than the fee, and sits out otherwise — this weekend it fired on three of the six games it looked at.",
+    "research": {
+      "player": "Ahmed research",
+      "method": "Bets whatever the crowd most believes will win, at the best Kalshi price for that side.",
+      "pick": "Oregon to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
+      "side": "yes",
+      "verdict": "The media is 70% Oregon and the money is far more one-sided than the tickets, which is the shape this track is built to follow.",
+      "evidence": [
+        {
+          "text": "16 of 23 named straight-up picks take Oregon, including all nine CBS analysts and FOX's RJ Young, Laken Litman and Michael Cohen.",
+          "src": "expert roundup, Sep 24-26 2026"
+        },
+        {
+          "text": "Oregon took 91% of spread handle on only 35% of tickets; the public is on USC, the money is on Oregon.",
+          "src": "Cleatz Week 4 betting report, Sep 22 2026"
+        },
+        {
+          "text": "Polymarket has run to Oregon 76c against Kalshi's 61c.",
+          "src": "Polymarket via Goal.com, Sep 26 2026"
+        },
+        {
+          "text": "The line moved Oregon -2.5 to -3.5 and the moneyline -140 to -180 across the week.",
+          "src": "SI / VegasInsider, Sep 21-26 2026"
+        },
+        {
+          "text": "USC is home, No.12 and 4-0; Oregon is No.20 and 2-1, so the crowd is backing the lower-ranked road team.",
+          "src": "AP Top 25, Sep 20 2026"
+        },
+        {
+          "text": "Recorded dissent: Yahoo's TV roundup split 4-4, with Josh Pate, Dan Rubenstein, Ty Hildenbrandt and Greg McElroy on USC.",
+          "src": "Yahoo Sports, Sep 25 2026"
+        }
+      ]
+    },
+    "statistics": {
+      "player": "Ahmed statistics",
+      "method": "Bets only where the price is wrong by more than the fee.",
+      "pick": "USC to win (moneyline)",
+      "ticker": "KXNCAAFGAME-26SEP26OREUSC-USC",
+      "side": "yes",
+      "verdict": "Thin but real: three neutral models call this a coin flip while the market prices Oregon at 60%. Half the stake of the A&M bet because it is half the edge.",
+      "evidence": [
+        {
+          "text": "Three neutral models sit near even: ESPN FPI Oregon 54.1% (Sep 21), numberFire 50.0% (Sep 24), SportsGrid 51.0% (Sep 26).",
+          "src": "model screens, Sep 21-26 2026"
+        },
+        {
+          "text": "Sportsbook devig is Oregon 60-62% across bet365, DraftKings, Caesars, BetMGM and FanDuel.",
+          "src": "sportsbook prices, Sep 26 2026"
+        },
+        {
+          "text": "Kalshi asks USC 40c, which normalizes to 39.6% — below every model.",
+          "src": "Kalshi public API, Sep 26 2026 16:30Z"
+        },
+        {
+          "text": "Blending the three models with the book devig puts USC near 43.6%. At 40c that is a 3.6c edge against a fee of 0.07 x 0.40 x 0.60 = 1.68c, about +1.9c net per contract. Break-even 41.68c.",
+          "src": "fee = 0.07 x P x (1-P)"
+        },
+        {
+          "text": "Dissent, deliberately discounted: Dimers has Oregon 62.6% (Sep 26) and Action Network's power ratings project Oregon -5.5, both at or above the market.",
+          "src": "Dimers / Action Network, Sep 26 2026"
+        },
+        {
+          "text": "Supporting structure, not counted in the probability: USC is missing top WR Trent Mosley for a second straight week, and Oregon lost WR Jeremiah McClellan and OL Trent Ferguson.",
+          "src": "SI / Autzen Zoo injury reports, Sep 26 2026"
+        }
+      ]
+    }
+  }
+}
