@@ -48,6 +48,8 @@
   .game .prices{font-family:var(--mono);font-size:13px}
   .game .cta{align-self:flex-start;margin-top:6px}
   .game.done{border-top-color:var(--rule)}
+  .standings .who{display:flex;flex-direction:column;gap:3px}
+  .standings .sum{color:var(--muted);font-size:13px;line-height:1.4;font-family:var(--body,inherit);text-transform:none;letter-spacing:0;max-width:52ch}
   details.past{margin-top:18px;border-top:1px solid var(--rule)}
   details.past>summary{cursor:pointer;list-style:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:var(--muted);display:flex;align-items:center;gap:8px;padding:12px 0}
   details.past>summary::-webkit-details-marker{display:none}
@@ -126,7 +128,22 @@ async function main(){
   $("#stSub").innerHTML = anyLive
     ? 'open bets are marked to the live Kalshi market — what they would be worth if cashed out now, fees already taken out'
     : 'paper P&amp;L after Kalshi taker fees · results from the exchange\'s settlements';
-  $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.liveBankroll-a.liveBankroll).map(t => `<tr><td>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':`<span class="pill">${esc(t.role)}</span>`}${t.marked?' <span class="pill live">live</span>':""}</td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${fmt$(t.free==null?t.bankroll:t.free)}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${cls(t.pnl)}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num ${cls(t.live)}">${t.marked?signed(t.live):'<span class="muted">—</span>'}</td><td class="num bank">${fmt$(t.liveBankroll)}${t.marked?`<small class="${cls(t.live)}">${signed(t.live)} unsettled</small>`:""}</td></tr>`).join("");
+  const summarize = t => {
+    const start = cfg.bankroll, net = Math.round((t.liveBankroll - start)*100)/100;
+    if (!t.picks) return t.role === "system"
+      ? "Sits out until the collector gives it a live reference line, so it has no bets and nothing at risk."
+      : `Hasn't placed a bet yet — the whole ${fmtK(start)} is still on the table.`;
+    const parts = [];
+    parts.push(t.settled
+      ? `${t.wins}–${t.losses} on ${t.settled} settled bet${t.settled>1?"s":""}, ${t.pnl>0?`up ${fmt$(t.pnl)}`:t.pnl<0?`down ${fmt$(-t.pnl)}`:"level"} after fees`
+      : `${t.picks} bet${t.picks>1?"s":""} placed, none settled yet`);
+    if (t.open) parts.push(`${t.open} still open with ${fmt$(t.atRisk)} tied up`);
+    parts.push(net>0 ? `${fmt$(net)} ahead of the ${fmtK(start)} start`
+             : net<0 ? `${fmt$(-net)} behind the ${fmtK(start)} start`
+             : `level with the ${fmtK(start)} start`);
+    return parts.join("; ") + ".";
+  };
+  $("#stRows").innerHTML = st.table.slice().sort((a,b)=>b.liveBankroll-a.liveBankroll).map(t => `<tr><td><div class="who"><div>${esc(t.player)} ${t.role==="system"?'<span class="pill sys">system</span>':`<span class="pill">${esc(t.role)}</span>`}${t.marked?' <span class="pill live">live</span>':""}</div><div class="sum">${esc(summarize(t))}</div></div></td><td class="num">${t.picks}</td><td class="num">${t.open}</td><td class="num muted">${t.atRisk?fmt$(t.atRisk):"—"}</td><td class="num">${fmt$(t.free==null?t.bankroll:t.free)}</td><td class="num">${t.wins}–${t.losses}</td><td class="num muted">${t.fees?fmt$(t.fees):"—"}</td><td class="num ${cls(t.pnl)}">${t.settled?fmt$(t.pnl):"—"}</td><td class="num ${cls(t.live)}">${t.marked?signed(t.live):'<span class="muted">—</span>'}</td><td class="num bank">${fmt$(t.liveBankroll)}${t.marked?`<small class="${cls(t.live)}">${signed(t.live)} unsettled</small>`:""}</td></tr>`).join("");
   // games — open ones on the board, finished ones folded away underneath
   const games = L.slate.filter(s => /^(yes|y|true)$/i.test(s.in_slate||""));
   const tiles = games.map(s => { const mk = eventMarkets(L.markets, s.ev); const h = mk.winner.find(m=>m.team===s.ev.home.abbr), a = mk.winner.find(m=>m.team===s.ev.away.abbr);
